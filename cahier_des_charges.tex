@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{PRO : Cahier des charges}
+\author{Groupe 1-B}
+\date{Mars 2018}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Environnement de développement envisagé}
+\begin{enumerate}
+\item Langage de programmation : Java
+\item Base de données : MySQL
+\item Librairie graphique : JavaFX
+\item API tierces : GSON, JUnit
+\item Framework library for client server : Netty, Apache MINA, CoralReactor, autre ?
+\end{enumerate}
+
+\paragraph{Fonctionnalités de base}
+\begin{enumerate}
+\item Affichage des salles libres sous forme de plan selon les paramètres suivants, choisis par l'utilisateur :
+	\begin{enumerate}
+	\item Position de l'utilisateur
+	\item Bâtiment : St-Roch ou Cheseaux
+	\item Numéro d'étage
+	\item Horaire, à choix : maintenant, ou sur une ou plusieurs plages horaire
+	\item Présence de prises électriques
+	\item Présence de tableaux
+	\item Présence d'ordinateurs
+    \end{enumerate}
+\item Affichage de divers commodités sur le plan d'étage : toilettes, Selecta et machine à café
+\end{enumerate} 
+
+\paragraph{Fonctionnalités facultatives}
+\begin{enumerate}
+\item Mode daltonien
+\item Mode nuit
+\item Génération de fichiers .csv ou .txt contenant les salles libres
+\item Possibilité à l'utilisateur d'indiquer si une salle est utilisées, soit par user input soit par détection de la borne wi-fi utilisée.
+\end{enumerate} 
+
+\end{document}
+
