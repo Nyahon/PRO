@@ -7,7 +7,7 @@ USE daryll;
 SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE TABLE Period(
-	idPeriod TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	idPeriod TINYINT UNSIGNED NOT NULL,
     startingTime TIME NOT NULL,
     finishingTime TIME NOT NULL,
     PRIMARY KEY (idPeriod)
@@ -15,51 +15,49 @@ CREATE TABLE Period(
 
 CREATE TABLE TakePlace(
     date DATE NOT NULL,
-    idPeriod TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    idPeriod TINYINT UNSIGNED NOT NULL,
     roomName VARCHAR(10) NOT NULL,
     FOREIGN KEY (idPeriod) REFERENCES Period (idPeriod),
-    FOREIGN KEY (roomName) REFERENCES Classroom (roomName)
+    FOREIGN KEY (roomName) REFERENCES Classroom (roomName),
+    PRIMARY KEY (roomName, idPeriod)
 );
 
 CREATE TABLE Classroom(
-	roomName VARCHAR(15) NOT NULL,
+	roomName VARCHAR(10) NOT NULL,
     isLocked BOOL NOT NULL,
-    floorName VARCHAR(15) NOT NULL,
-    idEquipments TINYINT UNSIGNED NOT NULL,
-    PRIMARY KEY (roomName),
+    floorName VARCHAR(10) NOT NULL,
+    idClassroomEquipment TINYINT UNSIGNED NOT NULL,
     FOREIGN KEY (floorName) REFERENCES Floor (floorName),
-    FOREIGN KEY (idEquipments) REFERENCES Equipments (idEquipments)
+    FOREIGN KEY (idClassroomEquipment) REFERENCES ClassroomEquipment (idClassroomEquipment),
+    PRIMARY KEY (roomName)
 );
 
 
-CREATE TABLE Equipments(
-	idEquipments TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    
+CREATE TABLE ClassroomEquipment(
+	idClassroomEquipment TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
     beamer BOOL NOT NULL,
     electricalSocket BOOL NOT NULL,
     computers BOOL NOT NULL,
     board BOOL NOT NULL,
-    PRIMARY KEY (idEquipments)
+    PRIMARY KEY (idClassroomEquipment)
 );
 
-CREATE TABLE Floor(
-	floorNumber SMALLINT,
-	floorName VARCHAR(10) NOT NULL,
-    place TINYINT NOT NULL,
-    
-	PRIMARY KEY (floorName),
-    idFloorEquipments TINYINT UNSIGNED NOT NULL,
-    FOREIGN KEY (idFloorEquipments) REFERENCES FloorEquipments (idFloorEquipments)
-);
-
-CREATE TABLE FloorEquipments(
-	idFloorEquipments TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE FloorEquipment(
+	idFloorEquipment TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
     toiletM BOOL NOT NULL,
     toiletF BOOL NOT NULL,
     coffeeMachine BOOL NOT NULL,
     selecta BOOL NOT NULL,
     wayOut BOOL NOT NULL,
-    PRIMARY KEY (idFloorEquipments)
+    PRIMARY KEY (idFloorEquipment)
+);
+
+CREATE TABLE Floor(
+	floorName VARCHAR(10) NOT NULL,
+    place TINYINT UNSIGNED NOT NULL,
+    idFloorEquipment TINYINT UNSIGNED NOT NULL,
+    FOREIGN KEY (idFloorEquipment) REFERENCES FloorEquipment (idFloorEquipment),
+    PRIMARY KEY (floorName)
 );
 
 SET FOREIGN_KEY_CHECKS = 1;
