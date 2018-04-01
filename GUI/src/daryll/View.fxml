@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="daryll.ViewController">
+  <bottom>
+    <HBox alignment="CENTER" pickOnBounds="true" prefHeight="60.0" prefWidth="800.0">
+      <children>
+        <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="151.0" text="Prises électr." />
+        <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="151.0" text="Beamer" />
+        <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="151.0" text="Tableau" />
+        <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="151.0" text="WCs" />
+        <CheckBox mnemonicParsing="false" prefHeight="60.0" prefWidth="151.0" text="Distributeur" />
+      </children>
+    </HBox>
+  </bottom>
+  <center>
+    <TabPane focusTraversable="true" prefHeight="200.0" prefWidth="200.0" rotateGraphic="false" tabClosingPolicy="UNAVAILABLE" visible="true">
+      <tabs>
+        <Tab closable="false" disable="false" text="Cheseaux">
+          <content>
+            <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
+              <center>
+                <Pane id="" prefHeight="456.0" prefWidth="692.0" snapToPixel="true" style="-fx-background-image: url('http://www.sandpiperdunes.com/images/floorplan.gif');&#10;-fx-background-size: contain;&#10;-fx-background-repeat: no-repeat;&#10;-fx-background-position: center;&#10;" visible="true" BorderPane.alignment="CENTER" />
+              </center>
+              <left>
+                <VBox prefHeight="456.0" prefWidth="108.0">
+                  <children>
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage K" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage J" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage H" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage G" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage F" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage E" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage D" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage C" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage B" />
+                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage A" />
+                  </children>
+                </VBox>
+              </left>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Saint-Roch">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <center>
+                <ImageView fitHeight="456.0" fitWidth="691.0000999999975" pickOnBounds="true" preserveRatio="false">
+                  <image>
+                    <Image url="@../../../../../Desktop/vectorial_background_2_by_jskar.jpg" />
+                  </image>
+                </ImageView>
+              </center>
+              <left>
+                <VBox prefHeight="456.0" prefWidth="109.0" />
+              </left>
+            </BorderPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="Fichier">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Salle la plus proche" />
+            <MenuItem mnemonicParsing="false" text="Fermer" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Modifier">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Entrer la position" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Aide">
+          <items>
+            <MenuItem mnemonicParsing="false" text="À propos" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>
