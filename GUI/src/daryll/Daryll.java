@@ -24,6 +24,11 @@ import javafx.stage.Stage;
 
 public class Daryll extends Application {
    
+   /**
+    * @brief Method that loads all the JavaFX ressources to run the programm.
+    * @param stage
+    * @throws Exception 
+    */
    @Override
    public void start(Stage stage) throws Exception {
       Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
@@ -35,6 +40,7 @@ public class Daryll extends Application {
    }
 
    /**
+    * @brief The programm begins here.
     * @param args the command line arguments
     */
    public static void main(String[] args) {
