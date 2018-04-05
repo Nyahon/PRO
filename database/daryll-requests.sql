@@ -6,13 +6,14 @@ to add, update or find some data */
 /* drop procedures */
 DROP PROCEDURE IF EXISTS addPeriod;
 DROP PROCEDURE IF EXISTS addFloor;
-DROP PROCEDURE IF EXISTS addClassroom;
+DROP FUNCTION  IF EXISTS addClassroom;
 DROP PROCEDURE IF EXISTS addTakePlace;
 DROP PROCEDURE IF EXISTS addEquipments;
 DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
 DROP PROCEDURE IF EXISTS addTakePlaceClassroomFloor;
-DROP FUNCTION  IF EXISTS nb_medias_by_genre;
+DROP FUNCTION  IF EXISTS addEquipments;
+
 
 /* Create a new period */
 DELIMITER //
@@ -31,36 +32,35 @@ DELIMITER //
     
 /* Create a new classroom */
 DELIMITER //
-	CREATE PROCEDURE addRoom(IN roomName VARCHAR(10), IN isLocked BOOL, 
-    IN floorName VARCHAR(10), idEquipments TINYINT UNSIGNED)
+	CREATE PROCEDURE addClassroom(IN classroomName VARCHAR(10), IN isLocked BOOL, 
+    IN floorName VARCHAR(10), idClassroomEquipment TINYINT UNSIGNED)
     BEGIN
-		INSERT INTO Classroom(roomName, isLocked, floorName, idEquipments) VALUES
-        (roomName, isLocked, floorName, idEquipments);
+		INSERT INTO Classroom(classroomName, isLocked, floorName, idClassroomEquipment) VALUES
+        (classroomName, isLocked, floorName, idClassroomEquipment);
 	END //
 
-/* Create a new time room period (TakePlace) */
+/* Create a new couple of room and period (TakePlace) */
 DELIMITER //
-	CREATE PROCEDURE addTakePlace(IN roomName VARCHAR(10), IN idPeriod TINYINT UNSIGNED)
+	CREATE PROCEDURE addTakePlace(IN date DATE, IN idPeriod TINYINT UNSIGNED, IN classroomName VARCHAR(10))
     BEGIN
-		INSERT INTO TakePlace(roomName, idPeriod) VALUES (roomName, idPeriod);
+		INSERT INTO TakePlace(date, idPeriod, classroomName) VALUES (date, idPeriod, classroomName);
 	END //
     
 /* Create a new equipment */
 DELIMITER //
-	CREATE PROCEDURE addEquipments(IN beamer BOOL, IN electricalSocket BOOL,
+	CREATE PROCEDURE addClassroomEquipment(IN beamer BOOL, IN electricalSocket BOOL,
     IN computers BOOL, IN board BOOL)
     BEGIN
-		INSERT INTO Equipments(beamer, electricalSocket, computers, board) VALUES
+		INSERT INTO ClassroomEquipment(beamer, electricalSocket, computers, board) VALUES
         (beamer, electricalSocket, computers, board);
 	END //
     
     
 /* Create a new equipment */
 DELIMITER //
-	CREATE PROCEDURE addEquipments(IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL,
+	CREATE PROCEDURE addFloorEquipment(IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL,
     IN selecta BOOL, IN wayOut BOOL)
     BEGIN
-		INSERT INTO Equipments(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
+		INSERT INTO FloorEquipment(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
         (toiletM, toiletF, coffeeMachine, selecta, wayOut);
 	END //
-

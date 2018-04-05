@@ -3,128 +3,172 @@
  * File     : ToolBoxMySQL.java
  * Author   : Siu Aurélien
  * Created on : 27.03.2018
- * Last edit  : 29.03.2018
- * Description : Java class that contains tools to insert or update element in the database
+ * Last edit  : 05.04.2018
+ * Description : Contains the basic tools to connect to the database and insert elements into it
  *
  */
 
-import java.sql.*;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
 
-public class ToolBoxMySQL extends Thread {
+public class ToolBoxMySQL implements Runnable {
 
+    // Logger to deliver information or report errors
     private static final Logger LOG = Logger.getLogger(ToolBoxMySQL.class.getName());
-    private static final Scanner mScanner = new Scanner(System.in);
-    private Connection mConnection;
+
+    // Login informations for the connection to the database
+    private static final String database = "daryll";
+    private static final String password = "mly.48ODR-51";
+
+    private Connection connection;
     private String sql;
 
-    private static final String[][] hoursStartEnd = {{"08:25:00", "09:10:00"}, {"09:15:00", "10:00:00"},
-            {"10:25:00", "11:10:00"}, {"11:15:00", "12:00:00"}, {"12:00:00", "13:15:00"}, {"13:15:00","14:00:00"},
-            {"14:00:00", "14:45:00"}, {"14:55:00", "15:40:00"}, {"15:45:00", "16:30:00"}, {"16:35:00", "17:20:00"},
-            {"17:20:00", "18:05:00"}, {"18:30:00", "19:15:00"}, {"19:15:00", "20:00:00"}, {"20:05:00", "20:50:00"},
-            {"20:50:00", "21:35:00"}, {"21:35:00", "22:20:00"}};
+    public static void main(String... args) {}
 
-    public static void main(String... args) {
-        new ToolBoxMySQL().start();
-    }
-
+    /**
+     * @brief This method is called when we start this Runnable class.
+     * It initialize the connection to the database
+     */
     @Override
     public void run() {
         try {
             initConnection();
-            insertPeriods();
+
         } catch (SQLException e) {
             LOG.log(Level.SEVERE, e.getMessage());
-        } finally {
-            if (mConnection != null) {
-                try {
-                    mConnection.close();
-                } catch (SQLException e) {
-                    LOG.log(Level.SEVERE, e.getMessage());
-                }
+            closeConnection();
+        }
+    }
+
+    /**
+     * @brief This method initialize the connection to the database
+     */
+    private void initConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/" + database + "?user=root&password=" + password;
+        connection = DriverManager.getConnection(url);
+    }
+
+    /**
+     * @brief This method close the connection to the database
+     */
+    public void closeConnection() {
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                LOG.log(Level.SEVERE, e.getMessage());
             }
         }
     }
 
-    private void initConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/daryll?user=root&password=mly.48ODR-51";
-        mConnection = DriverManager.getConnection(url);
+    /**
+     * @brief This method insert the periods list into the database
+     */
+    public void insertPeriods(String[][] listOfPeriods) {
+        LOG.info("Insertion of the periods...");
+        ResultSet result;
+        PreparedStatement ps;
+
+        try (Statement statement = connection.createStatement()) {
+
+            // Retrieve periods
+            sql = "SELECT idPeriod " +
+                    "FROM Period";
+            result = statement.executeQuery(sql);
+
+            sql = "call addPeriod(?,?,?)";
+            ps = connection.prepareCall(sql);
+            for (int i = 0; i < listOfPeriods.length; i += 1) {
+                if(!result.next()){
+                    ps.setInt(1, i); // idPeriod (0 to n)
+                    ps.setTime(2, Time.valueOf(listOfPeriods[i][0]));
+                    ps.setTime(3, Time.valueOf(listOfPeriods[i][1]));
+
+                    ps.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
+        }
     }
 
-    // Prepare the database insertion
-    private void initInsertion() throws SQLException {
-        // Insertion of the different periods
-        insertPeriods();
-    }
+    /**
+     * @brief This method insert a new Classroom element into the database
+     * @param classroomName It defines the name of the new Classroom
+     * @param isLocked defines if the room is locked or not
+     * @param idClassroomEquipment defines the reference to an element of the ClassroomEquipment table
+     *
+     */
+    private void insertClassroom(String classroomName, boolean isLocked, int place, int idClassroomEquipment) throws SQLException {
+        LOG.info("Insertion Classroom...");
+        ResultSet result;
+        PreparedStatement ps;
 
-    private void insertPeriods() throws SQLException {
-        System.out.print("Insertion of the periods");
-        try (Statement statement = mConnection.createStatement()) {
-            PreparedStatement ps;
-            String sql;
-            sql = "INSERT INTO Period(idPeriod, startingTime, finishingTime) VALUES (?,?,?)";
-            ps = mConnection.prepareStatement(sql);
-            for (int i = 0; i < hoursStartEnd.length; i += 1) {
-                ps.setInt(1, i); // idPeriod (0 to n)
-                ps.setTime(2, Time.valueOf(hoursStartEnd[i][0]) );
-                ps.setTime(3, Time.valueOf(hoursStartEnd[i][1]) );
+        try (Statement statement = connection.createStatement()) {
 
+            // Insert Floor (do nothing if it already exists)
+            insertFloor(classroomName.substring(0, 1), place);
+
+            // Check if the classroom already exists
+            sql = "SELECT classroomName " +
+                    "FROM Classroom AS CR " +
+                    "WHERE CR.classroomName=?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, classroomName);
+            result = ps.executeQuery();
+
+            // Add the classroom if it doesn't exists
+            if (!result.next()) {
+                sql = "call addClassroom(?,?,?,?)";
+                ps = connection.prepareCall(sql);
+                ps.setString(1, classroomName);
+                ps.setBoolean(2, isLocked);
+                ps.setString(3, classroomName.substring(0, 1));
+                ps.setInt(4, idClassroomEquipment);
                 ps.executeUpdate();
             }
         }
     }
 
-    // Insertion a classroom in the database
-    private void insertClassroom(String roomName, boolean isLocked) throws SQLException {
-        System.out.print("Insertion Classroom...");
-        try (Statement statement = mConnection.createStatement()) {
+    /**
+     * @brief This method insert new Classroom elements according to the list
+     * @param listClassrooms list of classrooms to add
+     */
+    public void insertClassrooms(String[] listClassrooms, int place) {
+        LOG.info("Insertion Classrooms...");
 
-            PreparedStatement ps;
-            sql = "INSERT INTO Classroom(roomName, isLocked, floorName) VALUES (?,?,?)";
-            ps = mConnection.prepareStatement(sql);
-            ps.setString(1, roomName);
-            ps.setBoolean(2, isLocked);
-            ps.setString(3, roomName.substring(0, 0));
-            ps.executeUpdate();
-        }
-    }
-
-    // Insertion of Classrooms in the database
-    // InitInsert must have been called before
-    public void insertClassrooms(String[] listClassrooms) {
-        System.out.print("Insertion Classrooms...");
-        ResultSet result = null;
-
-        try (Statement statement = mConnection.createStatement()) {
+        try (Statement statement = connection.createStatement()) {
 
             // Insert defaut ClassRoomEquipment if it doesn't exists
-            insertClassroomEquipment(0, true,true,false,true);
+            insertClassroomEquipment(1, true,true,false,true);
 
             for (int i = 0; i < listClassrooms.length; ++i) {
-                insertClassroom(listClassrooms[i], false);
+                insertClassroom(listClassrooms[i], false, place, 1);
             }
         } catch (SQLException e) {
             LOG.log(Level.SEVERE, e.getMessage());
-        } finally {
-            if (mConnection != null) {
-                try {
-                    mConnection.close();
-                } catch (SQLException e) {
-                    LOG.log(Level.SEVERE, e.getMessage());
-                }
-            }
+            closeConnection();
         }
     }
 
+    /**
+     * @brief This method insert a new Classroom element into the database
+     * @param idClassroomEquipment id of the ClassroomEquipment
+     * @param beamer provided?
+     * @param electricalSocket provided?
+     * @param computers provided?
+     * @param board provided?
+     *
+     */
     // Insertion of a new ClassroomEquipment in the database
-    private void insertClassroomEquipment(int idClassroomEquipment, boolean beamer, boolean electricalSocket,
-                                          boolean computers, boolean board) throws SQLException {
-        System.out.print("insert new ClassroomEquipment...");
+    public void insertClassroomEquipment(int idClassroomEquipment, boolean beamer, boolean electricalSocket,
+                                          boolean computers, boolean board) {
+        LOG.info("insert new ClassroomEquipment...");
         ResultSet result = null;
 
-        try (Statement statement = mConnection.createStatement()) {
+        try (Statement statement = connection.createStatement()) {
 
             // Test if default ClassRoomEquipment exists
             sql = "SELECT *" +
@@ -132,40 +176,50 @@ public class ToolBoxMySQL extends Thread {
                     "WHERE CE.idClassroomEquipment=" + idClassroomEquipment;
             result = statement.executeQuery(sql);
 
-            if (result == null) {
+            if (!result.next()) {
                 PreparedStatement ps;
-                sql = "INSERT INTO ClassroomEquipment (idClassroomEquipment, beamer, electricalSocket, computers, board) VALUES (?,?,?,?,?);";
-                ps = mConnection.prepareStatement(sql);
+                sql = "call addClassroomEquipment (?,?,?,?);";
+                ps = connection.prepareCall(sql);
 
-                ps.setInt(1, idClassroomEquipment);
-                ps.setBoolean(2, beamer);
-                ps.setBoolean(3, electricalSocket);
-                ps.setBoolean(4, computers);
-                ps.setBoolean(5, board);
+                //ps.setInt(1, idClassroomEquipment);
+                ps.setBoolean(1, beamer);
+                ps.setBoolean(2, electricalSocket);
+                ps.setBoolean(3, computers);
+                ps.setBoolean(4, board);
 
                 ps.executeUpdate();
             }
+        } catch (SQLException e){
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
         }
     }
 
-    // Insertion of a new Floor in the database
-    // InitInsert must have been called before
+    /**
+     * @brief This method insert a new floor element into the database
+     * @param floorName name of the floor
+     * @param place defines the place (number)
+     *
+     */
     private void insertFloor(String floorName, int place) throws SQLException {
-        System.out.print("insert new Floor...");
-        ResultSet result = null;
+        LOG.info("insert new Floor...");
+        ResultSet result;
+        PreparedStatement ps;
 
-        try (Statement statement = mConnection.createStatement()) {
+        try (Statement statement = connection.createStatement()) {
 
-            // Test if default ClassRoomEquipment exists
-            sql = "SELECT *" +
+            // Check if the floor is already in the database
+            sql = "SELECT floorName " +
                     "FROM Floor AS F " +
-                    "WHERE F.floorName=" + floorName;
-            result = statement.executeQuery(sql);
+                    "WHERE F.floorName=?";
 
-            if (result == null) {
-                PreparedStatement ps;
-                sql = "INSERT INTO Floor (floorName, place) VALUES (?,?);";
-                ps = mConnection.prepareStatement(sql);
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, floorName);
+            result = ps.executeQuery();
+
+            if (!result.next()) {
+                sql = "call addFloor(?,?);";
+                ps = connection.prepareCall(sql);
                 ps.setString(1, floorName);
                 ps.setInt(2, place);
 
@@ -174,50 +228,74 @@ public class ToolBoxMySQL extends Thread {
         }
     }
 
-    // Insertion of a new Floor in the database
-    // InitInsert must have been called before
-    private void insertFloorEquipment(boolean toiletM, boolean toiletF, boolean coffeeMachine, boolean selecta, boolean wayOut) throws SQLException {
-        System.out.print("insert new FloorEquipment...");
-        ResultSet result = null;
 
-        try (Statement statement = mConnection.createStatement()) {
+    /**
+     * @brief This method insert a new floor equipment into the database
+     * @param toiletM define if men toilets are available on the floor
+     * @param toiletF define if women toilets are available
+     * @param coffeeMachine define if a selecta is available
+     * @param selecta define if a selecta is available
+     * @param wayOut define if there is an exit.
+     *
+     */
+    public void insertFloorEquipment(boolean toiletM, boolean toiletF, boolean coffeeMachine, boolean selecta, boolean wayOut) {
+        LOG.info("insert new FloorEquipment...");
+        ResultSet result;
+        PreparedStatement ps;
 
-            // Test if default FloorEquipment exists
-            sql = "SELECT *" +
-                    "FROM FloorEquipment AS FE " +
-                    "WHERE FE.floorName=0";
-            result = statement.executeQuery(sql);
+        try (Statement statement = connection.createStatement()) {
 
-            if (result == null) {
-                PreparedStatement ps;
-                sql = "INSERT INTO FloorEquipment (toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES (?,?,?,?,?);";
-                ps = mConnection.prepareStatement(sql);
+            sql = "call addFloorEquipment(?,?,?,?,?);";
+            ps = connection.prepareCall(sql);
 
-                ps.setBoolean(1, toiletM);
-                ps.setBoolean(2, toiletF);
-                ps.setBoolean(3, coffeeMachine);
-                ps.setBoolean(4, selecta);
-                ps.setBoolean(5, wayOut);
+            ps.setBoolean(1, toiletM);
+            ps.setBoolean(2, toiletF);
+            ps.setBoolean(3, coffeeMachine);
+            ps.setBoolean(4, selecta);
+            ps.setBoolean(5, wayOut);
 
-                ps.executeUpdate();
-            }
+            ps.executeUpdate();
+        } catch (SQLException e){
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
         }
     }
 
-    // Insertion of Classrooms in the database
-    private void insertTakePlace(int idPeriod, String roomName, Date date) throws SQLException {
-        System.out.print("Insertion of the periods");
-        try (Statement statement = mConnection.createStatement()) {
+    /**
+     * @brief This method insert a new couple of Period and Classroom (TakePlace table) into the database
+     * @param date name of the floor
+     * @param idPeriod id of the linked element of the Period table
+     * @param classroomName
+     * */
+    public void insertTakePlace(Date date, int idPeriod, String classroomName) {
+        LOG.info("Insertion of a new TakePlace element...");
+
+        try (Statement statement = connection.createStatement()) {
+            ResultSet result;
             PreparedStatement ps;
-            sql = "INSERT INTO Period(idPeriod, startingTime, finishingTime) VALUES (?,?,?)";
-            ps = mConnection.prepareStatement(sql);
-            for (int i = 0; i < hoursStartEnd.length - 1; i += 2) {
-                ps.setInt(1, idPeriod);
-                ps.setTime(2, Time.valueOf(hoursStartEnd[i][0]));
-                ps.setTime(3, Time.valueOf(hoursStartEnd[i][1]));
+            // Test if the TakePlace given already exists
+            sql = "SELECT * " +
+                    "FROM TakePlace AS TP " +
+                    "WHERE TP.date=? AND TP.idPeriod=? AND TP.classroomName=?";
+
+            ps = connection.prepareStatement(sql);
+            ps.setDate(1, date);
+            ps.setInt(2, idPeriod);
+            ps.setString(3, classroomName);
+            result = ps.executeQuery();
+
+
+            if (!result.next()) {
+                sql = "call addTakePlace(?,?,?)";
+                ps = connection.prepareCall(sql);
+                ps.setDate(1, date);
+                ps.setInt(2, idPeriod);
+                ps.setString(3, classroomName);
                 ps.executeUpdate();
-                ++idPeriod;
             }
+        } catch (SQLException e){
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
         }
     }
 }
