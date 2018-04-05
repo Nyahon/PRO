@@ -79,7 +79,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="Mode">
           <items>
-            <MenuItem mnemonicParsing="false" text="Salle la plus proche" />
+            <MenuItem mnemonicParsing="false" onAction="#shortestFreeRoom" text="Salle la plus proche" />
             <MenuItem mnemonicParsing="false" text="Crénaux horaires" />
             <MenuItem mnemonicParsing="false" text="Quitter" />
           </items>

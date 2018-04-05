@@ -22,8 +22,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import sun.plugin.javascript.navig.Anchor;
 
 public class ViewController implements Initializable {
    
@@ -54,6 +67,46 @@ public class ViewController implements Initializable {
       Pane pane = (Pane) scene.lookup("#PANE"); // get the pane who hostes the image
       pane.styleProperty().setValue(""); // delete image
    }
+   
+    /**
+    * @brief This method is a handler that manage the click of the shortest room menu
+    * button option. It will popup a little windows to enter the position and then it
+    * will give the shortest free room from a given place.
+    */
+   @FXML
+   public void shortestFreeRoom() {
+      // Creating the stage
+      Stage stage = new Stage();
+      stage.setResizable(false);
+      
+      // Creating the label
+      Label label = new Label("Entrez la lettre de votre salle courante");
+      
+      // Creating the textfield
+      TextField textField = new TextField("Lettre de la salle...");
+      textField.setAlignment(Pos.CENTER);
+      
+      // Make an anonymous class with event handler for this button
+      Button button = new Button("Chercher !");
+      
+      // Creating the anchorPane
+      VBox anchorPane = new VBox();
+      anchorPane.getChildren().add(label);
+      anchorPane.getChildren().add(textField);
+      anchorPane.getChildren().add(button);
+      anchorPane.setAlignment(Pos.CENTER);
+      anchorPane.isVisible();
+
+      // Show all
+      Scene scene = new Scene(anchorPane);
+      stage.setScene(scene);
+      stage.show();
+
+
+   }
+   
+   
+   
    
    /**
     * @brief Necessary to redefine but not necessary to use it.
