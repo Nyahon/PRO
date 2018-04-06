@@ -80,14 +80,13 @@
         <Menu mnemonicParsing="false" text="Mode">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#shortestFreeRoom" text="Salle la plus proche" />
-            <MenuItem mnemonicParsing="false" text="Crénaux horaires" />
-            <MenuItem mnemonicParsing="false" text="Quitter" />
+            <MenuItem mnemonicParsing="false" onAction="#scheduleRooms" text="Crénaux horaires" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Aide">
           <items>
-            <MenuItem mnemonicParsing="false" text="Mode d'emploi" />
-            <MenuItem mnemonicParsing="false" text="À propos" />
+            <MenuItem mnemonicParsing="false" onAction="#howToUse" text="Mode d'emploi" />
+            <MenuItem mnemonicParsing="false" onAction="#about" text="À propos" />
           </items>
         </Menu>
       </menus>
