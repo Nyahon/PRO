@@ -13,7 +13,7 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package daryll;
+package daryll.View;
 
 import java.net.URL;
 import java.util.ResourceBundle;

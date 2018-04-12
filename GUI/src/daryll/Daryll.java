@@ -31,11 +31,19 @@ public class Daryll extends Application {
     */
    @Override
    public void start(Stage stage) throws Exception {
-      Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("View/View.fxml"));
       Scene scene = new Scene(root);
  
       stage.setTitle("Daryll");
       stage.setScene(scene);
+
+      /* Tests contraintes de redimensionnement */
+      stage.setMinHeight(600);
+      stage.setMinWidth(800);
+      //stage.minWidthProperty().bind(scene.heightProperty().multiply(4).divide(3));
+      stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
+
+
       stage.show();
    }
 
