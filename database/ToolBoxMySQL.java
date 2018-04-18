@@ -3,8 +3,9 @@
  * File     : ToolBoxMySQL.java
  * Author   : Siu Aurélien
  * Created on : 27.03.2018
- * Last edit  : 05.04.2018
- * Description : Contains the basic tools to connect to the database and insert elements into it
+ * Edited by : Muaremi Dejvid
+ * Last edit  : 12.04.2018
+ * Description : Contains the basic tools to connect to the database and modify its content.
  *
  */
 
@@ -62,6 +63,8 @@ public class ToolBoxMySQL implements Runnable {
         }
     }
 
+	
+	
     /**
      * @brief This method insert the periods list into the database
      */
@@ -162,7 +165,6 @@ public class ToolBoxMySQL implements Runnable {
      * @param board provided?
      *
      */
-    // Insertion of a new ClassroomEquipment in the database
     public void insertClassroomEquipment(int idClassroomEquipment, boolean beamer, boolean electricalSocket,
                                           boolean computers, boolean board) {
         LOG.info("insert new ClassroomEquipment...");
@@ -227,7 +229,6 @@ public class ToolBoxMySQL implements Runnable {
             }
         }
     }
-
 
     /**
      * @brief This method insert a new floor equipment into the database
@@ -298,4 +299,9 @@ public class ToolBoxMySQL implements Runnable {
             closeConnection();
         }
     }
+	
+	
 }
+
+
+
