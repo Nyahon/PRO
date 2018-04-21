@@ -3,7 +3,7 @@
  * File        : Daryll.java
  * Date        : 31.03.2018
  *
- * Goal : This file contains the base of the application Daryll. This is where the
+ * Goal : This file contains the base of the application Daryll, this is where the
  *        application begin and launch his GUI.
  *
  * 
@@ -12,7 +12,6 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-
 package daryll;
 
 import javafx.application.Application;
@@ -31,19 +30,19 @@ public class Daryll extends Application {
     */
    @Override
    public void start(Stage stage) throws Exception {
-      Parent root = FXMLLoader.load(getClass().getResource("View/View.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
       Scene scene = new Scene(root);
  
       stage.setTitle("Daryll");
       stage.setScene(scene);
-
+      
       /* Tests contraintes de redimensionnement */
       stage.setMinHeight(600);
       stage.setMinWidth(800);
+      
       //stage.minWidthProperty().bind(scene.heightProperty().multiply(4).divide(3));
       stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
-
-
+      
       stage.show();
    }
 
@@ -53,6 +52,6 @@ public class Daryll extends Application {
     */
    public static void main(String[] args) {
       launch(args);
-   }
+   }   
    
 }
