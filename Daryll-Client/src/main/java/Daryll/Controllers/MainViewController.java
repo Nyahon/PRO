@@ -18,6 +18,7 @@ package Daryll.Controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -52,7 +53,7 @@ public class MainViewController implements Initializable {
     */
    public void clean(Button b) {
       Scene scene = b.getScene(); // get the scene
-      Pane pane = (Pane) scene.lookup("#planPane"); // get the pane who hostes the image
+      Pane pane = (Pane) scene.lookup("#planCheseaux"); // get the pane who hostes the image
       pane.styleProperty().setValue(""); // delete image
    }
    
@@ -62,7 +63,7 @@ public class MainViewController implements Initializable {
     */
    public void scheduleRoom () throws Exception {
       // Initializing the FXML
-      Parent root = FXMLLoader.load(getClass().getResource("../../resources/RoomScheduleView.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("/Daryll/RoomScheduleView.fxml"));
       Scene scene = new Scene(root);
       
       // Creating and launching the stage
@@ -83,7 +84,8 @@ public class MainViewController implements Initializable {
     */
    public void shortestFreeRoom() throws Exception {
       // Initializing the FXML
-      Parent root = FXMLLoader.load(getClass().getResource("../../resources/ShortestRoomView.fxml"));
+
+      Parent root = FXMLLoader.load(getClass().getResource("/Daryll/ShortestRoomView.fxml"));
       Scene scene = new Scene(root);
       
       // Creating and launching the stage
@@ -104,7 +106,7 @@ public class MainViewController implements Initializable {
     */
    public void timeslot() throws IOException {
       // Initializing the FXML
-      Parent root = FXMLLoader.load(getClass().getResource("../../resources/TimeslotView.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("/Daryll/TimeslotView.fxml"));
       Scene scene = new Scene(root);
       
       // Creating and launching the stage

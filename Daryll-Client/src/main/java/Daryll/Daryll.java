@@ -16,12 +16,16 @@ package Daryll; /**
 
 import Daryll.SVGTools.BufferedImageTranscoder;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
+
+import Daryll.Plan.*;
 
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
@@ -47,46 +51,27 @@ public class Daryll extends Application {
       stage.setTitle("Daryll");
       stage.setScene(scene);
 
+      /* Constraints for resizing the window.*/
+      stage.setMinHeight(600);
+      stage.setMinWidth(800);
+      stage.maxHeightProperty().bind(scene.widthProperty().divide(4).multiply(3).add(2));
+      stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
 
-      /* The following lines are here to load and transcode SVG image to be able to display the image maps*/
 
       // ImageView where the converted SVG image will be
       ImageView imgView = new ImageView();
-      // Transcoder used to convert the svg to an java FX image
-      BufferedImageTranscoder trans = new BufferedImageTranscoder();
-      WritableImage img = null;
 
-      try {
-         // Get InputStream from an SVG file
-         InputStream svgInputStream = getClass().getResourceAsStream("/Daryll/etageK-plan-base.svg");
-         TranscoderInput transcoderInput = new TranscoderInput(svgInputStream);
-         try {
+      PlanLoader planLoader = new PlanLoader();
+      planLoader.createPlanFromSVGFile("/Daryll/etageK-plan-base.svg");
 
-            // Set format of the transcoded image
-            trans.addTranscodingHint(PNGTranscoder.KEY_WIDTH, new Float(1200));
-            trans.addTranscodingHint(PNGTranscoder.KEY_HEIGHT,new Float(800));
-
-            // Transcoding operation (it will produce a bufferedImage, stored in the BufferedImageTranscoder
-            trans.transcode(transcoderInput, null);
-
-            // Allow to retrieve a Java FX image from the bufferedImage)
-            img = SwingFXUtils.toFXImage(trans.getBufferedImage(), null);
-
-         } catch (TranscoderException ex) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, ex);
-         }
-      }
-      catch (Exception io) {
-         Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, io);
-      }
-
-      /* END of transcoding */
-
-      // Put the image inside an ImageView object
-      imgView.setImage(img);
 
       // Select the Pane where the image will be displayed
       Pane pane = (Pane) scene.lookup("#planCheseaux");
+      Image img = planLoader.getTranscodedImage(1400,800);
+
+
+      // Put the image inside an ImageView object
+      imgView.setImage(img);
 
       // imgView settings
       imgView.setPreserveRatio(true);
@@ -95,12 +80,7 @@ public class Daryll extends Application {
       // Add the imageView
       pane.getChildren().add(imgView);
 
-      /* Constraints for resizing the window.*/
-      stage.setMinHeight(600);
-      stage.setMinWidth(800);
-      stage.maxHeightProperty().bind(scene.widthProperty().divide(4).multiply(3).add(2));
-      stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
-
+      
       stage.show();
    }
 
@@ -110,6 +90,7 @@ public class Daryll extends Application {
     */
    public static void main(String[] args) {
       launch(args);
+
    }   
    
 }
