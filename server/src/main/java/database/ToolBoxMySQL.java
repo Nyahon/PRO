@@ -38,6 +38,7 @@ public class ToolBoxMySQL implements Runnable {
 
         } catch (SQLException e) {
             LOG.log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
             closeConnection();
         }
     }
@@ -58,6 +59,7 @@ public class ToolBoxMySQL implements Runnable {
             try {
                 connection.close();
             } catch (SQLException e) {
+                e.printStackTrace();
                 LOG.log(Level.SEVERE, e.getMessage());
             }
         }
@@ -91,7 +93,8 @@ public class ToolBoxMySQL implements Runnable {
                     ps.executeUpdate();
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException e){
+            e.printStackTrace();
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
@@ -150,7 +153,8 @@ public class ToolBoxMySQL implements Runnable {
             for (int i = 0; i < listClassrooms.length; ++i) {
                 insertClassroom(listClassrooms[i], false, place, 1);
             }
-        } catch (SQLException e) {
+        } catch (SQLException e){
+            e.printStackTrace();
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
@@ -192,6 +196,7 @@ public class ToolBoxMySQL implements Runnable {
                 ps.executeUpdate();
             }
         } catch (SQLException e){
+            e.printStackTrace();
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
@@ -257,6 +262,7 @@ public class ToolBoxMySQL implements Runnable {
 
             ps.executeUpdate();
         } catch (SQLException e){
+            e.printStackTrace();
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
@@ -295,12 +301,150 @@ public class ToolBoxMySQL implements Runnable {
                 ps.executeUpdate();
             }
         } catch (SQLException e){
+            e.printStackTrace();
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
     }
-	
-	
+	/**
+     * @brief This method update the lock status of a classroom which already exist.
+     * @param classroomName the name of the classroom to update. Must be in the database.
+     * @param isLocked the new status of the classroom
+     */
+	public void updateClassroomLock(String classroomName, boolean isLocked){
+		LOG.info("Update of the state of the classroom...");
+
+        try(Statement statement = connection.createStatement()){
+            ResultSet result;
+            PreparedStatement ps;
+            // Test if the classroom given exists
+            sql = "SELECT * " +
+                    "FROM classroom AS CR " +
+                    "WHERE CR.classroomName=?";
+             ps = connection.prepareStatement(sql);
+             ps.setString(1, classroomName);
+             result = ps.executeQuery();
+
+             if (!result.next()) {
+                 LOG.log(Level.SEVERE, "Can't find the classroom...");
+                 return;
+             }
+             sql = "call updateClassroomLock(?,?)";
+             ps = connection.prepareCall(sql);
+             ps.setString(1, classroomName);
+             ps.setBoolean(2,isLocked);
+             ps.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
+        }
+    }
+    /**
+     * @brief update the classroom equipment for the specified classroom equipment. 
+     * You have to set all the data.
+     * @param idClassroomEquipment must exist in the database, used to find the equipment to update.
+     * @param beamer does the classroom has a beamer ?
+     * @param electricalSocket does the classroom has some electrical socket ?
+     * @param computers does the classroom has computers ?
+     * @param board does the classroom has a board ?
+     */
+    public void updateClassroomEquipment(int idClassroomEquipment, boolean beamer, boolean electricalSocket, boolean computers, boolean board){
+		LOG.info("Update of the state of the classroom equipment...");
+
+        try(Statement statement = connection.createStatement()){
+            ResultSet result;
+            PreparedStatement ps;
+            // Test if the classroom equipment given exists
+            sql = "SELECT * " +
+                    "FROM classroomequipment AS CE " +
+                    "WHERE CE.idClassroomEquipment=?";
+             ps = connection.prepareStatement(sql);
+             ps.setInt(1, idClassroomEquipment);
+             result = ps.executeQuery();
+
+             if (!result.next()) {
+                 LOG.log(Level.SEVERE, "Can't find the classroom equipment...");
+                 return;
+             }
+             sql = "call updateClassroomEquipment(?,?,?,?,?)";
+             ps = connection.prepareCall(sql);
+             ps.setInt(1, idClassroomEquipment); 
+             ps.setBoolean(2,beamer);
+             ps.setBoolean(3,electricalSocket);
+             ps.setBoolean(4,computers);
+             ps.setBoolean(5,board);
+             ps.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
+        }
+	}
+
+    /**
+     * @brief update the floor equipment for the specified floor equipment.
+     * You have to set all the data.
+     * @param idFloorEquipment must exist in the database, used to find the equipment to update.
+     * @param toiletM does the floor has toilet for the male student ?
+     * @param toiletF does the floor has toilet for the female student ?
+     * @param coffeeMachine does the floor has a coffee machine ?
+     * @param selecta does the floor has a selecta ?
+     * @param wayOut does the floor has access to a way out ?
+     */
+    public void updateFloorEquipment(int idFloorEquipment, boolean toiletM, boolean toiletF, boolean coffeeMachine, boolean selecta, boolean wayOut){
+		LOG.info("Update of the state of the floor equipment...");
+
+        try(Statement statement = connection.createStatement()){
+            ResultSet result;
+            PreparedStatement ps;
+            // Test if the floor equipment given exists
+            sql = "SELECT * " +
+                    "FROM floorequipment AS FE " +
+                    "WHERE FE.idFloorEquipment=?";
+             ps = connection.prepareStatement(sql);
+             ps.setInt(1, idFloorEquipment);
+             result = ps.executeQuery();
+
+             if (!result.next()) {
+                 LOG.log(Level.SEVERE, "Can't find the floor equipment...");
+                 return;
+             }
+             sql = "call updateFloorEquipment(?,?,?,?,?,?)";
+             ps = connection.prepareCall(sql);
+             ps.setInt(1, idFloorEquipment); 
+             ps.setBoolean(2,toiletM);
+             ps.setBoolean(3,toiletF);
+             ps.setBoolean(4,coffeeMachine);
+             ps.setBoolean(5,selecta);
+             ps.setBoolean(6,wayOut);
+             ps.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
+        }
+    }
+    /**
+     * @brief clear the take place table. 
+     * This method is used to clear the table before we add the new course
+     */
+    void clearTakePlace(){
+        LOG.info("Update of the state of the floor equipment...");
+
+        try(Statement statement = connection.createStatement()){
+            ResultSet result;
+            PreparedStatement ps;
+            // Test if the floor equipment given exists
+            sql = "truncate takeplace";
+            ps = connection.prepareStatement(sql);
+            result = ps.executeQuery();
+        } catch (SQLException e){
+            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
+        }
+    }
 }
 
 

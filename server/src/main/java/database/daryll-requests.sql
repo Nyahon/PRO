@@ -13,7 +13,7 @@ DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
 DROP PROCEDURE IF EXISTS addTakePlaceClassroomFloor;
 DROP FUNCTION  IF EXISTS addEquipments;
-
+DROP FUNCTION  IF EXISTS updateClassroomLock;
 
 /* Create a new period */
 DELIMITER //
@@ -61,6 +61,15 @@ DELIMITER //
 	CREATE PROCEDURE addFloorEquipment(IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL,
     IN selecta BOOL, IN wayOut BOOL)
     BEGIN
+		INSERT INTO FloorEquipment(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
+        (toiletM, toiletF, coffeeMachine, selecta, wayOut);
+	END //
+    
+    /* Create a new equipment */
+DELIMITER //
+	CREATE PROCEDURE updateClassroomLock(IN classroomName VARCHAR(10), IN isLocked BOOL)
+    BEGIN
+		UPDATE 'classroom'
 		INSERT INTO FloorEquipment(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
         (toiletM, toiletF, coffeeMachine, selecta, wayOut);
 	END //
