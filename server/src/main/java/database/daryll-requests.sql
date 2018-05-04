@@ -58,18 +58,33 @@ DELIMITER //
     
 /* Create a new equipment */
 DELIMITER //
-	CREATE PROCEDURE addFloorEquipment(IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL,
-    IN selecta BOOL, IN wayOut BOOL)
+	CREATE PROCEDURE addFloorEquipment(IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL, IN selecta BOOL, IN wayOut BOOL)
     BEGIN
 		INSERT INTO FloorEquipment(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
         (toiletM, toiletF, coffeeMachine, selecta, wayOut);
 	END //
     
-    /* Create a new equipment */
+/* Update the classroom lock state */
 DELIMITER //
 	CREATE PROCEDURE updateClassroomLock(IN classroomName VARCHAR(10), IN isLocked BOOL)
     BEGIN
-		UPDATE 'classroom'
-		INSERT INTO FloorEquipment(toiletM, toiletF, coffeeMachine, selecta, wayOut) VALUES
-        (toiletM, toiletF, coffeeMachine, selecta, wayOut);
+		UPDATE 'Classroom' SET 'isLocked'=isLocked WHERE 'classroomName'=classroomName;
+	END //
+
+/* Update the classroom equipment */
+DELIMITER //
+	CREATE PROCEDURE updateClassroomEquipment(IN idClassroomEquipment TINYINT UNSIGNED, IN beamer BOOL, IN electricalSocket BOOL, IN computers, IN board)
+    BEGIN
+		UPDATE 'ClassroomEquipment' 
+		SET 'beamer'=beamer, 'electricalSocket'=electricalSocket, 'computers'=computers, 'beamer'=board 
+		WHERE 'idClassroomEquipment'=idClassroomEquipment;
+	END //
+
+/* Update the floor equipment */
+DELIMITER //
+	CREATE PROCEDURE updateFloorEquipment(IN idFloorEquipment TINYINT UNSIGNED, IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL, IN selecta BOOL, IN wayOut BOO)
+    BEGIN
+		UPDATE 'FloorEquipment' 
+		SET 'toiletM'=toiletM, 'toiletF'=toiletF, 'coffeeMachine'=coffeeMachine, 'selecta'=selecta, `wayOut`=wayOut 
+		WHERE 'idFloorEquipment'=idFloorEquipment;
 	END //
