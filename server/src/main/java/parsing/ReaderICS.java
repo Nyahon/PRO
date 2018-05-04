@@ -1,4 +1,4 @@
-package parsing;
+package server.parsing;
 
 import biweekly.Biweekly;
 import biweekly.ICalendar;
@@ -12,6 +12,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.*;
+
+/** A class to read an ICS file and parse its content.
+ *  @autor : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti 
+ */
 
 public class ReaderICS {
 
@@ -37,6 +41,11 @@ public class ReaderICS {
     private static List<LocalTime> listStartPeriods;
     private static List<LocalTime> listEndPeriods;
 
+   /**
+    * The method reads an ICS file with the name <code>fileRaeder</code> and send
+    * its content to the MYSQL databse defined in the class ToolBoxMySQL
+    * @param fileName the name of the file we need to parse  
+    */
     public void readICSFile(String fileName){
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 
@@ -79,7 +88,10 @@ public class ReaderICS {
 
     /*
      * This method return the numbers corresponding to the periods between a DateStart and a DateEnd
-     * given in parameter.
+     * given as parameters.
+     * @param datestart   the starting date
+     * @param dateend   the ending date
+     * @return periods  an ArrayList containing the periods between the given dates
      */
     private ArrayList periodFromSchedule(@NotNull DateStart datestart,@NotNull DateEnd dateend){
         ArrayList periods = new ArrayList<Integer>();
@@ -107,6 +119,13 @@ public class ReaderICS {
         return periods;
     }
 
+    /*
+     * This method computes the period number corresponding to a given time.
+     * If the time corresponds to the exact end of a period, then the next
+     * period is returned.
+     * @param time   the time one wants to match on a period
+     * @return period  the period matching the given time
+     */
     private int currentOrNextPeriod(LocalTime time){
 
         int period;
@@ -126,6 +145,13 @@ public class ReaderICS {
         return period + 1;
     }
 
+    /*
+     * This method computes the period number corresponding to a given time.
+     * If the time corresponds to the exact start of a period, then the previous
+     * period is returned.
+     * @param time   the time one wants to match on a period
+     * @return period  the period matching the given time
+     */
     private int currentOrPreviousPeriod(LocalTime time){
 
         int period;
