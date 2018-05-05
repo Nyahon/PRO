@@ -1,4 +1,4 @@
-package server.parsing;
+package parsing;
 
 import biweekly.Biweekly;
 import biweekly.ICalendar;
@@ -6,15 +6,17 @@ import biweekly.component.VEvent;
 import biweekly.property.DateEnd;
 import biweekly.property.DateStart;
 import com.sun.istack.internal.NotNull;
+import database.ToolBoxMySQL;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Date;
 import java.time.LocalTime;
 import java.util.*;
 
-/** A class to read an ICS file and parse its content.
- *  @autor : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti 
+/** A class to read an ICS file, parse its content and send it to a MySQL database.
+ *  @author : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti
  */
 
 public class ReaderICS {
@@ -35,19 +37,26 @@ public class ReaderICS {
                 LocalTime.of(21,35), LocalTime.of(22,20));
     }
 
-    private static String horaire1 = "test.ics";
-    private static String horaire2 = "gaps_global_S2_2017_2018.ics";
-
     private static List<LocalTime> listStartPeriods;
     private static List<LocalTime> listEndPeriods;
+    private ToolBoxMySQL tool;
 
+    /**
+     * Constructor of the class
+     */
+    public ReaderICS(){
+        tool = new ToolBoxMySQL();
+    }
    /**
     * The method reads an ICS file with the name <code>fileRaeder</code> and send
-    * its content to the MYSQL databse defined in the class ToolBoxMySQL
+    * its content to the MYSQL databse defined in the class database.ToolBoxMySQL
     * @param fileName the name of the file we need to parse  
     */
     public void readICSFile(String fileName){
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+
+            //init connection to MySQL database
+            tool.initConnection();
 
             // there is only 1 calender so its enough to take the 1st, w/o use .all()
             ICalendar ical = Biweekly.parse(br).first();
@@ -60,33 +69,21 @@ public class ReaderICS {
                 ArrayList<Integer> periods = periodFromSchedule(e.getDateStart(), e.getDateEnd());
                 List<String> rooms = Arrays.asList(e.getLocation().getValue().split("\\s*,\\s*"));
 
-                //System.out.println("Course : " + e.getSummary().getValue());
-                //System.out.println("Room : " + e.getLocation().getValue());
-                System.out.println("Rooms : " + rooms);
-                System.out.println("Starting : " + e.getDateStart().getValue());
-                System.out.println("Periods : "  + periods);
-                System.out.println("Ending : " + e.getDateEnd().getValue());
-                System.out.println();
-
-
-                // TODO : instead of sysout, use classes TransformerICSToMySQL and ToolboxMySQL to pass data
-/*
-                ToolBoxMySQL tool = new ToolBoxMySQL();
-
-                for(int i = periods.get(0); i < periods.get(periods.size()); i++) {
+                for(int i = periods.get(0); i < periods.get(periods.size()-1); i++) {
                     for(String room : rooms) {
-                        tool.insertTakePlace(i, room, new Date(e.getDateStart().getValue().getTime()));
+                        tool.insertClassroomWithCheck(room);
+                        tool.insertTakePlace(new Date(e.getDateStart().getValue().getTime()), i, room);
                     }
                 }
-*/
             }
-
         } catch (IOException e){
             e.printStackTrace();
+        } finally {
+            tool.closeConnection();
         }
     }
 
-    /*
+    /**
      * This method return the numbers corresponding to the periods between a DateStart and a DateEnd
      * given as parameters.
      * @param datestart   the starting date
@@ -119,7 +116,7 @@ public class ReaderICS {
         return periods;
     }
 
-    /*
+    /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact end of a period, then the next
      * period is returned.
@@ -145,7 +142,7 @@ public class ReaderICS {
         return period + 1;
     }
 
-    /*
+    /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact start of a period, then the previous
      * period is returned.
@@ -169,14 +166,4 @@ public class ReaderICS {
         }
         return period + 1;
     }
-
-    public static void main (String args[]){
-        System.out.println("Parsing ics file ...");
-
-        ReaderICS readerICS = new ReaderICS();
-        readerICS.readICSFile(horaire2);
-        
-        System.out.println("Parsing done !");
-    }
-
 }

@@ -1,9 +1,10 @@
+package database;
 /*
  * Project DARYLL
- * File     : ToolBoxMySQL.java
+ * File     : database.ToolBoxMySQL.java
  * Author   : Siu Aurélien
  * Created on : 27.03.2018
- * Edited by : Muaremi Dejvid
+ * Edited by : Muaremi Dejvid, Romain Gallay
  * Last edit  : 12.04.2018
  * Description : Contains the basic tools to connect to the database and modify its content.
  *
@@ -13,42 +14,44 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
 
-public class ToolBoxMySQL implements Runnable {
+public class ToolBoxMySQL  {
 
     // Logger to deliver information or report errors
     private static final Logger LOG = Logger.getLogger(ToolBoxMySQL.class.getName());
 
     // Login informations for the connection to the database
     private static final String database = "daryll";
-    private static final String password = "mly.48ODR-51";
+    private static final String password = "";
 
     private Connection connection;
     private String sql;
 
-    public static void main(String... args) {}
+    private static final String[][] periods = {{"08:25:00", "09:10:00"}, {"09:15:00", "10:00:00"},
+            {"10:25:00", "11:10:00"}, {"11:15:00", "12:00:00"}, {"12:00:00", "13:15:00"}, {"13:15:00","14:00:00"},
+            {"14:00:00", "14:45:00"}, {"14:55:00", "15:40:00"}, {"15:45:00", "16:30:00"}, {"16:35:00", "17:20:00"},
+            {"17:20:00", "18:05:00"}, {"18:30:00", "19:15:00"}, {"19:15:00", "20:00:00"}, {"20:05:00", "20:50:00"},
+            {"20:50:00", "21:35:00"}, {"21:35:00", "22:20:00"}};
 
-    /**
-     * @brief This method is called when we start this Runnable class.
-     * It initialize the connection to the database
-     */
-    @Override
-    public void run() {
-        try {
-            initConnection();
-
-        } catch (SQLException e) {
-            LOG.log(Level.SEVERE, e.getMessage());
-            e.printStackTrace();
-            closeConnection();
-        }
+    public ToolBoxMySQL(){
+        initConnection();
+        insertPeriods(periods);
+        // insert default classrooomequipment
+        insertClassroomEquipment(1, true,true,false,true);
+        closeConnection();
     }
 
     /**
      * @brief This method initialize the connection to the database
      */
-    private void initConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/" + database + "?user=root&password=" + password;
-        connection = DriverManager.getConnection(url);
+    public void initConnection() {
+        try {
+            String url = "jdbc:mysql://localhost:3306/" + database + "?user=root&password=" + password;
+            connection = DriverManager.getConnection(url);
+        } catch(SQLException e){
+            LOG.log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
+            closeConnection();
+        }
     }
 
     /**
@@ -64,8 +67,6 @@ public class ToolBoxMySQL implements Runnable {
             }
         }
     }
-
-	
 	
     /**
      * @brief This method insert the periods list into the database
@@ -107,7 +108,7 @@ public class ToolBoxMySQL implements Runnable {
      * @param idClassroomEquipment defines the reference to an element of the ClassroomEquipment table
      *
      */
-    private void insertClassroom(String classroomName, boolean isLocked, int place, int idClassroomEquipment) throws SQLException {
+    private void insertClassroom(String classroomName, boolean isLocked, int place, int idClassroomEquipment) {
         LOG.info("Insertion Classroom...");
         ResultSet result;
         PreparedStatement ps;
@@ -135,6 +136,10 @@ public class ToolBoxMySQL implements Runnable {
                 ps.setInt(4, idClassroomEquipment);
                 ps.executeUpdate();
             }
+        } catch (SQLException e){
+            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage());
+            closeConnection();
         }
     }
 
@@ -160,6 +165,18 @@ public class ToolBoxMySQL implements Runnable {
         }
     }
 
+    public void insertClassroomWithCheck(String classname){
+        char levelChar = classname.charAt(0);
+        int levelInt;
+
+        if(levelChar > 'k'){
+            levelInt = 1;
+        } else {
+            levelInt = 0;
+        }
+        insertClassroom(classname, false, levelInt, 1);
+
+    }
     /**
      * @brief This method insert a new Classroom element into the database
      * @param idClassroomEquipment id of the ClassroomEquipment

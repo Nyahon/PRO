@@ -1,4 +1,8 @@
-import java.sql.SQLException;
+package database;
+
+import parsing.ReaderICS;
+
+import javax.tools.Tool;
 
 public class TransformerICStoMySQL {
 
@@ -18,10 +22,10 @@ public class TransformerICStoMySQL {
 
 
 
-    // test function for the class ToolBoxMySQL
+    // test function for the class database.ToolBoxMySQL
     public void testToolBoxMySQL() {
         ToolBoxMySQL tbs = new ToolBoxMySQL();
-        tbs.run();
+        tbs.initConnection();
         tbs.insertPeriods(periods);
 
         tbs.insertClassrooms(classroomsCheseaux, 0);
@@ -34,8 +38,11 @@ public class TransformerICStoMySQL {
     }
 
     public static void main(String[] args) {
-        TransformerICStoMySQL testToolBox = new TransformerICStoMySQL();
-        testToolBox.testToolBoxMySQL();
+
+        String horaire2 = "gaps_global_S2_2017_2018.ics";
+
+        ReaderICS readerICS = new ReaderICS();
+        readerICS.readICSFile(horaire2);
 
     }
 }

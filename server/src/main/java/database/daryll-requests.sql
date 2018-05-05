@@ -11,6 +11,8 @@ DROP PROCEDURE IF EXISTS addTakePlace;
 DROP PROCEDURE IF EXISTS addEquipments;
 DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
+DROP PROCEDURE IF EXISTS addClassroom;
+DROP PROCEDURE IF EXISTS updateClassroomLock;
 DROP PROCEDURE IF EXISTS addTakePlaceClassroomFloor;
 DROP FUNCTION  IF EXISTS addEquipments;
 DROP FUNCTION  IF EXISTS updateClassroomLock;
@@ -68,23 +70,23 @@ DELIMITER //
 DELIMITER //
 	CREATE PROCEDURE updateClassroomLock(IN classroomName VARCHAR(10), IN isLocked BOOL)
     BEGIN
-		UPDATE 'Classroom' SET 'isLocked'=isLocked WHERE 'classroomName'=classroomName;
+		UPDATE `Classroom` SET `isLocked`=isLocked WHERE `classroomName`=classroomName;
 	END //
 
 /* Update the classroom equipment */
 DELIMITER //
-	CREATE PROCEDURE updateClassroomEquipment(IN idClassroomEquipment TINYINT UNSIGNED, IN beamer BOOL, IN electricalSocket BOOL, IN computers, IN board)
+	CREATE PROCEDURE updateClassroomEquipment(IN idClassroomEquipment TINYINT UNSIGNED, IN beamer BOOL, IN electricalSocket BOOL, IN computers BOOL, IN board BOOL)
     BEGIN
-		UPDATE 'ClassroomEquipment' 
-		SET 'beamer'=beamer, 'electricalSocket'=electricalSocket, 'computers'=computers, 'beamer'=board 
-		WHERE 'idClassroomEquipment'=idClassroomEquipment;
+		UPDATE `ClassroomEquipment` 
+		SET `beamer`=beamer, `electricalSocket`=electricalSocket, `computers`=computers, `beamer`=board 
+		WHERE `idClassroomEquipment`=idClassroomEquipment;
 	END //
 
 /* Update the floor equipment */
 DELIMITER //
-	CREATE PROCEDURE updateFloorEquipment(IN idFloorEquipment TINYINT UNSIGNED, IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL, IN selecta BOOL, IN wayOut BOO)
+	CREATE PROCEDURE updateFloorEquipment(IN idFloorEquipment TINYINT UNSIGNED, IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL, IN selecta BOOL, IN wayOut BOOL)
     BEGIN
-		UPDATE 'FloorEquipment' 
-		SET 'toiletM'=toiletM, 'toiletF'=toiletF, 'coffeeMachine'=coffeeMachine, 'selecta'=selecta, `wayOut`=wayOut 
-		WHERE 'idFloorEquipment'=idFloorEquipment;
+		UPDATE `FloorEquipment` 
+		SET `toiletM`=toiletM, `toiletF`=toiletF, `coffeeMachine`=coffeeMachine, `selecta`=selecta, `wayOut`=wayOut 
+		WHERE `idFloorEquipment`=idFloorEquipment;
 	END //
