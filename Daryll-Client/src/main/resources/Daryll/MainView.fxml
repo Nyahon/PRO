@@ -9,40 +9,73 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Daryll.Controllers.MainViewController">
   <bottom>
-    <HBox alignment="CENTER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" pickOnBounds="true" prefHeight="60.0" prefWidth="692.0" spacing="5.0" style="-fx-border-width: 2 0 0 0;-fx-border-color: black;" BorderPane.alignment="TOP_LEFT">
-      <children>
-        <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" selected="false" text="Prises accessibles" textAlignment="LEFT" visible="true" wrapText="false" />
-        <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" selected="false" text="Beamer" textAlignment="LEFT" visible="true" wrapText="false" />
-            <Label text="Jour" />
-            <DatePicker prefWidth="100.0" showWeekNumbers="true" />
-            <Label text="Heure" />
-            <TextField prefWidth="80.0" />
-            <Separator orientation="VERTICAL" prefHeight="200.0">
-               <HBox.margin>
-                  <Insets left="5.0" right="10.0" />
-               </HBox.margin>
+      <VBox BorderPane.alignment="TOP_LEFT">
+         <children>
+            <ToolBar blendMode="SRC_ATOP" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" VBox.vgrow="SOMETIMES">
+              <items>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4bfc6e" height="28.0" layoutX="100.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
+                  <Label text="10:25 - 11:10">
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#01d73a" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
+                  <Label text="10:25-12:00">
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05902a" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
+                  <Label text="10:25 - 13:15" />
+              </items>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                <padding>
-                  <Insets left="10.0" right="5.0" />
+                  <Insets left="146.0" />
                </padding>
-            </Separator>
-        <Label alignment="CENTER" contentDisplay="LEFT" prefHeight="81.0" text="Ma position :" textAlignment="LEFT" />
-            <Label text=" - " />
-            <Button mnemonicParsing="false" text="Entrer" />
-      </children>
-      <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-      </padding>
-    </HBox>
+            </ToolBar>
+          <HBox alignment="CENTER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" pickOnBounds="true" prefHeight="60.0" prefWidth="692.0" spacing="5.0" style="-fx-border-width: 2 0 0 0;-fx-border-color: black;">
+            <children>
+              <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" selected="false" text="Prises accessibles" textAlignment="LEFT" visible="true" wrapText="false" />
+              <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" selected="false" text="Beamer" textAlignment="LEFT" visible="true" wrapText="false" />
+                  <Label text="Jour" />
+                  <DatePicker prefWidth="100.0" showWeekNumbers="true" />
+                  <Label text="Heure" />
+                  <Spinner editable="true" prefWidth="50.0" />
+                  <Label text=":" />
+                  <Spinner editable="true" prefWidth="50.0" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                  </Separator>
+              <Label alignment="CENTER" contentDisplay="LEFT" prefHeight="81.0" text="Ma position :" textAlignment="LEFT" />
+                  <Label text=" - " />
+                  <Button mnemonicParsing="false" text="Entrer" />
+            </children>
+            <padding>
+              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+          </HBox>
+         </children>
+      </VBox>
   </bottom>
   <center>
     <TabPane focusTraversable="true" prefHeight="200.0" prefWidth="200.0" rotateGraphic="false" tabClosingPolicy="UNAVAILABLE" visible="true">
@@ -51,7 +84,13 @@
           <content>
             <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
               <center>
-                <Pane fx:id="planCheseaux" prefHeight="456.0" prefWidth="654.0" snapToPixel="true" visible="true" BorderPane.alignment="CENTER" />
+                <Pane fx:id="planCheseaux" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                           <children>
+                              <ImageView fx:id="imageCheseaux" fitHeight="437.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" />
+                           </children></Pane>
               </center>
               <left>
                 <VBox prefHeight="456.0" prefWidth="108.0">
