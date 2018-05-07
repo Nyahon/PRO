@@ -84,12 +84,12 @@
           <content>
             <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
               <center>
-                <Pane fx:id="planCheseaux" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
+                <Pane fx:id="planCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
                            <BorderPane.margin>
                               <Insets />
                            </BorderPane.margin>
                            <children>
-                              <ImageView fx:id="imageCheseaux" fitHeight="437.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageCheseaux" pickOnBounds="true" preserveRatio="true" />
                            </children></Pane>
               </center>
               <left>

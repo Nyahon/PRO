@@ -14,11 +14,7 @@ package Daryll; /**
  *
  */
 
-import Daryll.SVGTools.BufferedImageTranscoder;
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -27,14 +23,6 @@ import javafx.stage.Stage;
 
 import Daryll.Plan.*;
 
-import org.apache.batik.transcoder.TranscoderException;
-import org.apache.batik.transcoder.TranscoderInput;
-import org.apache.batik.transcoder.image.PNGTranscoder;
-
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Daryll extends Application {
    
    /**
@@ -42,6 +30,8 @@ public class Daryll extends Application {
     * @param stage
     * @throws Exception 
     */
+
+
    @Override
    public void start(Stage stage) throws Exception {
 
@@ -58,31 +48,31 @@ public class Daryll extends Application {
       stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
 
 
-      // ImageView where the converted SVG image will be
-      ImageView imgView = new ImageView();
-
       PlanLoader planLoader = new PlanLoader();
-      planLoader.createPlanFromSVGFile("/Daryll/etageK-plan-base.svg");
+      planLoader.createPlanFromSVGFile("/Daryll/plans/Cheseaux/etageK-plan-base.svg");
 
+      int width = 1400;
+      int height = 800;
 
       // Select the Pane where the image will be displayed
-      Pane pane = (Pane) scene.lookup("#planCheseaux");
-      Image img = planLoader.getTranscodedImage(1400,800);
+      ImageView imgView1 = (ImageView) scene.lookup("#imageCheseaux");
+      Image img1 = planLoader.getTranscodedImage(width,height);
 
 
       // Put the image inside an ImageView object
-      imgView.setImage(img);
+      imgView1.setImage(img1);
+
+
+      Pane pane = (Pane) scene.lookup("#planCheseaux");
 
       // imgView settings
-      imgView.setPreserveRatio(true);
-      imgView.fitWidthProperty().bind(pane.widthProperty());
+      imgView1.setPreserveRatio(true);
+      imgView1.fitWidthProperty().bind(pane.widthProperty());
 
-      // Add the imageView
-      pane.getChildren().add(imgView);
-
-      
       stage.show();
+
    }
+
 
    /**
     * @brief The programm begins here.

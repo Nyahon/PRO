@@ -24,6 +24,12 @@ public class PlanLoader {
 
     }
 
+    /**
+     *
+     * @param width the width of the image in output
+     * @param height the height of the image in output
+     * @return transcoded image in JavaFX format
+     */
     public Image getTranscodedImage(double width, double height){
         // Set format of the transcoded image
         trans.addTranscodingHint(PNGTranscoder.KEY_WIDTH, new Float((int)width));

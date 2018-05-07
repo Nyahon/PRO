@@ -27,6 +27,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -53,8 +54,10 @@ public class MainViewController implements Initializable {
     */
    public void clean(Button b) {
       Scene scene = b.getScene(); // get the scene
-      Pane pane = (Pane) scene.lookup("#planCheseaux"); // get the pane who hostes the image
-      pane.styleProperty().setValue(""); // delete image
+      ImageView imgView = (ImageView) scene.lookup("#imageCheseaux"); // get the pane who hostes the image
+      imgView.setVisible(false);
+      //imgView.setDisable(true); // delete image
+
    }
    
    /**
