@@ -48,7 +48,7 @@ public class ReaderICS {
         tool = new ToolBoxMySQL();
     }
    /**
-    * The method reads an ICS file with the name <code>fileRaeder</code> and send
+    * This method reads an ICS file with the name <code>fileRaeder</code> and send
     * its content to the MYSQL databse defined in the class database.ToolBoxMySQL
     * @param fileName the name of the file we need to parse  
     */
