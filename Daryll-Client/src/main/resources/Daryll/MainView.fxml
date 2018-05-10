@@ -27,19 +27,19 @@
             <ToolBar blendMode="SRC_ATOP" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" VBox.vgrow="SOMETIMES">
               <items>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4bfc6e" height="28.0" layoutX="100.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label text="10:25 - 11:10">
+                  <Label text="1 période">
                      <padding>
                         <Insets right="40.0" />
                      </padding>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#01d73a" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label text="10:25-12:00">
+                  <Label text="2 périodes">
                      <padding>
                         <Insets right="40.0" />
                      </padding>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05902a" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label text="10:25 - 13:15" />
+                  <Label text="3 périodes" />
               </items>
                <VBox.margin>
                   <Insets />
@@ -95,16 +95,16 @@
               <left>
                 <VBox prefHeight="456.0" prefWidth="108.0">
                   <children>
-                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage K" />
-                    <Button fx:id="i" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage J" />
-                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage H" />
-                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage G" />
-                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage F" />
-                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage E" />
-                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage D" />
-                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage C" />
-                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage B" />
-                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Etage A" />
+                    <Button fx:id="K" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage K" />
+                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage J" />
+                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage H" />
+                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage G" />
+                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage F" />
+                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage E" />
+                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage D" />
+                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage C" />
+                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage B" />
+                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage A" />
                   </children>
                 </VBox>
               </left>
@@ -114,21 +114,22 @@
         <Tab closable="false" text="Saint-Roch">
           <content>
             <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
-              <center>
-                <Pane id="" fx:id="planStRoch" prefHeight="456.0" prefWidth="692.0" snapToPixel="true" style="-fx-background-image: url('http://www.sandpiperdunes.com/images/floorplan.gif');&#10;-fx-background-size: contain;&#10;-fx-background-repeat: no-repeat;&#10;-fx-background-position: center;&#10;" visible="true" BorderPane.alignment="CENTER" />
-              </center>
+                <center>
+                    <Pane fx:id="planStRoch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets />
+                        </BorderPane.margin>
+                        <children>
+                            <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                </center>
               <left>
                 <VBox prefHeight="456.0" prefWidth="108.0">
                   <children>
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage J" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage H" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage G" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage F" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage E" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage D" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage C" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage B" />
-                    <Button mnemonicParsing="false" prefHeight="105.0" prefWidth="146.0" text="Etage A" />
+                    <Button fx:id="U" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage U" />
+                    <Button fx:id="T" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage T" />
+                    <Button fx:id="S" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage S" />
+                    <Button fx:id="R" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage R" />
                   </children>
                 </VBox>
               </left>
