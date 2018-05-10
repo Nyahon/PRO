@@ -48,10 +48,11 @@ public class Daryll extends Application {
       stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
 
 
+/*
       PlanLoader planLoader = new PlanLoader();
-      planLoader.createPlanFromSVGFile("/Daryll/plans/Cheseaux/etageK-plan-base.svg");
+      planLoader.createPlanFromSVGFile("/Daryll/plans/Cheseaux/floor-A2.svg");
 
-      int width = 1400;
+      int width = 1200;
       int height = 800;
 
       // Select the Pane where the image will be displayed
@@ -67,7 +68,7 @@ public class Daryll extends Application {
 
       // imgView settings
       imgView1.setPreserveRatio(true);
-      imgView1.fitWidthProperty().bind(pane.widthProperty());
+      imgView1.fitWidthProperty().bind(pane.widthProperty());*/
 
       stage.show();
 
