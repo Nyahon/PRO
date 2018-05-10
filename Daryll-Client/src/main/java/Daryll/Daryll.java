@@ -47,28 +47,22 @@ public class Daryll extends Application {
       stage.maxHeightProperty().bind(scene.widthProperty().divide(4).multiply(3).add(2));
       stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
 
+      Pane pane1 = (Pane) scene.lookup("#planCheseaux");
 
-/*
-      PlanLoader planLoader = new PlanLoader();
-      planLoader.createPlanFromSVGFile("/Daryll/plans/Cheseaux/floor-A2.svg");
+      Pane pane2 = (Pane) scene.lookup("#planStRoch");
 
-      int width = 1200;
-      int height = 800;
-
-      // Select the Pane where the image will be displayed
+      // Fix default size
       ImageView imgView1 = (ImageView) scene.lookup("#imageCheseaux");
-      Image img1 = planLoader.getTranscodedImage(width,height);
+      ImageView imgView2 = (ImageView) scene.lookup("#imageStRoch");
 
+      // Fix default settings for imageViews
+      imgView1.setPreserveRatio(true);
+      imgView1.fitWidthProperty().bind(pane1.widthProperty().subtract(60));
 
-      // Put the image inside an ImageView object
-      imgView1.setImage(img1);
-
-
-      Pane pane = (Pane) scene.lookup("#planCheseaux");
 
       // imgView settings
-      imgView1.setPreserveRatio(true);
-      imgView1.fitWidthProperty().bind(pane.widthProperty());*/
+      imgView2.setPreserveRatio(true);
+      imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(60));
 
       stage.show();
 

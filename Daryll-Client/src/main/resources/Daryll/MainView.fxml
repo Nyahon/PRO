@@ -89,7 +89,20 @@
                               <Insets />
                            </BorderPane.margin>
                            <children>
-                              <ImageView fx:id="imageCheseaux" pickOnBounds="true" preserveRatio="true" />
+                              <BorderPane>
+                                 <center>
+                                    <ImageView fx:id="imageCheseaux" pickOnBounds="true" preserveRatio="true" />
+                                 </center>
+                                 <left>
+                                    <Button fx:id="previousCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <right>
+                                    <Button fx:id="nextCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin></Button>
+                                 </right>
+                              </BorderPane>
                            </children></Pane>
               </center>
               <left>
@@ -120,7 +133,17 @@
                             <Insets />
                         </BorderPane.margin>
                         <children>
-                            <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" />
+                              <BorderPane>
+                                 <center>
+                                  <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" />
+                                 </center>
+                                  <left>
+                                      <Button fx:id="previousStRoch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
+                                  </left>
+                                  <right>
+                                      <Button fx:id="nextStRoch" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER" />
+                                  </right>
+                              </BorderPane>
                         </children></Pane>
                 </center>
               <left>

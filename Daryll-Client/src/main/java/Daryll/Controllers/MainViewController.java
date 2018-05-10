@@ -44,6 +44,8 @@ public class MainViewController implements Initializable {
 
     private static final HashMap<String, ArrayList<String>> FLOORS = new HashMap<>();
 
+    private static ArrayList<String> currentFloorPaths = new ArrayList<>();
+
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
 
     private void fillFloors() {
@@ -72,7 +74,6 @@ public class MainViewController implements Initializable {
         FLOORS.put("D", new ArrayList<>(floorFileName));
         floorFileName.clear();
 
-
         floorFileName.add("floor-G.svg");
         FLOORS.put("G", new ArrayList<>(floorFileName));
         floorFileName.clear();
@@ -81,10 +82,10 @@ public class MainViewController implements Initializable {
         FLOORS.put("H", new ArrayList<>(floorFileName));
         floorFileName.clear();
 
-      /*floorFileName.add("floor-J.svg"); Needs to be added in resources
+        floorFileName.add("floor-J.svg"); //Needs to be added in resources
 
-      FLOORS.put("J", new ArrayList<>(floorFileName));
-      floorFileName.clear();*/
+        FLOORS.put("J", new ArrayList<>(floorFileName));
+        floorFileName.clear();
 
         floorFileName.add("floor-K.svg");
         FLOORS.put("K", new ArrayList<>(floorFileName));
@@ -109,39 +110,60 @@ public class MainViewController implements Initializable {
     }
 
     /**
+     * @param event It corresponds to a mouse click for this case.
+     *              //@see idButton The buttons need to have an ID.
      * @brief This method is a handler that manage the click in a floor button. It
      * will show the free room from the stage.
-     * @param event It corresponds to a mouse click for this case.
-     * //@see idButton The buttons need to have an ID.
      */
     public void showFloor(Event event) {
 
-        Button b = (Button) event.getSource(); // get the button from the event
+        Button floorButton = (Button) event.getSource(); // get the button from the event
 
-        Scene scene = b.getScene(); // get the scene
-        String idButton = b.getId(); // get the id of the button
+        Scene scene = floorButton.getScene(); // get the scene
+        String idButton = floorButton.getId(); // get the id of the button
 
         Pane pane = null;
         ImageView imgView = null;
-        Image img;
+        Button previousButton = null;
+        Button nextButton = null;
+        currentFloorPaths = FLOORS.get(idButton);
+
+
         // Regex expression to know which building is the floor
         if (idButton.matches("[A-K]")) {
             imgView = (ImageView) scene.lookup("#imageCheseaux"); // get the pane who hostes the image
             pane = (Pane) scene.lookup("#planCheseaux");
+            previousButton = (Button) scene.lookup("#previousCheseaux");
+            previousButton.setDisable(true);
+            nextButton = (Button) scene.lookup("#nextCheseaux");
+            if (currentFloorPaths.size() == 1) {
+                nextButton.setDisable(true);
+            } else {
+                nextButton.setDisable(false);
+            }
         } else if (idButton.matches("[R-U]")) {
             imgView = (ImageView) scene.lookup("#imageStRoch"); // get the pane who hostes the image
             pane = (Pane) scene.lookup("#planStRoch");
+            previousButton = (Button) scene.lookup("#previousStRoch");
+            previousButton.setDisable(true);
+            if (currentFloorPaths.size() == 1) {
+                nextButton = (Button) scene.lookup("#nextStRoch");
+                nextButton.setDisable(true);
+            } else {
+                nextButton.setDisable(false);
+            }
         }
 
         try {
             PlanLoader planLoader = new PlanLoader();
-            planLoader.createPlanFromSVGFile("/Daryll/plans/" + FLOORS.get(idButton).get(0));
+            //currentFloorPaths = FLOORS.get(idButton);
+            planLoader.createPlanFromSVGFile("/Daryll/plans/" + currentFloorPaths.get(0));
 
             int width = 1200;
             int height = 700;
 
             // Select the Pane where the image will be displayed
-            img = planLoader.getTranscodedImage(width, height);
+            Image img = planLoader.getTranscodedImage(width, height);
 
             // Put the image inside an ImageView object
             imgView.setImage(img);
@@ -154,10 +176,21 @@ public class MainViewController implements Initializable {
         }
         // imgView settings
         imgView.setPreserveRatio(true);
-        imgView.fitWidthProperty().bind(pane.widthProperty());
+        imgView.fitWidthProperty().bind(pane.widthProperty().subtract(60));
 
         // switch case floor...
     }
+
+
+    public void nextPlan(Event event) {
+        Button b = (Button) event.getSource(); // get the button from the event
+
+        Scene scene = b.getScene(); // get the scene
+        String idButton = b.getId(); // get the id of the button
+
+
+    }
+
 
     /**
      * @brief This method cleans the pane, it means that the image will not appear
@@ -172,9 +205,9 @@ public class MainViewController implements Initializable {
     }*/
 
     /**
+     * @param b The necessary button floor to get the scene.
      * @brief This method cleans the pane, it means that the image will not appear
      * because the CSS code is deleted.
-     * @param b The necessary button floor to get the scene.
      */
     public void setPlan(Button b) {
         Scene scene = b.getScene(); // get the scene
@@ -211,8 +244,8 @@ public class MainViewController implements Initializable {
     }
 
     /**
-     * @brief Launch the view for the room schedule.
      * @throws Exception
+     * @brief Launch the view for the room schedule.
      */
     public void scheduleRoom() throws Exception {
         // Initializing the FXML
@@ -230,10 +263,10 @@ public class MainViewController implements Initializable {
     }
 
     /**
+     * @throws java.lang.Exception
      * @brief This method is a handler that manage the click of the shortest room menu
      * button option. It will popup a little windows to enter the position and then it
      * will give the shortest free room from a given place.
-     * @throws java.lang.Exception
      */
     public void shortestFreeRoom() throws Exception {
         // Initializing the FXML
@@ -252,10 +285,10 @@ public class MainViewController implements Initializable {
     }
 
     /**
+     * @throws java.io.IOException
      * @brief This method is a handler that manage the click of schedule rooms button
      * option. It will popup a little windows to enter some informations to get a
      * little planning of free rooms from timestamp.
-     * @throws java.io.IOException
      */
     public void timeslot() throws IOException {
         // Initializing the FXML
@@ -311,9 +344,9 @@ public class MainViewController implements Initializable {
     }
 
     /**
-     * @brief Necessary to redefine but not necessary to use it.
      * @param url link text
-     * @param rb Object ResourceBundle
+     * @param rb  Object ResourceBundle
+     * @brief Necessary to redefine but not necessary to use it.
      */
     //@Override
     public void initialize(URL url, ResourceBundle rb) {
