@@ -194,6 +194,7 @@ public class MainViewController implements Initializable {
 
         // Put the image inside an ImageView object
         imgView.setImage(img);
+        System.gc();
     }
 
     /**
