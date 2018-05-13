@@ -15,8 +15,6 @@
  */
 package Daryll.Controllers;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -25,6 +23,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import Daryll.Plan.PlanLoader;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.event.Event;
@@ -34,20 +33,34 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import sun.util.locale.provider.LocaleServiceProviderPool;
-
-import javax.imageio.ImageIO;
 
 public class MainViewController implements Initializable {
 
     private static final HashMap<String, ArrayList<String>> FLOORS = new HashMap<>();
-
     private static ArrayList<String> currentFloorPaths = new ArrayList<>();
-
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
+    private static final PlanLoader  planLoader = new PlanLoader();
+    private static int indexPlan = 0;
+    private static final int planWidth = 1600;
+    private static final int planHeight = 1080;
+    @FXML
+    private ImageView imageCheseaux;
+    @FXML
+    private ImageView imageStRoch;
+    @FXML
+    private Button nextCheseaux;
+    @FXML
+    private Button previousCheseaux;
+    @FXML
+    private Button nextStRoch;
+    @FXML
+    private Button previousStRoch;
 
+
+    /**
+     * @brief This method is the first one to be called to fill the hash map with floors
+     */
     private void fillFloors() {
         ArrayList<String> floorFileName = new ArrayList<>();
 
@@ -119,75 +132,113 @@ public class MainViewController implements Initializable {
 
         Button floorButton = (Button) event.getSource(); // get the button from the event
 
-        Scene scene = floorButton.getScene(); // get the scene
         String idButton = floorButton.getId(); // get the id of the button
 
-        Pane pane = null;
         ImageView imgView = null;
-        Button previousButton = null;
-        Button nextButton = null;
+        indexPlan = 0;
         currentFloorPaths = FLOORS.get(idButton);
-
 
         // Regex expression to know which building is the floor
         if (idButton.matches("[A-K]")) {
-            imgView = (ImageView) scene.lookup("#imageCheseaux"); // get the pane who hostes the image
-            pane = (Pane) scene.lookup("#planCheseaux");
-            previousButton = (Button) scene.lookup("#previousCheseaux");
-            previousButton.setDisable(true);
-            nextButton = (Button) scene.lookup("#nextCheseaux");
-            if (currentFloorPaths.size() == 1) {
-                nextButton.setDisable(true);
+            imgView = imageCheseaux;
+            previousCheseaux.setDisable(true);
+            if(currentFloorPaths != null) {
+                if (currentFloorPaths.size() == 1) {
+                    nextCheseaux.setDisable(true);
+                } else {
+                    nextCheseaux.setDisable(false);
+                }
             } else {
-                nextButton.setDisable(false);
+                nextCheseaux.setDisable(true);
             }
         } else if (idButton.matches("[R-U]")) {
-            imgView = (ImageView) scene.lookup("#imageStRoch"); // get the pane who hostes the image
-            pane = (Pane) scene.lookup("#planStRoch");
-            previousButton = (Button) scene.lookup("#previousStRoch");
-            previousButton.setDisable(true);
-            if (currentFloorPaths.size() == 1) {
-                nextButton = (Button) scene.lookup("#nextStRoch");
-                nextButton.setDisable(true);
+            imgView = imageStRoch;
+            previousStRoch.setDisable(true);
+            if(currentFloorPaths != null) {
+                if (currentFloorPaths.size() == 1) {
+                    nextStRoch.setDisable(true);
+                } else {
+                    nextStRoch.setDisable(false);
+                }
             } else {
-                nextButton.setDisable(false);
+                nextStRoch.setDisable(true);
             }
         }
 
         try {
-            PlanLoader planLoader = new PlanLoader();
-            //currentFloorPaths = FLOORS.get(idButton);
-            planLoader.createPlanFromSVGFile("/Daryll/plans/" + currentFloorPaths.get(0));
-
-            int width = 1200;
-            int height = 700;
-
-            // Select the Pane where the image will be displayed
-            Image img = planLoader.getTranscodedImage(width, height);
-
-            // Put the image inside an ImageView object
-            imgView.setImage(img);
+            loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
 
         } catch (Exception e) {
 
             Image exceptionImg = new Image("/Daryll/plans/default-image.png");
             imgView.setImage(exceptionImg);
-
         }
-        // imgView settings
-        imgView.setPreserveRatio(true);
-        imgView.fitWidthProperty().bind(pane.widthProperty().subtract(60));
-
-        // switch case floor...
     }
 
 
+    /**
+     * @brief This method is a handler to load an SVG file image into an ImageView
+     *
+     * @param path
+     * @param imgView The transcoded image will be put inside the image
+     * @param width
+     * @param height
+     *
+     */
+    public void loadSvgImage(String path, ImageView imgView, int width, int height){
+
+        planLoader.openSVGFile(path);
+
+        // Select the Pane where the image will be displayed
+        Image img = planLoader.getTranscodedImage(width, height);
+
+        // Put the image inside an ImageView object
+        imgView.setImage(img);
+    }
+
+    /**
+     * @param event It corresponds to a mouse click for this case.
+     *              //@see idButton The buttons need to have an ID.
+     * @brief This method is a handler that manage the click in a floor button. It
+     * will show the free room from the stage.
+     */
     public void nextPlan(Event event) {
+
         Button b = (Button) event.getSource(); // get the button from the event
 
-        Scene scene = b.getScene(); // get the scene
         String idButton = b.getId(); // get the id of the button
 
+        // Test affichage console
+        System.out.println(idButton);
+
+        if (idButton.equals("nextCheseaux") || idButton.equals("previousCheseaux")){
+            if (idButton.equals("nextCheseaux")) {
+                ++indexPlan;
+            } else {
+                --indexPlan;
+            }
+            ImageView imgView = imageCheseaux; // get the pane who hostes the image
+
+            if (currentFloorPaths.size() - 1 == indexPlan) {
+                nextCheseaux.setDisable(true);
+            } else {
+                nextCheseaux.setDisable(false);
+            }
+            if(indexPlan == 0){
+                previousCheseaux.setDisable(true);
+            } else{
+                previousCheseaux.setDisable(false);
+            }
+            try {
+                loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
+
+            } catch (Exception e) {
+
+                Image exceptionImg = new Image("/Daryll/plans/default-image.png");
+                imgView.setImage(exceptionImg);
+            }
+
+        }
 
     }
 
@@ -204,44 +255,6 @@ public class MainViewController implements Initializable {
     //imgView.setDisable(true); // delete image
     }*/
 
-    /**
-     * @param b The necessary button floor to get the scene.
-     * @brief This method cleans the pane, it means that the image will not appear
-     * because the CSS code is deleted.
-     */
-    public void setPlan(Button b) {
-        Scene scene = b.getScene(); // get the scene
-        String idButton = b.getId(); // get the id of the button
-        //char charIdButton = idButton.charAt(0);
-
-        ImageView imgView = null;
-        Pane pane = null;
-        // Regex expression to know which building is the floor
-        if (idButton.matches("[A-K]")) {
-            imgView = (ImageView) scene.lookup("#imageCheseaux"); // get the pane who hostes the image
-            pane = (Pane) scene.lookup("#planCheseaux");
-        } else if (idButton.matches("[R-U]")) {
-            imgView = (ImageView) scene.lookup("#imageStRoch"); // get the pane who hostes the image
-            pane = (Pane) scene.lookup("#planStRoch");
-        }
-
-        PlanLoader planLoader = new PlanLoader();
-        planLoader.createPlanFromSVGFile("/Daryll/plans/" + FLOORS.get(idButton).get(0));
-
-        int width = 1200;
-        int height = 800;
-
-        // Select the Pane where the image will be displayed
-        Image img = planLoader.getTranscodedImage(width, height);
-
-        // Put the image inside an ImageView object
-        imgView.setImage(img);
-
-        // imgView settings
-        imgView.setPreserveRatio(true);
-        imgView.fitWidthProperty().bind(pane.widthProperty());
-
-    }
 
     /**
      * @throws Exception

@@ -16,12 +16,10 @@ public class PlanLoader {
     private BufferedImageTranscoder trans = new BufferedImageTranscoder();
     private TranscoderInput transcoderInput = null;
 
-    public void createPlanFromSVGFile(String file){
-
+    public void openSVGFile(String file){
         // Get InputStream from an SVG file
         InputStream svgInputStream = getClass().getResourceAsStream(file);
         transcoderInput = new TranscoderInput(svgInputStream);
-
     }
 
     /**

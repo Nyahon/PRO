@@ -16,7 +16,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -82,42 +81,37 @@
       <tabs>
         <Tab closable="false" disable="false" text="Cheseaux">
           <content>
-            <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
+            <BorderPane disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" visible="true">
               <center>
-                <Pane fx:id="planCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
-                           <BorderPane.margin>
-                              <Insets />
-                           </BorderPane.margin>
-                           <children>
-                              <BorderPane>
-                                 <center>
-                                    <ImageView fx:id="imageCheseaux" pickOnBounds="true" preserveRatio="true" />
-                                 </center>
-                                 <left>
-                                    <Button fx:id="previousCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
-                                 </left>
-                                 <right>
-                                    <Button fx:id="nextCheseaux" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER">
-                                       <BorderPane.margin>
-                                          <Insets />
-                                       </BorderPane.margin></Button>
-                                 </right>
-                              </BorderPane>
-                           </children></Pane>
+                        <BorderPane fx:id="planCheseaux" minHeight="-Infinity" minWidth="-Infinity">
+                           <center>
+                              <ImageView fx:id="imageCheseaux" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                           </center>
+                           <left>
+                              <Button fx:id="previousCheseaux" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
+                           </left>
+                           <right>
+                              <Button fx:id="nextCheseaux" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </Button>
+                           </right>
+                        </BorderPane>
               </center>
               <left>
-                <VBox prefHeight="456.0" prefWidth="108.0">
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" prefHeight="400.0" prefWidth="108.0">
                   <children>
-                    <Button fx:id="K" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage K" />
-                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage J" />
-                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage H" />
-                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage G" />
-                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage F" />
-                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage E" />
-                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage D" />
-                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage C" />
-                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage B" />
-                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage A" />
+                    <Button fx:id="K" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage K" />
+                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage J" />
+                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage H" />
+                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage G" />
+                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage F" />
+                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage E" />
+                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage D" />
+                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage C" />
+                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage B" />
+                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage A" />
                   </children>
                 </VBox>
               </left>
@@ -126,25 +120,19 @@
         </Tab>
         <Tab closable="false" text="Saint-Roch">
           <content>
-            <BorderPane disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
+            <BorderPane fx:id="planStRoch" disable="false" prefHeight="200.0" prefWidth="200.0" visible="true">
                 <center>
-                    <Pane fx:id="planStRoch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" snapToPixel="true" visible="true" BorderPane.alignment="CENTER">
-                        <BorderPane.margin>
-                            <Insets />
-                        </BorderPane.margin>
-                        <children>
-                              <BorderPane>
-                                 <center>
-                                  <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" />
-                                 </center>
-                                  <left>
-                                      <Button fx:id="previousStRoch" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
-                                  </left>
-                                  <right>
-                                      <Button fx:id="nextStRoch" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER" />
-                                  </right>
-                              </BorderPane>
-                        </children></Pane>
+                        <BorderPane>
+                           <center>
+                            <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                           </center>
+                            <left>
+                                <Button fx:id="previousStRoch" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefWidth="30.0" text="&lt;" BorderPane.alignment="CENTER" />
+                            </left>
+                            <right>
+                                <Button fx:id="nextStRoch" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#nextPlan" prefHeight="440.0" prefWidth="30.0" text="&gt;" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
                 </center>
               <left>
                 <VBox prefHeight="456.0" prefWidth="108.0">

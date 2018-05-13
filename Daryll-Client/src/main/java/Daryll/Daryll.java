@@ -14,9 +14,14 @@ package Daryll; /**
  *
  */
 
+import Daryll.Controllers.MainViewController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
@@ -24,13 +29,12 @@ import javafx.stage.Stage;
 import Daryll.Plan.*;
 
 public class Daryll extends Application {
-   
+
    /**
     * @brief Method that loads all the JavaFX ressources to run the programm.
     * @param stage
     * @throws Exception 
     */
-
 
    @Override
    public void start(Stage stage) throws Exception {
@@ -47,9 +51,16 @@ public class Daryll extends Application {
       stage.maxHeightProperty().bind(scene.widthProperty().divide(4).multiply(3).add(2));
       stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
 
-      Pane pane1 = (Pane) scene.lookup("#planCheseaux");
+      BorderPane pane1 = (BorderPane) scene.lookup("#planCheseaux");
+      BorderPane pane2 = (BorderPane) scene.lookup("#planStRoch");
 
-      Pane pane2 = (Pane) scene.lookup("#planStRoch");
+      pane1.minWidthProperty().bind(scene.widthProperty().divide(2));
+
+      pane1.maxWidthProperty().bind(scene.widthProperty());
+      pane1.minHeightProperty().bind(scene.heightProperty().divide(2));
+
+      pane1.maxHeightProperty().bind(scene.heightProperty());
+
 
       // Fix default size
       ImageView imgView1 = (ImageView) scene.lookup("#imageCheseaux");
@@ -59,10 +70,9 @@ public class Daryll extends Application {
       imgView1.setPreserveRatio(true);
       imgView1.fitWidthProperty().bind(pane1.widthProperty().subtract(60));
 
-
-      // imgView settings
       imgView2.setPreserveRatio(true);
-      imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(60));
+      imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(100));
+
 
       stage.show();
 
