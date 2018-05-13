@@ -10,6 +10,10 @@ package database;
  *
  */
 
+import serialisation.data.ClassRoom;
+import serialisation.data.TimeSlot;
+
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
@@ -21,7 +25,8 @@ public class ToolBoxMySQL  {
 
     // Login informations for the connection to the database
     private static final String database = "daryll";
-    private static final String password = "";
+    private static final String account = "root";
+    private static final String password = "root";
 
     private Connection connection;
     private String sql;
@@ -45,7 +50,7 @@ public class ToolBoxMySQL  {
      */
     public void initConnection() {
         try {
-            String url = "jdbc:mysql://localhost:3306/" + database + "?user=root&password=" + password;
+            String url = "jdbc:mysql://localhost:3306/" + database + "?user=" + account + "&password=" + password;
             connection = DriverManager.getConnection(url);
         } catch(SQLException e){
             LOG.log(Level.SEVERE, e.getMessage());
@@ -358,7 +363,7 @@ public class ToolBoxMySQL  {
         }
     }
     /**
-     * @brief update the classroom equipment for the specified classroom equipment. 
+     * @brief update the classroom equipment for the specified classroom equipment.
      * You have to set all the data.
      * @param idClassroomEquipment must exist in the database, used to find the equipment to update.
      * @param beamer does the classroom has a beamer ?
@@ -386,7 +391,7 @@ public class ToolBoxMySQL  {
              }
              sql = "call updateClassroomEquipment(?,?,?,?,?)";
              ps = connection.prepareCall(sql);
-             ps.setInt(1, idClassroomEquipment); 
+             ps.setInt(1, idClassroomEquipment);
              ps.setBoolean(2,beamer);
              ps.setBoolean(3,electricalSocket);
              ps.setBoolean(4,computers);
@@ -429,7 +434,7 @@ public class ToolBoxMySQL  {
              }
              sql = "call updateFloorEquipment(?,?,?,?,?,?)";
              ps = connection.prepareCall(sql);
-             ps.setInt(1, idFloorEquipment); 
+             ps.setInt(1, idFloorEquipment);
              ps.setBoolean(2,toiletM);
              ps.setBoolean(3,toiletF);
              ps.setBoolean(4,coffeeMachine);
@@ -443,7 +448,7 @@ public class ToolBoxMySQL  {
         }
     }
     /**
-     * @brief clear the take place table. 
+     * @brief clear the take place table.
      * This method is used to clear the table before we add the new course
      */
     void clearTakePlace(){
@@ -461,6 +466,78 @@ public class ToolBoxMySQL  {
             LOG.log(Level.SEVERE, e.getMessage());
             closeConnection();
         }
+    }
+    
+    /**
+     * Receives a ClassRoom object, query the database to return the full schedule (aka multiple timetables) of a given room.
+     * @param c the classroom to get it's time table
+     * @return A full schedule of the given room, null if it'a always free, an SQLException if something bad happens.
+     */
+    ArrayList<TimeSlot> fullTimeTableFromRoom(ClassRoom c) throws SQLException{
+        ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+        LOG.info("Getting the timetable of a classroom");
+    
+        Statement statement = connection.createStatement();
+        ResultSet result;
+        PreparedStatement ps;
+        sql =   "SELECT *" +
+                "FROM takeplace AS T" +
+                "INNER JOIN period AS P" +
+                "ON T.idPeriod = P.idPeriod" +
+                "WHERE T.classroomName=?";
+        
+        ps = connection.prepareStatement(sql);
+        ps.setString(1, c.getClassRoom());
+        result = ps.executeQuery();
+    
+        if (!result.next()) {
+          LOG.log(Level.SEVERE, "The classroom is always free...");
+          return null;
+        }
+        
+        while (result.next()){
+          TimeSlot tmp = new TimeSlot(result.getString("classroomName"), result.getLong("date"), result.getLong("startingTime"), result.getLong("finishingTime"));
+          timeTable.add(tmp);
+        }
+        return timeTable;
+    }
+    
+    /**
+     * Receives a TimeTable object containing the current room of a user with a requested schedule,
+     * query the database to return all rooms that are occupied during this schedule.
+     * @param t a TimeSlot containing the date and the starting and ending time.
+     * @return an ArrayList of TimeSlot containing the classroom occupied at a given time,
+     *         null if it'a always free, an SQLException if something bad happens.
+     */
+    ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) throws SQLException{
+      ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+      LOG.info("Getting the classrooms that are occupied during this schedule");
+  
+      Statement statement = connection.createStatement();
+      ResultSet result;
+      PreparedStatement ps;
+      sql =   "SELECT *" +
+              "FROM takeplace AS T" +
+              "INNER JOIN period AS P" +
+              "ON T.idPeriod = P.idPeriod" +
+              "WHERE T.date = ? AND P.startingTime = ? AND P.finishingTime = ?;";
+  
+      ps = connection.prepareStatement(sql);
+      ps.setLong(1, t.getDate());
+      ps.setLong(2,t.getTime_start());
+      ps.setLong(3,t.getTime_end());
+      result = ps.executeQuery();
+  
+      if (!result.next()) {
+        LOG.log(Level.SEVERE, "The time slot is always free...");
+        return null;
+      }
+  
+      while (result.next()){
+        TimeSlot tmp = new TimeSlot(result.getString("classroomName"), result.getLong("date"), result.getLong("startingTime"), result.getLong("finishingTime"));
+        timeTable.add(tmp);
+      }
+      return timeTable;
     }
 }
 
