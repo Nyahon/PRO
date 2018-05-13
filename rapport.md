@@ -1,0 +1,332 @@
+# Page de titre
+
+- avec logo HES-SO et HEIG-VD
+- titre du projet
+- indication nature du rapport (Cahier des charges, Manuel utilisateur, ...)
+- nom des auteurs
+- nom du destinataire du rapport
+- date (par ex "mars 2018")
+
+
+
+
+
+# Table des matières
+
+
+
+
+
+# Introduction
+
+
+
+
+
+# Objectifs du projet
+
+
+
+
+
+# Concepts généraux
+
+
+
+
+
+# Conception et architecture du projet
+
+## Technologies utilisées
+
+### Le choix JavaFX
+
+Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt. Notre choix s'est porté pour JavaFX car Java est le langage le plus récent que nous ayons appris. 
+
+Bien sûr, nous aurions pu également choisir Swing étant donné que le langage est Java, mais nous avons déjà vu Swing dans le cadre du cours de programmation orientée objet. De ce fait, JavaFX nous apportait plus de challenge car c'était un outil encore inconnu à nos yeux.
+
+ JavaFX est donc une API Java permettant la création d'interface graphique. Comme son nom l'indique, il a été conçu en Java et dispose de plusieurs fonctionnalités dont les plus importantes sont les suivantes :
+
+- FXML : Le FXML est un langage inspiré du HTML ou XML et indique la définition de l'interface graphique utilisateur. Dans notre cas, nous avons plusieurs fichiers FXML qui contiendront toutes les balises nécessaires à la représentation d'une "view". Chaque balise représentera donc un composant de cette vue. Grâce au langage FXML, il sera possible de personaliser chacune des balises avec des attributs et des valeurs. Cette personalisation des balises peut être comparé au CSS pour les fichiers HTML.
+- Scene Builder : Scene Builder est une application fournie avec l'installation de JavaFX. C'est un éditeur de fichier FXML. Il nous permet de voir l'affichage de la vue comme si le programme était en cours d'exécution et de pouvoir personaliser directement les composants graphiques à l'aide de la souris. Cette application nous simplifie donc la personalisation à la place de réécrire tout le FXML. Il est à noter que le fichier FXML et Scene Builder sont liés. La modification de l'un met à jour directement la vue de l'autre !
+
+Ces deux fonctionnalités ont été les deux fonctionnalités les plus utilisés pour la partie graphique du projet.
+
+### Le choix de MySQL
+
+Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de BDR,  il s'agit du type que l'on maitrise le mieux et il est relativement bien adapté aux besoin de notre projet. 
+
+## Architecture de la solution
+
+
+
+
+
+# Description technique de l'implémentation
+
+## L'interface graphique
+
+### Fonctionnement de JavaFX
+
+Afin de comprendre comment marche JavaFX, il faut imaginer notre programme comme étant une pièce de théatre. JavaFX utilise cette image afin de structurer le programme ainsi que son interface graphique.
+
+Nous nous retrouvons donc avec des termes comme "Stage", "Scene" et différents composants animant cette scène. Nous vous expliquerons nos différentes scènes et composants plus tard dans la documentation.
+
+JavaFX intègre également la notion de MVC (Modèle-vue-contrôleur). Ils sont créés par défaut lors du commencement d'un projet. La classe principale étant le modèle, la vue étant le fichier FXML et le contrôleur étant le fichier Java gérant les interactions avec le fichier FXML.
+
+### Structure du programme
+
+#### Scène principale
+
+Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment). 
+
+La première tache a été de choisir le conteneur principal de DARYLL et pour cela, il y a plusieurs choix. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final. 
+
+Nous avons essayé plusieurs conteneurs tel que le Anchor Pane, le Grid Pane ou le simple Pane mais notre choix a penché pour le Border Pane. Il aurait été possible de réaliser notre programme avec les autres conteneurs mentionnés, mais étant donné que nous avons décidé d'intégrer le redimentionnement de la fenêtre pour les plans des étages, l'implémentation aurait été plus compliquée et le Border Pane nous facilitait beaucoup plus la tâche à ce niveau là.
+
+Le Border Pane est donc plus intéressant car il est déjà séparé en différentes zones (top, bottom, center, left, right), et grâce à ces zones, les composants prennent automatiquement la bonne taille avec le redimentionnement. L'autre aspect également important pour le Border Pane est le fait qu'il respecte le plus possible au mockup défini au début du projet.
+
+#### Scènes secondaires
+
+Par scènes secondaires, nous entendons les autres fenêtres ou pop-ups qui s'ajoute à la scène principale (fenêtre principal) de DARYLL. À la base, il n'y avais qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code. 
+
+Cette solution fonctionnait bien mais n'e donnait pas un rendu comme nous l'avi
+
+ons désiré. De plus, le contrôleur de la fenêtre principale devenait facilement énorme vu les nombreuses pop-ups que nous avons rajoutés pour les options du programme. Donc au final, cette solution ne donnait pas un bon rendu et n'était pas très évolutif car il est difficile de retrouver la bonne vue dans un seul fichier.
+
+Après des recherches et reflexions, nous avons décidé de dispatcher le FXML en plusieurs parties. Dorénavant, chaque fenêtre graphique aura son propre fichier FXML et son propre contrôleur gérant les intéractions avec l'utilisateur de ladite fenêtre.
+
+Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôler pour effectuer les changements ! 
+
+#### Gestion des évènements selon le composant ciblé
+
+Cette aspect du projet mérite son propre titre de part la démarche réalisée afin d'optimiser le code. 
+
+Si nous regardons le mockup de base, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions. 
+
+Alors évidemment, cela fonctionnera, mais n'oublions pas que le contrôleur est déjà très conséquent en terme de code. Si il faut encore rajouter une fonction par étage en sachant que Cheseaux en a environ dix, le code deviendrait illisible et donc moins maintenable.
+
+La nouvelle solution adopté a été de factoriser ce code. En effet, les boutons d'étages ont le même but : Afficher le plan de l'étage avec ses salles disponibles au moment X.
+
+L'idée est donc de faire une fonction permettant de faire ce changement pour chaque bouton d'étage. Idéalement la fonction devra prendre le bouton ciblé en paramètre mais malheureusement Scene Builder ne le permet pas...
+
+Après plusieurs recherches, nous avons trouvé une alternative que nous avons utilisée tout au long du projet pour l'interface graphique. En fait, cette alternative permet de retrouver le composant ciblé via un objet "Event". Cet objet "Event" nous permet de retrouver la scène où se trouve le composant ciblé puis de récupérer le composant via son ID. 
+
+Cela veut dire que la fonction gérant le changement de plan (showFloor) ne va pas prendre un bouton en paramètre mais un objet "Event" qui comprend le clic de la souris. C'est grâce à cette méthode que nous avons pu factoriser le code et le rendre plus propre.
+
+### Redimensionnement
+
+L'interface graphique de DARYLL affiche les plans des étages de Cheseaux ou de Saint-Roch. Ces plans ont une certaine taille et cela nous amène à une question problématique sur l'affichage des plans sous différentes résolutions. Si nous imaginons notre application dans un cas concret d'utilisation, alors il se pourrait que l'utilisateur ait une mauvaise qualité d'image à cause de sa résolution d'écran. 
+
+C'est pour cela que DARYLL offre la possbilité de d'aggrandir ou de rapetissir la fenêtre afin que l'affichage du plan soit en adéquation avec la résolution de l'utilisateur. Alors bien sûr, cette fonctionnalité paraît toute simple mais en réalité la mise en place est très difficile. Nous allons vous expliquer la démarche que nous avons eu tout au long du projet dans les paragraphes qui suivent.
+
+Suite à des réunions concernant cette question, le groupe s'est mis d'accord sur le fait qu'il était préférable d'intégrer le redimentionnement. L'idée initiale était d'afficher le plan sur un conteneur puis d'incruster des composants au dessus de chaque salle de l'étage afin d'indiquer le niveau de disponibilité de la salle avec un teint de vert. L'implémentation fut difficile car il fallait faire attention à ce que les composants restent correctement placés sur les étages lorsque l'utilisateur aggrandissait la fenêtre.
+
+Cette idée a été mise de côté car les tests n'ont pas été concluant et que le rendu final n'était pas propre. Nous avons donc eu une autre idée qui était d'utiliser les propriétés CSS du FXML. En effet, il suffisait d'aller dans les propriétés CSS du conteneur, de mettre la CSS correspondante en indiquant le lien du plan ainsi d'autres propriétés CSS et le plan affiché devenait redimentionnable. Malheureusement nous avons du laissé tomber cette idée car elle nous limitait à simplement afficher un plan alors que nous étions partis du principe d'afficher un plan avec des salles colorés en vert pour indiquer le niveau de disponibilité de la salle. Chose qui était impossible avec le CSS car nous ne pouvions pas indiquer quel salle colorier avec quel teint de vert.
+
+Après multiples recherches, nous avons eu l'idée de contourner le problème. En effet, au lieu de rajouter des éléments sur le plan puis de les modifier au fur et à mesure selon les disponibilités, nous allons modifier directement le plan lui-même, colorier chaque salle et afficher le résultat. La différence étant que nous ne travaillons plus avec des formats d'images ordinaire mais bel et bien avec le format SVG.
+
+Le format SVG nous permet de définir des zones sur un plan. Chaque zone définissant un étage contiendra un ID permettant de l'identifier dans le programme. Les plans nous ont été fournis en PDF, mais grâce à l'outil Inkscape (éditeur d'images opensource), il est possible de créer des fichiers SVG à partir de ces PDFs. Il faudra donc, pour chaque étage de chaque établissement, définir les zones de chaque salle... Énorme tâche mais pour un rendu final convainquant !
+
+## La base de donnée
+
+### Définition des tables
+
+`Period` :
+
+
+Cette table contient une liste de 15 périodes qui représente les différentes périodes possible dans l'horaire GAPS.
+Une période est identifiée par un numéro unique allant de 0 à 15 et représentant le numéro de la période sur l'horaire journalier de GAPS, se caractérise par une heure de début et une heure de fin.
+Chaque période est reliée à une ou plusieurs salles de classe.
+
+
+`Classroom` :
+
+
+Cette table contient la liste des salles des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
+Une salle est identifiée par son nom (A01, A02,...), et se caractérise par un boolean qui indique si elle est vérouillée ou non.
+La salle est relié à une ou plusieurs périodes, possède un équipement qui lui est propre, et se trouve dans un étage du batiment.
+
+
+`TakePlace` :
+
+
+Le numéro d'une période P est relié à une salle de classe S par un `TakePlace`, cette relation se caractérise par une date.
+
+
+`Floor` :
+
+
+Cette table contient la liste des étages des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
+Une étage est identifiée par son nom (A, B,...), et se caractérise par le campus auquel il appartient.
+Un étage est relié à plusieurs salles et possède un équipement qui lui est propre.
+
+
+`ClassroomEquipments` : 
+
+
+Cette table permet de spécifier en détails l'équipement présent dans une salle.
+L'équipement de la salle est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence d'un beamer, de prises éléctrique, d'ordinateurs et d'un tableau blanc ou noir.
+Un équipement est relié à une et une seule salle de classe.
+
+
+`FloorEquipments` :
+
+
+Cette table permet de spécifier en détails l'équipement présent dans un étage.
+L'équipement d'un étage est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence de toilette pour homme, de toilette pour femme, d'une machine é cafée, d'un distributeur Selecta ou équivalent et d'un accès à une sortie du bâtiment.
+Un équipement est relié à un et un seul étage.
+
+
+### Définition des méthodes
+
+`addPeriod` :
+
+Permet d'ajouter une période à la table des période selon la définition ci-dessus.
+
+
+`addFloor` :
+
+
+Permet d'ajouter un étage à la table des étages selon la définition ci-dessus.
+
+
+`addClassroom` :
+
+
+Permet d'ajouter une salle à la table des salles selon la définition ci-dessus.
+
+
+`addTakePlace` :
+
+
+Permet d'ajouter un lien entre les salles et les périodes selon la définition ci-dessus.
+
+
+`addClassroomEquipment` :
+
+
+Permet d'ajouter un équipement à une des salles selon la définition ci-dessus.
+
+
+`addFloorEquipment` :
+
+
+Permet d'ajouter un équipement à un des étages selon la définition ci-dessus.
+
+
+`updateClassroomLock` :
+
+
+Permet de changer le fait qu'une salle soit vérouillée ou non.
+
+
+`updateClassroomEquipment` : 
+
+
+Permet de changer l'équipement d'une salle.
+
+
+`updateFloorEquipment` :
+
+
+Permet de changer l'équipement d'un étage.
+
+
+
+
+## Difficultés rencontrées
+
+
+
+
+
+# Tests
+
+## Bugs restants
+
+
+
+
+
+# Conclusion
+
+## Niveau projet à proprement parler
+
+
+
+## Niveau fonctionnement du groupe
+
+
+
+## Avis personnel de chacun des membres du groupe
+
+
+
+## Améliorations possibles
+
+
+
+
+
+# Bibliographie / webographie
+
+
+
+## Base de donnée
+
+https://dev.mysql.com/doc/refman/5.7/en/
+
+
+
+## Interface graphique
+
+
+
+## Communication client serveur
+
+
+
+
+
+# Liste des figures / tables
+
+
+
+
+
+# Glossaire / Lexique (si nécessaire)
+
+
+
+
+
+# Annexes
+
+## Cahier des charges initial du projet
+
+
+
+## Planification du projet
+
+### Initiale
+
+### Finale
+
+### Discussion planification initiale vs finale
+
+
+
+## Journal de travail
+
+### Dejvid Muaremi
+
+### Aurélien Siu
+
+### Romain Gallay
+
+### Yohann Meyer
+
+### Labinot Rashiti
+
+### Loïc Frueh
