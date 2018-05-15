@@ -13,7 +13,7 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package Daryll.Controllers;
+package Daryll.GUI.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -133,6 +133,7 @@ public class MainViewController implements Initializable {
         Button floorButton = (Button) event.getSource(); // get the button from the event
 
         String idButton = floorButton.getId(); // get the id of the button
+
 
         ImageView imgView = null;
         indexPlan = 0;

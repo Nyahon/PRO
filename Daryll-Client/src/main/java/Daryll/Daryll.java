@@ -14,19 +14,12 @@ package Daryll; /**
  *
  */
 
-import Daryll.Controllers.MainViewController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
-
-import Daryll.Plan.*;
 
 public class Daryll extends Application {
 
@@ -72,7 +65,6 @@ public class Daryll extends Application {
 
       imgView2.setPreserveRatio(true);
       imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(100));
-
 
       stage.show();
 
