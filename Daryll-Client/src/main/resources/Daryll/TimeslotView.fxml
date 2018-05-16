@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane padding="$x2" prefHeight="309.0" prefWidth="288.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Daryll.GUI.Controllers.TimeslotViewController">
+<BorderPane padding="$x2" prefHeight="381.0" prefWidth="365.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Daryll.GUI.Controllers.TimeslotViewController">
   <bottom>
     <Button fx:id="TimeslotButton" mnemonicParsing="false" onAction="#giveRoomSchedule" prefWidth="123.0" text="Chercher !" BorderPane.alignment="CENTER" />
   </bottom>
@@ -21,17 +21,32 @@
         <Label text="Vendredi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
         <Label text="Samedi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
         <Label text="Dimanche" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-        <TextField fx:id="monday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
-        <TextField fx:id="tuesday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <TextField fx:id="wednesday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <TextField fx:id="thursday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <TextField fx:id="friday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <TextField fx:id="saturday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <TextField fx:id="sunday" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm - hh:mm" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label text="Dates" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+        <TextField fx:id="mondayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+          <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" fx:id="x1" />
+          </GridPane.margin>
+        </TextField>
+        <TextField fx:id="tuesdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <TextField fx:id="wednesdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <TextField fx:id="thursdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+        <TextField fx:id="fridayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+        <TextField fx:id="saturdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <TextField fx:id="sundayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="6" GridPane.valignment="CENTER"/>
+        <TextField fx:id="datesBegin" alignment="CENTER" focusTraversable="false" prefWidth="80.0" promptText="jj:mm:aaaa" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="7" GridPane.valignment="CENTER"/>
+        <TextField fx:id="mondayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+        <TextField fx:id="tuesdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <TextField fx:id="wednesdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <TextField fx:id="thursdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+        <TextField fx:id="fridayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+        <TextField fx:id="saturdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+        <TextField fx:id="sundayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="6" GridPane.valignment="CENTER"/>
+        <TextField fx:id="datesEnd" alignment="CENTER" focusTraversable="false" prefWidth="80.0" promptText="jj:mm:aaaa" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="7" GridPane.valignment="CENTER"/>
       </children>
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="105.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="173.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="111.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <padding>
         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
@@ -48,6 +63,6 @@
     </GridPane>
   </center>
   <top>
-    <Label alignment="CENTER" prefHeight="47.0" prefWidth="288.0" text="Entrez votre plage d'horaire" />
+    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="333.0" text="Entrez votre plage d'horaire [Début - Fin]" textAlignment="LEFT" BorderPane.alignment="CENTER" />
   </top>
 </BorderPane>
