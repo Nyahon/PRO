@@ -41,8 +41,8 @@ public class MainViewController implements Initializable {
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
     private static PlanLoader  planLoader = null;
     private static int indexPlan = 0;
-    private static final int planWidth = 1600;
-    private static final int planHeight = 1080;
+    private static final int planWidth = 2100;
+    private static final int planHeight = 980;
     private static Stage stagePosition = null;
     @FXML
     private ImageView imageCheseaux;

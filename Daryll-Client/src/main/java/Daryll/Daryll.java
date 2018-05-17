@@ -22,7 +22,9 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.time.LocalDate;
 
@@ -43,11 +45,13 @@ public class Daryll extends Application {
       stage.setTitle("Daryll");
       stage.setScene(scene);
 
+      //stage.initStyle(StageStyle.);
+
       /* Constraints for resizing the window.*/
-      stage.setMinHeight(600);
-      stage.setMinWidth(800);
-      stage.maxHeightProperty().bind(scene.widthProperty().divide(4).multiply(3).add(2));
-      stage.minHeightProperty().bind(scene.widthProperty().divide(4).multiply(3));
+      stage.setMinHeight(768);
+      stage.setMinWidth(1024);
+      stage.maxHeightProperty().bind(scene.widthProperty().divide(16).multiply(9).add(2));
+      stage.minHeightProperty().bind(scene.widthProperty().divide(16).multiply(9));
 
       BorderPane pane1 = (BorderPane) scene.lookup("#planCheseaux");
       BorderPane pane2 = (BorderPane) scene.lookup("#planStRoch");
