@@ -40,7 +40,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4bfc6e" height="28.0" layoutX="100.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
                   <Label alignment="CENTER_RIGHT" text="1 période" textAlignment="RIGHT">
                      <padding>
-                        <Insets right="10.0" />
+                        <Insets right="40.0" />
                      </padding>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#01d73a" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
