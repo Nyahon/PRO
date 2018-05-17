@@ -16,6 +16,7 @@
 package Daryll.GUI.Controllers;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +24,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import Daryll.Plan.PlanLoader;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -43,7 +45,8 @@ public class MainViewController implements Initializable {
     private static int indexPlan = 0;
     private static final int planWidth = 2100;
     private static final int planHeight = 980;
-    private static Stage stagePosition = null;
+
+    private static String position = "";
     @FXML
     private ImageView imageCheseaux;
     @FXML
@@ -58,9 +61,10 @@ public class MainViewController implements Initializable {
     private Button previousStRoch;
     @FXML
     private DatePicker dateField;
-
     @FXML
-    private Label currentRoom;
+    private TextField currentRoomField;
+    @FXML
+    private Button enterPositionButton;
 
 
     /**
@@ -206,11 +210,11 @@ public class MainViewController implements Initializable {
     }
 
 
-    public static void updatePositionLabel(String text){
-        System.out.println(text);
-        //System.out.println(this.currentRoom);
-        //currentRoom.setText(text);
-        stagePosition.close();
+    public void updatePosition(){
+
+        position =  currentRoomField.getText();
+        enterPositionButton.setText("Modifier");
+        System.out.println("Position : " + position);
     }
 
     /**
@@ -261,7 +265,6 @@ public class MainViewController implements Initializable {
 
     }
 
-
     /**
      * @brief This method cleans the pane, it means that the image will not appear
      * because the CSS code is deleted.
@@ -279,28 +282,11 @@ public class MainViewController implements Initializable {
      * @throws Exception
      * @brief Launch the view for the room schedule.
      */
-    public void positionRoom() throws Exception {
-        // Initializing the FXML
-        Parent root = FXMLLoader.load(getClass().getResource("/Daryll/SetPositionRoomView.fxml"));
-        Scene scene = new Scene(root);
-
-        // Creating and launching the stage
-        stagePosition = new Stage();
-        stagePosition.setTitle("Position actuelle");
-        stagePosition.setWidth(270);
-        stagePosition.setHeight(170);
-        stagePosition.setResizable(false);
-        stagePosition.setScene(scene);
-        stagePosition.show();
-    }
-
-    /**
-     * @throws Exception
-     * @brief Launch the view for the room schedule.
-     */
     public void scheduleRoom() throws Exception {
         // Initializing the FXML
-        Parent root = FXMLLoader.load(getClass().getResource("/Daryll/RoomScheduleView.fxml"));
+        FXMLLoader fxLoader = new FXMLLoader();
+        Parent root = fxLoader.load(getClass().getResource("/Daryll/RoomScheduleView.fxml"));
+
         Scene scene = new Scene(root);
 
         // Creating and launching the stage

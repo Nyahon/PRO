@@ -14,6 +14,7 @@ package Daryll; /**
  *
  */
 
+import Daryll.GUI.Controllers.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -39,7 +40,10 @@ public class Daryll extends Application {
    @Override
    public void start(Stage stage) throws Exception {
 
-      BorderPane root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader();
+      BorderPane root = fxmlLoader.load(getClass().getResource("MainView.fxml"));
+
+      MainViewController mainViewController = fxmlLoader.getController();
       Scene scene = new Scene(root);
  
       stage.setTitle("Daryll");
@@ -50,8 +54,8 @@ public class Daryll extends Application {
       /* Constraints for resizing the window.*/
       stage.setMinHeight(768);
       stage.setMinWidth(1024);
-      stage.maxHeightProperty().bind(scene.widthProperty().divide(16).multiply(9).add(2));
-      stage.minHeightProperty().bind(scene.widthProperty().divide(16).multiply(9));
+      stage.maxHeightProperty().bind(scene.widthProperty().divide(16).multiply(10).add(2));
+      stage.minHeightProperty().bind(scene.widthProperty().divide(16).multiply(10));
 
       BorderPane pane1 = (BorderPane) scene.lookup("#planCheseaux");
       BorderPane pane2 = (BorderPane) scene.lookup("#planStRoch");
