@@ -17,6 +17,7 @@ package Daryll.GUI.Controllers;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +35,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class MainViewController implements Initializable {
@@ -64,8 +68,15 @@ public class MainViewController implements Initializable {
     @FXML
     private TextField currentRoomField;
     @FXML
+    private Label currentRoomLabel;
+    @FXML
     private Button enterPositionButton;
+    @FXML
+    private Label guiConsole;
+    @FXML
+    Circle circleGuiLogger;
 
+    private GuiLogger guiLogger;
 
     /**
      * @brief This method is the first one to be called to fill the hash map with floors
@@ -213,8 +224,11 @@ public class MainViewController implements Initializable {
     public void updatePosition(){
 
         position =  currentRoomField.getText();
+        currentRoomField.clear();
         enterPositionButton.setText("Modifier");
-        System.out.println("Position : " + position);
+        currentRoomLabel.setText(position);
+        guiLogger.printInfo(position);
+
     }
 
     /**
@@ -380,6 +394,34 @@ public class MainViewController implements Initializable {
         stage.show();
     }
 
+    public class GuiLogger {
+        private Label console;
+
+        private final Paint colorInfo = Color.LIMEGREEN;
+        private final Paint colorError = Color.RED;
+
+        public GuiLogger(Label console) {
+            this.console = console;
+        }
+
+        public void printInfo(String valueOf) {
+            Platform.runLater(() -> {
+                circleGuiLogger.setFill(colorInfo);
+                console.setTextFill(colorInfo);
+                console.setText(valueOf);
+            });
+        }
+
+        public void printError(String valueOf) {
+            Platform.runLater(() -> {
+                circleGuiLogger.setFill(colorError);
+                console.setTextFill(colorError);
+                console.setText(valueOf);
+            });
+        }
+
+    }
+
     /**
      * @param url link text
      * @param rb  Object ResourceBundle
@@ -387,7 +429,10 @@ public class MainViewController implements Initializable {
      */
     //@Override
     public void initialize(URL url, ResourceBundle rb) {
+
         fillFloors();
+        guiLogger = new GuiLogger(guiConsole);
+
     }
 
 }

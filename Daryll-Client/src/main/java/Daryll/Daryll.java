@@ -91,7 +91,6 @@ public class Daryll extends Application {
       SpinnerValueFactory svfMinute = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,60);
       minuteSpinner.setValueFactory(svfMinute);
 
-
       stage.show();
 
    }
