@@ -17,9 +17,14 @@ package Daryll; /**
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
+
+import java.time.LocalDate;
 
 public class Daryll extends Application {
 
@@ -65,6 +70,19 @@ public class Daryll extends Application {
 
       imgView2.setPreserveRatio(true);
       imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(100));
+
+      LocalDate currentDate = LocalDate.now();
+      DatePicker datePicker = (DatePicker) scene.lookup("#dateField");
+      datePicker.valueProperty().setValue(currentDate);
+
+      Spinner hourSpinner = (Spinner) scene.lookup("#hourSpinner");
+      SpinnerValueFactory svfHour = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,24);
+      hourSpinner.setValueFactory(svfHour);
+
+      Spinner minuteSpinner = (Spinner) scene.lookup("#minuteSpinner");
+      SpinnerValueFactory svfMinute = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,60);
+      minuteSpinner.setValueFactory(svfMinute);
+
 
       stage.show();
 

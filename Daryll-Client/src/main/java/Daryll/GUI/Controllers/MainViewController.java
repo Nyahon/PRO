@@ -25,12 +25,11 @@ import java.util.logging.Logger;
 import Daryll.Plan.PlanLoader;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -40,10 +39,11 @@ public class MainViewController implements Initializable {
     private static final HashMap<String, ArrayList<String>> FLOORS = new HashMap<>();
     private static ArrayList<String> currentFloorPaths = new ArrayList<>();
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
-    private static final PlanLoader  planLoader = new PlanLoader();
+    private static PlanLoader  planLoader = null;
     private static int indexPlan = 0;
     private static final int planWidth = 1600;
     private static final int planHeight = 1080;
+    private static Stage stagePosition = null;
     @FXML
     private ImageView imageCheseaux;
     @FXML
@@ -56,6 +56,11 @@ public class MainViewController implements Initializable {
     private Button nextStRoch;
     @FXML
     private Button previousStRoch;
+    @FXML
+    private DatePicker dateField;
+
+    @FXML
+    private Label currentRoom;
 
 
     /**
@@ -131,9 +136,7 @@ public class MainViewController implements Initializable {
     public void showFloor(Event event) {
 
         Button floorButton = (Button) event.getSource(); // get the button from the event
-
         String idButton = floorButton.getId(); // get the id of the button
-
 
         ImageView imgView = null;
         indexPlan = 0;
@@ -167,7 +170,11 @@ public class MainViewController implements Initializable {
         }
 
         try {
-            loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
+            //imgView.setImage(new Thread);
+            planLoader = new PlanLoader("/Daryll/plans/" + currentFloorPaths.get(0),imgView, planWidth, planHeight);
+            new Thread(planLoader).start();
+            System.gc();
+           //loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
 
         } catch (Exception e) {
 
@@ -196,6 +203,14 @@ public class MainViewController implements Initializable {
         // Put the image inside an ImageView object
         imgView.setImage(img);
         System.gc();
+    }
+
+
+    public static void updatePositionLabel(String text){
+        System.out.println(text);
+        //System.out.println(this.currentRoom);
+        //currentRoom.setText(text);
+        stagePosition.close();
     }
 
     /**
@@ -232,8 +247,10 @@ public class MainViewController implements Initializable {
                 previousCheseaux.setDisable(false);
             }
             try {
-                loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
+                //loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
 
+                planLoader = new PlanLoader("/Daryll/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight);
+                new Thread(planLoader).start();
             } catch (Exception e) {
 
                 Image exceptionImg = new Image("/Daryll/plans/default-image.png");
@@ -257,6 +274,25 @@ public class MainViewController implements Initializable {
     //imgView.setDisable(true); // delete image
     }*/
 
+
+    /**
+     * @throws Exception
+     * @brief Launch the view for the room schedule.
+     */
+    public void positionRoom() throws Exception {
+        // Initializing the FXML
+        Parent root = FXMLLoader.load(getClass().getResource("/Daryll/SetPositionRoomView.fxml"));
+        Scene scene = new Scene(root);
+
+        // Creating and launching the stage
+        stagePosition = new Stage();
+        stagePosition.setTitle("Position actuelle");
+        stagePosition.setWidth(270);
+        stagePosition.setHeight(170);
+        stagePosition.setResizable(false);
+        stagePosition.setScene(scene);
+        stagePosition.show();
+    }
 
     /**
      * @throws Exception
@@ -329,7 +365,7 @@ public class MainViewController implements Initializable {
         stage.setTitle("À propos");
 
         // Creating the textArea
-        TextArea textArea = new TextArea("Text à remplir...");
+        TextArea textArea = new TextArea("Texte à remplir...");
         textArea.setEditable(false);
 
         // Show all

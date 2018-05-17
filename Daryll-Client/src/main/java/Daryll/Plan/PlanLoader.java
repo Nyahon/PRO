@@ -3,18 +3,35 @@ package Daryll.Plan;
 import Daryll.SVGTools.BufferedImageTranscoder;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 
 import java.io.InputStream;
+import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class PlanLoader {
+public class PlanLoader implements Runnable{
     // Transcoder used to convert the svg to an java FX image
-    private BufferedImageTranscoder trans = new BufferedImageTranscoder();
-    private TranscoderInput transcoderInput = null;
+    private static final BufferedImageTranscoder trans = new BufferedImageTranscoder();
+    private static TranscoderInput transcoderInput = null;
+
+    private String file; // file to transcode
+    private int width;
+    private int height;
+    private ImageView imgView;
+    private Image img;
+
+
+    public PlanLoader(String file, ImageView imgView, int width, int height){
+        this.file = file;
+        this.width = width;
+        this.height = height;
+        this.imgView = imgView;
+    }
+
 
     public void openSVGFile(String file){
         // Get InputStream from an SVG file
@@ -28,7 +45,7 @@ public class PlanLoader {
      * @param height the height of the image in output
      * @return transcoded image in JavaFX format
      */
-    public Image getTranscodedImage(double width, double height){
+    public Image getTranscodedImage(int width, int height){
         // Set format of the transcoded image
         trans.addTranscodingHint(PNGTranscoder.KEY_WIDTH, new Float((int)width));
         trans.addTranscodingHint(PNGTranscoder.KEY_HEIGHT,new Float((int)height));
@@ -44,4 +61,12 @@ public class PlanLoader {
         return SwingFXUtils.toFXImage(trans.getBufferedImage(), null);
     }
 
+    @Override
+    public void run() {
+
+        openSVGFile(file);
+        img = getTranscodedImage(width, height);
+
+        imgView.setImage(img);
+    }
 }
