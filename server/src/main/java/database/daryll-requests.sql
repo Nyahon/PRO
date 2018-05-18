@@ -8,14 +8,12 @@ DROP PROCEDURE IF EXISTS addPeriod;
 DROP PROCEDURE IF EXISTS addFloor;
 DROP FUNCTION  IF EXISTS addClassroom;
 DROP PROCEDURE IF EXISTS addTakePlace;
-DROP PROCEDURE IF EXISTS addEquipments;
 DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
-DROP PROCEDURE IF EXISTS addClassroom;
 DROP PROCEDURE IF EXISTS updateClassroomLock;
-DROP PROCEDURE IF EXISTS addTakePlaceClassroomFloor;
-DROP FUNCTION  IF EXISTS addEquipments;
-DROP FUNCTION  IF EXISTS updateClassroomLock;
+DROP PROCEDURE IF EXISTS updateClassroomEquipment;
+DROP PROCEDURE IF EXISTS updateFloorEquipment;
+DROP PROCEDURE IF EXISTS fullTimeTableFromRoom;
 
 /* Create a new period */
 DELIMITER //
@@ -89,4 +87,26 @@ DELIMITER //
 		UPDATE `FloorEquipment` 
 		SET `toiletM`=toiletM, `toiletF`=toiletF, `coffeeMachine`=coffeeMachine, `selecta`=selecta, `wayOut`=wayOut 
 		WHERE `idFloorEquipment`=idFloorEquipment;
+	END //
+    
+DELIMITER //
+CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
+    BEGIN
+		SELECT *
+        FROM `takeplace`
+        INNER JOIN `period`
+			ON `takeplace.idPeriod` = `period.idPeriod`
+        WHERE `takeplace.classroomName` = classroomName;
+	END //
+
+DELIMITER //
+CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date date, IN idPeriod tinyint(3))
+	BEGIN
+		SELECT * 
+		FROM `takeplace`
+		INNER JOIN  `period`
+			ON `takeplace.idPeriod` = `period.idPeriod`
+		INNER JOIN `classroom`
+			ON `takeplace.classroomName` = `classroom.classroomName`
+		WHERE  `classroom.floorName` = floorname AND `takeplace.date` = date AND `period.idPeriod` >= idPeriod;
 	END //

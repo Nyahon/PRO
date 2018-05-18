@@ -473,30 +473,27 @@ public class ToolBoxMySQL  {
      * @param c the classroom to get it's time table
      * @return A full schedule of the given room, null if it'a always free, an SQLException if something bad happens.
      */
-    ArrayList<TimeSlot> fullTimeTableFromRoom(ClassRoom c) throws SQLException{
+    public ArrayList<TimeSlot> fullTimeTableFromRoom(ClassRoom c) throws SQLException{
         ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
         LOG.info("Getting the timetable of a classroom");
     
         Statement statement = connection.createStatement();
         ResultSet result;
         PreparedStatement ps;
-        sql =   "SELECT *" +
-                "FROM takeplace AS T" +
-                "INNER JOIN period AS P" +
-                "ON T.idPeriod = P.idPeriod" +
-                "WHERE T.classroomName=?";
+        sql =   "call fullTimeTableFromRoom(?)";
         
         ps = connection.prepareStatement(sql);
         ps.setString(1, c.getClassRoom());
         result = ps.executeQuery();
     
         if (!result.next()) {
-          LOG.log(Level.SEVERE, "The classroom is always free...");
+          LOG.log(Level.SEVERE, "The classroom is always free.");
           return null;
         }
         
         while (result.next()){
-          TimeSlot tmp = new TimeSlot(result.getString("classroomName"), result.getLong("date"), result.getLong("startingTime"), result.getLong("finishingTime"));
+          TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
+                             result.getLong("date"), result.getInt("idPeriod"));
           timeTable.add(tmp);
         }
         return timeTable;
@@ -516,16 +513,13 @@ public class ToolBoxMySQL  {
       Statement statement = connection.createStatement();
       ResultSet result;
       PreparedStatement ps;
-      sql =   "SELECT *" +
-              "FROM takeplace AS T" +
-              "INNER JOIN period AS P" +
-              "ON T.idPeriod = P.idPeriod" +
-              "WHERE T.date = ? AND P.startingTime = ? AND P.finishingTime = ?;";
+      sql =   "call occupiedRoomsAtGivenSchedule(?,?,?)";
   
       ps = connection.prepareStatement(sql);
-      ps.setLong(1, t.getDate());
-      ps.setLong(2,t.getTime_start());
-      ps.setLong(3,t.getTime_end());
+      
+      ps.setDate(1, t.getDate());
+      ps.setInt(2,t.getIdPeriod());
+      ps.setString(3,t.getClassroom());
       result = ps.executeQuery();
   
       if (!result.next()) {
@@ -534,7 +528,9 @@ public class ToolBoxMySQL  {
       }
   
       while (result.next()){
-        TimeSlot tmp = new TimeSlot(result.getString("classroomName"), result.getLong("date"), result.getLong("startingTime"), result.getLong("finishingTime"));
+        TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
+                                    result.getLong("date"),
+                                    result.getInt("idPeriod"));
         timeTable.add(tmp);
       }
       return timeTable;
