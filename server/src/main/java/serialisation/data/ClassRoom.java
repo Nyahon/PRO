@@ -20,4 +20,8 @@ public class ClassRoom {
     public void setClassRoom(String classRoom) {
         this.classRoom = classRoom;
     }
+    
+    public String getFloor(){
+        return classRoom.substring(0,1);
+    }
 }
