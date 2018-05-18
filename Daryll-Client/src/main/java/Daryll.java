@@ -1,4 +1,4 @@
-package Daryll; /**
+/**
  * Module      : PRO
  * File        : Daryll.java
  * Date of Creation        : 31.03.2018
