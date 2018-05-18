@@ -1,6 +1,6 @@
-package Daryll.Plan;
+package GUI.Plan;
 
-import Daryll.SVGTools.BufferedImageTranscoder;
+import GUI.SVGTools.BufferedImageTranscoder;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -9,7 +9,6 @@ import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 
 import java.io.InputStream;
-import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

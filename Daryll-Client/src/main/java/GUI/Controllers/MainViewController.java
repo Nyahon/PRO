@@ -13,18 +13,16 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package Daryll.GUI.Controllers;
+package GUI.Controllers;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import Daryll.Plan.PlanLoader;
+import GUI.Plan.PlanLoader;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -45,7 +43,7 @@ public class MainViewController implements Initializable {
     private static final HashMap<String, ArrayList<String>> FLOORS = new HashMap<>();
     private static ArrayList<String> currentFloorPaths = new ArrayList<>();
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
-    private static PlanLoader  planLoader = null;
+    private static PlanLoader planLoader = null;
     private static int indexPlan = 0;
     private static final int planWidth = 2100;
     private static final int planHeight = 980;
@@ -186,14 +184,14 @@ public class MainViewController implements Initializable {
 
         try {
             //imgView.setImage(new Thread);
-            planLoader = new PlanLoader("/Daryll/plans/" + currentFloorPaths.get(0),imgView, planWidth, planHeight);
+            planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(0),imgView, planWidth, planHeight);
             new Thread(planLoader).start();
             System.gc();
-           //loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
+           //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
 
         } catch (Exception e) {
 
-            Image exceptionImg = new Image("/Daryll/plans/default-image.png");
+            Image exceptionImg = new Image("/plans/default-image.png");
             imgView.setImage(exceptionImg);
         }
     }
@@ -265,13 +263,13 @@ public class MainViewController implements Initializable {
                 previousCheseaux.setDisable(false);
             }
             try {
-                //loadSvgImage( "/Daryll/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
+                //loadSvgImage( "/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
 
-                planLoader = new PlanLoader("/Daryll/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight);
+                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight);
                 new Thread(planLoader).start();
             } catch (Exception e) {
 
-                Image exceptionImg = new Image("/Daryll/plans/default-image.png");
+                Image exceptionImg = new Image("/plans/default-image.png");
                 imgView.setImage(exceptionImg);
             }
 
@@ -299,7 +297,7 @@ public class MainViewController implements Initializable {
     public void scheduleRoom() throws Exception {
         // Initializing the FXML
         FXMLLoader fxLoader = new FXMLLoader();
-        Parent root = fxLoader.load(getClass().getResource("/Daryll/RoomScheduleView.fxml"));
+        Parent root = fxLoader.load(getClass().getResource("/RoomScheduleView.fxml"));
 
         Scene scene = new Scene(root);
 
@@ -322,7 +320,7 @@ public class MainViewController implements Initializable {
     public void shortestFreeRoom() throws Exception {
         // Initializing the FXML
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Daryll/ShortestRoomView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ShortestRoomView.fxml"));
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
@@ -343,7 +341,7 @@ public class MainViewController implements Initializable {
      */
     public void timeslot() throws IOException {
         // Initializing the FXML
-        Parent root = FXMLLoader.load(getClass().getResource("/Daryll/TimeslotView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/TimeslotView.fxml"));
         Scene scene = new Scene(root);
 
         // Creating and launching the stage

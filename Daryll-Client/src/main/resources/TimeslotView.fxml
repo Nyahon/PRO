@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="381.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Daryll.GUI.Controllers.TimeslotViewController">
+<BorderPane prefHeight="381.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.TimeslotViewController">
   <bottom>
     <Button fx:id="TimeslotButton" mnemonicParsing="false" onAction="#giveRoomSchedule" prefWidth="123.0" text="Chercher !" BorderPane.alignment="CENTER" />
   </bottom>

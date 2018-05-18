@@ -1,4 +1,4 @@
-package Daryll.serialisation.data;
+package models;
 
 public class TimeSlot {
 

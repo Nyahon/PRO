@@ -1,17 +1,16 @@
 /**
  * Module      : PRO
- * File        : TimeslotViewController.java
+ * File        : RoomScheduleViewController.java
  * Date        : 12.04.2018
  *
- * Goal : Controller managing the timeslot view.
+ * Goal : Controller managing the schedule from a room.
  *
- * 
- * Remarks : -
+ * Remarks :
  *
  * @author Rashiti Labinot
  * @version 1.0
  */
-package Daryll.GUI.Controllers;
+package GUI.Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,12 +21,12 @@ import javafx.fxml.Initializable;
  *
  * @author Labinot
  */
-public class TimeslotViewController implements Initializable {
-
+public class RoomScheduleViewController implements Initializable {
+   
    /**
-    * Give a schedule for each day with the free rooms.
+    * Handler that will give the schedule of the room
     */
-   public void giveRoomSchedule() {
+   public void giveRoomSchedule () {
       
    }
    

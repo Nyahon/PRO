@@ -11,7 +11,7 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package Daryll.GUI.Controllers;
+package GUI.Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;

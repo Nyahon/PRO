@@ -1,9 +1,9 @@
 package Daryll; /**
  * Module      : PRO
- * File        : Daryll.Daryll.java
+ * File        : Daryll.java
  * Date of Creation        : 31.03.2018
  *
- * Goal : This file contains the base of the application Daryll.Daryll, this is where the
+ * Goal : This file contains the base of the application Daryll, this is where the
  *        application begin and launch his GUI.
  *
  * 
@@ -14,7 +14,7 @@ package Daryll; /**
  *
  */
 
-import Daryll.GUI.Controllers.MainViewController;
+import GUI.Controllers.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,9 +23,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.time.LocalDate;
 
@@ -48,8 +46,6 @@ public class Daryll extends Application {
  
       stage.setTitle("Daryll");
       stage.setScene(scene);
-
-      //stage.initStyle(StageStyle.);
 
       /* Constraints for resizing the window.*/
       stage.setMinHeight(768);

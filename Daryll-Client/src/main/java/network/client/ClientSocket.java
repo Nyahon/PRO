@@ -1,10 +1,10 @@
-package Daryll.serialisation.client;
+package network.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import Daryll.serialisation.data.ClassRoom;
-import Daryll.serialisation.data.JsonObjectMapper;
-import Daryll.serialisation.data.TimeSlot;
-import Daryll.serialisation.protocol.protocol;
+import network.protocol.protocol;
+import models.ClassRoom;
+import network.serialisation.JsonObjectMapper;
+import models.TimeSlot;
 
 import java.io.BufferedReader;
 import java.io.IOException;
