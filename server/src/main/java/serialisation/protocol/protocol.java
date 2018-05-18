@@ -13,14 +13,15 @@ public class protocol {
 
     public final static String CMD_CLASSROOM = "CLASSROOM";
     public final static String CMD_TIMESLOT = "TIMESLOT";
+    public final static String CMD_FLOOR = "FLOOR";
     public final static String CMD_BYE = "BYE";
-
 
     public final static String RESPONSE_OK = "OK";
     public final static String RESPONSE_CONNECTED = "CONNECTED";
 
     public final static String RESPONSE_CLASSROOM = "READY";
     public final static String RESPONSE_TIMESLOT = "READY";
+    public final static String RESPONSE_FLOOR = "READY";
     public final static String RESPONSE_BYE = "BYE_BYE";
 
 
