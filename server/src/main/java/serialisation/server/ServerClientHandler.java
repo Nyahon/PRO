@@ -1,10 +1,14 @@
 package serialisation.server;
+import database.ToolBoxMySQL;
 import serialisation.data.ClassRoom;
 import serialisation.data.JsonObjectMapper;
 import serialisation.data.TimeSlot;
 import serialisation.protocol.protocol;
 
 import java.io.*;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * This class implements the serialisation.server.protocol
  *
- * @author Yohann Meyer
+ * @author Yohann Meyer, Romain Gallay
  */
 public class ServerClientHandler implements IClientHandler {
     final static Logger LOG = Logger.getLogger(ServerClientHandler.class.getName());
@@ -22,7 +26,11 @@ public class ServerClientHandler implements IClientHandler {
     public int numberOfCommands = 0;
     private List<TimeSlot> queryTimeSlots;
     private List<ClassRoom> queryClassRooms;
+    private ToolBoxMySQL toolBoxMySQL;
 
+    public ServerClientHandler(){
+        toolBoxMySQL = new ToolBoxMySQL();
+    }
 
 
     @Override
@@ -57,6 +65,13 @@ public class ServerClientHandler implements IClientHandler {
                         LOG.log(Level.SEVERE, "Error trying to get free time slots: ", e);
                     }
                     break;
+                case protocol.CMD_FLOOR:
+
+                    try {
+                        floorSchedule(reader, writer);
+                    }catch (Exception e){ //TODO BETTER
+                        LOG.log(Level.SEVERE, "Error trying to get free time slots for a whole floor: ", e);
+                    }
 
                 case protocol.CMD_BYE:
 
@@ -95,9 +110,57 @@ public class ServerClientHandler implements IClientHandler {
         writer.println(jsonResponse);
         writer.flush();
         */
+
     }
 
     private void getTimeSlots(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
+
+        writer.println(protocol.RESPONSE_TIMESLOT);
+        writer.flush();
+
+        //queryClassRooms = JsonObjectMapper.parseJson( reader.lines().collect(Collectors.joining()),  ClassRoom.class );
+
+        /** CALL DB with query **/
+        /** TODO HERE COME DB CONNEXION **/
+        /** GET response    **/
+
+        writer.println(protocol.RESPONSE_OK);
+        writer.flush();
+        /*
+        String jsonResponse = createJson(response);
+        writer.println(jsonResponse);
+        writer.flush();
+        */
+
+    }
+
+    private void floorSchedule(BufferedReader reader, PrintWriter writer) throws IOException{
+
+        writer.println(protocol.RESPONSE_FLOOR);
+        writer.flush();
+
+        // get the TimeSlot sent by client and parse it from Json
+        TimeSlot timeSlotReferenceFloor = JsonObjectMapper.parseJson(reader.readLine(), TimeSlot.class);
+        toolBoxMySQL.initConnection();
+        ArrayList<TimeSlot> floorSchedule = null;
+
+        // request the schedule of every classroom in the same floor
+        try {
+            floorSchedule = toolBoxMySQL.occupiedRoomsAtGivenSchedule(timeSlotReferenceFloor);
+        } catch (SQLException e){
+            LOG.log(Level.SEVERE, "Error during database query to get schedule for a whole floor", e);
+        }
+
+        // send every TimeSlot as Json to client
+        for(TimeSlot ts : floorSchedule){
+            writer.println(JsonObjectMapper.toJson(ts));
+        }
+
+        writer.println(protocol.RESPONSE_OK);
+        writer.flush();
+    }
+
+    private void classRoomSchedule(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
 
         writer.println(protocol.RESPONSE_TIMESLOT);
         writer.flush();

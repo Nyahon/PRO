@@ -36,8 +36,6 @@ public class ClientSocket {
 
         LOG.info("Connected to ___ serialisation.server " + server + " on port " + port + "." );
 
-
-
     }
 
     public void disconnect() throws IOException {

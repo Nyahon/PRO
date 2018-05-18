@@ -509,7 +509,7 @@ public class ToolBoxMySQL  {
      * @return an ArrayList of TimeSlot containing the classroom occupied at a given time,
      *         null if it'a always free, an SQLException if something bad happens.
      */
-    ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) throws SQLException{
+    public ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) throws SQLException{
       ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
       LOG.info("Getting the classrooms that are occupied during this schedule");
   
