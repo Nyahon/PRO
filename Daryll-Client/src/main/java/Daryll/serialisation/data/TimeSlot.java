@@ -3,22 +3,24 @@ package Daryll.serialisation.data;
 public class TimeSlot {
 
     private ClassRoom classroom = ClassRoom.NO_CLASSROOM;
-    private long date = 0;
     private long timeStart = 0;
     private long timeEnd = 0;
 
     public TimeSlot(){}
-
-    public TimeSlot(String classroom, long date, long timeStart, long timeEnd) {
+    
+    public TimeSlot(String classroom, long timeStart) {
         this.classroom.setClassRoom( classroom );
-        this.date = date;
+        this.timeStart = timeStart;
+    }
+    
+    public TimeSlot(String classroom, long timeStart, long timeEnd) {
+        this.classroom.setClassRoom( classroom );
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
     }
 
-    public TimeSlot(ClassRoom classroom, long date, long timeStart, long timeEnd) {
+    public TimeSlot(ClassRoom classroom, long timeStart, long timeEnd) {
         this.classroom = classroom;
-        this.date = date;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
     }
@@ -48,7 +50,4 @@ public class TimeSlot {
         this.timeEnd = timeEnd;
     }
     
-    public long getDate() { return date;}
-    
-    public void setDate(long date) { this.date = date; }
 }
