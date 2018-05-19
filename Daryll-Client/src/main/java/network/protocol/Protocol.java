@@ -14,6 +14,7 @@ public class Protocol {
 
     public final static String CMD_CLASSROOM = "CLASSROOM";
     public final static String CMD_TIMESLOT = "TIMESLOT";
+    public final static String CMD_ADVANCED = "ADVANCED";
     public final static String CMD_FLOOR = "FLOOR";
     public final static String CMD_BYE = "BYE";
 
@@ -22,6 +23,7 @@ public class Protocol {
 
     public final static String RESPONSE_CLASSROOM = "READY";
     public final static String RESPONSE_TIMESLOT = "READY";
+    public final static String RESPONSE_ADVANCED = "READY";
     public final static String RESPONSE_FLOOR = "READY";
     public final static String RESPONSE_BYE = "BYE_BYE";
 

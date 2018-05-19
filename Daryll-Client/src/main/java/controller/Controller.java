@@ -1,6 +1,7 @@
 package controller;
 
 import Utils.FloorFreePeriodMap;
+import models.AdvancedRequest;
 import models.ClassRoom;
 import models.TimeSlot;
 import network.client.ClientSocket;
@@ -35,5 +36,9 @@ public class Controller {
     }
 
 
-
+    public static List<TimeSlot> handleClientAdvancedRequest(List<AdvancedRequest> data) throws IOException {
+        client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
+        client.askForAdvancedRequest(data);
+        return client.receiveTimeSlots();
+    }
 }

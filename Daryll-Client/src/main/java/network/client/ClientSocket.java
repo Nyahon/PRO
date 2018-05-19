@@ -1,6 +1,7 @@
 package network.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import models.AdvancedRequest;
 import network.protocol.Protocol;
 import models.ClassRoom;
 import network.serialisation.JsonObjectMapper;
@@ -79,6 +80,20 @@ public class ClientSocket {
             throw new ConnectException(rsp);
         os.println(JsonObjectMapper.toJson(t));
         os.flush();
+    }
+
+    public void askForAdvancedRequest(List<AdvancedRequest> a) throws IOException {
+        os.println(Protocol.CMD_ADVANCED);
+        os.flush();
+        String rsp;
+        if( !(rsp = is.readLine() ).equals(Protocol.RESPONSE_ADVANCED) )
+            throw new ConnectException(rsp);
+
+        for (AdvancedRequest request : a) {
+            os.println(JsonObjectMapper.toJson(request));
+            os.flush();
+        }
+        os.println(Protocol.RESPONSE_OK);
     }
 
     public List<TimeSlot> receiveTimeSlots() throws IOException {
