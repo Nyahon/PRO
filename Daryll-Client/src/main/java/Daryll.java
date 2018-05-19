@@ -14,7 +14,7 @@
  *
  */
 
-import GUI.Controllers.MainViewController;
+import GUI.controllers.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

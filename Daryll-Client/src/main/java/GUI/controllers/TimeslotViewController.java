@@ -11,7 +11,7 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package GUI.Controllers;
+package GUI.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;

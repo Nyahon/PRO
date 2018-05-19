@@ -1,6 +1,6 @@
 package models;
 
-import Utils.PeriodManager;
+import utils.PeriodManager;
 
 import java.sql.Date;
 

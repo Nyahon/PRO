@@ -13,8 +13,9 @@
  *
  */
 
-package GUI.SVGTools;
+package GUI.svgTools;
 
+import utils.DisplayConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -27,10 +28,10 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.io.File;
 import java.io.PrintWriter;
 
 
@@ -41,15 +42,20 @@ public class SVGToolBox {
 
     /**
      * parse the given file to update color of classrooms
-     * @param file the svg file that needs to be parsed
+     * @param svg the svg file that needs to be parsed
      */
-    public static void updateSVG(File file) {
+    public void updateSVG(String svg, String classroomName, String colorValue) {
+
+        InputStream svgInputStream = getClass().getResourceAsStream(svg);
+
+        //System.out.println(svgInputStream.toString());
+
         List<String> classrooms = new ArrayList<String>();
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-            Document doc = dBuilder.parse(file);
+            Document doc = dBuilder.parse(svgInputStream);
             doc.getDocumentElement().normalize();
 
             // Get the list of all groups (g balise)
@@ -57,12 +63,12 @@ public class SVGToolBox {
 
             // NodeList path = doc.getElementsByTagName("path");
 
-            getClassroomFromSVGNodeList(groups, "A09", "fill:#0000ff"); // blue color
+            getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
 
-            transformTheDom(doc, file.getAbsolutePath());
+            transformTheDom(doc, svgInputStream.getClass().getResource(svg).getPath());
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -72,7 +78,7 @@ public class SVGToolBox {
      * @param classroomName classroom name to apply color
      * @param colorValue  color to apply on the classroom
      */
-    public static void getClassroomFromSVGNodeList(NodeList nodeList, String classroomName, String colorValue){
+    public void getClassroomFromSVGNodeList(NodeList nodeList, String classroomName, String colorValue){
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
             org.w3c.dom.Node nNode = nodeList.item(temp);
             if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
@@ -80,20 +86,20 @@ public class SVGToolBox {
 
                 Element linkNode = (Element) nNode.getParentNode();
                 if(linkNode.getAttribute("id").equals(classroomName)) {
-                    System.out.println(eElement.getAttribute("id"));
-                    System.out.println(eElement.getAttribute("style"));
-                    eElement.setAttribute("style", "fill:#0000ff");
-                    linkNode.setAttribute("style", "fill:#0000ff");
-                    System.out.println(eElement.getAttribute("style"));
-                    System.out.println(linkNode.getAttribute("style"));
+                    //System.out.println(eElement.getAttribute("id"));
+                    //System.out.println(eElement.getAttribute("style"));
+                    eElement.setAttribute("style", "fill:#00ff00");
+                    linkNode.setAttribute("style", "fill:#00ff00");
+                    //System.out.println(eElement.getAttribute("style"));
+                    //System.out.println(linkNode.getAttribute("style"));
 
                     NodeList path = eElement.getElementsByTagName("path");
                     if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                         Element pathElem = (Element) path.item(0);
                         // #C5FFB8
-                        System.out.println(pathElem.getAttribute("style"));
+                        //System.out.println(pathElem.getAttribute("style"));
                         pathElem.setAttribute("style", colorValue);
-                        System.out.println(pathElem.getAttribute("style"));
+                        //System.out.println(pathElem.getAttribute("style"));
                     }
                 }
             }
@@ -135,7 +141,7 @@ public class SVGToolBox {
             // the screen.
             StreamResult scrResult =
                     new StreamResult(System.out);
-            transformer.transform(source, scrResult);
+            transformer.transform(source, null);
 
             //Get an output stream for the output file.
             PrintWriter outStream = new PrintWriter(filename);
@@ -149,14 +155,12 @@ public class SVGToolBox {
         }//end try block
 
         catch(Exception e){
-            e.printStackTrace(System.err);
+            //e.printStackTrace(System.err);
         }//end catch
     }//end transformTheDom
 
-    public static void main(String args[]){
-        // Test with Floor A1 (first part of A floor)
-        File f = new File("src/main/resources/Daryll/plans/Cheseaux/floor-A1.svg");
-        updateSVG(f);
-    }
+        //System.out.println(getResourceAsStream());
+        //File f = new File("/plans/floor-A1.svg");
+        //updateSVG(f);
 
 }

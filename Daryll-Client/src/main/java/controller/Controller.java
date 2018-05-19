@@ -1,6 +1,6 @@
 package controller;
 
-import Utils.FloorFreePeriodMap;
+import utils.FloorFreePeriodMap;
 import models.AdvancedRequest;
 import models.ClassRoom;
 import models.TimeSlot;

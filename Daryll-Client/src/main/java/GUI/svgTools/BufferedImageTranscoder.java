@@ -1,4 +1,4 @@
-package GUI.SVGTools; /**
+package GUI.svgTools; /**
  * This is a compilation of code snippets required to render SVG files in JavaFX using Batik.
  * See my full post on StackOverflow: http://stackoverflow.com/a/23894292/603003
  */

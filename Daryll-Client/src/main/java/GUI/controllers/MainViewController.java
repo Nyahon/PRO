@@ -13,17 +13,17 @@
  * @author Rashiti Labinot
  * @version 1.0
  */
-package GUI.Controllers;
+package GUI.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.logging.Logger;
 
-import GUI.Plan.PlanLoader;
+import GUI.plan.PlanLoader;
+import GUI.svgTools.SVGToolBox;
+import utils.ClassroomsByFloor;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,6 +50,7 @@ public class MainViewController implements Initializable {
     private static int indexPlan = 0;
     private static final int planWidth = 2100;
     private static final int planHeight = 980;
+    private static final SVGToolBox svgToolBox = new SVGToolBox();
 
     private static String position = "";
     @FXML
@@ -187,25 +188,44 @@ public class MainViewController implements Initializable {
 
         LocalDate localDate = dateField.getValue();
 
-        //Date date = Date.valueOf(localDate);
-        //date.setHours(0);
+        // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
+        String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
 
-        //date.toGMTString()
-        //System.out.println( date.toGMTString());
-
-
-        java.sql.Date date = java.sql.Date.valueOf(localDate);
-        TimeSlot timeSlotToSend = new TimeSlot("A07", date.getTime(),2 );
-
-        System.out.println(date.toGMTString());
+        int periodRequested = 2;
+        TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
         Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
 
-        System.out.println(timeSlotReceived.toString());
+        String firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
+        for(HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()){
+
+
+            String classroomName = classroom.getKey();
+            int freePeriods = classroom.getValue();
+            //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
+            switch (freePeriods){
+                case 0:
+                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#ffffff");
+                    break;
+                case 1:
+                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#99ff99");
+                    break;
+                case 2:
+                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#00ff00");
+                    break;
+                case 3:
+                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
+                    break;
+                default:
+                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
+                    break;
+            }
+
+        }
 
         try {
             //imgView.setImage(new Thread);
-            planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(0),imgView, planWidth, planHeight);
+            planLoader = new PlanLoader(firstSvgFloorPath,imgView, planWidth, planHeight);
             new Thread(planLoader).start();
             System.gc();
            //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);

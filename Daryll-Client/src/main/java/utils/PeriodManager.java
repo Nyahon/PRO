@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.time.LocalTime;
 import java.util.Arrays;
