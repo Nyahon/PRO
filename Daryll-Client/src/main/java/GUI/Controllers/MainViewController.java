@@ -188,7 +188,7 @@ public class MainViewController implements Initializable {
 
         TimeSlot timeSlotToSend = new TimeSlot("H01", Instant.now().toEpochMilli(), 4 );
 
-        List<TimeSlot> timeSlotReceived = Controller.handleClientRequest(timeSlotToSend);
+        List<TimeSlot> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
 
         try {
             //imgView.setImage(new Thread);

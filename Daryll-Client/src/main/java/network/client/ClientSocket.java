@@ -59,7 +59,7 @@ public class ClientSocket {
 
     }
 
-    public void askForTimeSlot(ClassRoom c) throws JsonProcessingException, ConnectException, IOException{
+    public void askForClassroom(ClassRoom c) throws JsonProcessingException, ConnectException, IOException{
         os.println(Protocol.CMD_CLASSROOM);
         os.flush();
         String rsp;
@@ -71,7 +71,7 @@ public class ClientSocket {
 
     }
 
-    public void askForClassRoom(TimeSlot t) throws IOException {
+    public void askForFloor(TimeSlot t) throws IOException {
         os.println(Protocol.CMD_FLOOR);
         os.flush();
         String rsp;
@@ -81,7 +81,7 @@ public class ClientSocket {
         os.flush();
     }
 
-    public List<TimeSlot> receiveClassRooms() throws IOException {
+    public List<TimeSlot> receiveTimeSlots() throws IOException {
         List<TimeSlot> response = new ArrayList<>();
         String rsp;
         while (!(rsp = is.readLine()).equals(Protocol.RESPONSE_OK)) {
@@ -89,11 +89,6 @@ public class ClientSocket {
         }
         return response;
     }
-
-    public void askForClassRoom(List<TimeSlot> t){
-
-    }
-
 
 
 }
