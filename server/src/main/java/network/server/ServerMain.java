@@ -1,6 +1,6 @@
 package network.server;
 
-import network.protocol.protocol;
+import network.protocol.ProtocolServer;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -23,7 +23,7 @@ public class ServerMain {
      */
     public static void main(String[] args) throws IOException {
         System.setProperty("java.util.logging.SimpleFormatter.format", "%5$s %n");
-        ServerDaryll server = new ServerDaryll( protocol.DEFAULT_PORT );
+        ServerDaryll server = new ServerDaryll( ProtocolServer.DEFAULT_PORT );
         try {
             server.startServer();
         } catch (IOException ex) {

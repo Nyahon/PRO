@@ -9,6 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * This class contains automated tests to validate the serialisation.client and the serialisation.server
@@ -29,7 +32,7 @@ public class DataTransferTest {
 
     private ClassRoom a01 = new ClassRoom("A01");
 
-    private TimeSlot t1 = new TimeSlot(f01, 1025, 1100);
+    private TimeSlot t1 = new TimeSlot("f01", Instant.now().toEpochMilli() , 2);
     private String t1Json = "{\"classroom\":\"F01\",\"time_start\":1025,\"time_end\":1100}";
 
     @Test

@@ -5,11 +5,12 @@ package network.protocol;
  *
  * @author Olivier Liechti
  */
-public class protocol {
+public class Protocol {
 
     public final static String VERSION = "1.0";
 
     public final static int DEFAULT_PORT = 2613;
+    public final static String SERVER_IP = "locahost";
 
     public final static String CMD_CLASSROOM = "CLASSROOM";
     public final static String CMD_TIMESLOT = "TIMESLOT";

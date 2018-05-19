@@ -35,12 +35,4 @@ public class TransformerICStoMySQL {
         tbs.closeConnection();
     }
 
-    public static void main(String[] args) {
-
-        String horaire2 = "gaps_global_S2_2017_2018.ics";
-
-        ReaderICS readerICS = new ReaderICS();
-        readerICS.readICSFile(horaire2);
-
-    }
 }

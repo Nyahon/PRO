@@ -3,7 +3,7 @@ import models.ClassRoom;
 import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
 import database.ToolBoxMySQL;
-import network.protocol.protocol;
+import network.protocol.ProtocolServer;
 
 import java.io.*;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
- * This class implements the serialisation.server.protocol
+ * This class implements the serialisation.server.ProtocolServer
  *
  * @author Yohann Meyer, Romain Gallay
  */
@@ -26,11 +26,11 @@ public class ServerClientHandler implements IClientHandler {
     private List<TimeSlot> queryTimeSlots;
     private List<ClassRoom> queryClassRooms;
     private ToolBoxMySQL toolBoxMySQL;
+    private boolean done;
 
     public ServerClientHandler(){
         toolBoxMySQL = new ToolBoxMySQL();
     }
-
 
     @Override
     public void handleClientConnection(InputStream is, OutputStream os) throws IOException {
@@ -39,16 +39,16 @@ public class ServerClientHandler implements IClientHandler {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(os));
 
-        writer.println(protocol.RESPONSE_CONNECTED);
+        writer.println(ProtocolServer.RESPONSE_CONNECTED);
         writer.flush();
 
         String command;
-        boolean done = false;
+        done = false;
         while (!done && ((command = reader.readLine()) != null)) {
 
             LOG.log(Level.INFO, "COMMAND: {0}", command);
             switch (command.toUpperCase()) {
-                case protocol.CMD_CLASSROOM:
+                case ProtocolServer.CMD_CLASSROOM:
 
                     try {
                         getClassRoom(reader, writer);
@@ -56,7 +56,7 @@ public class ServerClientHandler implements IClientHandler {
                         LOG.log(Level.SEVERE, "Error trying to get classroom: ", e);
                     }
                     break;
-                case protocol.CMD_TIMESLOT:
+                case ProtocolServer.CMD_TIMESLOT:
 
                     try {
                         getTimeSlots(reader, writer);
@@ -64,24 +64,33 @@ public class ServerClientHandler implements IClientHandler {
                         LOG.log(Level.SEVERE, "Error trying to get free time slots: ", e);
                     }
                     break;
-                case protocol.CMD_FLOOR:
+                case ProtocolServer.CMD_FLOOR:
 
                     try {
                         floorSchedule(reader, writer);
                     }catch (Exception e){ //TODO BETTER
                         LOG.log(Level.SEVERE, "Error trying to get free time slots for a whole floor: ", e);
                     }
+                    break;
+                case ProtocolServer.CMD_INITDATABASE:
 
-                case protocol.CMD_BYE:
+                    try {
+                        initDatabase(reader, writer);
+                    }catch (Exception e){ //TODO BETTER
+                        LOG.log(Level.SEVERE, "Error trying to init database: ", e);
+                    }
+                    break;
 
-                    writer.println(protocol.RESPONSE_BYE);
+                case ProtocolServer.CMD_BYE:
+
+                    writer.println(ProtocolServer.RESPONSE_BYE);
                     writer.flush();
                     done = true;
                     break;
 
                 default:
 
-                    writer.println("You absolute spoon, there's a serialisation.server.protocol.");
+                    writer.println("You absolute spoon, there's a serialisation.server.ProtocolServer.");
                     writer.flush();
                     break;
             }
@@ -92,7 +101,7 @@ public class ServerClientHandler implements IClientHandler {
 
     private void getClassRoom(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
 
-        writer.println(protocol.RESPONSE_CLASSROOM);
+        writer.println(ProtocolServer.RESPONSE_CLASSROOM);
         writer.flush();
 
         queryTimeSlots = JsonObjectMapper.parseJsonArray( reader.lines().collect(Collectors.joining()),  TimeSlot.class );
@@ -101,7 +110,7 @@ public class ServerClientHandler implements IClientHandler {
         /** TODO HERE COME DB CONNEXION **/
         /** GET response    **/
 
-        writer.println(protocol.RESPONSE_OK);
+        writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
 
         /*
@@ -114,7 +123,7 @@ public class ServerClientHandler implements IClientHandler {
 
     private void getTimeSlots(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
 
-        writer.println(protocol.RESPONSE_TIMESLOT);
+        writer.println(ProtocolServer.RESPONSE_TIMESLOT);
         writer.flush();
 
         //queryClassRooms = JsonObjectMapper.parseJson( reader.lines().collect(Collectors.joining()),  ClassRoom.class );
@@ -123,7 +132,7 @@ public class ServerClientHandler implements IClientHandler {
         /** TODO HERE COME DB CONNEXION **/
         /** GET response    **/
 
-        writer.println(protocol.RESPONSE_OK);
+        writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
         /*
         String jsonResponse = createJson(response);
@@ -135,7 +144,7 @@ public class ServerClientHandler implements IClientHandler {
 
     private void floorSchedule(BufferedReader reader, PrintWriter writer) throws IOException{
 
-        writer.println(protocol.RESPONSE_FLOOR);
+        writer.println(ProtocolServer.RESPONSE_FLOOR);
         writer.flush();
 
         // get the TimeSlot sent by client and parse it from Json
@@ -155,13 +164,13 @@ public class ServerClientHandler implements IClientHandler {
             writer.println(JsonObjectMapper.toJson(ts));
         }
 
-        writer.println(protocol.RESPONSE_OK);
+        writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
     }
 
     private void classRoomSchedule(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
 
-        writer.println(protocol.RESPONSE_TIMESLOT);
+        writer.println(ProtocolServer.RESPONSE_TIMESLOT);
         writer.flush();
 
         //queryClassRooms = JsonObjectMapper.parseJson( reader.lines().collect(Collectors.joining()),  ClassRoom.class );
@@ -170,7 +179,7 @@ public class ServerClientHandler implements IClientHandler {
         /** TODO HERE COME DB CONNEXION **/
         /** GET response    **/
 
-        writer.println(protocol.RESPONSE_OK);
+        writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
         /*
         String jsonResponse = createJson(response);
@@ -180,4 +189,30 @@ public class ServerClientHandler implements IClientHandler {
 
     }
 
+    private void initDatabase(BufferedReader reader, PrintWriter writer) throws IOException {
+        int tries = 0;
+        final int maxTry = 5;
+        String password = "root";
+        writer.println("Enter password :");
+        writer.flush();
+
+        // user has maxTry tries to enter the right password
+        while(!reader.readLine().equals(password) && tries < maxTry){
+            if(tries < 4) {
+                writer.println("Wrong password, " + (maxTry - tries) + " tries left");
+            } else {
+                writer.println("Wrong password, " + (maxTry - tries) + " try left");
+            }
+            writer.flush();
+            tries++;
+        }
+
+        // if user has tried 5 password, then disconnect him
+        if(tries == maxTry){
+            writer.println("disconnected");
+            done = true;
+            return;
+        }
+        toolBoxMySQL.initDatabase();
+    }
 }

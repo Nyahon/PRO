@@ -12,6 +12,7 @@ package database;
 
 import models.ClassRoom;
 import models.TimeSlot;
+import utils.ReaderICS;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -26,7 +27,8 @@ public class ToolBoxMySQL  {
     // Login informations for the connection to the database
     private static final String database = "daryll";
     private static final String account = "root";
-    private static final String password = "root";
+    private static final String password = "Wg4e9h!lqs";
+    private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
 
     private Connection connection;
     private String sql;
@@ -38,11 +40,6 @@ public class ToolBoxMySQL  {
             {"20:50:00", "21:35:00"}, {"21:35:00", "22:20:00"}};
 
     public ToolBoxMySQL(){
-        initConnection();
-        insertPeriods(periods);
-        // insert default classrooomequipment
-        insertClassroomEquipment(1, true,true,false,true);
-        closeConnection();
     }
 
     /**
@@ -57,6 +54,16 @@ public class ToolBoxMySQL  {
             e.printStackTrace();
             closeConnection();
         }
+    }
+
+    public void initDatabase() {
+        initConnection();
+        insertPeriods(periods);
+        // insert default classrooomequipment
+        insertClassroomEquipment(1, true,true,false,true);
+        ReaderICS readerICS = new ReaderICS(this);
+        readerICS.readICSFile(fileNameICS);
+        closeConnection();
     }
 
     /**

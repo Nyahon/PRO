@@ -44,8 +44,8 @@ public class ReaderICS {
     /**
      * Constructor of the class
      */
-    public ReaderICS(){
-        tool = new ToolBoxMySQL();
+    public ReaderICS(ToolBoxMySQL tool){
+        this.tool = tool;
     }
    /**
     * This method reads an ICS file with the name <code>fileRaeder</code> and send
@@ -54,9 +54,6 @@ public class ReaderICS {
     */
     public void readICSFile(String fileName){
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-
-            //init connection to MySQL database
-            tool.initConnection();
 
             // there is only 1 calender so its enough to take the 1st, w/o use .all()
             ICalendar ical = Biweekly.parse(br).first();
@@ -78,8 +75,6 @@ public class ReaderICS {
             }
         } catch (IOException e){
             e.printStackTrace();
-        } finally {
-            tool.closeConnection();
         }
     }
 
