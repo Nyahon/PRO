@@ -2,8 +2,7 @@ package controller;
 
 import models.TimeSlot;
 import network.client.ClientSocket;
-import network.protocol.protocol;
-import org.python.netty.handler.ssl.ApplicationProtocolConfig;
+import network.protocol.Protocol;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class Controller {
 
     public static void sendGUIdata(TimeSlot data) throws IOException {
         ClientSocket client = new ClientSocket();
-        client.connect(protocol.SERVER_IP, protocol.DEFAULT_PORT);
+        client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
         client.askForClassRoom(data);
     }
 

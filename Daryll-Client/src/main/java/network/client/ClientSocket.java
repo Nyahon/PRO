@@ -1,7 +1,7 @@
 package network.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import network.protocol.protocol;
+import network.protocol.Protocol;
 import models.ClassRoom;
 import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
@@ -12,7 +12,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
-import java.sql.Time;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -32,7 +31,7 @@ public class ClientSocket {
         os = new PrintWriter( socket.getOutputStream() );
         //   String resp = is.readLine();
         //   System.out.println( resp );
-        if( !is.readLine().equals(protocol.RESPONSE_CONNECTED) )
+        if( !is.readLine().equals(Protocol.RESPONSE_CONNECTED) )
             throw new IOException("error during connection");
 
         LOG.info("Connected to ___ serialisation.server " + server + " on port " + port + "." );
@@ -43,7 +42,7 @@ public class ClientSocket {
 
     public void disconnect() throws IOException {
 
-        os.println(protocol.CMD_BYE);
+        os.println(Protocol.CMD_BYE);
         os.flush();
 
         is.close();
@@ -60,10 +59,10 @@ public class ClientSocket {
     }
 
     public void askForTimeSlot(ClassRoom c) throws JsonProcessingException, ConnectException, IOException{
-        os.println(protocol.CMD_CLASSROOM);
+        os.println(Protocol.CMD_CLASSROOM);
         os.flush();
         String rsp;
-        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_CLASSROOM) )
+        if( !(rsp = is.readLine() ).equals(Protocol.RESPONSE_CLASSROOM) )
             throw new ConnectException(rsp);
 
         os.println(JsonObjectMapper.toJson( c ));
@@ -72,10 +71,10 @@ public class ClientSocket {
     }
 
     public void askForClassRoom(TimeSlot t) throws IOException {
-        os.println(protocol.CMD_TIMESLOT);
+        os.println(Protocol.CMD_FLOOR);
         os.flush();
         String rsp;
-        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_TIMESLOT) )
+        if( !(rsp = is.readLine() ).equals(Protocol.RESPONSE_TIMESLOT) )
             throw new ConnectException(rsp);
         os.println(JsonObjectMapper.toJson(t));
         os.flush();
