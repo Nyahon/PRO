@@ -1,6 +1,6 @@
-package serialisation.server;
+package network.server;
 
-import serialisation.protocol.protocol;
+import network.protocol.protocol;
 
 import java.io.IOException;
 import java.util.logging.Level;

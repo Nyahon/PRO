@@ -1,13 +1,12 @@
-package serialisation.server;
+package network.server;
+import models.ClassRoom;
+import network.serialisation.JsonObjectMapper;
+import models.TimeSlot;
 import database.ToolBoxMySQL;
-import serialisation.data.ClassRoom;
-import serialisation.data.JsonObjectMapper;
-import serialisation.data.TimeSlot;
-import serialisation.protocol.protocol;
+import network.protocol.protocol;
 
 import java.io.*;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;

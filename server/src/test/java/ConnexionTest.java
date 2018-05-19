@@ -2,7 +2,7 @@
 
 import java.io.IOException;
 
-import serialisation.client.ClientSocket;
+import network.client.ClientSocket;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;

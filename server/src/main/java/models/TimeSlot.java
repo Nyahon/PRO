@@ -1,4 +1,4 @@
-package serialisation.data;
+package models;
 
 import java.sql.Date;
 

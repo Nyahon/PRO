@@ -1,4 +1,4 @@
-package serialisation.data;
+package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

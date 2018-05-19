@@ -2,9 +2,9 @@
 
 import java.io.IOException;
 
-import serialisation.data.ClassRoom;
-import serialisation.data.JsonObjectMapper;
-import serialisation.data.TimeSlot;
+import models.ClassRoom;
+import network.serialisation.JsonObjectMapper;
+import models.TimeSlot;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;

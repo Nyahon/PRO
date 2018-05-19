@@ -1,4 +1,4 @@
-package serialisation.protocol;
+package network.protocol;
 
 /**
  * This class defines constants for the Roulette Protocol (version 2)

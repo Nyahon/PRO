@@ -1,4 +1,4 @@
-package parsing;
+package utils;
 
 import biweekly.Biweekly;
 import biweekly.ICalendar;

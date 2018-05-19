@@ -1,4 +1,4 @@
-package serialisation.server;
+package network.server;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;

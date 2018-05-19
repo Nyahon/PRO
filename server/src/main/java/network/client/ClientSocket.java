@@ -1,10 +1,10 @@
-package serialisation.client;
+package network.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import serialisation.data.ClassRoom;
-import serialisation.data.JsonObjectMapper;
-import serialisation.data.TimeSlot;
-import serialisation.protocol.protocol;
+import network.protocol.protocol;
+import models.ClassRoom;
+import network.serialisation.JsonObjectMapper;
+import models.TimeSlot;
 
 import java.io.BufferedReader;
 import java.io.IOException;

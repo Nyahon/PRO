@@ -10,8 +10,8 @@ package database;
  *
  */
 
-import serialisation.data.ClassRoom;
-import serialisation.data.TimeSlot;
+import models.ClassRoom;
+import models.TimeSlot;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -364,7 +364,7 @@ public class ToolBoxMySQL  {
     }
     /**
      * @brief update the classroom equipment for the specified classroom equipment.
-     * You have to set all the data.
+     * You have to set all the models.
      * @param idClassroomEquipment must exist in the database, used to find the equipment to update.
      * @param beamer does the classroom has a beamer ?
      * @param electricalSocket does the classroom has some electrical socket ?
@@ -406,7 +406,7 @@ public class ToolBoxMySQL  {
 
     /**
      * @brief update the floor equipment for the specified floor equipment.
-     * You have to set all the data.
+     * You have to set all the models.
      * @param idFloorEquipment must exist in the database, used to find the equipment to update.
      * @param toiletM does the floor has toilet for the male student ?
      * @param toiletF does the floor has toilet for the female student ?

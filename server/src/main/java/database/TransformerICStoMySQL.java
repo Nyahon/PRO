@@ -1,8 +1,6 @@
 package database;
 
-import parsing.ReaderICS;
-
-import javax.tools.Tool;
+import utils.ReaderICS;
 
 public class TransformerICStoMySQL {
 

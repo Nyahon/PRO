@@ -3,10 +3,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import serialisation.client.ClientSocket;
+import network.client.ClientSocket;
 import org.junit.rules.ExternalResource;
-import serialisation.protocol.protocol;
-import serialisation.server.ServerDaryll;
+import network.protocol.protocol;
+import network.server.ServerDaryll;
 
 /**
  *
