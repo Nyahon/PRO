@@ -6,7 +6,7 @@ to add, update or find some data */
 /* drop procedures */
 DROP PROCEDURE IF EXISTS addPeriod;
 DROP PROCEDURE IF EXISTS addFloor;
-DROP FUNCTION  IF EXISTS addClassroom;
+DROP PROCEDURE IF EXISTS addClassroom;
 DROP PROCEDURE IF EXISTS addTakePlace;
 DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
@@ -14,6 +14,7 @@ DROP PROCEDURE IF EXISTS updateClassroomLock;
 DROP PROCEDURE IF EXISTS updateClassroomEquipment;
 DROP PROCEDURE IF EXISTS updateFloorEquipment;
 DROP PROCEDURE IF EXISTS fullTimeTableFromRoom;
+DROP PROCEDURE IF EXISTS occupiedRoomsAtGivenSchedule;
 
 /* Create a new period */
 DELIMITER //
@@ -68,45 +69,45 @@ DELIMITER //
 DELIMITER //
 	CREATE PROCEDURE updateClassroomLock(IN classroomName VARCHAR(10), IN isLocked BOOL)
     BEGIN
-		UPDATE `Classroom` SET `isLocked`=isLocked WHERE `classroomName`=classroomName;
+		UPDATE Classroom SET isLocked=isLocked WHERE classroomName=classroomName;
 	END //
 
 /* Update the classroom equipment */
 DELIMITER //
 	CREATE PROCEDURE updateClassroomEquipment(IN idClassroomEquipment TINYINT UNSIGNED, IN beamer BOOL, IN electricalSocket BOOL, IN computers BOOL, IN board BOOL)
     BEGIN
-		UPDATE `ClassroomEquipment` 
-		SET `beamer`=beamer, `electricalSocket`=electricalSocket, `computers`=computers, `beamer`=board 
-		WHERE `idClassroomEquipment`=idClassroomEquipment;
+		UPDATE ClassroomEquipment 
+		SET beamer=beamer, electricalSocket=electricalSocket, computers=computers, beamer=board 
+		WHERE idClassroomEquipment=idClassroomEquipment;
 	END //
 
 /* Update the floor equipment */
 DELIMITER //
 	CREATE PROCEDURE updateFloorEquipment(IN idFloorEquipment TINYINT UNSIGNED, IN toiletM BOOL, IN toiletF BOOL, IN coffeeMachine BOOL, IN selecta BOOL, IN wayOut BOOL)
     BEGIN
-		UPDATE `FloorEquipment` 
-		SET `toiletM`=toiletM, `toiletF`=toiletF, `coffeeMachine`=coffeeMachine, `selecta`=selecta, `wayOut`=wayOut 
-		WHERE `idFloorEquipment`=idFloorEquipment;
+		UPDATE FloorEquipment 
+		SET toiletM=toiletM, toiletF=toiletF, coffeeMachine=coffeeMachine, selecta=selecta, wayOut=wayOut 
+		WHERE idFloorEquipment=idFloorEquipment;
 	END //
     
 DELIMITER //
 CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
     BEGIN
 		SELECT *
-        FROM `takeplace`
-        INNER JOIN `period`
-			ON `takeplace.idPeriod` = `period.idPeriod`
-        WHERE `takeplace.classroomName` = classroomName;
+        FROM TakePlace
+        INNER JOIN Period
+			ON TakePlace.idPeriod = Period.idPeriod
+        WHERE TakePlace.classroomName = classroomName;
 	END //
 
 DELIMITER //
 CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date date, IN idPeriod tinyint(3))
 	BEGIN
 		SELECT * 
-		FROM `takeplace`
-		INNER JOIN  `period`
-			ON `takeplace.idPeriod` = `period.idPeriod`
-		INNER JOIN `classroom`
-			ON `takeplace.classroomName` = `classroom.classroomName`
-		WHERE  `classroom.floorName` = floorname AND `takeplace.date` = date AND `period.idPeriod` >= idPeriod;
+		FROM TakePlace
+		INNER JOIN  Period
+			ON TakePlace.idPeriod = Period.idPeriod
+		INNER JOIN Classroom
+			ON TakePlace.classroomName = Classroom.classroomName
+		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND Period.idPeriod >= idPeriod;
 	END //

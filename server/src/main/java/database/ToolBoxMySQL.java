@@ -527,8 +527,8 @@ public class ToolBoxMySQL  {
           sql = "call occupiedRoomsAtGivenSchedule(?,?,?)";
 
           ps = connection.prepareStatement(sql);
-
-          ps.setString(1, t.getClassroom());
+          System.out.println(t.getDate().toGMTString());
+          ps.setString(1, t.floor());
           ps.setDate(2, t.getDate());
           ps.setInt(3, t.getIdPeriod());
 
@@ -540,7 +540,7 @@ public class ToolBoxMySQL  {
 
           while (result.next()) {
               TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
-                      result.getLong("date"),
+                      result.getDate("date").getTime(),
                       result.getInt("idPeriod"));
               timeTable.add(tmp);
           }
