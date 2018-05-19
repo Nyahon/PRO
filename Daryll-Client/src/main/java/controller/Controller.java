@@ -1,5 +1,6 @@
 package controller;
 
+import Utils.FloorFreePeriodMap;
 import models.ClassRoom;
 import models.TimeSlot;
 import network.client.ClientSocket;
@@ -7,15 +8,24 @@ import network.protocol.Protocol;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+
 
 public class Controller {
 
     private static final ClientSocket client = new ClientSocket();
 
-    public static List<TimeSlot> handleClientFloorRequest(TimeSlot data) throws IOException {
+    public static Map<String, Integer> handleClientFloorRequest(TimeSlot data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
         client.askForFloor(data);
-        return client.receiveTimeSlots();
+        FloorFreePeriodMap freePeriodMap = new FloorFreePeriodMap(data.floor());
+        List<TimeSlot> result = client.receiveTimeSlots();
+        for (TimeSlot t : result) {
+            int numberOfFreePeriod = t.getIdPeriod() - data.getIdPeriod();
+            freePeriodMap.insert(t.getClassroom(), numberOfFreePeriod);
+        }
+
+        return freePeriodMap.getFreeMap();
     }
 
     public static List<TimeSlot> handleClientClassroomRequest(TimeSlot data) throws IOException {
