@@ -27,7 +27,7 @@ public class ToolBoxMySQL  {
     // Login informations for the connection to the database
     private static final String database = "daryll";
     private static final String account = "root";
-    private static final String password = "Wg4e9h!lqs";
+    private static final String password = "mly.48ODR-51";
     private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
 
     private Connection connection;
@@ -513,32 +513,37 @@ public class ToolBoxMySQL  {
      * @return an ArrayList of TimeSlot containing the classroom occupied at a given time,
      *         null if it'a always free, an SQLException if something bad happens.
      */
-    public ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) throws SQLException{
+    public ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) {
       ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
       LOG.info("Getting the classrooms that are occupied during this schedule");
-  
-      Statement statement = connection.createStatement();
-      ResultSet result;
-      PreparedStatement ps;
-      sql =   "call occupiedRoomsAtGivenSchedule(?,?,?)";
-  
-      ps = connection.prepareStatement(sql);
-      
-      ps.setDate(1, t.getDate());
-      ps.setInt(2,t.getIdPeriod());
-      ps.setString(3,t.getClassroom());
-      result = ps.executeQuery();
-  
-      if (!result.next()) {
-        LOG.log(Level.SEVERE, "The time slot is always free...");
-        return null;
-      }
-  
-      while (result.next()){
-        TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
-                                    result.getLong("date"),
-                                    result.getInt("idPeriod"));
-        timeTable.add(tmp);
+
+      try {
+          Statement statement = connection.createStatement();
+          ResultSet result;
+          PreparedStatement ps;
+          sql = "call occupiedRoomsAtGivenSchedule(?,?,?)";
+
+          ps = connection.prepareStatement(sql);
+
+          ps.setString(1, t.getClassroom());
+          ps.setDate(2, t.getDate());
+          ps.setInt(3, t.getIdPeriod());
+
+          result = ps.executeQuery();
+
+          if (!result.next()) {
+              LOG.log(Level.SEVERE, "The time slot is always free...");
+              return null;
+          }
+
+          while (result.next()) {
+              TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
+                      result.getLong("date"),
+                      result.getInt("idPeriod"));
+              timeTable.add(tmp);
+          }
+      } catch (SQLException e){
+          e.printStackTrace();
       }
       return timeTable;
     }
