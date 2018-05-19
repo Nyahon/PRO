@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 
-public class Utils {
+public class PeriodManager {
 
     static {
         PERIODS_START = Arrays.asList(LocalTime.of(8,30), LocalTime.of(9,15),
@@ -25,7 +25,7 @@ public class Utils {
     public static final List<LocalTime> PERIODS_START;
     public static final List<LocalTime> PERIODS_END;
 
-    private Utils(){};
+    private PeriodManager(){};
 
     /**
      * This method computes the period number corresponding to a given time.
