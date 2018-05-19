@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class TimeSlot {
 
-    private ClassRoom classroom = ClassRoom.NO_CLASSROOM;
+    private ClassRoom classroom= new ClassRoom();
     private Date date;
     private int idPeriod;
 
