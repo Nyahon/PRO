@@ -29,22 +29,19 @@ Ce rapport, étant à rendre lors de la semaines treize, il ne contiendra pas le
 
 
 # Objectifs du projet
-
-
-
-
-
-# Concepts généraux
-
-
-
+L'objectif de notre projet et de proposer un programme, DARYLL, un utilitaire permettant l'obtention des disponiblités des salles de cours de la HEIG. À l'heure actuelle, aucun outil interne de l'HEIG-VD ne permet d'obtenir cette information de manière viable.
+Se basant principalement sur les données GAPS, DARYLL proposera une interface claire et rapide
+aux utilisateur à la recherche d'une salle libre pour un ou plusieurs horaire(s) donné(s) et l'inverse.
+Il permettra également d'imprimer un horaire selon les spécification de l'utilisateur.
 
 
 # Conception et architecture du projet
 
 ## Technologies utilisées
 
-### Le choix JavaFX
+### Java
+
+### JavaFX
 
 Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt. Notre choix s'est porté pour JavaFX car Java est le langage le plus récent que nous ayons appris.
 
@@ -57,9 +54,20 @@ Bien sûr, nous aurions pu également choisir Swing étant donné que le langage
 
 Ces deux fonctionnalités ont été les deux fonctionnalités les plus utilisés pour la partie graphique du projet.
 
-### Le choix de MySQL
+### Scene Builder
+
+### Maven
+
+### Git
+
+### GitHub
+
+### MySQL
 
 Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de BDR,  il s'agit du type que l'on maitrise le mieux et il est relativement bien adapté aux besoin de notre projet.
+
+
+
 
 ## Architecture de la solution
 
