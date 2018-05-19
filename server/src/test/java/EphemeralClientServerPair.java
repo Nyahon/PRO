@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 import network.client.ClientSocket;
 import org.junit.rules.ExternalResource;
-import network.protocol.protocol;
+import network.protocol.ProtocolServer;
 import network.server.ServerDaryll;
 
 /**
@@ -20,7 +20,7 @@ public class EphemeralClientServerPair extends ExternalResource {
 
     @Override
     protected void before() throws Throwable {
-        server = new ServerDaryll(protocol.DEFAULT_PORT);
+        server = new ServerDaryll(ProtocolServer.DEFAULT_PORT);
         server.startServer();
 
         client = new ClientSocket();

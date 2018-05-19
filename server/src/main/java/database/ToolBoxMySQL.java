@@ -478,30 +478,33 @@ public class ToolBoxMySQL  {
     /**
      * Receives a ClassRoom object, query the database to return the full schedule (aka multiple timetables) of a given room.
      * @param c the classroom to get it's time table
-     * @return A full schedule of the given room, null if it'a always free, an SQLException if something bad happens.
+     * @return A full schedule of the given room, empty if it'a always free, an SQLException if something bad happens.
      */
-    public ArrayList<TimeSlot> fullTimeTableFromRoom(ClassRoom c) throws SQLException{
+    public ArrayList<TimeSlot> classRoomSchedule(ClassRoom c) {
         ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
         LOG.info("Getting the timetable of a classroom");
-    
-        Statement statement = connection.createStatement();
-        ResultSet result;
-        PreparedStatement ps;
-        sql =   "call fullTimeTableFromRoom(?)";
-        
-        ps = connection.prepareStatement(sql);
-        ps.setString(1, c.getClassRoom());
-        result = ps.executeQuery();
-    
-        if (!result.next()) {
-          LOG.log(Level.SEVERE, "The classroom is always free.");
-          return null;
-        }
-        
-        while (result.next()){
-          TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
-                             result.getLong("date"), result.getInt("idPeriod"));
-          timeTable.add(tmp);
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet result;
+            PreparedStatement ps;
+            sql =   "call fullTimeTableFromRoom(?)";
+
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, c.getClassRoom());
+            result = ps.executeQuery();
+
+            if (!result.next()) {
+              LOG.log(Level.SEVERE, "The classroom is always free.");
+            }
+
+            while (result.next()){
+              TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
+                                 result.getLong("date"), result.getInt("idPeriod"));
+              timeTable.add(tmp);
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
         }
         return timeTable;
     }
@@ -511,7 +514,7 @@ public class ToolBoxMySQL  {
      * query the database to return all rooms that are occupied during this schedule.
      * @param t a TimeSlot containing the date and the starting and ending time.
      * @return an ArrayList of TimeSlot containing the classroom occupied at a given time,
-     *         null if it'a always free, an SQLException if something bad happens.
+     *         empty if it'a always free, an SQLException if something bad happens.
      */
     public ArrayList<TimeSlot> occupiedRoomsAtGivenSchedule(TimeSlot t) {
       ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
@@ -533,7 +536,6 @@ public class ToolBoxMySQL  {
 
           if (!result.next()) {
               LOG.log(Level.SEVERE, "The time slot is always free...");
-              return null;
           }
 
           while (result.next()) {

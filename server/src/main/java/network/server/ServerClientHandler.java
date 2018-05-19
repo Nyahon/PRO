@@ -51,9 +51,9 @@ public class ServerClientHandler implements IClientHandler {
                 case ProtocolServer.CMD_CLASSROOM:
 
                     try {
-                        getClassRoom(reader, writer);
+                        classRoomSchedule(reader, writer);
                     }catch (Exception e){ //TODO BETTER
-                        LOG.log(Level.SEVERE, "Error trying to get classroom: ", e);
+                        LOG.log(Level.SEVERE, "Error trying to get a classroom schedule: ", e);
                     }
                     break;
                 case ProtocolServer.CMD_TIMESLOT:
@@ -90,34 +90,13 @@ public class ServerClientHandler implements IClientHandler {
 
                 default:
 
-                    writer.println("You absolute spoon, there's a serialisation.server.ProtocolServer.");
+                    writer.println("Wrong command");
                     writer.flush();
+                    done = true;
                     break;
             }
             writer.flush();
         }
-
-    }
-
-    private void getClassRoom(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
-
-        writer.println(ProtocolServer.RESPONSE_CLASSROOM);
-        writer.flush();
-
-        queryTimeSlots = JsonObjectMapper.parseJsonArray( reader.lines().collect(Collectors.joining()),  TimeSlot.class );
-
-        /** CALL DB with query **/
-        /** TODO HERE COME DB CONNEXION **/
-        /** GET response    **/
-
-        writer.println(ProtocolServer.RESPONSE_OK);
-        writer.flush();
-
-        /*
-        String jsonResponse = createJson(response);
-        writer.println(jsonResponse);
-        writer.flush();
-        */
 
     }
 
@@ -153,11 +132,7 @@ public class ServerClientHandler implements IClientHandler {
         ArrayList<TimeSlot> floorSchedule = null;
 
         // request the schedule of every classroom in the same floor
-        try {
-            floorSchedule = toolBoxMySQL.occupiedRoomsAtGivenSchedule(timeSlotReferenceFloor);
-        } catch (SQLException e){
-            LOG.log(Level.SEVERE, "Error during database query to get schedule for a whole floor", e);
-        }
+        floorSchedule = toolBoxMySQL.occupiedRoomsAtGivenSchedule(timeSlotReferenceFloor);
 
         // send every TimeSlot as Json to client
         for(TimeSlot ts : floorSchedule){
@@ -168,25 +143,25 @@ public class ServerClientHandler implements IClientHandler {
         writer.flush();
     }
 
-    private void classRoomSchedule(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
+    private void classRoomSchedule(BufferedReader reader, PrintWriter writer) throws IOException {
 
-        writer.println(ProtocolServer.RESPONSE_TIMESLOT);
+        writer.println(ProtocolServer.RESPONSE_CLASSROOM);
         writer.flush();
 
-        //queryClassRooms = JsonObjectMapper.parseJson( reader.lines().collect(Collectors.joining()),  ClassRoom.class );
+        // get the ClassRoom sent by client and parse it from Json
+        ClassRoom classRoom = JsonObjectMapper.parseJson(reader.readLine(), ClassRoom.class);
+        toolBoxMySQL.initConnection();
+        ArrayList<TimeSlot> classRoomSchedule = null;
 
-        /** CALL DB with query **/
-        /** TODO HERE COME DB CONNEXION **/
-        /** GET response    **/
+        // query the schedule of the classroom
+        classRoomSchedule = toolBoxMySQL.classRoomSchedule(classRoom);
 
+        // send every TimeSlot as Json to client
+        for(TimeSlot ts : classRoomSchedule){
+            writer.println(JsonObjectMapper.toJson(ts));
+        }
         writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
-        /*
-        String jsonResponse = createJson(response);
-        writer.println(jsonResponse);
-        writer.flush();
-        */
-
     }
 
     private void initDatabase(BufferedReader reader, PrintWriter writer) throws IOException {
@@ -217,5 +192,6 @@ public class ServerClientHandler implements IClientHandler {
         toolBoxMySQL.initDatabase();
         writer.println("Database initialization successful !");
         writer.flush();
+        done = true;
     }
 }

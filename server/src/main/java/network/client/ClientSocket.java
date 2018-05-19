@@ -1,7 +1,7 @@
 package network.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import network.protocol.protocol;
+import network.protocol.ProtocolServer;
 import models.ClassRoom;
 import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
@@ -31,7 +31,7 @@ public class ClientSocket {
         os = new PrintWriter( socket.getOutputStream() );
         //   String resp = is.readLine();
         //   System.out.println( resp );
-        if( !is.readLine().equals(protocol.RESPONSE_CONNECTED) )
+        if( !is.readLine().equals(ProtocolServer.RESPONSE_CONNECTED) )
             throw new IOException("error during connection");
 
         LOG.info("Connected to ___ serialisation.server " + server + " on port " + port + "." );
@@ -40,7 +40,7 @@ public class ClientSocket {
 
     public void disconnect() throws IOException {
 
-        os.println(protocol.CMD_BYE);
+        os.println(ProtocolServer.CMD_BYE);
         os.flush();
 
         is.close();
@@ -57,10 +57,10 @@ public class ClientSocket {
     }
 
     public void askForTimeSlot(ClassRoom c) throws JsonProcessingException, ConnectException, IOException{
-        os.println(protocol.CMD_CLASSROOM);
+        os.println(ProtocolServer.CMD_CLASSROOM);
         os.flush();
         String rsp;
-        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_CLASSROOM) )
+        if( !(rsp = is.readLine() ).equals(ProtocolServer.RESPONSE_CLASSROOM) )
             throw new ConnectException(rsp);
 
         os.println(JsonObjectMapper.toJson( c ));
