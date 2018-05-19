@@ -1,28 +1,24 @@
 package models;
 
+import java.sql.Date;
+
 public class TimeSlot {
 
     private ClassRoom classroom = ClassRoom.NO_CLASSROOM;
-    private long timeStart = 0;
-    private long timeEnd = 0;
+    private Date date;
+    private int idPeriod;
 
     public TimeSlot(){}
     
-    public TimeSlot(String classroom, long timeStart) {
+    public TimeSlot(String classroom, long date) {
         this.classroom.setClassRoom( classroom );
-        this.timeStart = timeStart;
+        this.date = new Date(date);
     }
     
-    public TimeSlot(String classroom, long timeStart, long timeEnd) {
+    public TimeSlot(String classroom, long date, int idPeriod) {
         this.classroom.setClassRoom( classroom );
-        this.timeStart = timeStart;
-        this.timeEnd = timeEnd;
-    }
-
-    public TimeSlot(ClassRoom classroom, long timeStart, long timeEnd) {
-        this.classroom = classroom;
-        this.timeStart = timeStart;
-        this.timeEnd = timeEnd;
+        this.date = new Date(date);
+        this.idPeriod = idPeriod;
     }
 
     public String getClassroom() {
@@ -33,21 +29,20 @@ public class TimeSlot {
         this.classroom.setClassRoom( classroom );
 
     }
-
-    public long getTime_start() {
-        return timeStart;
-    }
-
-    public void setTime_start(long timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public long getTime_end() {
-        return timeEnd;
-    }
-
-    public void setTime_end(long timeEnd) {
-        this.timeEnd = timeEnd;
+    
+    public Date getDate() {
+        return date;
     }
     
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    
+    public int getIdPeriod() {
+        return idPeriod;
+    }
+    
+    public void setIdPeriod(int idPeriod) {
+        this.idPeriod = idPeriod;
+    }
 }
