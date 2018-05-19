@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.sql.Time;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -68,6 +69,16 @@ public class ClientSocket {
         os.println(JsonObjectMapper.toJson( c ));
         os.flush();
 
+    }
+
+    public void askForClassRoom(TimeSlot t) throws IOException {
+        os.println(protocol.CMD_TIMESLOT);
+        os.flush();
+        String rsp;
+        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_CLASSROOM) )
+            throw new ConnectException(rsp);
+        os.println(JsonObjectMapper.toJson(t));
+        os.flush();
     }
 
     public void askForClassRoom(List<TimeSlot> t){
