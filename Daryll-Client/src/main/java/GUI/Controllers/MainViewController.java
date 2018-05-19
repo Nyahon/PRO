@@ -17,11 +17,10 @@ package GUI.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.util.*;
 import java.util.logging.Logger;
 
 import GUI.Plan.PlanLoader;
@@ -186,9 +185,23 @@ public class MainViewController implements Initializable {
             }
         }
 
-        TimeSlot timeSlotToSend = new TimeSlot("H01", Instant.now().toEpochMilli(), 4 );
+        LocalDate localDate = dateField.getValue();
 
-        List<TimeSlot> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
+        //Date date = Date.valueOf(localDate);
+        //date.setHours(0);
+
+        //date.toGMTString()
+        //System.out.println( date.toGMTString());
+
+
+        java.sql.Date date = java.sql.Date.valueOf(localDate);
+        TimeSlot timeSlotToSend = new TimeSlot("A07", date.getTime(),2 );
+
+        System.out.println(date.toGMTString());
+
+        Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
+
+        System.out.println(timeSlotReceived.toString());
 
         try {
             //imgView.setImage(new Thread);
