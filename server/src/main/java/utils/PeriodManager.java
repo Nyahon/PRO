@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -30,7 +30,7 @@ public class PeriodManager {
     /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact end of a period, then the next
-     * period is returned.
+     * period is returned. Note : the first period corresponds to the period 0.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
@@ -50,13 +50,13 @@ public class PeriodManager {
                 period++;
             }
         }
-        return period + 1;
+        return period;
     }
 
     /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact start of a period, then the previous
-     * period is returned.
+     * period is returned. Note : the first period corresponds to the period 0.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
@@ -75,6 +75,6 @@ public class PeriodManager {
                 period--;
             }
         }
-        return period + 1;
+        return period;
     }
 }

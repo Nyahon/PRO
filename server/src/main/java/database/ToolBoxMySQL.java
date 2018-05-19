@@ -14,6 +14,7 @@ import models.ClassRoom;
 import models.TimeSlot;
 import utils.ReaderICS;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,12 +57,12 @@ public class ToolBoxMySQL  {
         }
     }
 
-    public void initDatabase() {
+    public void initDatabase(PrintWriter writer) {
         initConnection();
         insertPeriods(periods);
         // insert default classrooomequipment
         insertClassroomEquipment(1, true,true,false,true);
-        ReaderICS readerICS = new ReaderICS(this);
+        ReaderICS readerICS = new ReaderICS(this, writer);
         readerICS.readICSFile(fileNameICS);
         closeConnection();
     }

@@ -11,12 +11,10 @@ import database.ToolBoxMySQL;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.time.LocalTime;
 import java.util.*;
-
-import static Utils.PeriodManager.currentOrNextPeriod;
-import static Utils.PeriodManager.currentOrPreviousPeriod;
 
 /** A class to read an ICS file, parse its content and send it to a MySQL database.
  *  @author : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti
@@ -25,12 +23,14 @@ import static Utils.PeriodManager.currentOrPreviousPeriod;
 public class ReaderICS {
 
     private ToolBoxMySQL tool;
+    private PrintWriter writer;
 
     /**
      * Constructor of the class
      */
-    public ReaderICS(ToolBoxMySQL tool){
+    public ReaderICS(ToolBoxMySQL tool, PrintWriter writer){
         this.tool = tool;
+        this.writer = writer;
     }
    /**
     * This method reads an ICS file with the name <code>fileRaeder</code> and send
@@ -38,25 +38,37 @@ public class ReaderICS {
     * @param fileName the name of the file we need to parse  
     */
     public void readICSFile(String fileName){
-        try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try(BufferedReader br = new BufferedReader(new FileReader(fileName));
+            BufferedReader br2 = new BufferedReader(new FileReader(fileName))) {
 
             // there is only 1 calender so its enough to take the 1st, w/o use .all()
             ICalendar ical = Biweekly.parse(br).first();
 
             List<VEvent> events = ical.getEvents();
+            int numberOfEventsProcessed = 0;
+            int lastPercent = 0;
 
             // each event concerns a course from time X to Y at date Z in room R
             for (VEvent e : events){
+                numberOfEventsProcessed++;
 
                 ArrayList<Integer> periods = periodFromSchedule(e.getDateStart(), e.getDateEnd());
                 List<String> rooms = Arrays.asList(e.getLocation().getValue().split("\\s*,\\s*"));
 
-                for(int i = periods.get(0); i < periods.get(periods.size()-1); i++) {
+                for(int i : periods) {
                     for(String room : rooms) {
                         tool.insertClassroomWithCheck(room);
                         tool.insertTakePlace(new Date(e.getDateStart().getValue().getTime()), i, room);
                     }
                 }
+                // send the percentage of the file processed
+                int percent = numberOfEventsProcessed * 100 / events.size();
+                if (percent != lastPercent) {
+                    writer.println("Updating database " + lastPercent + "%");
+                    writer.flush();
+                    lastPercent = percent;
+                }
+
             }
         } catch (IOException e){
             e.printStackTrace();
@@ -83,8 +95,8 @@ public class ReaderICS {
         LocalTime startTime = LocalTime.of(calendarStart.get(Calendar.HOUR_OF_DAY), calendarStart.get(Calendar.MINUTE));
         LocalTime endTime = LocalTime.of(calendarEnd.get(Calendar.HOUR_OF_DAY), calendarEnd.get(Calendar.MINUTE));
 
-        int startPeriod = currentOrNextPeriod(startTime);
-        int endPeriod = currentOrPreviousPeriod(endTime);
+        int startPeriod = PeriodManager.currentOrNextPeriod(startTime);
+        int endPeriod = PeriodManager.currentOrPreviousPeriod(endTime);
 
         // add periods in ArrayList periods
         for(int i = startPeriod; i <= endPeriod; i++){

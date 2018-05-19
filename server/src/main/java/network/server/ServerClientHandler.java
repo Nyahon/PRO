@@ -202,7 +202,7 @@ public class ServerClientHandler implements IClientHandler {
             done = true;
             return;
         }
-        toolBoxMySQL.initDatabase();
+        toolBoxMySQL.initDatabase(writer);
         writer.println("Database initialization successful !");
         writer.flush();
         done = true;
