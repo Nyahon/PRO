@@ -75,7 +75,7 @@ public class ClientSocket {
         os.println(protocol.CMD_TIMESLOT);
         os.flush();
         String rsp;
-        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_CLASSROOM) )
+        if( !(rsp = is.readLine() ).equals(protocol.RESPONSE_TIMESLOT) )
             throw new ConnectException(rsp);
         os.println(JsonObjectMapper.toJson(t));
         os.flush();
