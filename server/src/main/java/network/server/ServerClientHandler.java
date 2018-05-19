@@ -210,9 +210,12 @@ public class ServerClientHandler implements IClientHandler {
         // if user has tried 5 password, then disconnect him
         if(tries == maxTry){
             writer.println("disconnected");
+            writer.flush();
             done = true;
             return;
         }
         toolBoxMySQL.initDatabase();
+        writer.println("Database initialization successful !");
+        writer.flush();
     }
 }
