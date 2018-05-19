@@ -17,8 +17,10 @@ package GUI.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -37,6 +39,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import models.TimeSlot;
+import controller.Controller;
 
 public class MainViewController implements Initializable {
 
@@ -146,7 +150,7 @@ public class MainViewController implements Initializable {
      * @brief This method is a handler that manage the click in a floor button. It
      * will show the free room from the stage.
      */
-    public void showFloor(Event event) {
+    public void showFloor(Event event) throws IOException{
 
         Button floorButton = (Button) event.getSource(); // get the button from the event
         String idButton = floorButton.getId(); // get the id of the button
@@ -181,6 +185,10 @@ public class MainViewController implements Initializable {
                 nextStRoch.setDisable(true);
             }
         }
+
+        TimeSlot timeSlotToSend = new TimeSlot("H01", Instant.now().toEpochMilli(), 4 );
+
+        List<TimeSlot> timeSlotReceived = Controller.handleClientRequest(timeSlotToSend);
 
         try {
             //imgView.setImage(new Thread);
