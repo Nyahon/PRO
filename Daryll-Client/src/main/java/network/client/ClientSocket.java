@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -78,6 +79,15 @@ public class ClientSocket {
             throw new ConnectException(rsp);
         os.println(JsonObjectMapper.toJson(t));
         os.flush();
+    }
+
+    public List<TimeSlot> receiveClassRooms() throws IOException {
+        List<TimeSlot> response = new ArrayList<>();
+        String rsp;
+        while (!(rsp = is.readLine()).equals(Protocol.RESPONSE_OK)) {
+            response.add(JsonObjectMapper.parseJson(rsp, TimeSlot.class));
+        }
+        return response;
     }
 
     public void askForClassRoom(List<TimeSlot> t){

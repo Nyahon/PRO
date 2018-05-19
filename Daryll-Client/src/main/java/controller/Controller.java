@@ -10,15 +10,11 @@ import java.util.List;
 
 public class Controller {
 
-    public static void sendGUIdata(TimeSlot data) throws IOException {
-        ClientSocket client = new ClientSocket();
-        client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
-        client.askForClassRoom(data);
-    }
+    private static final ClientSocket client = new ClientSocket();
 
     public static List<TimeSlot> handleClientRequest(TimeSlot data) throws IOException {
-        List<TimeSlot> response = new ArrayList<>();
-        sendGUIdata(data);
-        return response;
+        client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
+        client.askForClassRoom(data);
+        return client.receiveClassRooms();
     }
 }
