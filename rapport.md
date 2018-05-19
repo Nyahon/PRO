@@ -43,20 +43,17 @@ Il permettra également d'imprimer un horaire selon les spécification de l'util
 Parmi les deux langages de haut niveau proposés pour le projet (Java ou C++), nous avons choisi d'utiliser Java pour sa portabilité, grâce à la Java virtual machine, sa sécurité et ses performance dont le garbage collector est particulièrement interessant par le fait qu'il libère la mémoire automatiquement. En effet, cette fonctionnalité nous semble plus que nécessaire quant tenu du fait que nous allons utiliser un transcodeur pour passer d'un plan SVG à une image Java.
 De plus notre équipe est plus habile à programmer à l'aide du langage Java, et l'API JavaFX.   
 
-### JavaFX
+#### JavaFX
+Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt.
 
-Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt. Notre choix s'est porté pour JavaFX car Java est le langage le plus récent que nous ayons appris.
+Notre choix s'est porté pour JavaFX, successeur de Swing en tant que librairie de création d'interface graphiques officielle du langage. Le SDK de JavaFX est intégré au JDK standard Java SE et dispose de plusieurs fonctionnalités dont les plus importantes sont les suivantes :
 
-Bien sûr, nous aurions pu également choisir Swing étant donné que le langage est Java, mais nous avons déjà vu Swing dans le cadre du cours de programmation orientée objet. De ce fait, JavaFX nous apportait plus de challenge car c'était un outil encore inconnu à nos yeux.
+##### Scene FXML
+Le FXML est un langage inspiré du HTML ou XML et indique la définition de l'interface graphique utilisateur. Dans notre cas, nous avons plusieurs fichiers FXML qui contiendront toutes les balises nécessaires à la représentation d'une "view". Chaque balise représentera donc un composant de cette vue. Grâce au langage FXML, il sera possible de personaliser chacune des balises avec des attributs et des valeurs. Cette personalisation des balises peut être comparé au CSS pour les fichiers HTML.
 
- JavaFX est donc une API Java permettant la création d'interface graphique. Comme son nom l'indique, il a été conçu en Java et dispose de plusieurs fonctionnalités dont les plus importantes sont les suivantes :
-
-- FXML : Le FXML est un langage inspiré du HTML ou XML et indique la définition de l'interface graphique utilisateur. Dans notre cas, nous avons plusieurs fichiers FXML qui contiendront toutes les balises nécessaires à la représentation d'une "view". Chaque balise représentera donc un composant de cette vue. Grâce au langage FXML, il sera possible de personaliser chacune des balises avec des attributs et des valeurs. Cette personalisation des balises peut être comparé au CSS pour les fichiers HTML.
-- Scene Builder : Scene Builder est une application fournie avec l'installation de JavaFX. C'est un éditeur de fichier FXML. Il nous permet de voir l'affichage de la vue comme si le programme était en cours d'exécution et de pouvoir personaliser directement les composants graphiques à l'aide de la souris. Cette application nous simplifie donc la personalisation à la place de réécrire tout le FXML. Il est à noter que le fichier FXML et Scene Builder sont liés. La modification de l'un met à jour directement la vue de l'autre !
-
-Ces deux fonctionnalités ont été les deux fonctionnalités les plus utilisés pour la partie graphique du projet.
-
-### Scene Builder
+##### Scene Builder
+Scene Builder de Gluon permet de manipuler des objets JavaFX graphiquement et d'exporter ceux-ci dans un fichier .fxml interprétable et modifiable par la librairie graphique. Il nous permet également de voir l'interface comme si le programme était en cours d'exécution et de pouvoir y personaliser directement les composants graphiques à l'aide de la souris.
+Cette application nous simplifie donc la personalisation car il n'est pas nécessaire de réécrire tout le FXML. Il est à noter que le fichier FXML et Scene Builder sont liés. La modification de l'un met à jour directement la vue de l'autre !
 
 ### Maven
 
