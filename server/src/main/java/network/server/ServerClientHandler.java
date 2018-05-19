@@ -1,4 +1,5 @@
 package network.server;
+import models.AdvancedRequest;
 import models.ClassRoom;
 import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
@@ -7,6 +8,7 @@ import network.protocol.ProtocolServer;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,31 +51,31 @@ public class ServerClientHandler implements IClientHandler {
             LOG.log(Level.INFO, "COMMAND: {0}", command);
             switch (command.toUpperCase()) {
                 case ProtocolServer.CMD_CLASSROOM:
-
                     try {
                         classRoomSchedule(reader, writer);
                     }catch (Exception e){ //TODO BETTER
                         LOG.log(Level.SEVERE, "Error trying to get a classroom schedule: ", e);
                     }
                     break;
-                case ProtocolServer.CMD_TIMESLOT:
 
-                    try {
-                        getTimeSlots(reader, writer);
-                    }catch (Exception e){ //TODO BETTER
-                        LOG.log(Level.SEVERE, "Error trying to get free time slots: ", e);
-                    }
-                    break;
                 case ProtocolServer.CMD_FLOOR:
-
                     try {
                         floorSchedule(reader, writer);
                     }catch (Exception e){ //TODO BETTER
-                        LOG.log(Level.SEVERE, "Error trying to get free time slots for a whole floor: ", e);
+                        LOG.log(Level.SEVERE, "Error trying to get occupied time slots for a whole floor: ", e);
                     }
                     break;
-                case ProtocolServer.CMD_INITDATABASE:
 
+                case ProtocolServer.CMD_ADVANCED:
+
+                    try {
+                        advancedRequest(reader, writer);
+                    }catch (Exception e){ //TODO BETTER
+                        LOG.log(Level.SEVERE, "Error trying to get occupied time slots during advanced request: ", e);
+                    }
+                    break;
+
+                case ProtocolServer.CMD_INITDATABASE:
                     try {
                         initDatabase(reader, writer);
                     }catch (Exception e){ //TODO BETTER
@@ -82,42 +84,19 @@ public class ServerClientHandler implements IClientHandler {
                     break;
 
                 case ProtocolServer.CMD_BYE:
-
                     writer.println(ProtocolServer.RESPONSE_BYE);
                     writer.flush();
                     done = true;
                     break;
 
                 default:
-
-                    writer.println("Wrong command");
+                    writer.println("Unknown command");
                     writer.flush();
                     done = true;
                     break;
             }
             writer.flush();
         }
-
-    }
-
-    private void getTimeSlots(BufferedReader reader, PrintWriter writer) throws IOException, ClassNotFoundException {
-
-        writer.println(ProtocolServer.RESPONSE_TIMESLOT);
-        writer.flush();
-
-        //queryClassRooms = JsonObjectMapper.parseJson( reader.lines().collect(Collectors.joining()),  ClassRoom.class );
-
-        /** CALL DB with query **/
-        /** TODO HERE COME DB CONNEXION **/
-        /** GET response    **/
-
-        writer.println(ProtocolServer.RESPONSE_OK);
-        writer.flush();
-        /*
-        String jsonResponse = createJson(response);
-        writer.println(jsonResponse);
-        writer.flush();
-        */
 
     }
 
@@ -164,6 +143,40 @@ public class ServerClientHandler implements IClientHandler {
         writer.flush();
     }
 
+    private void advancedRequest(BufferedReader reader, PrintWriter writer) throws IOException{
+        writer.println(ProtocolServer.RESPONSE_ADVANCED);
+        writer.flush();
+
+        String answerJson;
+        ArrayList<AdvancedRequest> advancedRequests = new ArrayList<>();
+
+        while((answerJson = reader.readLine()) != ProtocolServer.RESPONSE_OK){
+            advancedRequests.add(JsonObjectMapper.parseJson(answerJson, AdvancedRequest.class));
+        }
+
+        ArrayList<TimeSlot> answer = new ArrayList<>();
+
+        // query the database to get the occupied timeslot
+        for(AdvancedRequest ar : advancedRequests){
+
+            // if the advancedRequest contains a classroom
+            if(!ar.getClassroom().equals(null)){
+
+
+                // if the advancedRequest contains a floor
+            } else if(!ar.getFloor().equals(null)){
+
+                // if the advancedRequest only contains the building
+            } else {
+
+            }
+        }
+
+        writer.println(ProtocolServer.RESPONSE_OK);
+        writer.flush();
+
+    }
+
     private void initDatabase(BufferedReader reader, PrintWriter writer) throws IOException {
         int tries = 0;
         final int maxTry = 5;
@@ -182,7 +195,7 @@ public class ServerClientHandler implements IClientHandler {
             tries++;
         }
 
-        // if user has tried 5 password, then disconnect him
+        // if user has tried 5 passwords, then disconnect him
         if(tries == maxTry){
             writer.println("disconnected");
             writer.flush();
