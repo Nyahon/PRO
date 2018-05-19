@@ -103,11 +103,12 @@ CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
 DELIMITER //
 CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date date, IN idPeriod tinyint(3))
 	BEGIN
-		SELECT * 
+		SELECT Classroom.classroomName, TakePlace.date, MIN(TakePlace.idPeriod) AS 'idPeriod'
 		FROM TakePlace
 		INNER JOIN  Period
 			ON TakePlace.idPeriod = Period.idPeriod
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
-		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND Period.idPeriod >= idPeriod;
+		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND Period.idPeriod >= idPeriod
+		GROUP BY (Classroom.classroomName);
 	END //

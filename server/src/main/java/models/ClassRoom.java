@@ -1,13 +1,8 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties({"NO_CLASSROOM"})
 public class ClassRoom {
 
-    public static final ClassRoom NO_CLASSROOM = new ClassRoom("NOCR");
     private String classRoom = "";
-
 
     public ClassRoom(){}
 

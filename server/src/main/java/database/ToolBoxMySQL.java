@@ -527,26 +527,26 @@ public class ToolBoxMySQL  {
           sql = "call occupiedRoomsAtGivenSchedule(?,?,?)";
 
           ps = connection.prepareStatement(sql);
-          System.out.println(t.getDate().toGMTString());
+
           ps.setString(1, t.floor());
           ps.setDate(2, t.getDate());
           ps.setInt(3, t.getIdPeriod());
 
           result = ps.executeQuery();
 
-          if (!result.next()) {
-              LOG.log(Level.SEVERE, "The time slot is always free...");
-          }
+
 
           while (result.next()) {
-              TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
-                      result.getDate("date").getTime(),
-                      result.getInt("idPeriod"));
+              String classroom = result.getString("classroomName");
+              Date date = result.getDate("date");
+              int idPeriod = result.getInt("idPeriod");
+              TimeSlot tmp = new TimeSlot(classroom,date.getTime(), idPeriod);
               timeTable.add(tmp);
           }
       } catch (SQLException e){
           e.printStackTrace();
       }
+        System.out.println("database : " + timeTable);
       return timeTable;
     }
 }
