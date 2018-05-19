@@ -40,6 +40,8 @@ Il permettra également d'imprimer un horaire selon les spécification de l'util
 ## Technologies utilisées
 
 ### Java
+Parmi les deux langages de haut niveau proposés pour le projet (Java ou C++), nous avons choisi d'utiliser Java pour sa portabilité, grâce à la Java virtual machine, sa sécurité et ses performance dont le garbage collector est particulièrement interessant par le fait qu'il libère la mémoire automatiquement. En effet, cette fonctionnalité nous semble plus que nécessaire quant tenu du fait que nous allons utiliser un transcodeur pour passer d'un plan SVG à une image Java.
+De plus notre équipe est plus habile à programmer à l'aide du langage Java, et l'API JavaFX.   
 
 ### JavaFX
 
