@@ -18,9 +18,14 @@
 
 
 # Introduction
+Durant le quatrième semestre de la section TIC, nous devons effectuer un projet en groupes de cinq ou six personnes. Le but est de rassembler les connaissances que les étudiants ont aquises jusqu'à maintenant à travers un projet conséquent. Nous devrons prendre conscience des difficultés liées au travail de groupe, apprendre à planifier un projet sur plusieurs mois, gérer les conflits interne et apprendre à avoir une vision globale de l'architecture du projet.
+Au terme du semestre, nous devons rendre un programme complet et fonctionnel, avec une documentation adéquate et être capables de le présenter et le défendre.
+Le projet dure seize semaines et vaut trois crédits. Le temps de travail est de 540 heures pour toute l’équipe, soit cinq heures par membres du projet, par semaine.
+Dans le cadre du projet, l'équipe de développement est composée du chef de projet Yohann Meyer, de son suppléent Loïc Frueh et des membres Aurélien Siu, Dejvid Muaremi, Labinot Rashiti, et Romain Gallay.
 
+Dans ce rapport, nous allons expliquer notre démarche de travail, les principaux choix de conception et d'implémentation. Il sera structuré selon le modèle fournis.
 
-
+Ce rapport, étant à rendre lors de la semaines treize, il ne contiendra pas les retours de la défense orale.
 
 
 # Objectifs du projet
@@ -41,7 +46,7 @@
 
 ### Le choix JavaFX
 
-Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt. Notre choix s'est porté pour JavaFX car Java est le langage le plus récent que nous ayons appris. 
+Dans le cadre du développement de DARYLL, il nous a été imposé de choisir entre trois API pour l'interface graphique. Il fallait donc choisir entre Swing, JavaFX et Qt. Notre choix s'est porté pour JavaFX car Java est le langage le plus récent que nous ayons appris.
 
 Bien sûr, nous aurions pu également choisir Swing étant donné que le langage est Java, mais nous avons déjà vu Swing dans le cadre du cours de programmation orientée objet. De ce fait, JavaFX nous apportait plus de challenge car c'était un outil encore inconnu à nos yeux.
 
@@ -54,7 +59,7 @@ Ces deux fonctionnalités ont été les deux fonctionnalités les plus utilisés
 
 ### Le choix de MySQL
 
-Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de BDR,  il s'agit du type que l'on maitrise le mieux et il est relativement bien adapté aux besoin de notre projet. 
+Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de BDR,  il s'agit du type que l'on maitrise le mieux et il est relativement bien adapté aux besoin de notre projet.
 
 ## Architecture de la solution
 
@@ -78,9 +83,9 @@ JavaFX intègre également la notion de MVC (Modèle-vue-contrôleur). Ils sont 
 
 #### Scène principale
 
-Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment). 
+Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment).
 
-La première tache a été de choisir le conteneur principal de DARYLL et pour cela, il y a plusieurs choix. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final. 
+La première tache a été de choisir le conteneur principal de DARYLL et pour cela, il y a plusieurs choix. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final.
 
 Nous avons essayé plusieurs conteneurs tel que le Anchor Pane, le Grid Pane ou le simple Pane mais notre choix a penché pour le Border Pane. Il aurait été possible de réaliser notre programme avec les autres conteneurs mentionnés, mais étant donné que nous avons décidé d'intégrer le redimentionnement de la fenêtre pour les plans des étages, l'implémentation aurait été plus compliquée et le Border Pane nous facilitait beaucoup plus la tâche à ce niveau là.
 
@@ -88,7 +93,7 @@ Le Border Pane est donc plus intéressant car il est déjà séparé en différe
 
 #### Scènes secondaires
 
-Par scènes secondaires, nous entendons les autres fenêtres ou pop-ups qui s'ajoute à la scène principale (fenêtre principal) de DARYLL. À la base, il n'y avais qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code. 
+Par scènes secondaires, nous entendons les autres fenêtres ou pop-ups qui s'ajoute à la scène principale (fenêtre principal) de DARYLL. À la base, il n'y avais qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code.
 
 Cette solution fonctionnait bien mais n'e donnait pas un rendu comme nous l'avi
 
@@ -96,13 +101,13 @@ ons désiré. De plus, le contrôleur de la fenêtre principale devenait facilem
 
 Après des recherches et reflexions, nous avons décidé de dispatcher le FXML en plusieurs parties. Dorénavant, chaque fenêtre graphique aura son propre fichier FXML et son propre contrôleur gérant les intéractions avec l'utilisateur de ladite fenêtre.
 
-Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôler pour effectuer les changements ! 
+Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôler pour effectuer les changements !
 
 #### Gestion des évènements selon le composant ciblé
 
-Cette aspect du projet mérite son propre titre de part la démarche réalisée afin d'optimiser le code. 
+Cette aspect du projet mérite son propre titre de part la démarche réalisée afin d'optimiser le code.
 
-Si nous regardons le mockup de base, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions. 
+Si nous regardons le mockup de base, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions.
 
 Alors évidemment, cela fonctionnera, mais n'oublions pas que le contrôleur est déjà très conséquent en terme de code. Si il faut encore rajouter une fonction par étage en sachant que Cheseaux en a environ dix, le code deviendrait illisible et donc moins maintenable.
 
@@ -110,13 +115,13 @@ La nouvelle solution adopté a été de factoriser ce code. En effet, les bouton
 
 L'idée est donc de faire une fonction permettant de faire ce changement pour chaque bouton d'étage. Idéalement la fonction devra prendre le bouton ciblé en paramètre mais malheureusement Scene Builder ne le permet pas...
 
-Après plusieurs recherches, nous avons trouvé une alternative que nous avons utilisée tout au long du projet pour l'interface graphique. En fait, cette alternative permet de retrouver le composant ciblé via un objet "Event". Cet objet "Event" nous permet de retrouver la scène où se trouve le composant ciblé puis de récupérer le composant via son ID. 
+Après plusieurs recherches, nous avons trouvé une alternative que nous avons utilisée tout au long du projet pour l'interface graphique. En fait, cette alternative permet de retrouver le composant ciblé via un objet "Event". Cet objet "Event" nous permet de retrouver la scène où se trouve le composant ciblé puis de récupérer le composant via son ID.
 
 Cela veut dire que la fonction gérant le changement de plan (showFloor) ne va pas prendre un bouton en paramètre mais un objet "Event" qui comprend le clic de la souris. C'est grâce à cette méthode que nous avons pu factoriser le code et le rendre plus propre.
 
 ### Redimensionnement
 
-L'interface graphique de DARYLL affiche les plans des étages de Cheseaux ou de Saint-Roch. Ces plans ont une certaine taille et cela nous amène à une question problématique sur l'affichage des plans sous différentes résolutions. Si nous imaginons notre application dans un cas concret d'utilisation, alors il se pourrait que l'utilisateur ait une mauvaise qualité d'image à cause de sa résolution d'écran. 
+L'interface graphique de DARYLL affiche les plans des étages de Cheseaux ou de Saint-Roch. Ces plans ont une certaine taille et cela nous amène à une question problématique sur l'affichage des plans sous différentes résolutions. Si nous imaginons notre application dans un cas concret d'utilisation, alors il se pourrait que l'utilisateur ait une mauvaise qualité d'image à cause de sa résolution d'écran.
 
 C'est pour cela que DARYLL offre la possbilité de d'aggrandir ou de rapetissir la fenêtre afin que l'affichage du plan soit en adéquation avec la résolution de l'utilisateur. Alors bien sûr, cette fonctionnalité paraît toute simple mais en réalité la mise en place est très difficile. Nous allons vous expliquer la démarche que nous avons eu tout au long du projet dans les paragraphes qui suivent.
 
@@ -162,7 +167,7 @@ Une étage est identifiée par son nom (A, B,...), et se caractérise par le cam
 Un étage est relié à plusieurs salles et possède un équipement qui lui est propre.
 
 
-`ClassroomEquipments` : 
+`ClassroomEquipments` :
 
 
 Cette table permet de spécifier en détails l'équipement présent dans une salle.
@@ -221,7 +226,7 @@ Permet d'ajouter un équipement à un des étages selon la définition ci-dessus
 Permet de changer le fait qu'une salle soit vérouillée ou non.
 
 
-`updateClassroomEquipment` : 
+`updateClassroomEquipment` :
 
 
 Permet de changer l'équipement d'une salle.
