@@ -15,30 +15,15 @@ import java.sql.Date;
 import java.time.LocalTime;
 import java.util.*;
 
+import static Utils.PeriodManager.currentOrNextPeriod;
+import static Utils.PeriodManager.currentOrPreviousPeriod;
+
 /** A class to read an ICS file, parse its content and send it to a MySQL database.
  *  @author : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti
  */
 
 public class ReaderICS {
 
-    static {
-        listStartPeriods = Arrays.asList(LocalTime.of(8,30), LocalTime.of(9,15),
-                LocalTime.of(10,25), LocalTime.of(11,15), LocalTime.of(12,00),
-                LocalTime.of(13,15), LocalTime.of(14,00), LocalTime.of(14,55),
-                LocalTime.of(15,45), LocalTime.of(16,35), LocalTime.of(17,20),
-                LocalTime.of(18,30), LocalTime.of(19,15), LocalTime.of(20,5),
-                LocalTime.of(20,50), LocalTime.of(21,35));
-
-        listEndPeriods = Arrays.asList(LocalTime.of(9,15), LocalTime.of(10,0),
-                LocalTime.of(11,10), LocalTime.of(12,0), LocalTime.of(12,45),
-                LocalTime.of(14,0), LocalTime.of(14,45), LocalTime.of(15,40),
-                LocalTime.of(16,30), LocalTime.of(17,20), LocalTime.of(18,5),
-                LocalTime.of(19,15), LocalTime.of(20,0), LocalTime.of(20,50),
-                LocalTime.of(21,35), LocalTime.of(22,20));
-    }
-
-    private static List<LocalTime> listStartPeriods;
-    private static List<LocalTime> listEndPeriods;
     private ToolBoxMySQL tool;
 
     /**
@@ -98,9 +83,6 @@ public class ReaderICS {
         LocalTime startTime = LocalTime.of(calendarStart.get(Calendar.HOUR_OF_DAY), calendarStart.get(Calendar.MINUTE));
         LocalTime endTime = LocalTime.of(calendarEnd.get(Calendar.HOUR_OF_DAY), calendarEnd.get(Calendar.MINUTE));
 
-        System.out.println("time start : " + startTime);
-        System.out.println("time end : " + endTime);
-
         int startPeriod = currentOrNextPeriod(startTime);
         int endPeriod = currentOrPreviousPeriod(endTime);
 
@@ -109,56 +91,5 @@ public class ReaderICS {
             periods.add(i);
         }
         return periods;
-    }
-
-    /**
-     * This method computes the period number corresponding to a given time.
-     * If the time corresponds to the exact end of a period, then the next
-     * period is returned.
-     * @param time   the time one wants to match on a period
-     * @return period  the period matching the given time
-     */
-    private int currentOrNextPeriod(LocalTime time){
-
-        int period;
-
-        // if start time corresponds to the end of a period, then return the next one
-        if(listEndPeriods.contains(time)){
-            period = listEndPeriods.indexOf(time) + 1;
-
-        } else {
-            period = 0;
-
-            // iterate on listEndPeriods until time is past current entry
-            while (time.isAfter(listEndPeriods.get(period))) {
-                period++;
-            }
-        }
-        return period + 1;
-    }
-
-    /**
-     * This method computes the period number corresponding to a given time.
-     * If the time corresponds to the exact start of a period, then the previous
-     * period is returned.
-     * @param time   the time one wants to match on a period
-     * @return period  the period matching the given time
-     */
-    private int currentOrPreviousPeriod(LocalTime time){
-
-        int period;
-
-        // if end time corresponds to the start of a period, then return the previous one
-        if(listStartPeriods.contains(time)){
-            period = listStartPeriods.indexOf(time) - 1;
-
-        } else {
-            period = listStartPeriods.size() - 1;
-
-            while (time.isBefore(listStartPeriods.get(period))) {
-                period--;
-            }
-        }
-        return period + 1;
     }
 }
