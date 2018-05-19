@@ -8,7 +8,7 @@ import org.python.netty.handler.ssl.ApplicationProtocolConfig;
 import java.io.IOException;
 
 public class Controller {
-    public void getGUIData(TimeSlot data) throws IOException {
+    public static void sendGUIdata(TimeSlot data) throws IOException {
         ClientSocket client = new ClientSocket();
         client.connect(protocol.SERVER_IP, protocol.DEFAULT_PORT);
         client.askForClassRoom(data);
