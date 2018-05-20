@@ -397,18 +397,16 @@ public class MainViewController implements Initializable {
      * @brief This method is a handler for the about option in the menu. It will
      * display a popup with a text that contains the informations.
      */
-    public void about() {
+    public void about() throws IOException {
         // Creating the stage
+        Parent root = FXMLLoader.load(getClass().getResource("/AboutView.fxml"));
+        Scene scene = new Scene(root);
+
+        // Launching the stage
         Stage stage = new Stage();
-        stage.setResizable(false);
         stage.setTitle("À propos");
-
-        // Creating the textArea
-        TextArea textArea = new TextArea("Texte à remplir...");
-        textArea.setEditable(false);
-
-        // Show all
-        Scene scene = new Scene(textArea);
+        stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.setScene(scene);
         stage.show();
     }
