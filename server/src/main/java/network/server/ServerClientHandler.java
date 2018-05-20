@@ -5,6 +5,7 @@ import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
 import database.ToolBoxMySQL;
 import network.protocol.ProtocolServer;
+import utils.ReaderICS;
 
 import java.io.*;
 import java.sql.SQLException;
@@ -161,15 +162,21 @@ public class ServerClientHandler implements IClientHandler {
 
             // if the advancedRequest contains a classroom
             if(!ar.getClassroom().equals(null)){
-
+                answer.addAll(toolBoxMySQL.classroomAdvancedSchedule(ar));
 
                 // if the advancedRequest contains a floor
             } else if(!ar.getFloor().equals(null)){
+                answer.addAll(toolBoxMySQL.floorAdvancedSchedule(ar));
 
                 // if the advancedRequest only contains the building
             } else {
-
+                answer.addAll(toolBoxMySQL.buildingAdvancedSchedule(ar));
             }
+        }
+
+        // send every TimeSlot as Json to client
+        for(TimeSlot ts : answer){
+            writer.println(JsonObjectMapper.toJson(ts));
         }
 
         writer.println(ProtocolServer.RESPONSE_OK);
@@ -203,7 +210,7 @@ public class ServerClientHandler implements IClientHandler {
             return;
         }
         toolBoxMySQL.initDatabase(writer);
-        writer.println("Database initialization successful !");
+        writer.println(ReaderICS.getMessageUpdateDB() + "success !");
         writer.flush();
         done = true;
     }

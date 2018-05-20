@@ -24,6 +24,7 @@ public class ReaderICS {
 
     private ToolBoxMySQL tool;
     private PrintWriter writer;
+    private static String messageUpdateDB = "Updating database : ";
 
     /**
      * Constructor of the class
@@ -63,12 +64,11 @@ public class ReaderICS {
                 }
                 // send the percentage of the file processed
                 int percent = numberOfEventsProcessed * 100 / events.size();
-                if (percent != lastPercent) {
-                    writer.println("Updating database " + lastPercent + "%");
-                    writer.flush();
+                if (percent != lastPercent && percent%5 == 0) {
                     lastPercent = percent;
+                    writer.println(messageUpdateDB + lastPercent + "%");
+                    writer.flush();
                 }
-
             }
         } catch (IOException e){
             e.printStackTrace();
@@ -103,5 +103,9 @@ public class ReaderICS {
             periods.add(i);
         }
         return periods;
+    }
+
+    public static String getMessageUpdateDB() {
+        return messageUpdateDB;
     }
 }

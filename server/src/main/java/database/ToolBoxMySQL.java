@@ -10,6 +10,7 @@ package database;
  *
  */
 
+import models.AdvancedRequest;
 import models.ClassRoom;
 import models.TimeSlot;
 import utils.ReaderICS;
@@ -549,6 +550,39 @@ public class ToolBoxMySQL  {
       }
         System.out.println("database : " + timeTable);
       return timeTable;
+    }
+
+    /**
+     * Query the database to return a TimeSlot array containing all occupied periods
+     * during the interval and in the classroom defined in the given <code>advancedRequest</code>.
+     * @param   advancedRequest a TimeSlot containing the date and the starting and ending time.
+     * @return  an ArrayList of TimeSlot containing the classroom occupied at a given time,
+     *         empty if it'a always free, an SQLException if something bad happens.
+     */
+    public ArrayList<TimeSlot> classroomAdvancedSchedule(AdvancedRequest advancedRequest){
+        return new ArrayList<>();
+    }
+
+    /**
+     * Query the database to return a TimeSlot array containing all occupied periods
+     * during the interval and in the floor defined in the given <code>advancedRequest</code>.
+     * @param   advancedRequest a TimeSlot containing the date and the starting and ending time.
+     * @return  an ArrayList of TimeSlot containing the classroom occupied at a given time,
+     *         empty if it'a always free, an SQLException if something bad happens.
+     */
+    public ArrayList<TimeSlot> floorAdvancedSchedule(AdvancedRequest advancedRequest){
+        return new ArrayList<>();
+    }
+
+    /**
+     * Query the database to return a TimeSlot array containing all occupied periods
+     * during the interval and in the building defined in the given <code>advancedRequest</code>.
+     * @param   advancedRequest a TimeSlot containing the date and the starting and ending time.
+     * @return  an ArrayList of TimeSlot containing the classroom occupied at a given time,
+     *         empty if it'a always free, an SQLException if something bad happens.
+     */
+    public ArrayList<TimeSlot> buildingAdvancedSchedule(AdvancedRequest advancedRequest){
+        return new ArrayList<>();
     }
 }
 
