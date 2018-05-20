@@ -496,16 +496,9 @@ public class ToolBoxMySQL  {
             ps = connection.prepareStatement(sql);
             ps.setString(1, c.getClassRoom());
             result = ps.executeQuery();
-
-            if (!result.next()) {
-              LOG.log(Level.SEVERE, "The classroom is always free.");
-            }
-
-            while (result.next()){
-              TimeSlot tmp = new TimeSlot(result.getString("classroomName"),
-                                 result.getLong("date"), result.getInt("idPeriod"));
-              timeTable.add(tmp);
-            }
+    
+            timeTable.addAll(receiveDataFromDB(result));
+            
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -536,16 +529,9 @@ public class ToolBoxMySQL  {
           ps.setInt(3, t.getIdPeriod());
 
           result = ps.executeQuery();
-
-
-
-          while (result.next()) {
-              String classroom = result.getString("classroomName");
-              Date date = result.getDate("date");
-              int idPeriod = result.getInt("idPeriod");
-              TimeSlot tmp = new TimeSlot(classroom,date.getTime(), idPeriod);
-              timeTable.add(tmp);
-          }
+          
+          timeTable.addAll(receiveDataFromDB(result));
+          
       } catch (SQLException e){
           e.printStackTrace();
       }
@@ -561,7 +547,33 @@ public class ToolBoxMySQL  {
      *         empty if it'a always free, an SQLException if something bad happens.
      */
     public ArrayList<TimeSlot> classroomAdvancedSchedule(AdvancedRequest advancedRequest){
-        return new ArrayList<>();
+        ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+        LOG.info("Advanced request : classroom");
+    
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet result;
+            PreparedStatement ps;
+            sql = "call classroomAdvancedSchedule(?,?,?,?,?)";
+            //place, date, idPeriodBegin, idPeriodEnd, classroomName
+        
+            ps = connection.prepareStatement(sql);
+        
+            ps.setInt(1, advancedRequest.getBuilding());
+            ps.setDate(2, advancedRequest.getDate());
+            ps.setInt(3, advancedRequest.getIdPeriodBegin());
+            ps.setInt(4, advancedRequest.getIdPeriodEnd());
+            ps.setString(5, advancedRequest.getClassroom());
+        
+            result = ps.executeQuery();
+        
+            timeTable.addAll(receiveDataFromDB(result));
+        
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        System.out.println("database : " + timeTable);
+        return timeTable;
     }
 
     /**
@@ -572,7 +584,33 @@ public class ToolBoxMySQL  {
      *         empty if it'a always free, an SQLException if something bad happens.
      */
     public ArrayList<TimeSlot> floorAdvancedSchedule(AdvancedRequest advancedRequest){
-        return new ArrayList<>();
+        ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+        LOG.info("Advanced request : classroom");
+    
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet result;
+            PreparedStatement ps;
+            sql = "call floorAdvancedSchedule(?,?,?,?,?)";
+            //place, date, idPeriodBegin, idPeriodEnd, classroomName
+        
+            ps = connection.prepareStatement(sql);
+        
+            ps.setInt(1, advancedRequest.getBuilding());
+            ps.setDate(2, advancedRequest.getDate());
+            ps.setInt(3, advancedRequest.getIdPeriodBegin());
+            ps.setInt(4, advancedRequest.getIdPeriodEnd());
+            ps.setString(5, advancedRequest.getFloor());
+        
+            result = ps.executeQuery();
+        
+            timeTable.addAll(receiveDataFromDB(result));
+        
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        System.out.println("database : " + timeTable);
+        return timeTable;
     }
 
     /**
@@ -583,7 +621,53 @@ public class ToolBoxMySQL  {
      *         empty if it'a always free, an SQLException if something bad happens.
      */
     public ArrayList<TimeSlot> buildingAdvancedSchedule(AdvancedRequest advancedRequest){
-        return new ArrayList<>();
+        ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+        LOG.info("Advanced request : classroom");
+    
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet result;
+            PreparedStatement ps;
+            sql = "call floorAdvancedSchedule(?,?,?,?)";
+            //place, date, idPeriodBegin, idPeriodEnd, classroomName
+        
+            ps = connection.prepareStatement(sql);
+        
+            ps.setInt(1, advancedRequest.getBuilding());
+            ps.setDate(2, advancedRequest.getDate());
+            ps.setInt(3, advancedRequest.getIdPeriodBegin());
+            ps.setInt(4, advancedRequest.getIdPeriodEnd());
+        
+            result = ps.executeQuery();
+        
+            timeTable.addAll(receiveDataFromDB(result));
+        
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        System.out.println("database : " + timeTable);
+        return timeTable;
+    }
+    
+    /**
+     * Take the result of the database and return a timetable.
+     * @param result the result of the database
+     * @return A timetable when there's a result and empty when the class are always free
+     * @throws SQLException when something bad happens while reading the result set.
+     */
+    private ArrayList<TimeSlot> receiveDataFromDB(ResultSet result) throws SQLException {
+        ArrayList<TimeSlot> timeTable = new ArrayList<>();
+        if(result == null){
+            return timeTable;
+        }
+        while (result.next()) {
+            String classroom = result.getString("classroomName");
+            Date date = result.getDate("date");
+            int idPeriod = result.getInt("idPeriod");
+            TimeSlot tmp = new TimeSlot(classroom,date.getTime(), idPeriod);
+            timeTable.add(tmp);
+        }
+        return timeTable;
     }
 }
 
