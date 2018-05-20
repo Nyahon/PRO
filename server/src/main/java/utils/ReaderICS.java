@@ -64,9 +64,9 @@ public class ReaderICS {
                 }
                 // send the percentage of the file processed
                 int percent = numberOfEventsProcessed * 100 / events.size();
-                if (percent != lastPercent && percent%5 == 0) {
+                if (percent != lastPercent) {
                     lastPercent = percent;
-                    writer.println(messageUpdateDB + lastPercent + "%");
+                    writer.print(messageUpdateDB + lastPercent + "%\r");
                     writer.flush();
                 }
             }
