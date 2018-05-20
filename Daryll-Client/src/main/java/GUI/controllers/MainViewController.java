@@ -191,7 +191,7 @@ public class MainViewController implements Initializable {
         // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
         String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
 
-        int periodRequested = 2;
+        int periodRequested = 4;
         TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
         Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);

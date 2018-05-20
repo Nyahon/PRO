@@ -50,7 +50,7 @@ public class PeriodManager {
                 period++;
             }
         }
-        return period + 1;
+        return period;
     }
 
     /**
@@ -75,6 +75,6 @@ public class PeriodManager {
                 period--;
             }
         }
-        return period + 1;
+        return period;
     }
 }

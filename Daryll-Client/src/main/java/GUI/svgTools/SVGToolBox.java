@@ -2,15 +2,14 @@
  * Module      : PRO
  * File        : .java
  * Date of Creation        : 31.03.2018
- *
+ * <p>
  * Description : This file contains the tools to parse, use and transcode
- *               svg files in the application Daryll. *
- *
+ * svg files in the application Daryll. *
+ * <p>
  * Remarks : -
  *
  * @author Früeh Loïc, Gallay Romain, Meyer Yohannn, Muaremi Dejvid, Siu Aurélien, Rashiti Labinot
  * @version 1.0
- *
  */
 
 package GUI.svgTools;
@@ -28,6 +27,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,10 @@ public class SVGToolBox {
 
             getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
 
-            transformTheDom(doc, svgInputStream.getClass().getResource(svg).getPath());
+            String lala = svgInputStream.getClass().getResource(svg).getPath();
+            System.out.println("string = " + lala);
+
+            transformTheDom(doc, lala);
 
         } catch (Exception e) {
             //e.printStackTrace();
@@ -78,14 +82,14 @@ public class SVGToolBox {
      * @param classroomName classroom name to apply color
      * @param colorValue  color to apply on the classroom
      */
-    public void getClassroomFromSVGNodeList(NodeList nodeList, String classroomName, String colorValue){
+    public void getClassroomFromSVGNodeList(NodeList nodeList, String classroomName, String colorValue) {
         for (int temp = 0; temp < nodeList.getLength(); temp++) {
             org.w3c.dom.Node nNode = nodeList.item(temp);
             if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
 
                 Element linkNode = (Element) nNode.getParentNode();
-                if(linkNode.getAttribute("id").equals(classroomName)) {
+                if (linkNode.getAttribute("id").equals(classroomName)) {
                     //System.out.println(eElement.getAttribute("id"));
                     //System.out.println(eElement.getAttribute("style"));
                     eElement.setAttribute("style", "fill:#00ff00");
@@ -104,7 +108,6 @@ public class SVGToolBox {
                 }
             }
         }
-
     }
 
 
@@ -117,8 +120,8 @@ public class SVGToolBox {
      * @param filename
      */
     static void transformTheDom(Document document,
-                                String filename){
-        try{
+                                String filename) {
+        try {
             //Get a TransformerFactory object.
             TransformerFactory xformFactory =
                     TransformerFactory.newInstance();
@@ -130,7 +133,7 @@ public class SVGToolBox {
             //Sets the standalone property in the first line of
             // the output file.
             transformer.setOutputProperty(
-                    OutputKeys.STANDALONE,"no");
+                    OutputKeys.STANDALONE, "no");
 
             //Get a DOMSource object that represents the
             // Document object
@@ -140,27 +143,12 @@ public class SVGToolBox {
             // screen. Then transform the DOM sending XML to
             // the screen.
             StreamResult scrResult =
-                    new StreamResult(System.out);
-            transformer.transform(source, null);
-
-            //Get an output stream for the output file.
-            PrintWriter outStream = new PrintWriter(filename);
-
-            //Get a StreamResult object that points to the
-            // output file.  Then transform the DOM sending XML
-            // code to the file
-            StreamResult fileResult =
-                    new StreamResult(outStream);
-            transformer.transform(source,fileResult);
+                    new StreamResult(new FileOutputStream(filename));
+            transformer.transform(source, scrResult);
         }//end try block
 
-        catch(Exception e){
-            //e.printStackTrace(System.err);
+        catch (Exception e) {
+            e.printStackTrace(System.err);
         }//end catch
     }//end transformTheDom
-
-        //System.out.println(getResourceAsStream());
-        //File f = new File("/plans/floor-A1.svg");
-        //updateSVG(f);
-
 }
