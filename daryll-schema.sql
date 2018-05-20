@@ -54,7 +54,7 @@ CREATE TABLE TakePlace (
 
 CREATE TABLE Floor (
     floorName VARCHAR(10) NOT NULL,
-    place TINYINT UNSIGNED NOT NULL,
+    building TINYINT UNSIGNED NOT NULL,
     idFloorEquipment TINYINT UNSIGNED,
     FOREIGN KEY (idFloorEquipment)
         REFERENCES FloorEquipment (idFloorEquipment),
