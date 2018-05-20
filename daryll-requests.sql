@@ -90,34 +90,33 @@ DELIMITER //
 		SET toiletM=toiletM, toiletF=toiletF, coffeeMachine=coffeeMachine, selecta=selecta, wayOut=wayOut 
 		WHERE idFloorEquipment=idFloorEquipment;
 	END //
-    
+
+# Query the database to return all rooms that are occupied during this schedule
 DELIMITER //
 CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
     BEGIN
-		SELECT *
+		SELECT date, idPeriod, classroomName
         FROM TakePlace
-        INNER JOIN Period
-			ON TakePlace.idPeriod = Period.idPeriod
-        WHERE TakePlace.classroomName = classroomName;
+        WHERE classroomName = classroomName AND date >= now();
 	END //
 
+# Querry the database to return all rooms that are occupied at a given schedule
 DELIMITER //
 CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date date, IN idPeriod tinyint(3))
 	BEGIN
-		SELECT Classroom.classroomName, TakePlace.date, MIN(TakePlace.idPeriod) AS 'idPeriod'
+		SELECT TakePlace.classroomName, TakePlace.date, MIN(TakePlace.idPeriod) AS 'idPeriod'
 		FROM TakePlace
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
 		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriod
 		GROUP BY (Classroom.classroomName);
 	END //
-#  ClassRoom classroom
-# public ArrayList<TimeSlot> classroomAdvancedSchedule(AdvancedRequest)
-# Receive an AdvancedRequest with classroom set, return a TimeSlot array containing every occupied period during the given interval.
+
+# Query the database to return all occupied periods during the given interval and in the given classroom
 DELIMITER //
 CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), classroomName varchar(10))
 	BEGIN
-		SELECT *
+		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
@@ -125,18 +124,12 @@ CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), date date, idPer
 			ON Classroom.floorName = Floor.floorName
 		WHERE Floor.building = building AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName;
 		END //
-    
-# Floor
-# TakePlace
-# Classroom
 
-
-# public ArrayList<TimeSlot> floorAdvancedSchedule(AdvancedRequest)
-# Receive an AdvancedRequest with floor set, return a TimeSlot array containing every occupied period during the given interval.
+# Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given floor
 DELIMITER //
 CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), floorName varchar(10))
 	BEGIN
-		SELECT *
+		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
@@ -145,12 +138,11 @@ CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), date date, idPeriodB
 		WHERE Floor.building = building AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName;
 		END //
 
-# public ArrayList<TimeSlot> buildingAdvancedSchedule(AdvancedRequest)
-# Receive an AdvancedRequest with neither floor nor classrom set, return a TimeSlot array containing every occupied period during the given interval.
+# Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given building
 DELIMITER //
 CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3))
 	BEGIN
-		SELECT *
+		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
