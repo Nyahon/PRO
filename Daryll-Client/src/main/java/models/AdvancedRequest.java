@@ -1,31 +1,21 @@
 package models;
 
-import utils.PeriodManager;
-
 import java.sql.Date;
 
 public class AdvancedRequest {
-    private String building;
+
+    /**
+     * The building, 0 corresponds to Cheseaux and 1 to St-Roch
+     */
+    private int building;
     private Date date;
     private int idPeriodBegin;
-    private int idPeriodEnd = PeriodManager.PERIODS_END.size();
+    private int idPeriodEnd;
     private String floor;
-    private String classroom;
+    private ClassRoom classroom;
 
-
-
-    public AdvancedRequest(String building, Date date, int idPeriodBegin,
-                           String floor, String classroom) {
-
-        this.building = building;
-        this.date = date;
-        this.idPeriodBegin = idPeriodBegin;
-        this.floor = floor;
-        this.classroom = classroom;
-    }
-
-    public AdvancedRequest(String building, Date date, int idPeriodBegin, int idPeriodEnd,
-                           String floor, String classroom) {
+    public AdvancedRequest(int building, Date date, int idPeriodBegin, int idPeriodEnd,
+                           String floor, ClassRoom classroom) {
 
         this.building = building;
         this.date = date;
@@ -35,11 +25,11 @@ public class AdvancedRequest {
         this.classroom = classroom;
     }
 
-    public String getBuilding() {
+    public int getBuilding() {
         return building;
     }
 
-    public void setBuilding(String building) {
+    public void setBuilding(int building) {
         this.building = building;
     }
 
@@ -76,10 +66,10 @@ public class AdvancedRequest {
     }
 
     public String getClassroom() {
-        return classroom;
+        return classroom.getClassRoom();
     }
 
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
+    public void setClassroom(ClassRoom classroom) {
+        this.classroom = new ClassRoom(classroom.getClassRoom());
     }
 }
