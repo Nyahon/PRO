@@ -66,7 +66,7 @@ public class ReaderICS {
                 int percent = numberOfEventsProcessed * 100 / events.size();
                 if (percent != lastPercent && percent%5 == 0) {
                     lastPercent = percent;
-                    writer.println(messageUpdateDB + lastPercent + "%");
+                    writer.print(messageUpdateDB + lastPercent + "%\r");
                     writer.flush();
                 }
             }
