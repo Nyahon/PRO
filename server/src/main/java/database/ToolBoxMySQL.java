@@ -29,7 +29,7 @@ public class ToolBoxMySQL  {
     // Login informations for the connection to the database
     private static final String database = "daryll";
     private static final String account = "root";
-    private static final String password = "mly.48ODR-51";
+    private static final String password = "root";
     private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
 
     private Connection connection;
@@ -535,7 +535,6 @@ public class ToolBoxMySQL  {
       } catch (SQLException e){
           e.printStackTrace();
       }
-        System.out.println("database : " + timeTable);
       return timeTable;
     }
 
