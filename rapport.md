@@ -293,6 +293,18 @@ https://dev.mysql.com/doc/refman/5.7/en/
 
 ## Interface graphique
 
+Oracle, 2013/08, "JavaFX Scene Builder User Guide", https://docs.oracle.com/javafx/scenebuilder/1/user_guide/library-panel.htm
+
+Stackoverflow, 2013/08, "How to find an element with an ID in JavaFX?",  https://stackoverflow.com/questions/12201712/how-to-find-an-element-with-an-id-in-javafx
+
+Oracle, 2013/09, "Getting Started with JavaFX", https://docs.oracle.com/javafx/2/get_started/form.htm
+
+Stackoverflow, 2014/09, "JavaFX getting scene from a controller", https://stackoverflow.com/questions/26060859/javafx-getting-scene-from-a-controller
+
+Oracle, 2014/01, "Designing GUI with the librarie panel (release 2)", https://docs.oracle.com/javase/8/scene-builder-2/user-guide/library-panel.htm
+
+Labri.fr, 2014/08, "Introduction à JavaFX", http://www.labri.fr/perso/johnen/pdf/IUT-Bordeaux/UMLCours/IntroductionJavaFX-V1.pdf
+
 
 
 ## Communication client serveur
