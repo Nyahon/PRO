@@ -183,11 +183,12 @@ public class ToolBoxMySQL  {
         char levelChar = classname.charAt(0);
         int levelInt;
 
-        if(levelChar > 'k'){
+        if(Character.toLowerCase(levelChar) > 'k'){
             levelInt = 1;
         } else {
             levelInt = 0;
         }
+
         insertClassroom(classname, false, levelInt, 1);
 
     }
