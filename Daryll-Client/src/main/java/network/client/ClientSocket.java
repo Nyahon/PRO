@@ -94,6 +94,7 @@ public class ClientSocket {
             os.flush();
         }
         os.println(Protocol.RESPONSE_OK);
+        os.flush();
     }
 
     public List<TimeSlot> receiveTimeSlots() throws IOException {

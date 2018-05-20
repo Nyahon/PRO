@@ -8,11 +8,11 @@ public class AdvancedRequest {
     private int building;
     private Date date;
     private int idPeriodBegin;
-    private int idPeriodEnd = PeriodManager.PERIODS_END.size();
+    private int idPeriodEnd = PeriodManager.PERIODS_END.size()-1;
     private String floor;
     private String classroom;
 
-
+    public AdvancedRequest(){};
 
     public AdvancedRequest(int building, Date date, int idPeriodBegin,
                            String floor, String classroom) {
