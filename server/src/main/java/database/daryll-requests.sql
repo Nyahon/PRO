@@ -8,13 +8,16 @@ DROP PROCEDURE IF EXISTS addPeriod;
 DROP PROCEDURE IF EXISTS addFloor;
 DROP PROCEDURE IF EXISTS addClassroom;
 DROP PROCEDURE IF EXISTS addTakePlace;
-DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS addClassroomEquipment;
+DROP PROCEDURE IF EXISTS addFloorEquipment;
 DROP PROCEDURE IF EXISTS updateClassroomLock;
 DROP PROCEDURE IF EXISTS updateClassroomEquipment;
 DROP PROCEDURE IF EXISTS updateFloorEquipment;
 DROP PROCEDURE IF EXISTS fullTimeTableFromRoom;
 DROP PROCEDURE IF EXISTS occupiedRoomsAtGivenSchedule;
+DROP PROCEDURE IF EXISTS classroomAdvancedSchedule;
+DROP PROCEDURE IF EXISTS floorAdvancedSchedule;
+DROP PROCEDURE IF EXISTS buildingAdvancedSchedule;
 
 /* Create a new period */
 DELIMITER //
@@ -33,8 +36,7 @@ DELIMITER //
     
 /* Create a new classroom */
 DELIMITER //
-	CREATE PROCEDURE addClassroom(IN classroomName VARCHAR(10), IN isLocked BOOL, 
-    IN floorName VARCHAR(10), idClassroomEquipment TINYINT UNSIGNED)
+	CREATE PROCEDURE addClassroom(IN classroomName VARCHAR(10), IN isLocked BOOL, IN floorName VARCHAR(10), idClassroomEquipment TINYINT UNSIGNED)
     BEGIN
 		INSERT INTO Classroom(classroomName, isLocked, floorName, idClassroomEquipment) VALUES
         (classroomName, isLocked, floorName, idClassroomEquipment);
@@ -49,8 +51,7 @@ DELIMITER //
     
 /* Create a new equipment */
 DELIMITER //
-	CREATE PROCEDURE addClassroomEquipment(IN beamer BOOL, IN electricalSocket BOOL,
-    IN computers BOOL, IN board BOOL)
+	CREATE PROCEDURE addClassroomEquipment(IN beamer BOOL, IN electricalSocket BOOL, IN computers BOOL, IN board BOOL)
     BEGIN
 		INSERT INTO ClassroomEquipment(beamer, electricalSocket, computers, board) VALUES
         (beamer, electricalSocket, computers, board);
@@ -105,10 +106,55 @@ CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date 
 	BEGIN
 		SELECT Classroom.classroomName, TakePlace.date, MIN(TakePlace.idPeriod) AS 'idPeriod'
 		FROM TakePlace
-		INNER JOIN  Period
-			ON TakePlace.idPeriod = Period.idPeriod
 		INNER JOIN Classroom
 			ON TakePlace.classroomName = Classroom.classroomName
-		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND Period.idPeriod >= idPeriod
+		WHERE  Classroom.floorName = floorname AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriod
 		GROUP BY (Classroom.classroomName);
 	END //
+#  ClassRoom classroom
+# public ArrayList<TimeSlot> classroomAdvancedSchedule(AdvancedRequest)
+# Receive an AdvancedRequest with classroom set, return a TimeSlot array containing every occupied period during the given interval.
+DELIMITER //
+CREATE PROCEDURE classroomAdvancedSchedule(place tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), classroomName varchar(10))
+	BEGIN
+		SELECT *
+        FROM TakePlace
+		INNER JOIN Classroom
+			ON TakePlace.classroomName = Classroom.classroomName
+		INNER JOIN Floor
+			ON Classroom.floorName = Floor.floorName
+		WHERE Floor.place = place AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName;
+		END //
+    
+# Floor
+# TakePlace
+# Classroom
+
+
+# public ArrayList<TimeSlot> floorAdvancedSchedule(AdvancedRequest)
+# Receive an AdvancedRequest with floor set, return a TimeSlot array containing every occupied period during the given interval.
+DELIMITER //
+CREATE PROCEDURE floorAdvancedSchedule(place tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), floorName varchar(10))
+	BEGIN
+		SELECT *
+        FROM TakePlace
+		INNER JOIN Classroom
+			ON TakePlace.classroomName = Classroom.classroomName
+		INNER JOIN Floor
+			ON Classroom.floorName = Floor.floorName
+		WHERE Floor.place = place AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName;
+		END //
+
+# public ArrayList<TimeSlot> buildingAdvancedSchedule(AdvancedRequest)
+# Receive an AdvancedRequest with neither floor nor classrom set, return a TimeSlot array containing every occupied period during the given interval.
+DELIMITER //
+CREATE PROCEDURE buildingAdvancedSchedule(place tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3))
+	BEGIN
+		SELECT *
+        FROM TakePlace
+		INNER JOIN Classroom
+			ON TakePlace.classroomName = Classroom.classroomName
+		INNER JOIN Floor
+			ON Classroom.floorName = Floor.floorName
+		WHERE Floor.place = place AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd;
+		END //
