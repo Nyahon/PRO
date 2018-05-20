@@ -18,6 +18,7 @@ package GUI.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -40,6 +41,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
+import utils.PeriodManager;
 
 public class MainViewController implements Initializable {
 
@@ -73,6 +75,10 @@ public class MainViewController implements Initializable {
     private Label currentRoomLabel;
     @FXML
     private Button enterPositionButton;
+    @FXML
+    private Spinner hourSpinner;
+    @FXML
+    private Spinner minuteSpinner;
     @FXML
     private Label guiConsole;
     @FXML
@@ -188,10 +194,13 @@ public class MainViewController implements Initializable {
 
         LocalDate localDate = dateField.getValue();
 
+        LocalTime localTime = LocalTime.of((Integer) hourSpinner.valueProperty().getValue(), (Integer)minuteSpinner.valueProperty().getValue());
+
         // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
         String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
 
-        int periodRequested = 4;
+        int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
+        System.out.println(periodRequested);
         TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
         Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);

@@ -27,13 +27,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.io.PrintWriter;
 
 
 public class SVGToolBox {
@@ -109,7 +107,6 @@ public class SVGToolBox {
             }
         }
     }
-
 
     /**
      * @brief This is a utility method that is used to execute code
