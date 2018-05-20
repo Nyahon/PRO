@@ -7,19 +7,21 @@ import java.util.List;
 public class PeriodManager {
 
     static {
-        PERIODS_START = Arrays.asList(LocalTime.of(8,30), LocalTime.of(9,15),
+        PERIODS_START = Arrays.asList(LocalTime.of(0,00), LocalTime.of(7,00),
+                LocalTime.of(7,45), LocalTime.of(8,30), LocalTime.of(9,15),
                 LocalTime.of(10,25), LocalTime.of(11,15), LocalTime.of(12,00),
                 LocalTime.of(13,15), LocalTime.of(14,00), LocalTime.of(14,55),
                 LocalTime.of(15,45), LocalTime.of(16,35), LocalTime.of(17,20),
                 LocalTime.of(18,30), LocalTime.of(19,15), LocalTime.of(20,5),
-                LocalTime.of(20,50), LocalTime.of(21,35));
+                LocalTime.of(20,50), LocalTime.of(21,35), LocalTime.of(22,20));
 
-        PERIODS_END = Arrays.asList(LocalTime.of(9,15), LocalTime.of(10,0),
+        PERIODS_END = Arrays.asList(LocalTime.of(7,00), LocalTime.of(7,45),
+                LocalTime.of(8,30), LocalTime.of(9,15), LocalTime.of(10,0),
                 LocalTime.of(11,10), LocalTime.of(12,0), LocalTime.of(12,45),
                 LocalTime.of(14,0), LocalTime.of(14,45), LocalTime.of(15,40),
                 LocalTime.of(16,30), LocalTime.of(17,20), LocalTime.of(18,5),
                 LocalTime.of(19,15), LocalTime.of(20,0), LocalTime.of(20,50),
-                LocalTime.of(21,35), LocalTime.of(22,20));
+                LocalTime.of(21,35), LocalTime.of(22,20), LocalTime.of(23,59));
     }
 
     public static final List<LocalTime> PERIODS_START;
@@ -30,14 +32,13 @@ public class PeriodManager {
     /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact end of a period, then the next
-     * period is returned. Note : the first period corresponds to the period 0.
+     * period is returned.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
     public static int currentOrNextPeriod(LocalTime time){
 
         int period;
-
         // if start time corresponds to the end of a period, then return the next one
         if(PERIODS_END.contains(time)){
             period = PERIODS_END.indexOf(time) + 1;
@@ -56,7 +57,7 @@ public class PeriodManager {
     /**
      * This method computes the period number corresponding to a given time.
      * If the time corresponds to the exact start of a period, then the previous
-     * period is returned. Note : the first period corresponds to the period 0.
+     * period is returned.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
