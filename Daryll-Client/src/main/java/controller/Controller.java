@@ -62,8 +62,10 @@ public class Controller {
         PrintWriter writer = new PrintWriter("classroom-request.txt", "UTF-8");
         writer.println("Classe: " + clientRequest.getClassRoom());
         writer.println("-------------------------------------------------");
+        writer.flush();
         for (int period : periods) {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
+            writer.flush();
         }
 
     }
