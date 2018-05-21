@@ -213,7 +213,8 @@ public class ServerClientHandler implements IClientHandler {
             return;
         }
         toolBoxMySQL.initDatabase(writer);
-        writer.println(ReaderICS.getMessageUpdateDB() + "success !");
+        writer.println(ReaderICS.getMessageUpdateDB() + "success !" +
+                "                                                                     ");
         writer.flush();
         done = true;
     }
