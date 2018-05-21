@@ -190,16 +190,17 @@ Cette méthode nous permet de répondre à deux demandes à la fois, la possibil
 
 ## Difficultées rencontrées
 ### Interface graphique
-Il y a de fortes chances que suite aux informations données dans les précédents points du rapport, les points critiques ont déjà été remarqués.  
-
-Pour l'interface graphique, la plus grosse difficulté a été la mise en place de l'affichage des plans des étages en gérant le redimentionnement et le fait que les salles doivent être coloré pour indiquer leur niveau de disponibilité. Cela a été vraiment le plus gros soucis dans cette partie. Nous voulions offrir à l'utilisateur cette fonctionnalité afin que l'utilisation de DARYLL soit des plus agréables et c'est chose faîte.
-
-Bien sûr, nous sommes passés par plusieurs chemins pour avoir ce rendu. Nous nous sommes tout de même dit que, dans les pires des cas, nous afficherons un simple tableau avec les salles et les informations nécessaires si l'affichage des plans étaient trop compliqués. Cependant, il faut avouer que cela aurait été moins remarquable.
-
-Nous avons eu d'autres difficultés comme le fait de gérer les interactions entre vues et contrôleurs, certains composants graphiques qui ne répondaient pas à nos demandes mais au final ce n'est rien de très grave.
+Il y a de fortes chances que suite aux informations données dans les précédents points du rapport, les points critiques ont déjà été remarqués.
+Pour l'interface graphique, la plus grosse difficulté a été la mise en place de l'affichage des plans des étages en gérant le redimentionnement et le fait que les salles doivent être coloré pour indiquer leur niveau de disponibilité.
+Cela a été vraiment le plus gros soucis dans cette partie. Nous voulions offrir à l'utilisateur cette fonctionnalité afin que l'utilisation de DARYLL soit des plus agréables et c'est chose faîte.
+Bien sûr, nous sommes passés par plusieurs chemins pour avoir ce rendu.
+Nous nous sommes tout de même dit que, dans les pires des cas, nous afficherons un simple tableau avec les salles et les informations nécessaires si l'affichage des plans étaient trop compliqués. Cependant, il faut avouer que cela aurait été moins remarquable.
+Nous avons eu d'autres difficultés comme le fait de gérer les interactions entre vues et contrôleurs, certains composants graphiques ne répondant pas à nos demandes, mais au final ce n'est rien de très grave.
 ### Restructurer les plans
-### Parcourir l'ICS
+Les salles étant représenté par des triangles sur le plan, il a fallu les regrouper afin d'obtenir une salle dont on pourra modifier sa couleur en temps réel.
+La modification n'est pas particulièrement difficile mais elle prend énormément de temps, mais le résultat final est très beau.
 ### Gestion des dates
+Malheureusement, les dates SQL ne sont pas parfaitement supportées par Java, ceci nous a donné beaucoup de fil à retordre afin de générer une requête SQL, qui sera envoyée à la base de données.
 
 
 # Test réalisé
