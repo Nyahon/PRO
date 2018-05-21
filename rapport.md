@@ -1,5 +1,4 @@
 # Page de titre
-
 - avec logo HES-SO et HEIG-VD
 - titre du projet
 - indication nature du rapport (Cahier des charges, Manuel utilisateur, ...)
@@ -78,8 +77,37 @@ Inkscape, le logiciels libre de dessin vectoriel sous licence GNU GPL. Il nous a
 Docker, le logiciel libre qui automatise le déploiement d'application dans des conteneurs logiciels. Ces conteneurs sont isolé et peuvent être executé sur n'importe quel système qui prend en charges Docker.
 Ceci nous permet d'étendre la flexibilité et la portabilité de notre serveur.
 
-
 ## Architecture de la solution
+
+### Définition de la base de données
+Period :
+Cette table contient une liste de 15 périodes qui représente les différentes périodes possible dans l'horaire GAPS.
+Une période est identifiée par un numéro unique allant de 0 à 15 et représentant le numéro de la période sur l'horaire journalier de GAPS, se caractérise par une heure de début et une heure de fin.
+Chaque période est reliée à une ou plusieurs salles de classe.
+
+Classroom :
+Cette table contient la liste des salles des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
+Une salle est identifiée par son nom (A01, A02,...), et se caractérise par un boolean qui indique si elle est vérouillée ou non.
+La salle est relié à une ou plusieurs périodes, possède un équipement qui lui est propre, et se trouve dans un étage du batiment.
+
+TakePlace :
+Le numéro d'une période P est relié à une salle de classe S par un `TakePlace`, cette relation se caractérise par une date.
+
+Floor :
+Cette table contient la liste des étages des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
+Une étage est identifiée par son nom (A, B,...), et se caractérise par le campus auquel il appartient.
+Un étage est relié à plusieurs salles et possède un équipement qui lui est propre.
+
+ClassroomEquipments :
+Cette table permet de spécifier en détails l'équipement présent dans une salle.
+L'équipement de la salle est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence d'un beamer, de prises éléctrique, d'ordinateurs et d'un tableau blanc ou noir.
+Un équipement est relié à une et une seule salle de classe.
+
+FloorEquipments :
+Cette table permet de spécifier en détails l'équipement présent dans un étage.
+L'équipement d'un étage est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence de toilette pour homme, de toilette pour femme, d'une machine é cafée, d'un distributeur Selecta ou équivalent et d'un accès à une sortie du bâtiment.
+Un équipement est relié à un et un seul étage.
+
 
 Schema et commentaire global
 ---
@@ -89,20 +117,20 @@ Schema et commentaire sur l'interface graphique
 
 # Description technique de l'implémentation
 
-## L'interface graphique
+## Structure du programme
 
-### Fonctionnement de JavaFX
+### L'interface graphique
 
+#### Fonctionnement de JavaFX
 Afin de comprendre comment marche JavaFX, il faut imaginer notre programme comme étant une pièce de théatre. JavaFX utilise cette image afin de structurer le programme ainsi que son interface graphique.
 
 Nous nous retrouvons donc avec des termes comme "Stage", "Scene" et différents composants animant cette scène. Nous vous expliquerons nos différentes scènes et composants plus tard dans la documentation.
 
 JavaFX intègre également la notion de MVC (Modèle-vue-contrôleur). Ils sont créés par défaut lors du commencement d'un projet. La classe principale étant le modèle, la vue étant le fichier FXML et le contrôleur étant le fichier Java gérant les interactions avec le fichier FXML.
 
-### Structure du programme
+
 
 #### Scène principale
-
 Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment).
 
 La première tache a été de choisir le conteneur principal de DARYLL et pour cela, il y a plusieurs choix. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final.
@@ -112,7 +140,6 @@ Nous avons essayé plusieurs conteneurs tel que le Anchor Pane, le Grid Pane ou 
 Le Border Pane est donc plus intéressant car il est déjà séparé en différentes zones (top, bottom, center, left, right), et grâce à ces zones, les composants prennent automatiquement la bonne taille avec le redimentionnement. L'autre aspect également important pour le Border Pane est le fait qu'il respecte le plus possible au mockup défini au début du projet.
 
 #### Scènes secondaires
-
 Par scènes secondaires, nous entendons les autres fenêtres ou pop-ups qui s'ajoute à la scène principale (fenêtre principal) de DARYLL. À la base, il n'y avais qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code.
 
 Cette solution fonctionnait bien mais n'e donnait pas un rendu comme nous l'avi
@@ -124,7 +151,6 @@ Après des recherches et reflexions, nous avons décidé de dispatcher le FXML e
 Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôler pour effectuer les changements !
 
 #### Gestion des évènements selon le composant ciblé
-
 Cette aspect du projet mérite son propre titre de part la démarche réalisée afin d'optimiser le code.
 
 Si nous regardons le mockup de base, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions.
@@ -139,8 +165,7 @@ Après plusieurs recherches, nous avons trouvé une alternative que nous avons u
 
 Cela veut dire que la fonction gérant le changement de plan (showFloor) ne va pas prendre un bouton en paramètre mais un objet "Event" qui comprend le clic de la souris. C'est grâce à cette méthode que nous avons pu factoriser le code et le rendre plus propre.
 
-### Redimensionnement
-
+#### Redimensionnement
 L'interface graphique de DARYLL affiche les plans des étages de Cheseaux ou de Saint-Roch. Ces plans ont une certaine taille et cela nous amène à une question problématique sur l'affichage des plans sous différentes résolutions. Si nous imaginons notre application dans un cas concret d'utilisation, alors il se pourrait que l'utilisateur ait une mauvaise qualité d'image à cause de sa résolution d'écran.
 
 C'est pour cela que DARYLL offre la possbilité de d'aggrandir ou de rapetissir la fenêtre afin que l'affichage du plan soit en adéquation avec la résolution de l'utilisateur. Alors bien sûr, cette fonctionnalité paraît toute simple mais en réalité la mise en place est très difficile. Nous allons vous expliquer la démarche que nous avons eu tout au long du projet dans les paragraphes qui suivent.
@@ -153,55 +178,12 @@ Après multiples recherches, nous avons eu l'idée de contourner le problème. E
 
 Le format SVG nous permet de définir des zones sur un plan. Chaque zone définissant un étage contiendra un ID permettant de l'identifier dans le programme. Les plans nous ont été fournis en PDF, mais grâce à l'outil Inkscape (éditeur d'images opensource), il est possible de créer des fichiers SVG à partir de ces PDFs. Il faudra donc, pour chaque étage de chaque établissement, définir les zones de chaque salle... Énorme tâche mais pour un rendu final convainquant !
 
-## La base de donnée
+### Sérialisation
 
-### Définition des tables
-
-Period :
-Cette table contient une liste de 15 périodes qui représente les différentes périodes possible dans l'horaire GAPS.
-Une période est identifiée par un numéro unique allant de 0 à 15 et représentant le numéro de la période sur l'horaire journalier de GAPS, se caractérise par une heure de début et une heure de fin.
-Chaque période est reliée à une ou plusieurs salles de classe.
+### Transformation ICS
 
 
-Classroom :
-Cette table contient la liste des salles des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
-Une salle est identifiée par son nom (A01, A02,...), et se caractérise par un boolean qui indique si elle est vérouillée ou non.
-La salle est relié à une ou plusieurs périodes, possède un équipement qui lui est propre, et se trouve dans un étage du batiment.
-
-
-TakePlace :
-Le numéro d'une période P est relié à une salle de classe S par un `TakePlace`, cette relation se caractérise par une date.
-
-
-Floor :
-Cette table contient la liste des étages des campus de Cheseaux et Saint-Roch de l'HEIG-VD.
-Une étage est identifiée par son nom (A, B,...), et se caractérise par le campus auquel il appartient.
-Un étage est relié à plusieurs salles et possède un équipement qui lui est propre.
-
-
-ClassroomEquipments :
-Cette table permet de spécifier en détails l'équipement présent dans une salle.
-L'équipement de la salle est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence d'un beamer, de prises éléctrique, d'ordinateurs et d'un tableau blanc ou noir.
-Un équipement est relié à une et une seule salle de classe.
-
-
-FloorEquipments :
-Cette table permet de spécifier en détails l'équipement présent dans un étage.
-L'équipement d'un étage est identifiée par un numéro unique, et se caractérise par des boolean qui indique la présence de toilette pour homme, de toilette pour femme, d'une machine é cafée, d'un distributeur Selecta ou équivalent et d'un accès à une sortie du bâtiment.
-Un équipement est relié à un et un seul étage.
-
-
-
-## Difficultés rencontrées
-
-
-
-
-
-# Tests
-
-## Bugs restants
-
+## Difficultées rencontrées
 
 
 
@@ -210,10 +192,10 @@ Un équipement est relié à un et un seul étage.
 
 ## Niveau projet à proprement parler
 
+### Problèmes connus dans le programme final
 
 
 ## Niveau fonctionnement du groupe
-
 
 
 ## Avis personnel de chacun des membres du groupe
@@ -234,7 +216,7 @@ https://docs.oracle.com/javase/8/docs/
 
 
 ## Base de donnée
-
+Documentation officielle,
 https://dev.mysql.com/doc/refman/5.7/en/
 
 
@@ -250,18 +232,17 @@ Labri.fr, 2014/08, "Introduction à JavaFX", http://www.labri.fr/perso/johnen/pd
 
 
 ## Communication client serveur
+Cours de RES de l'HEIG-VD par Olivier Liechti,
+https://github.com/wasadigi/Teaching-HEIGVD-RES
+
+
+# Table des figures
 
 
 
 
 
-# Liste des figures / tables
-
-
-
-
-
-# Glossaire / Lexique (si nécessaire)
+# Glossaire
 
 
 
