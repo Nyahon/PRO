@@ -570,7 +570,7 @@ public class ToolBoxMySQL  {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call classroomAdvancedSchedule(?,?,?,?,?)";
+            sql = "call classroomAdvancedSchedule(?,?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
 
             ps = connection.prepareStatement(sql);

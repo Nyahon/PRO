@@ -151,5 +151,5 @@ CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), dateBegin date, d
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
 		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd
-        ORDER BY TakePlace.date, TakePlace.classroomName, TakePlace.idPeriod ;
+        ORDER BY TakePlace.date, TakePlace.classroomName, TakePlace.idPeriod;
 		END //
