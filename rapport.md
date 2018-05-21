@@ -74,8 +74,17 @@ Nous avons choisi de l'utiliser car c'est le modèle que nous maitrisions le mie
 ### Inkscape
 Inkscape, le logiciels libre de dessin vectoriel sous licence GNU GPL. Il nous a permis d'ouvrir les PFDs des plans du bâtiment afin de les modifier comme s'il s'agissait d'un SVG puis nous pouvons les exporter au format qui nous arranges le plus (SVG).
 
+### Docker
+Docker, le logiciel libre qui automatise le déploiement d'application dans des conteneurs logiciels. Ces conteneurs sont isolé et peuvent être executé sur n'importe quel système qui prend en charges Docker.
+Ceci nous permet d'étendre la flexibilité et la portabilité de notre serveur.
+
 
 ## Architecture de la solution
+
+Schema et commentaire global
+---
+Schema et commentaire sur l'interface graphique
+---
 
 
 # Description technique de l'implémentation
@@ -182,6 +191,7 @@ L'équipement d'un étage est identifiée par un numéro unique, et se caractér
 Un équipement est relié à un et un seul étage.
 
 
+
 ## Difficultés rencontrées
 
 
@@ -218,6 +228,9 @@ Un équipement est relié à un et un seul étage.
 
 # Bibliographie / webographie
 
+## Java
+Documentation officielle,
+https://docs.oracle.com/javase/8/docs/
 
 
 ## Base de donnée
@@ -227,17 +240,11 @@ https://dev.mysql.com/doc/refman/5.7/en/
 
 
 ## Interface graphique
-
 Oracle, 2013/08, "JavaFX Scene Builder User Guide", https://docs.oracle.com/javafx/scenebuilder/1/user_guide/library-panel.htm
-
 Stackoverflow, 2013/08, "How to find an element with an ID in JavaFX?",  https://stackoverflow.com/questions/12201712/how-to-find-an-element-with-an-id-in-javafx
-
 Oracle, 2013/09, "Getting Started with JavaFX", https://docs.oracle.com/javafx/2/get_started/form.htm
-
 Stackoverflow, 2014/09, "JavaFX getting scene from a controller", https://stackoverflow.com/questions/26060859/javafx-getting-scene-from-a-controller
-
 Oracle, 2014/01, "Designing GUI with the librarie panel (release 2)", https://docs.oracle.com/javase/8/scene-builder-2/user-guide/library-panel.htm
-
 Labri.fr, 2014/08, "Introduction à JavaFX", http://www.labri.fr/perso/johnen/pdf/IUT-Bordeaux/UMLCours/IntroductionJavaFX-V1.pdf
 
 
