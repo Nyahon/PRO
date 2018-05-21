@@ -82,19 +82,16 @@ public class ClientSocket {
         os.flush();
     }
 
-    public void askForAdvancedRequest(List<AdvancedRequest> a) throws IOException {
+    public void askForAdvancedRequest(AdvancedRequest a) throws IOException {
         os.println(Protocol.CMD_ADVANCED);
         os.flush();
         String rsp;
         if( !(rsp = is.readLine() ).equals(Protocol.RESPONSE_ADVANCED) )
             throw new ConnectException(rsp);
 
-        for (AdvancedRequest request : a) {
-            os.println(JsonObjectMapper.toJson(request));
-            os.flush();
-        }
-        os.println(Protocol.RESPONSE_OK);
+        os.println(JsonObjectMapper.toJson(a));
         os.flush();
+
     }
 
     public List<TimeSlot> receiveTimeSlots() throws IOException {
