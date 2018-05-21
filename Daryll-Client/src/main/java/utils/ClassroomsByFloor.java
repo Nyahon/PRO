@@ -3,10 +3,6 @@ package utils;
 import java.util.*;
 
 public class ClassroomsByFloor {
-    private static final List<String> FLOORS_CHESEAUX =
-            Arrays.asList("A", "B", "C", "D", "F", "G", "H", "J", "K");
-    private static final List<String> FLOORS_ST_ROCH =
-            Arrays.asList("R", "S", "T", "U");
     private static final List<String> A_CLASSROOMS =
             Arrays.asList("A01", "A05a", "A05b", "A07", "A09");
     private static final List<String> B_CLASSROOMS =
@@ -26,6 +22,22 @@ public class ClassroomsByFloor {
     private static List<String> K_CLASSROOMS =
             Arrays.asList("K01", "K02", "K03", "K04");
 
+    private static List<String> R_CLASSROOMS =
+            Arrays.asList("R06", "R09", "R102");
+    private static List<String> S_CLASSROOMS =
+            Arrays.asList("S02", "S07", "S102a", "S102b", "S106", "S107", "S12", "S125a", "S129", "S131", "S133", "S135",
+                    "S137", "S141", "S143", "S147", "S151", "S153", "S155", "S157");
+    private static List<String> T_CLASSROOMS =
+            Arrays.asList("T102", "T104", "T105", "T106", "T107", "T12", "T129", "T136a", "T139", "T141", "T143",
+                    "S147", "S151", "S153", "S155", "S157", "S158");
+    private static List<String> U_CLASSROOMS =
+            Arrays.asList("U32", "U44");
+
+    public static final List<String> FLOORS_CHESEAUX =
+            Arrays.asList("A", "B", "C", "D", "F", "G", "H", "J", "K");
+    public static final List<String> FLOORS_ST_ROCH =
+            Arrays.asList("R", "S", "T", "U");
+
     public static final Map< String, List<String> > FloorsMap;
     static {
         Map<String, List<String> > map = new HashMap<>();
@@ -38,6 +50,10 @@ public class ClassroomsByFloor {
         map.put("H", H_CLASSROOMS);
         map.put("J", J_CLASSROOMS);
         map.put("K", K_CLASSROOMS);
+        map.put("R", R_CLASSROOMS);
+        map.put("S", S_CLASSROOMS);
+        map.put("T", T_CLASSROOMS);
+        map.put("U", U_CLASSROOMS);
         FloorsMap = Collections.unmodifiableMap(map);
     }
 }
