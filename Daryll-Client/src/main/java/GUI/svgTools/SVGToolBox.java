@@ -63,11 +63,7 @@ public class SVGToolBox {
             // NodeList path = doc.getElementsByTagName("path");
 
             getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
-
-            String lala = svgInputStream.getClass().getResource(svg).getPath();
-            System.out.println("string = " + lala);
-
-            transformTheDom(doc, lala);
+            transformTheDom(doc, svgInputStream.getClass().getResource(svg).getPath());
 
         } catch (Exception e) {
             //e.printStackTrace();
