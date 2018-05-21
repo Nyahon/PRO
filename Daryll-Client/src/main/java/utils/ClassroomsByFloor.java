@@ -3,6 +3,10 @@ package utils;
 import java.util.*;
 
 public class ClassroomsByFloor {
+    private static final List<String> FLOORS_CHESEAUX =
+            Arrays.asList("A", "B", "C", "D", "F", "G", "H", "J", "K");
+    private static final List<String> FLOORS_ST_ROCH =
+            Arrays.asList("R", "S", "T", "U");
     private static final List<String> A_CLASSROOMS =
             Arrays.asList("A01", "A05a", "A05b", "A07", "A09");
     private static final List<String> B_CLASSROOMS =
