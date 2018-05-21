@@ -80,16 +80,6 @@ public class Daryll extends Application {
       DatePicker datePicker = (DatePicker) scene.lookup("#dateField");
       datePicker.valueProperty().setValue(currentDateTime.toLocalDate());
 
-      Spinner hourSpinner = (Spinner) scene.lookup("#hourSpinner");
-      SpinnerValueFactory svfHour = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,23);
-      svfHour.setValue(currentDateTime.getHour());
-      hourSpinner.setValueFactory(svfHour);
-
-      Spinner minuteSpinner = (Spinner) scene.lookup("#minuteSpinner");
-      SpinnerValueFactory svfMinute = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,59);
-      svfMinute.setValue(currentDateTime.getMinute());
-      minuteSpinner.setValueFactory(svfMinute);
-
       stage.show();
 
    }
