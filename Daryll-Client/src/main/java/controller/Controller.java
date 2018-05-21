@@ -8,6 +8,7 @@ import network.client.ClientSocket;
 import network.protocol.Protocol;
 import utils.PeriodManager;
 
+import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,14 @@ public class Controller {
         client.askForClassroom(data);
         List<TimeSlot> result = client.receiveTimeSlots();
         createFile(result, data);
+        File file = new File("classroom-request.txt");
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
+            Runtime.getRuntime().exec(cmd);
+        }
+        else {
+            Desktop.getDesktop().edit(file);
+        }
 
 
         return client.receiveTimeSlots();
@@ -67,6 +76,5 @@ public class Controller {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
             writer.flush();
         }
-
     }
 }
