@@ -6,7 +6,8 @@ import java.sql.Date;
 
 public class AdvancedRequest {
     private int building;
-    private Date date;
+    private Date dateBegin;
+    private Date dateEnd;
     private int idPeriodBegin;
     private int idPeriodEnd = PeriodManager.PERIODS_END.size()-1;
     private String floor;
@@ -14,22 +15,24 @@ public class AdvancedRequest {
 
     public AdvancedRequest(){};
 
-    public AdvancedRequest(int building, Date date, int idPeriodBegin,
+    public AdvancedRequest(int building, Date begin, Date end, int idPeriodBegin,
                            String floor, String classroom) {
 
         this.building = building;
-        this.date = date;
+        this.dateBegin = begin;
+        this.dateEnd = end;
         this.idPeriodBegin = idPeriodBegin;
         this.idPeriodEnd = PeriodManager.PERIODS_START.size();
         this.floor = floor;
         this.classroom = classroom;
     }
 
-    public AdvancedRequest(int building, Date date, int idPeriodBegin, int idPeriodEnd,
+    public AdvancedRequest(int building, Date begin, Date end, int idPeriodBegin, int idPeriodEnd,
                            String floor, String classroom) {
 
         this.building = building;
-        this.date = date;
+        this.dateBegin = begin;
+        this.dateEnd = end;
         this.idPeriodBegin = idPeriodBegin;
         this.idPeriodEnd = idPeriodEnd;
         this.floor = floor;
@@ -44,12 +47,20 @@ public class AdvancedRequest {
         this.building = building;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDateBegin() {
+        return dateBegin;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateBegin(Date date) {
+        this.dateBegin = date;
+    }
+
+    public Date getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(Date date) {
+        this.dateEnd = date;
     }
 
     public int getIdPeriodBegin() {
