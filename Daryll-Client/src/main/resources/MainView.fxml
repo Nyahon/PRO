@@ -22,7 +22,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.MainViewController">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.MainViewController">
   <bottom>
       <VBox BorderPane.alignment="TOP_LEFT">
          <children>
@@ -59,16 +59,14 @@
                   <Insets left="146.0" />
                </padding>
             </ToolBar>
-          <HBox alignment="CENTER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" pickOnBounds="true" prefHeight="60.0" prefWidth="692.0" spacing="5.0" style="-fx-border-width: 2 0 0 0;-fx-border-color: black;">
+          <HBox fx:id="bottomUserInputHBox" alignment="CENTER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" pickOnBounds="true" prefHeight="60.0" prefWidth="692.0" spacing="5.0" style="-fx-border-width: 2 0 0 0;-fx-border-color: black;">
             <children>
               <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" selected="false" text="Prises accessibles" textAlignment="LEFT" visible="true" wrapText="false" />
               <CheckBox alignment="CENTER_LEFT" allowIndeterminate="false" contentDisplay="CENTER" focusTraversable="false" indeterminate="false" mnemonicParsing="false" prefHeight="60.0" prefWidth="90.0" selected="false" text="Beamer" textAlignment="LEFT" visible="true" wrapText="false" />
                   <Label text="Jour" />
                   <DatePicker fx:id="dateField" prefWidth="120.0" showWeekNumbers="true" />
                   <Label text="Heure" />
-                  <Spinner fx:id="hourSpinner" editable="true" prefWidth="60.0" />
-                  <Label text=":" />
-                  <Spinner fx:id="minuteSpinner" editable="true" prefWidth="60.0" />
+                  <Spinner fx:id="hourSpinner" editable="true" prefWidth="120.0" />
                   <Separator orientation="VERTICAL" prefHeight="200.0">
                      <HBox.margin>
                         <Insets left="5.0" />
