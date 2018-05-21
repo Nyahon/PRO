@@ -4,6 +4,12 @@ import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * A class to map a period with its start and time. Contains only static attributes and methods
+ *
+ * @author Yohann Meyer
+ * @author Romain Gallay
+ */
 public class PeriodManager {
 
     static {
@@ -24,15 +30,25 @@ public class PeriodManager {
                 LocalTime.of(21,35), LocalTime.of(22,20), LocalTime.of(23,59));
     }
 
+    /**
+     * An array containing the start time of every period, the index corresponds to the period number
+     */
     public static final List<LocalTime> PERIODS_START;
+
+    /**
+     * An array containing the end time of every period, the index corresponds to the period number
+     */
     public static final List<LocalTime> PERIODS_END;
 
+    /**
+     * Default constructor, private because there is no need to instantiate the class
+     */
     private PeriodManager(){};
 
     /**
-     * This method computes the period number corresponding to a given time.
+     * A method to compute the period number corresponding to a given time.
      * If the time corresponds to the exact end of a period, then the next
-     * period is returned.
+     * period is returned. Note : the first period corresponds to the period 0.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
@@ -56,9 +72,9 @@ public class PeriodManager {
     }
 
     /**
-     * This method computes the period number corresponding to a given time.
+     * A method to compute the period number corresponding to a given time.
      * If the time corresponds to the exact start of a period, then the previous
-     * period is returned.
+     * period is returned. Note : the first period corresponds to the period 0.
      * @param time   the time one wants to match on a period
      * @return period  the period matching the given time
      */
