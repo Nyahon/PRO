@@ -13,6 +13,7 @@ package database;
 import models.AdvancedRequest;
 import models.ClassRoom;
 import models.TimeSlot;
+import utils.PeriodManager;
 import utils.ReaderICS;
 
 import java.io.PrintWriter;
@@ -29,7 +30,7 @@ public class ToolBoxMySQL  {
     // Login informations for the connection to the database
     private static final String database = "daryll";
     private static final String account = "root";
-    private static final String password = "mly.48ODR-51";
+    private static final String password = "root";
     private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
 
     private Connection connection;
@@ -60,7 +61,7 @@ public class ToolBoxMySQL  {
 
     public void initDatabase(PrintWriter writer) {
         initConnection();
-        insertPeriods(periods);
+        insertPeriods();
         // insert default classrooomequipment
         insertClassroomEquipment(1, true,true,false,true);
         ReaderICS readerICS = new ReaderICS(this, writer);
@@ -85,7 +86,7 @@ public class ToolBoxMySQL  {
     /**
      * @brief This method insert the periods list into the database
      */
-    public void insertPeriods(String[][] listOfPeriods) {
+    public void insertPeriods() {
         LOG.info("Insertion of the periods...");
         ResultSet result;
         PreparedStatement ps;
@@ -99,11 +100,11 @@ public class ToolBoxMySQL  {
 
             sql = "call addPeriod(?,?,?)";
             ps = connection.prepareCall(sql);
-            for (int i = 0; i < listOfPeriods.length; i += 1) {
+            for (int i = 0; i < PeriodManager.PERIODS_START.size(); i += 1) {
                 if(!result.next()){
                     ps.setInt(1, i); // idPeriod (0 to n)
-                    ps.setTime(2, Time.valueOf(listOfPeriods[i][0]));
-                    ps.setTime(3, Time.valueOf(listOfPeriods[i][1]));
+                    ps.setTime(2, Time.valueOf(PeriodManager.PERIODS_START.get(i)));
+                    ps.setTime(3, Time.valueOf(PeriodManager.PERIODS_END.get(i)));
 
                     ps.executeUpdate();
                 }
@@ -535,7 +536,6 @@ public class ToolBoxMySQL  {
       } catch (SQLException e){
           e.printStackTrace();
       }
-        System.out.println("database : " + timeTable);
       return timeTable;
     }
 
@@ -628,7 +628,7 @@ public class ToolBoxMySQL  {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call floorAdvancedSchedule(?,?,?,?)";
+            sql = "call buildingAdvancedSchedule(?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
         
             ps = connection.prepareStatement(sql);
