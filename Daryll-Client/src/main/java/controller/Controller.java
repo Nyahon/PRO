@@ -6,9 +6,11 @@ import models.ClassRoom;
 import models.TimeSlot;
 import network.client.ClientSocket;
 import network.protocol.Protocol;
+import utils.PeriodManager;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -46,10 +48,23 @@ public class Controller {
         return client.receiveTimeSlots();
     }
 
-    private File createFile(List<TimeSlot> t) {
-        File file = new File();
+    private void createFile(List<TimeSlot> timeSlotList, TimeSlot clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
 
+        List<Integer> periods = new ArrayList<>();
+        for (int i = 0; i < PeriodManager.PERIODS_START.size(); ++i) {
+            periods.add(i);
+        }
 
-        return file;
+        for (TimeSlot t : timeSlotList) {
+            periods.remove(t.getIdPeriod());
+        }
+
+        PrintWriter writer = new PrintWriter("classroom-request.txt", "UTF-8");
+        writer.println("Classe: " + clientRequest.getClassroom());
+        writer.println("-------------------------------------------------");
+        for (int period : periods) {
+            writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
+        }
+
     }
 }
