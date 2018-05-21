@@ -114,7 +114,7 @@ CREATE PROCEDURE occupiedRoomsAtGivenSchedule(IN floorName varchar(10), IN date 
 
 # Query the database to return all occupied periods during the given interval and in the given classroom
 DELIMITER //
-CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), classroomName varchar(10))
+CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), dateBegin date, dateEnd date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), classroomName varchar(10))
 	BEGIN
 		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
@@ -122,12 +122,12 @@ CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), date date, idPer
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName;
 		END //
 
 # Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given floor
 DELIMITER //
-CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), floorName varchar(10))
+CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), dateBegin date, dateEnd date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3), floorName varchar(10))
 	BEGIN
 		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
@@ -135,12 +135,12 @@ CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), date date, idPeriodB
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName;
 		END //
 
 # Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given building
 DELIMITER //
-CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), date date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3))
+CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), dateBegin date, dateEnd date, idPeriodBegin tinyint(3), idPeriodEnd tinyint(3))
 	BEGIN
 		SELECT TakePlace.classroomName, TakePlace.date, TakePlace.idPeriod
         FROM TakePlace
@@ -148,5 +148,5 @@ CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), date date, idPeri
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date = date AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd;
 		END //

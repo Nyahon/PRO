@@ -577,9 +577,10 @@ public class ToolBoxMySQL  {
 
             ps.setInt(1, advancedRequest.getBuilding());
             ps.setDate(2, advancedRequest.getDateBegin());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
-            ps.setString(5, advancedRequest.getClassroom());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
+            ps.setString(6, advancedRequest.getClassroom());
 
             result = ps.executeQuery();
 
@@ -607,16 +608,17 @@ public class ToolBoxMySQL  {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call floorAdvancedSchedule(?,?,?,?,?)";
+            sql = "call floorAdvancedSchedule(?,?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
 
             ps = connection.prepareStatement(sql);
 
             ps.setInt(1, advancedRequest.getBuilding());
             ps.setDate(2, advancedRequest.getDateBegin());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
-            ps.setString(5, advancedRequest.getFloor());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
+            ps.setString(6, advancedRequest.getFloor());
 
             result = ps.executeQuery();
 
@@ -644,15 +646,16 @@ public class ToolBoxMySQL  {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call buildingAdvancedSchedule(?,?,?,?)";
+            sql = "call buildingAdvancedSchedule(?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
 
             ps = connection.prepareStatement(sql);
         
             ps.setInt(1, advancedRequest.getBuilding());
             ps.setDate(2, advancedRequest.getDateBegin());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
         
             result = ps.executeQuery();
         
