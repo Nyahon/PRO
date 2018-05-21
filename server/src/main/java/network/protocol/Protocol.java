@@ -51,12 +51,12 @@ public class Protocol {
      * the command to acknowledge a connexion
      */
     public final static String RESPONSE_CONNECTED = "CONNECTED";
-
-    /**
-     * the command to acknowledge a connexion
-     */
     public final static String RESPONSE_CLASSROOM = "READY";
+    public final static String RESPONSE_TIMESLOT = "READY";
     public final static String RESPONSE_FLOOR = "READY";
     public final static String RESPONSE_ADVANCED = "READY";
+    /**
+     * the command to disconnect
+     */
     public final static String RESPONSE_BYE = "BYE_BYE";
 }
