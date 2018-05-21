@@ -1,4 +1,4 @@
-package GUI.plan;
+package GUI.svgTools;
 
 import GUI.svgTools.BufferedImageTranscoder;
 import javafx.embed.swing.SwingFXUtils;
