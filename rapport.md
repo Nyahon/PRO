@@ -128,8 +128,6 @@ Nous nous retrouvons donc avec des termes comme "Stage", "Scene" et différents 
 
 JavaFX intègre également la notion de MVC (Modèle-vue-contrôleur). Ils sont créés par défaut lors du commencement d'un projet. La classe principale étant le modèle, la vue étant le fichier FXML et le contrôleur étant le fichier Java gérant les interactions avec le fichier FXML.
 
-
-
 #### Scène principale
 Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment).
 
@@ -178,12 +176,21 @@ Après multiples recherches, nous avons eu l'idée de contourner le problème. E
 
 Le format SVG nous permet de définir des zones sur un plan. Chaque zone définissant un étage contiendra un ID permettant de l'identifier dans le programme. Les plans nous ont été fournis en PDF, mais grâce à l'outil Inkscape (éditeur d'images opensource), il est possible de créer des fichiers SVG à partir de ces PDFs. Il faudra donc, pour chaque étage de chaque établissement, définir les zones de chaque salle... Énorme tâche mais pour un rendu final convainquant !
 
-### Sérialisation
-
 ### Transformation ICS
 
-
 ## Difficultées rencontrées
+### Interface graphique
+Il y a de fortes chances que suite aux informations données dans les précédents points du rapport, les points critiques ont déjà été remarqués.  
+
+Pour l'interface graphique, la plus grosse difficulté a été la mise en place de l'affichage des plans des étages en gérant le redimentionnement et le fait que les salles doivent être coloré pour indiquer leur niveau de disponibilité. Cela a été vraiment le plus gros soucis dans cette partie. Nous voulions offrir à l'utilisateur cette fonctionnalité afin que l'utilisation de DARYLL soit des plus agréables et c'est chose faîte.
+
+Bien sûr, nous sommes passés par plusieurs chemins pour avoir ce rendu. Nous nous sommes tout de même dit que, dans les pires des cas, nous afficherons un simple tableau avec les salles et les informations nécessaires si l'affichage des plans étaient trop compliqués. Cependant, il faut avouer que cela aurait été moins remarquable.
+
+Nous avons eu d'autres difficultés comme le fait de gérer les interactions entre vues et contrôleurs, certains composants graphiques qui ne répondaient pas à nos demandes mais au final ce n'est rien de très grave.
+
+### Communication Java - MySQL
+
+### Génération du fichier imprimable
 
 
 
