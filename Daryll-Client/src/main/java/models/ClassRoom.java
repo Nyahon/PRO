@@ -18,7 +18,7 @@ public class ClassRoom {
         this.classRoom = classRoom;
     }
     
-    public String getFloor(){
+    public String floor(){
         return classRoom.substring(0,1);
     }
 }

@@ -7,6 +7,7 @@ import models.TimeSlot;
 import network.client.ClientSocket;
 import network.protocol.Protocol;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,9 @@ public class Controller {
     public static List<TimeSlot> handleClientClassroomRequest(TimeSlot data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
         client.askForClassroom(new ClassRoom(data.getClassroom()));
+        List<TimeSlot> result = client.receiveTimeSlots();
+
+
         return client.receiveTimeSlots();
     }
 
@@ -40,5 +44,12 @@ public class Controller {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
         client.askForAdvancedRequest(data);
         return client.receiveTimeSlots();
+    }
+
+    private File createFile(List<TimeSlot> t) {
+        File file = new File();
+
+
+        return file;
     }
 }
