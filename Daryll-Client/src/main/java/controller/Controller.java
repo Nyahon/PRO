@@ -51,7 +51,7 @@ public class Controller {
     private static void createFile(List<TimeSlot> timeSlotList, ClassRoom clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
 
         List<Integer> periods = new ArrayList<>();
-        for (int i = 0; i < PeriodManager.PERIODS_START.size(); ++i) {
+        for (int i = 3; i < PeriodManager.PERIODS_START.size() - 1; ++i) {
             periods.add(i);
         }
 
