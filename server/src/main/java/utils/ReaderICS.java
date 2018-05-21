@@ -5,9 +5,7 @@ import biweekly.ICalendar;
 import biweekly.component.VEvent;
 import biweekly.property.DateEnd;
 import biweekly.property.DateStart;
-import com.sun.istack.internal.NotNull;
 import database.ToolBoxMySQL;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,15 +14,21 @@ import java.sql.Date;
 import java.time.LocalTime;
 import java.util.*;
 
-/** A class to read an ICS file, parse its content and send it to a MySQL database.
- *  @author : Dejvid Muaremi, Aurélien Siu, Romain Gallay, Yohann Meyer, Loïc Frueh, Labinot Rashiti
+/**A class to read an ICS file, parse its content and send it to a MySQL database through
+ * a ToolBoxMySQL object.
+ *  @author : Romain Gallay
  */
-
 public class ReaderICS {
 
+    /**
+     * A ToolBoxMySQL object to pass the client requests to a MySQL database.
+     */
     private ToolBoxMySQL tool;
+
+    /**
+     * a PrintWriter to update the client with the progression of the database insertion
+     */
     private PrintWriter writer;
-    private static String messageUpdateDB = "Updating database : ";
 
     /**
      * Constructor of the class
@@ -34,8 +38,8 @@ public class ReaderICS {
         this.writer = writer;
     }
    /**
-    * This method reads an ICS file with the name <code>fileRaeder</code> and send
-    * its content to the MYSQL databse defined in the class database.ToolBoxMySQL
+    * Reads an ICS file with the name <code>fileRaeder</code> and send
+    * its content to the MySQL databse through a ToolBoxMySQL object.
     * @param fileName the name of the file we need to parse  
     */
     public void readICSFile(String fileName){
@@ -76,7 +80,7 @@ public class ReaderICS {
                         progressBar += "#";
                         progressBarInverse = progressBarInverse.substring(0, progressBarInverse.length()-1);
                     }
-                    writer.print(messageUpdateDB + "(" + lastPercent + "%) :" + formatting + " |" + progressBar +
+                    writer.print("Updating database : " + "(" + lastPercent + "%) :" + formatting + " |" + progressBar +
                             progressBarInverse + "|\r");
                     writer.flush();
                 }
@@ -87,13 +91,13 @@ public class ReaderICS {
     }
 
     /**
-     * This method return the numbers corresponding to the periods between a DateStart and a DateEnd
+     * A method to retrieve the numbers corresponding to the periods between a DateStart and a DateEnd
      * given as parameters.
      * @param datestart   the starting date
      * @param dateend   the ending date
      * @return periods  an ArrayList containing the periods between the given dates
      */
-    private ArrayList periodFromSchedule(@NotNull DateStart datestart,@NotNull DateEnd dateend){
+    private ArrayList periodFromSchedule( DateStart datestart, DateEnd dateend){
         ArrayList periods = new ArrayList<Integer>();
 
         // create a Calendar for both Dates
@@ -114,9 +118,5 @@ public class ReaderICS {
             periods.add(i);
         }
         return periods;
-    }
-
-    public static String getMessageUpdateDB() {
-        return messageUpdateDB;
     }
 }

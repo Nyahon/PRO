@@ -12,7 +12,7 @@ import java.util.List;
  * into their json representation, and vice-versa. It relies on the jackson
  * library.
  *
- * @author Olivier Liechti
+ * @author Yohann Meyer
  */
 public class JsonObjectMapper {
 
@@ -49,14 +49,12 @@ public class JsonObjectMapper {
 
     /**
      * Converts a json string into a list of POJO of the specified class
-     * @param json
-     * @param type
-     * @param <T>
-     * @return
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @param json  the Json String to parse
+     * @param type  the type of the parsed object
+     * @return  an ArrayList of the parsed objects
+     * @throws IOException  if an I/O exception occurs
+     * @throws ClassNotFoundException   if the class.getName() fails
      *
-     * https://stackoverflow.com/questions/6349421/how-to-use-jackson-to-deserialise-an-array-of-objects#6349488
      */
     @SuppressWarnings("unchecked")
     public static <T> List<T> parseJsonArray(String json, Class<T> type) throws IOException, ClassNotFoundException {

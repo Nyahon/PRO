@@ -2,19 +2,47 @@ package models;
 
 import java.sql.Date;
 
+/**
+ * Represents the data needed to send an classroom
+ *
+ * @author Loïc Frueh
+ * @author Yohann Meyer
+ */
 public class TimeSlot {
 
+    /**
+     * the classroom
+     */
     private ClassRoom classroom = new ClassRoom();
+
+    /**
+     * the date
+     */
     private Date date;
+
+    /**
+     * the id period as defined in PeriodManager
+     */
     private int idPeriod;
 
+    /**
+     * Default constructor
+     */
     public TimeSlot(){}
-    
+
+    /**
+     * Constructs a TimeSlot with <code>idPeriod</code> set to 0
+     * @param classroom the classroom
+     * @param date  the date
+     */
     public TimeSlot(String classroom, long date) {
         this.classroom.setClassRoom( classroom );
         this.date = new Date(date);
     }
-    
+
+    /**
+     * Constructs a TimeSlot with 3 parameters
+     */
     public TimeSlot(String classroom, long date, int idPeriod) {
         this.classroom = new ClassRoom(classroom);
         this.date = new Date(date);
@@ -25,6 +53,10 @@ public class TimeSlot {
         return classroom.getClassRoom();
     }
 
+    /**
+     * Return the classroom floor
+     * @return the classroom floor
+     */
     public String floor() {
         return classroom.floor();
     }

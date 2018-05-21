@@ -9,7 +9,7 @@ import java.io.OutputStream;
  * the serialisation.server gets a new socket, spawns a new Thread and creates an instance of a
  * class implementing this interface.
  *
- * @author Olivier Liechti
+ * @author Yohann Meyer
  */
 public interface IClientHandler {
 
@@ -21,7 +21,7 @@ public interface IClientHandler {
      *
      * @param is input stream to read commands sent by the serialisation.client
      * @param os output stream to send responses back to the serialisation.client
-     * @throws java.io.IOException
+     * @throws java.io.IOException if an I/O error occurs
      */
     public void handleClientConnection(InputStream is, OutputStream os) throws IOException;
 

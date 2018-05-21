@@ -5,32 +5,43 @@ import network.serialisation.JsonObjectMapper;
 import models.TimeSlot;
 import database.ToolBoxMySQL;
 import network.protocol.ProtocolServer;
-import utils.ReaderICS;
 
 import java.io.*;
-import java.sql.SQLException;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 /**
- * This class implements the serialisation.server.ProtocolServer
+ * A manager to handle a client connexion, process its commands and pass them to a ToolBoxMySQL object.
  *
- * @author Yohann Meyer, Romain Gallay
+ * @author Yohann Meyer
+ * @author Romain Gallay
  */
 public class ServerClientHandler implements IClientHandler {
-    final static Logger LOG = Logger.getLogger(ServerClientHandler.class.getName());
 
-    public int numberOfNewStudents = 0;
-    public int numberOfCommands = 0;
-    private List<TimeSlot> queryTimeSlots;
-    private List<ClassRoom> queryClassRooms;
+    /**
+     * A Logger to print messages in console
+     */
+    private final static Logger LOG = Logger.getLogger(ServerClientHandler.class.getName());
+
+    /**
+     * A ToolBoxMySQL object to pass the client requests to a MySQL database.
+     */
     private ToolBoxMySQL toolBoxMySQL;
+
+    /**
+     * Represents the state of the client connexion.
+     */
     private boolean done;
 
+    /**
+     * the file name of the ICS to parse
+     */
+    private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
+
+    /**
+     * Default constructor
+     */
     public ServerClientHandler(){
         toolBoxMySQL = new ToolBoxMySQL();
     }
@@ -98,9 +109,15 @@ public class ServerClientHandler implements IClientHandler {
             }
             writer.flush();
         }
-
     }
 
+    /**
+     * Handle the protocol to retrieve the schedule of every room in a given floor
+     *
+     * @param reader    BufferedReader to read commands sent by client
+     * @param writer    PrintWriter to send responses back to the client
+     * @throws java.io.IOException  if an I/O error occurs, or if the Json parsing fails
+     */
     private void floorSchedule(BufferedReader reader, PrintWriter writer) throws IOException{
 
         writer.println(ProtocolServer.RESPONSE_FLOOR);
@@ -121,8 +138,16 @@ public class ServerClientHandler implements IClientHandler {
 
         writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
+        toolBoxMySQL.closeConnection();
     }
 
+    /**
+     * Handle the protocol to retrieve the schedule of a given room during the current day
+     *
+     * @param reader    BufferedReader to read commands sent by client
+     * @param writer    PrintWriter to send responses back to the client
+     * @throws java.io.IOException  if an I/O error occurs, or if the Json parsing fails
+     */
     private void classRoomSchedule(BufferedReader reader, PrintWriter writer) throws IOException {
 
         writer.println(ProtocolServer.RESPONSE_CLASSROOM);
@@ -142,38 +167,36 @@ public class ServerClientHandler implements IClientHandler {
         }
         writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
+        toolBoxMySQL.closeConnection();
     }
 
+    /**
+     * Handle the protocol to retrieve schedules through an advanced request.
+     *
+     * @param reader    BufferedReader to read commands sent by client
+     * @param writer    PrintWriter to send responses back to the client
+     * @throws java.io.IOException  if an I/O error occurs, or if the Json parsing fails
+     */
     private void advancedRequest(BufferedReader reader, PrintWriter writer) throws IOException{
         writer.println(ProtocolServer.RESPONSE_ADVANCED);
-        writer.flush();
 
-        String answerJson;
-        ArrayList<AdvancedRequest> advancedRequests = new ArrayList<>();
-
-        while(!(answerJson = reader.readLine()).equals(ProtocolServer.RESPONSE_OK)){
-            advancedRequests.add(JsonObjectMapper.parseJson(answerJson, AdvancedRequest.class));
-            System.out.println(answerJson);
-        }
+        AdvancedRequest advancedRequest = JsonObjectMapper.parseJson(reader.readLine(), AdvancedRequest.class);
+        System.out.println(advancedRequest);
 
         ArrayList<TimeSlot> answer = new ArrayList<>();
         toolBoxMySQL.initConnection();
 
-        // query the database to get the occupied timeslot
-        for(AdvancedRequest ar : advancedRequests){
+        // if the advancedRequest contains a classroom
+        if(advancedRequest.getClassroom() != null){
+            answer.addAll(toolBoxMySQL.classroomAdvancedSchedule(advancedRequest));
 
-            // if the advancedRequest contains a classroom
-            if(ar.getClassroom() != null){
-                answer.addAll(toolBoxMySQL.classroomAdvancedSchedule(ar));
+            // if the advancedRequest contains a floor
+        } else if(advancedRequest.getFloor() != null){
+            answer.addAll(toolBoxMySQL.floorAdvancedSchedule(advancedRequest));
 
-                // if the advancedRequest contains a floor
-            } else if(ar.getFloor() != null){
-                answer.addAll(toolBoxMySQL.floorAdvancedSchedule(ar));
-
-                // if the advancedRequest only contains the building
-            } else {
-                answer.addAll(toolBoxMySQL.buildingAdvancedSchedule(ar));
-            }
+            // if the advancedRequest only contains the building
+        } else {
+            answer.addAll(toolBoxMySQL.buildingAdvancedSchedule(advancedRequest));
         }
 
         // send every TimeSlot as Json to client
@@ -184,9 +207,15 @@ public class ServerClientHandler implements IClientHandler {
 
         writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
-
     }
 
+    /**
+     * Handle a ssh or telnet connexion to populate the database with the help of a ToolBoxMySQL object
+     *
+     * @param reader    BufferedReader to read commands sent by client
+     * @param writer    PrintWriter to send responses back to the client
+     * @throws java.io.IOException  if an I/O error occurs
+     */
     private void initDatabase(BufferedReader reader, PrintWriter writer) throws IOException {
         int tries = 0;
         final int maxTry = 5;
@@ -212,10 +241,11 @@ public class ServerClientHandler implements IClientHandler {
             done = true;
             return;
         }
-        toolBoxMySQL.initDatabase(writer);
-        writer.println(ReaderICS.getMessageUpdateDB() + "success !" +
+        toolBoxMySQL.populateDatabase(writer, fileNameICS);
+        writer.println("Updating database : success !" +
                 "                                                                     ");
         writer.flush();
         done = true;
+        toolBoxMySQL.closeConnection();
     }
 }

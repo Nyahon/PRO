@@ -7,8 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Instances of this class are created whenever a serialisation.client has arrived and a
- * connection has been established (the instances are created by the TCPServer
+ * Instances of this class are created whenever a client has arrived and a
+ * connection has been established (the instances are created by the ServerDaryll
  * class). The class is responsible for setting up and cleaning up the
  * communication streams, but delegates the hard work (i.e. the implementation
  * of our own application serialisation.server.protocol) to a class that implements the
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * implements the IClientHandler interface and implement another application
  * serialisation.server.protocol.
  *
- * @author Olivier Liechti
+ * @author Yohann Meyer
  */
 public class ClientWorker implements Runnable {
 
