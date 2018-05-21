@@ -118,9 +118,7 @@ Schema et commentaire sur l'interface graphique
 # Description technique de l'implémentation
 
 ## Structure du programme
-
 ### L'interface graphique
-
 #### Fonctionnement de JavaFX
 Afin de comprendre comment marche JavaFX, il faut imaginer notre programme comme étant une pièce de théatre. JavaFX utilise cette image afin de structurer le programme ainsi que son interface graphique.
 
@@ -177,6 +175,18 @@ Après multiples recherches, nous avons eu l'idée de contourner le problème. E
 Le format SVG nous permet de définir des zones sur un plan. Chaque zone définissant un étage contiendra un ID permettant de l'identifier dans le programme. Les plans nous ont été fournis en PDF, mais grâce à l'outil Inkscape (éditeur d'images opensource), il est possible de créer des fichiers SVG à partir de ces PDFs. Il faudra donc, pour chaque étage de chaque établissement, définir les zones de chaque salle... Énorme tâche mais pour un rendu final convainquant !
 
 ### Transformation ICS
+À partir du calendrier ICS de GAPS, nous avons dû implémenter un parseur afin de pouvoir parcourir ce fichier et récupérer la liste des salles occupées. Cette liste a été ensuite ajoutée à la base de données afin que l'on puisse y effectuer des requêtes dessus.
+
+### Transformation des plans des batîments
+Les plans fournis n'étaient pas parfaitement adapté à notre application, Ils étaient au format PDF et il y avait beaucoup d'informations supperflue qui rendaient leur lecture très difficile. Par conséquent, Il a fallu les modifier à la main un par un afin d'obtenir des fichiers SVG que l'on utilisera. Les modifications ont dû être faites sur chaque bâtiments, chaque étages, chaque salles et surtout sur les fragments de salles qui ont rendu la manipulation particulièrement difficile.
+
+### Communication clients - serveur
+Nous avons appliqué ce que nous avons appris lors du cours de RES. Nous avons donc défini un paquet "network" qui va effectuer la sérialisation et l'envoie des données par le réseau en utilisant des socket TCP.
+Nous avons mis en place un protocole de communication entre le client et le serveur pour l'échange d'informations, à savoir le type, le contenu, et la fin des requêtes.
+
+### Génération du fichier imprimable
+L'implémentation d'une commande "imprimer" est extrèmement compliquée par conséquent nous avons choisi de créer un fichier texte temporaire et imprimable, qui sera ouvert automatiquement par l'éditeur de texte par défaut de l'utilisateur. Celui-ci devra ensuite décider si il veut sauver ou imprimer ledit fichier. Si l'utilisateur ne sauvegarde pas le fichier, celui-ci sera écrasé lors de la prochaine requête.
+Cette méthode nous permet de répondre à deux demandes à la fois, la possibilité de sauver un fichier contenant les disponibilité ainsi que la possibilité d'imprimer un fichier.
 
 ## Difficultées rencontrées
 ### Interface graphique
@@ -187,47 +197,40 @@ Pour l'interface graphique, la plus grosse difficulté a été la mise en place 
 Bien sûr, nous sommes passés par plusieurs chemins pour avoir ce rendu. Nous nous sommes tout de même dit que, dans les pires des cas, nous afficherons un simple tableau avec les salles et les informations nécessaires si l'affichage des plans étaient trop compliqués. Cependant, il faut avouer que cela aurait été moins remarquable.
 
 Nous avons eu d'autres difficultés comme le fait de gérer les interactions entre vues et contrôleurs, certains composants graphiques qui ne répondaient pas à nos demandes mais au final ce n'est rien de très grave.
-
-### Communication Java - MySQL
-
-### Génération du fichier imprimable
-
+### Restructurer les plans
+### Parcourir l'ICS
+### Gestion des dates
 
 
+# Test réalisé
+## Problèmes connus dans le programme final
 
 # Conclusion
-
 ## Niveau projet à proprement parler
-
-### Problèmes connus dans le programme final
-
-
 ## Niveau fonctionnement du groupe
-
-
 ## Avis personnel de chacun des membres du groupe
-
-
-
 ## Améliorations possibles
 
 
 
 
 
-# Bibliographie / webographie
+# Bibliographie / Webographie
 
 ## Java
-Documentation officielle,
-https://docs.oracle.com/javase/8/docs/
-
-
-## Base de donnée
-Documentation officielle,
-https://dev.mysql.com/doc/refman/5.7/en/
-
-
-
+Documentation officielle, https://docs.oracle.com/javase/8/docs/
+## Maven
+Site officiel, https://maven.apache.org/
+## Git
+Site officiel, https://git-scm.com/
+## GitHub
+Site officiel, https://github.com/
+## MySQL
+Documentation officielle, https://dev.mysql.com/doc/refman/5.7/en/
+## Inkscape
+Site officiel, https://inkscape.org/fr/
+## Docker
+Site officiel, https://www.docker.com/
 ## Interface graphique
 Oracle, 2013/08, "JavaFX Scene Builder User Guide", https://docs.oracle.com/javafx/scenebuilder/1/user_guide/library-panel.htm
 Stackoverflow, 2013/08, "How to find an element with an ID in JavaFX?",  https://stackoverflow.com/questions/12201712/how-to-find-an-element-with-an-id-in-javafx
@@ -235,52 +238,28 @@ Oracle, 2013/09, "Getting Started with JavaFX", https://docs.oracle.com/javafx/2
 Stackoverflow, 2014/09, "JavaFX getting scene from a controller", https://stackoverflow.com/questions/26060859/javafx-getting-scene-from-a-controller
 Oracle, 2014/01, "Designing GUI with the librarie panel (release 2)", https://docs.oracle.com/javase/8/scene-builder-2/user-guide/library-panel.htm
 Labri.fr, 2014/08, "Introduction à JavaFX", http://www.labri.fr/perso/johnen/pdf/IUT-Bordeaux/UMLCours/IntroductionJavaFX-V1.pdf
-
-
-
 ## Communication client serveur
-Cours de RES de l'HEIG-VD par Olivier Liechti,
-https://github.com/wasadigi/Teaching-HEIGVD-RES
+Cours de RES de l'HEIG-VD par Olivier Liechti, https://github.com/wasadigi/Teaching-HEIGVD-RES
 
+# Sources externes
+Calendrier ICS, GAPS
+Plan des bâtiments, Philippe Moser
 
 # Table des figures
 
-
-
-
-
 # Glossaire
 
-
-
-
-
 # Annexes
-
 ## Cahier des charges initial du projet
-
-
-
 ## Planification du projet
-
 ### Initiale
-
 ### Finale
-
 ### Discussion planification initiale vs finale
 
-
-
 ## Journal de travail
-
 ### Dejvid Muaremi
-
 ### Aurélien Siu
-
 ### Romain Gallay
-
 ### Yohann Meyer
-
 ### Labinot Rashiti
-
 ### Loïc Frueh
