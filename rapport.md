@@ -56,22 +56,26 @@ Scene Builder de Gluon permet de manipuler des objets JavaFX graphiquement et d'
 Cette application nous simplifie donc la personalisation car il n'est pas nécessaire de réécrire tout le FXML. Il est à noter que le fichier FXML et Scene Builder sont liés. La modification de l'un met à jour directement la vue de l'autre !
 
 ### Maven
+Comme on utilise plusieurs libraries externes, il devenait rapidement compliqué de gérer toutes les dépendance de notre programme. C'est pour Cette raison que nous avons choisi d'utiliser l'outil Maven de Apache, celui-ci permettra de complier et importer notre projet sur nos nombreux environnement de travail. L'autre avantages que nous offres Maven et qu'il permet de produire un fichier executable grâce à des instructions se trouvant dans le fichier pom.xml.
 
 ### Git
+Git, le gestionnaire de version décentralisé libre, utilisé afin de gérer la totalité du projet ainsi que toutes ses modifications.
+Nous avons créer une nouvelle branche par thème, c'est à dire, une branche pour le client, une branche pour le serveur, une pour l'adrministration et une pour les rendu.
+Cet outil nous a été particulièrement utile pour pouvoir travailler en équipe et en même temps tout en nous assurons que nous avions bien tous la même version de DARYLL.
 
 ### GitHub
+GitHub, le service web permettant de parcourir visuellement l'historique Git de DARYLL  et qui va également le stoquer.
+GitHub offre également de nombreuses fonctionnalité ainsi que des outils de gestion pour le projet.
 
 ### MySQL
+MySQL, le système de gestion de bases de données relationnelles (SGDBR), faisant partie des logiciels de gestion des bases de données les plus utilisés au monde.
+Nous avons choisi de l'utiliser car c'est le modèle que nous maitrisions le mieux et que Java possède de nombreuses méthodes afin de nous permettre d'intéragir avec nos données.
 
-Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de BDR,  il s'agit du type que l'on maitrise le mieux et il est relativement bien adapté aux besoin de notre projet.
-
-
+### Inkscape
+Inkscape, le logiciels libre de dessin vectoriel sous licence GNU GPL. Il nous a permis d'ouvrir les PFDs des plans du bâtiment afin de les modifier comme s'il s'agissait d'un SVG puis nous pouvons les exporter au format qui nous arranges le plus (SVG).
 
 
 ## Architecture de la solution
-
-
-
 
 
 # Description technique de l'implémentation
@@ -80,7 +84,7 @@ Nous avons choisi d'utiliser une base de donnée MySQL car, ayant eu un cours de
 
 ### Fonctionnement de JavaFX
 
-Afin de comprendre comment marche JavaFX, il faut imaginer notre programme comme étant une pièce de théatre. JavaFX utilise cette image pour structurer le programme ainsi que son interface graphique.
+Afin de comprendre comment marche JavaFX, il faut imaginer notre programme comme étant une pièce de théatre. JavaFX utilise cette image afin de structurer le programme ainsi que son interface graphique.
 
 Nous nous retrouvons donc avec des termes comme "Stage", "Scene" et différents composants animant cette scène. Nous vous expliquerons nos différentes scènes et composants plus tard dans la documentation.
 
@@ -88,39 +92,41 @@ JavaFX intègre également la notion de MVC (Modèle-vue-contrôleur). Ils sont 
 
 ### Structure du programme
 
-#### Vue principale selon le mockup
+#### Scène principale
 
 Lors du début du projet, le programme était une simple application JavaFX. Le projet DARYLL possédait donc uniquement un fichier contenant sa classe, une vue vide (fenêtre principal ou scène principal) et le contrôleur de cette vue (donc selon le modèle MVC vu précèdemment).
 
-La première tache a été de réaliser un modèle similaire au mockup définit par les membres du projet. Il faut donc déjà choisir le conteneur principal de DARYLL et c'est déjà un choix crucial pour la suite de la réalisation. Pour cela, il y a plusieurs choix de conteneurs. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final.
+La première tache a été de choisir le conteneur principal de DARYLL et pour cela, il y a plusieurs choix. Certains ont des avantages que d'autres n'ont pas. En réalité, le choix dépend de l'utilisation de l'application et du rendu final.
 
-Nous avons essayé plusieurs conteneurs tel que le Anchor Pane, le Grid Pane ou le simple Pane mais notre choix a penché pour le Border Pane. Biensûr, il est possible de réaliser notre programme avec les autres conteneurs mentionnés, mais étant donné que nous avons décidé d'intégrer le redimentionnement de la fenêtre pour les plans des étages, l'implémentation aurait été plus compliquée et le Border Pane nous facilite beaucoup plus la tâche à ce niveau là.
+Nous avons essayé plusieurs conteneurs tel que le Anchor Pane, le Grid Pane ou le simple Pane mais notre choix a penché pour le Border Pane. Il aurait été possible de réaliser notre programme avec les autres conteneurs mentionnés, mais étant donné que nous avons décidé d'intégrer le redimentionnement de la fenêtre pour les plans des étages, l'implémentation aurait été plus compliquée et le Border Pane nous facilitait beaucoup plus la tâche à ce niveau là.
 
 Le Border Pane est donc plus intéressant car il est déjà séparé en différentes zones (top, bottom, center, left, right), et grâce à ces zones, les composants prennent automatiquement la bonne taille avec le redimentionnement. L'autre aspect également important pour le Border Pane est le fait qu'il respecte le plus possible au mockup défini au début du projet.
 
-#### Scènes secondaires pour les modes
+#### Scènes secondaires
 
-Par scènes secondaires, nous entendons les autres fenêtres ou "vues" qui s'ajoute à la scène principale (fenêtre principale) de DARYLL. À la base, il n'y avait qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code.
+Par scènes secondaires, nous entendons les autres fenêtres ou pop-ups qui s'ajoute à la scène principale (fenêtre principal) de DARYLL. À la base, il n'y avais qu'une seule scène et un seul contrôleur qui gérait ladite scène.  Les autres scènes étaient créées directement dans le contrôleur principal via du code.
 
-Cette solution fonctionnait bien mais n'e donnait pas un rendu comme nous l'avions désiré. De plus, le contrôleur de la fenêtre principale devenait rapidement énorme vu les nombreuses fenêtres que nous avons rajoutés pour les modes du programme. Donc au final, cette solution ne donnait pas un bon rendu et n'était pas très évolutif car il est difficile de retrouver la bonne fonction gérant la bonne vue dans un seul fichier énorme.
+Cette solution fonctionnait bien mais n'e donnait pas un rendu comme nous l'avi
 
-Après réflexion et recherches, nous avons décidé de dispatcher le FXML en plusieurs parties. Dorénavant, chaque fenêtre graphique aura son propre fichier FXML et son propre contrôleur gérant les intéractions avec l'utilisateur de ladite fenêtre.
+ons désiré. De plus, le contrôleur de la fenêtre principale devenait facilement énorme vu les nombreuses pop-ups que nous avons rajoutés pour les options du programme. Donc au final, cette solution ne donnait pas un bon rendu et n'était pas très évolutif car il est difficile de retrouver la bonne vue dans un seul fichier.
 
-Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôleur pour effectuer les changements !
+Après des recherches et reflexions, nous avons décidé de dispatcher le FXML en plusieurs parties. Dorénavant, chaque fenêtre graphique aura son propre fichier FXML et son propre contrôleur gérant les intéractions avec l'utilisateur de ladite fenêtre.
+
+Cette nouvelle solution permet d'avoir un rendu nettement meilleur à l'affichage et rend le code beaucoup plus propre. En effet, lorsqu'il faudra mettre à jour ou dépanner une fenêtre du programme, il suffira d'aller dans son fichier FXML et contrôler pour effectuer les changements !
 
 #### Gestion des évènements selon le composant ciblé
 
 Cette aspect du projet mérite son propre titre de part la démarche réalisée afin d'optimiser le code.
 
-Si nous regardons le mockup défini, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions.
+Si nous regardons le mockup de base, nous aperçevons que la zone de gauche contient tous les boutons des étages. La démarche basique aurait été de créer une fonction pour chaque bouton d'étage dans le contrôleur de la vue et ensuite de les assigner une à une via Scene Builder. Cela veut dire que pour X boutons nous auront X fonctions.
 
-Alors évidemment, cela fonctionnera, mais n'oublions pas que le contrôleur est déjà très conséquent en terme de code. S'il faut encore rajouter une fonction par étage en sachant que Cheseaux en a environ dix, le code deviendrait illisible et donc moins maintenable.
+Alors évidemment, cela fonctionnera, mais n'oublions pas que le contrôleur est déjà très conséquent en terme de code. Si il faut encore rajouter une fonction par étage en sachant que Cheseaux en a environ dix, le code deviendrait illisible et donc moins maintenable.
 
 La nouvelle solution adopté a été de factoriser ce code. En effet, les boutons d'étages ont le même but : Afficher le plan de l'étage avec ses salles disponibles au moment X.
 
 L'idée est donc de faire une fonction permettant de faire ce changement pour chaque bouton d'étage. Idéalement la fonction devra prendre le bouton ciblé en paramètre mais malheureusement Scene Builder ne le permet pas...
 
-Après plusieurs recherches, nous avons trouvé une alternative que nous avons utilisée tout au long du projet pour l'interface graphique. En fait, cette alternative permet de retrouver le composant ciblé via un objet "Event". Cet objet "Event" nous permet de retrouver la scène où se trouve le composant ciblé puis de récupérer le composant via son "fx-id".
+Après plusieurs recherches, nous avons trouvé une alternative que nous avons utilisée tout au long du projet pour l'interface graphique. En fait, cette alternative permet de retrouver le composant ciblé via un objet "Event". Cet objet "Event" nous permet de retrouver la scène où se trouve le composant ciblé puis de récupérer le composant via son ID.
 
 Cela veut dire que la fonction gérant le changement de plan (showFloor) ne va pas prendre un bouton en paramètre mais un objet "Event" qui comprend le clic de la souris. C'est grâce à cette méthode que nous avons pu factoriser le code et le rendre plus propre.
 
@@ -128,7 +134,7 @@ Cela veut dire que la fonction gérant le changement de plan (showFloor) ne va p
 
 L'interface graphique de DARYLL affiche les plans des étages de Cheseaux ou de Saint-Roch. Ces plans ont une certaine taille et cela nous amène à une question problématique sur l'affichage des plans sous différentes résolutions. Si nous imaginons notre application dans un cas concret d'utilisation, alors il se pourrait que l'utilisateur ait une mauvaise qualité d'image à cause de sa résolution d'écran.
 
-C'est pour cela que DARYLL offre la possbilité d'aggrandir ou de rapetissir la fenêtre afin que l'affichage du plan soit en adéquation avec la résolution de l'utilisateur. Alors bien sûr, cette fonctionnalité paraît toute simple mais en réalité la mise en place est très difficile. Nous allons vous expliquer la démarche que nous avons eu tout au long du projet dans les paragraphes qui suivent.
+C'est pour cela que DARYLL offre la possbilité de d'aggrandir ou de rapetissir la fenêtre afin que l'affichage du plan soit en adéquation avec la résolution de l'utilisateur. Alors bien sûr, cette fonctionnalité paraît toute simple mais en réalité la mise en place est très difficile. Nous allons vous expliquer la démarche que nous avons eu tout au long du projet dans les paragraphes qui suivent.
 
 Suite à des réunions concernant cette question, le groupe s'est mis d'accord sur le fait qu'il était préférable d'intégrer le redimentionnement. L'idée initiale était d'afficher le plan sur un conteneur puis d'incruster des composants au dessus de chaque salle de l'étage afin d'indiquer le niveau de disponibilité de la salle avec un teint de vert. L'implémentation fut difficile car il fallait faire attention à ce que les composants restent correctement placés sur les étages lorsque l'utilisateur aggrandissait la fenêtre.
 
@@ -247,13 +253,7 @@ Permet de changer l'équipement d'un étage.
 
 ## Difficultés rencontrées
 
-Il y a de fortes chances que suite aux informations données dans les précédents points du rapport, les points critiques ont déjà été remarqués. 
 
-Pour l'interface graphique, la plus grosse difficulté a été la mise en place de l'affichage des plans des étages en gérant le redimentionnement et le fait que les salles doivent être coloré pour indiquer leur niveau de disponibilité. Cela a été vraiment le plus gros soucis dans cette partie. Nous voulions offrir à l'utilisateur cette fonctionnalité afin que l'utilisation de DARYLL soit des plus agréables et c'est chose faîte.
-
-Bien sûr, nous sommes passés par plusieurs chemins pour avoir ce rendu. Nous nous sommes tout de même dit que, dans les pires des cas, nous afficherons un simple tableau avec les salles et les informations nécessaires si l'affichage des plans étaient trop compliqués. Cependant, il faut avouer que cela aurait été moins remarquable.
-
-Nous avons eu d'autres difficultés comme le fait de gérer les interactions entre vues et contrôleurs, certains composants graphiques qui ne répondaient pas à nos demandes mais au final ce n'est rien de très grave.
 
 
 
