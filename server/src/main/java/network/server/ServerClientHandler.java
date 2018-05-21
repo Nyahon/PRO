@@ -72,7 +72,7 @@ public class ServerClientHandler implements IClientHandler {
                     try {
                         advancedRequest(reader, writer);
                     }catch (Exception e){ //TODO BETTER
-                        LOG.log(Level.SEVERE, "Error trying to get occupied time slots during advanced request: ", e);
+                        LOG.log(Level.SEVERE, "Error trying to get occupied time slots during advanced request: " + e.getMessage());
                     }
                     break;
 
@@ -151,21 +151,23 @@ public class ServerClientHandler implements IClientHandler {
         String answerJson;
         ArrayList<AdvancedRequest> advancedRequests = new ArrayList<>();
 
-        while((answerJson = reader.readLine()) != ProtocolServer.RESPONSE_OK){
+        while(!(answerJson = reader.readLine()).equals(ProtocolServer.RESPONSE_OK)){
             advancedRequests.add(JsonObjectMapper.parseJson(answerJson, AdvancedRequest.class));
+            System.out.println(answerJson);
         }
 
         ArrayList<TimeSlot> answer = new ArrayList<>();
+        toolBoxMySQL.initConnection();
 
         // query the database to get the occupied timeslot
         for(AdvancedRequest ar : advancedRequests){
 
             // if the advancedRequest contains a classroom
-            if(!ar.getClassroom().equals(null)){
+            if(ar.getClassroom() != null){
                 answer.addAll(toolBoxMySQL.classroomAdvancedSchedule(ar));
 
                 // if the advancedRequest contains a floor
-            } else if(!ar.getFloor().equals(null)){
+            } else if(ar.getFloor() != null){
                 answer.addAll(toolBoxMySQL.floorAdvancedSchedule(ar));
 
                 // if the advancedRequest only contains the building
@@ -178,6 +180,7 @@ public class ServerClientHandler implements IClientHandler {
         for(TimeSlot ts : answer){
             writer.println(JsonObjectMapper.toJson(ts));
         }
+        toolBoxMySQL.closeConnection();
 
         writer.println(ProtocolServer.RESPONSE_OK);
         writer.flush();
