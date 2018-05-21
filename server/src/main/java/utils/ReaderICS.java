@@ -48,6 +48,9 @@ public class ReaderICS {
             List<VEvent> events = ical.getEvents();
             int numberOfEventsProcessed = 0;
             int lastPercent = 0;
+            String progressBar = "";
+            String progressBarInverse = new String(new char[50]).replace("\0", " ");
+            String formatting = " ";
 
             // each event concerns a course from time X to Y at date Z in room R
             for (VEvent e : events){
@@ -66,7 +69,15 @@ public class ReaderICS {
                 int percent = numberOfEventsProcessed * 100 / events.size();
                 if (percent != lastPercent) {
                     lastPercent = percent;
-                    writer.print(messageUpdateDB + lastPercent + "%\r");
+                    if(percent > 9){
+                        formatting = "";
+                    }
+                    if(percent%2 == 0){
+                        progressBar += "#";
+                        progressBarInverse = progressBarInverse.substring(0, progressBarInverse.length()-1);
+                    }
+                    writer.print(messageUpdateDB + "(" + lastPercent + "%) :" + formatting + " |" + progressBar +
+                            progressBarInverse + "|\r");
                     writer.flush();
                 }
             }
