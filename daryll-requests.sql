@@ -122,7 +122,8 @@ CREATE PROCEDURE classroomAdvancedSchedule(building tinyint(3), dateBegin date, 
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Classroom.classroomName = classroomName
+        ORDER BY(TakePlace.date, TakePlace.classroomName, TakePlace.idPeriod);
 		END //
 
 # Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given floor
@@ -135,7 +136,8 @@ CREATE PROCEDURE floorAdvancedSchedule(building tinyint(3), dateBegin date, date
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd AND Floor.floorName = floorName
+        ORDER BY(TakePlace.date, TakePlace.classroomName, TakePlace.idPeriod);
 		END //
 
 # Query the database to return a TimeSlot array containing all occupied periods during the given interval and in the given building
@@ -148,5 +150,6 @@ CREATE PROCEDURE buildingAdvancedSchedule(building tinyint(3), dateBegin date, d
 			ON TakePlace.classroomName = Classroom.classroomName
 		INNER JOIN Floor
 			ON Classroom.floorName = Floor.floorName
-		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd;
+		WHERE Floor.building = building AND TakePlace.date >= dateBegin AND TakePlace.date <= dateEnd AND TakePlace.idPeriod >= idPeriodBegin AND TakePlace.idPeriod <= idPeriodEnd
+        ORDER BY(TakePlace.date, TakePlace.classroomName, TakePlace.idPeriod);
 		END //
