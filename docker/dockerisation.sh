@@ -17,7 +17,7 @@ authors() { echo "=====DARYLL=======";
 
 usage() { echo "Usage: $0 [-b] [-s ] [-r <port>] [-d <port>][-u] [-h]" 1>&2; exit 1; }
 
-build() { docker build --no-cache-t $serverName . ; }
+build() { docker build --no-cache -t $serverName . ; }
 
 save()  {   echo "working..."; 
             docker save -o $imageTar $serverName ;
