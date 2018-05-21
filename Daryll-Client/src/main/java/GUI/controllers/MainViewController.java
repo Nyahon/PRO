@@ -15,7 +15,9 @@
  */
 package GUI.controllers;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -25,6 +27,9 @@ import java.util.logging.Logger;
 import GUI.model.TimeSpinner;
 import GUI.svgTools.PlanLoader;
 import GUI.svgTools.SVGToolBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
@@ -440,22 +445,12 @@ public class MainViewController implements Initializable {
 
     /**
      * @brief This method is a handler for the guide option in the menu. It will
-     * display a popup with a text that contains the informations.
+     * redirect to a web page of your project in Github
      */
-    public void howToUse() {
-        // Creating the stage
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setTitle("Guide d'utilisation");
-
-        // Creating the textArea
-        TextArea textArea = new TextArea("Text à remplir...");
-        textArea.setEditable(false);
-
-        // Show all
-        Scene scene = new Scene(textArea);
-        stage.setScene(scene);
-        stage.show();
+    public void howToUse() throws Exception {
+        String url = "https://github.com/Nyahon/PRO";
+        URI uri = new URI(url);
+        Desktop.getDesktop().browse(uri);
     }
 
     public class GuiLogger {
