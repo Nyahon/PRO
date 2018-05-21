@@ -97,7 +97,7 @@ CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
     BEGIN
 		SELECT date, idPeriod, classroomName
         FROM TakePlace
-        WHERE classroomName = classroomName AND date >= now();
+        WHERE classroomName = classroomName AND date = current_date();
 	END //
 
 # Querry the database to return all rooms that are occupied at a given schedule
