@@ -22,8 +22,11 @@ import java.time.LocalTime;
 import java.util.*;
 import java.util.logging.Logger;
 
+import GUI.model.TimeSpinner;
 import GUI.plan.PlanLoader;
 import GUI.svgTools.SVGToolBox;
+import javafx.scene.layout.HBox;
+import models.AdvancedRequest;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -42,6 +45,8 @@ import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
 import utils.PeriodManager;
+
+import static controller.Controller.handleClientClassroomRequest;
 
 public class MainViewController implements Initializable {
 
@@ -74,11 +79,11 @@ public class MainViewController implements Initializable {
     @FXML
     private Label currentRoomLabel;
     @FXML
+    private HBox bottomUserInputHBox;
+    @FXML
     private Button enterPositionButton;
     @FXML
     private Spinner hourSpinner;
-    @FXML
-    private Spinner minuteSpinner;
     @FXML
     private Label guiConsole;
     @FXML
@@ -194,7 +199,8 @@ public class MainViewController implements Initializable {
 
         LocalDate localDate = dateField.getValue();
 
-        LocalTime localTime = LocalTime.of((Integer) hourSpinner.valueProperty().getValue(), (Integer)minuteSpinner.valueProperty().getValue());
+        LocalTime localTime = (LocalTime) hourSpinner.getValue();
+        System.out.println(localTime);
 
         // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
         String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
@@ -203,7 +209,16 @@ public class MainViewController implements Initializable {
         System.out.println(periodRequested);
         TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
+
+        //List<TimeSlot> classroomResponse = handleClientClassroomRequest(timeSlotToSend);
+
+        // Standard version
         Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
+
+        /*AdvancedRequest advancedRequest = new AdvancedRequest(0, java.sql.Date.valueOf("2018-05-22"), 2, null, null);
+
+        List<AdvancedRequest> advancedRequests = new ArrayList<>(Arrays.asList(advancedRequest));
+        List<TimeSlot> timeSlotReceived = Controller.handleClientAdvancedRequest(advancedRequests);*/
 
         String firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
         for(HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()){
@@ -370,14 +385,15 @@ public class MainViewController implements Initializable {
     public void shortestFreeRoom() throws Exception {
         // Initializing the FXML
 
-        Parent root = FXMLLoader.load(getClass().getResource("/ShortestRoomView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(getClass().getResource("/ShortestRoomView.fxml"));
+
+        TimeslotViewController timeslotViewController = fxmlLoader.getController();
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
         Stage stage = new Stage();
         stage.setTitle("Salle la plus proche");
-        stage.setWidth(270);
-        stage.setHeight(170);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -477,8 +493,10 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         fillFloors();
+        hourSpinner = new TimeSpinner();
+        hourSpinner.setPrefWidth(90.0);
+        bottomUserInputHBox.getChildren().set(5, hourSpinner);
         guiLogger = new GuiLogger(guiConsole);
-
     }
 
 }
