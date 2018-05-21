@@ -23,10 +23,9 @@ import java.util.*;
 import java.util.logging.Logger;
 
 import GUI.model.TimeSpinner;
-import GUI.plan.PlanLoader;
+import GUI.svgTools.PlanLoader;
 import GUI.svgTools.SVGToolBox;
 import javafx.scene.layout.HBox;
-import models.AdvancedRequest;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -45,8 +44,6 @@ import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
 import utils.PeriodManager;
-
-import static controller.Controller.handleClientClassroomRequest;
 
 public class MainViewController implements Initializable {
 
@@ -220,32 +217,37 @@ public class MainViewController implements Initializable {
         List<AdvancedRequest> advancedRequests = new ArrayList<>(Arrays.asList(advancedRequest));
         List<TimeSlot> timeSlotReceived = Controller.handleClientAdvancedRequest(advancedRequests);*/
 
-        String firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
+        String firstSvgFloorPath = "";
+        //String firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
         for(HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()){
 
 
-            String classroomName = classroom.getKey();
-            int freePeriods = classroom.getValue();
-            //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
-            switch (freePeriods){
-                case 0:
-                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#ffffff");
-                    break;
-                case 1:
-                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#99ff99");
-                    break;
-                case 2:
-                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#00ff00");
-                    break;
-                case 3:
-                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
-                    break;
-                default:
-                    svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
-                    break;
+            for(int i = 0; i < currentFloorPaths.size(); ++i) {
+                firstSvgFloorPath = "/plans/" + currentFloorPaths.get(i);
+                String classroomName = classroom.getKey();
+                int freePeriods = classroom.getValue();
+                //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
+                switch (freePeriods) {
+                    case 0:
+                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#ffffff");
+                        break;
+                    case 1:
+                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#99ff99");
+                        break;
+                    case 2:
+                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#00ff00");
+                        break;
+                    case 3:
+                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
+                        break;
+                    default:
+                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
+                        break;
+                }
             }
 
         }
+        firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
 
         try {
             //imgView.setImage(new Thread);
