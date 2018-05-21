@@ -10,7 +10,6 @@ import utils.PeriodManager;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -32,10 +31,11 @@ public class Controller {
         return freePeriodMap.getFreeMap();
     }
 
-    public static List<TimeSlot> handleClientClassroomRequest(TimeSlot data) throws IOException {
+    public static List<TimeSlot> handleClientClassroomRequest(ClassRoom data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
-        client.askForClassroom(new ClassRoom(data.getClassroom()));
+        client.askForClassroom(data);
         List<TimeSlot> result = client.receiveTimeSlots();
+        createFile(result, data);
 
 
         return client.receiveTimeSlots();
@@ -48,7 +48,7 @@ public class Controller {
         return client.receiveTimeSlots();
     }
 
-    private void createFile(List<TimeSlot> timeSlotList, TimeSlot clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
+    private static void createFile(List<TimeSlot> timeSlotList, ClassRoom clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
 
         List<Integer> periods = new ArrayList<>();
         for (int i = 0; i < PeriodManager.PERIODS_START.size(); ++i) {
@@ -60,7 +60,7 @@ public class Controller {
         }
 
         PrintWriter writer = new PrintWriter("classroom-request.txt", "UTF-8");
-        writer.println("Classe: " + clientRequest.getClassroom());
+        writer.println("Classe: " + clientRequest.getClassRoom());
         writer.println("-------------------------------------------------");
         for (int period : periods) {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
