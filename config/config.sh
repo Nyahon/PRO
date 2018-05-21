@@ -2,7 +2,7 @@
 
 MyUSER="root"
 MyPASS="root"
-HostName="host"
+HostName="localhost"
 dbName="daryll"
 dbUser=$MyUSER
 dbPass=$MyPASS
