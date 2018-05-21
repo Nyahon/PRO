@@ -81,7 +81,7 @@ public class ServerClientHandler implements IClientHandler {
                 case ProtocolServer.CMD_ADVANCED:
 
                     try {
-                        advancedRequest(reader, writer);
+                        advancedRequest(reader, writer);;
                     }catch (Exception e){ //TODO BETTER
                         LOG.log(Level.SEVERE, "Error trying to get occupied time slots during advanced request: " + e.getMessage());
                     }
@@ -179,6 +179,7 @@ public class ServerClientHandler implements IClientHandler {
      */
     private void advancedRequest(BufferedReader reader, PrintWriter writer) throws IOException{
         writer.println(ProtocolServer.RESPONSE_ADVANCED);
+        writer.flush();
 
         AdvancedRequest advancedRequest = JsonObjectMapper.parseJson(reader.readLine(), AdvancedRequest.class);
         System.out.println(advancedRequest);
@@ -203,6 +204,7 @@ public class ServerClientHandler implements IClientHandler {
         for(TimeSlot ts : answer){
             writer.println(JsonObjectMapper.toJson(ts));
         }
+        LOG.log(Level.INFO, "sent !");
         toolBoxMySQL.closeConnection();
 
         writer.println(ProtocolServer.RESPONSE_OK);
