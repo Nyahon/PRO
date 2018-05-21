@@ -20,6 +20,7 @@ public class AdvancedRequest {
         this.building = building;
         this.date = date;
         this.idPeriodBegin = idPeriodBegin;
+        this.idPeriodEnd = PeriodManager.PERIODS_START.size();
         this.floor = floor;
         this.classroom = classroom;
     }
