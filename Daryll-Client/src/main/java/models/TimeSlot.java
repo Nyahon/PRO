@@ -25,7 +25,7 @@ public class TimeSlot {
         return classroom.getClassRoom();
     }
 
-    public String floor() { return classroom.getFloor(); }
+    public String floor() { return classroom.floor(); }
 
     public void setClassroom(String classroom) {
         this.classroom.setClassRoom( classroom );
