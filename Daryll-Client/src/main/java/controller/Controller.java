@@ -21,6 +21,7 @@ import java.util.List;
 public class Controller {
 
     private static final ClientSocket client = new ClientSocket();
+    private static AdvancedRequest clientRequest;
 
     public static Map<String, Integer> handleClientFloorRequest(TimeSlot data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
@@ -45,7 +46,7 @@ public class Controller {
             Runtime.getRuntime().exec(cmd);
         }
         else {
-            String cmd = "nano" + file.getCanonicalPath();
+            String cmd = "nano " + file.getCanonicalPath();
             Runtime.getRuntime().exec(cmd);
         }
     }
@@ -56,15 +57,16 @@ public class Controller {
         for (AdvancedRequest request : data) {
             client.askForAdvancedRequest(request);
             List<TimeSlot> result = client.receiveTimeSlots();
+            clientRequest = request;
 
-            if (request.getClassroom() != null) {
-                writeToFileWithClassroomTemplate(result, request, writer);
+            if (clientRequest.getClassroom() != null) {
+                writeToFileWithClassroomTemplate(result, writer);
             }
-            else if (request.getFloor() != null) {
-                writeToFileWithFloorTemplate(result, request, writer);
+            else if (clientRequest.getFloor() != null) {
+                writeToFileWithFloorTemplate(result, writer);
             }
             else {
-                writeToFileWithAllTemplate(result, request, writer);
+                writeToFileWithAllTemplate(result, writer);
             }
         }
         writer.close();
@@ -109,7 +111,7 @@ public class Controller {
         writer.close();
     }
 
-    private static void writeToFileWithClassroomTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
+    private static void writeToFileWithClassroomTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -126,8 +128,9 @@ public class Controller {
             writer.println("-------------------------------------------------");
             writer.flush();
 
+            int firstPeriod = clientRequest.getIdPeriodBegin() < 3 ? 3 : clientRequest.getIdPeriodBegin();
             // Fill the period tab with all existing periods
-            for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+            for (int j = firstPeriod; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
                 periods.add(j);
             }
 
@@ -162,7 +165,7 @@ public class Controller {
         }
     }
 
-    private static void writeToFileWithFloorTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
+    private static void writeToFileWithFloorTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -180,11 +183,11 @@ public class Controller {
             writer.flush();
             // Recuperate classrooms in the requested floor and Loop on all classroom
             List<String> classrooms = ClassroomsByFloor.FloorsMap.get(clientRequest.getFloor());
-            writeFreePeriodsForClassroom(writer, classrooms, date, timeSlotList, tmp, periods);
+            writeFreePeriodsForFloor(writer, classrooms, date, timeSlotList, tmp, periods);
         }
     }
 
-    private static void writeToFileWithAllTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
+    private static void writeToFileWithAllTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         List<String> classrooms;
         DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
@@ -210,18 +213,19 @@ public class Controller {
 
                 // Recuperate classrooms in the current floor and Loop on all classroom
                 classrooms = ClassroomsByFloor.FloorsMap.get(floor);
-                writeFreePeriodsForClassroom(writer, classrooms, date, timeSlotList, tmp, periods);
+                writeFreePeriodsForFloor(writer, classrooms, date, timeSlotList, tmp, periods);
             }
         }
     }
 
-    private static void writeFreePeriodsForClassroom(PrintWriter writer, List<String> classrooms, LocalDate date, List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods) {
+    private static void writeFreePeriodsForFloor(PrintWriter writer, List<String> classrooms, LocalDate date, List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods) {
         for (String classroom : classrooms) {
             writer.println("Salle : " + classroom);
             writer.println("--------------");
 
+            int beginPeriod = clientRequest.getIdPeriodBegin() < 3 ? 3 : clientRequest.getIdPeriodBegin();
             // Fill the period tab with all existing periods
-            for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+            for (int j = beginPeriod; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
                 periods.add(j);
             }
 
@@ -250,7 +254,6 @@ public class Controller {
                 writer.flush();
             }
         }
-
     }
 
     private static void removeClassroomOccupiedPeriod (List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods, String classroom) {
@@ -264,12 +267,10 @@ public class Controller {
             // Group all TimeSlot of the same classroom in the temp list
             tmp.add(timeSlotList.get(i));
         }
-
         // Remove all the occupied periods from the period list
         for (TimeSlot t : tmp) {
             periods.remove(Integer.valueOf(t.getIdPeriod()));
         }
-
         // Remove all the processed TimeSlot from the list
         timeSlotList.removeAll(tmp);
         tmp.clear();
