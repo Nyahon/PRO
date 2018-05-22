@@ -25,7 +25,6 @@ public class ClientSocket {
     protected PrintWriter os;
     protected Socket socket;
 
-
     public void connect(String server, int port) throws IOException {
 
         socket = new Socket(server, port);
@@ -36,10 +35,7 @@ public class ClientSocket {
         if( !is.readLine().equals(Protocol.RESPONSE_CONNECTED) )
             throw new IOException("error during connection");
 
-        LOG.info("Connected to ___ serialisation.server " + server + " on port " + port + "." );
-
-
-
+        LOG.info("Connected to DARRYL server " + server + " on port " + port + "." );
     }
 
     public void disconnect() throws IOException {

@@ -1,11 +1,21 @@
 package network.protocol;
 
+import utils.ConfigLoader;
+
+import java.util.Properties;
+
 /**
  * This class defines constants for the DARYLL protocol
  *
  * @author Yohann Meyer, Loïc Frueh, Romain Gallay
  */
 public class Protocol {
+
+    static {
+        ConfigLoader config = new ConfigLoader();
+        DEFAULT_PORT = config.getServerPort();
+        SERVER_IP = config.getServerAddress();
+    }
 
     /**
      * the software version
@@ -15,12 +25,12 @@ public class Protocol {
     /**
      * the default port used in the client-server communication
      */
-    public final static int DEFAULT_PORT = 2613;
+    public final static int DEFAULT_PORT;
 
     /**
      * the server ip
      */
-    public final static String SERVER_IP = "localhost";
+    public final static String SERVER_IP;
 
     /**
      * the command used in classroom request
