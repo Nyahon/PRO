@@ -23,7 +23,7 @@
    guidetolerance="10"
    id="namedview45131"
    inkscape:current-layer="svg2"
-   inkscape:cx="259.55915"
+   inkscape:cx="183.30321"
    inkscape:cy="375.56295"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
@@ -3727,7 +3727,7 @@
        id="path2223"
        inkscape:connector-curvature="0"
        style="clip-rule:evenodd" /></clipPath></defs><g
-   id="R09-7"
+   id="R06"
    transform="matrix(0.90793338,0,0,0.65747683,-621.96428,-22.431954)"
    style="fill:#ffffff"><path
      style="fill:#ffffff;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:2.66304922"
@@ -51102,6 +51102,7 @@
      style="stroke-width:1.33328688">8</tspan></text>
 
 
+
 <g
    font-size="5.6153px"
    font-weight="bold"
@@ -51116,6 +51117,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text40257"
    transform="translate(355.22,413.73)"
@@ -51123,6 +51125,7 @@
      id="tspan40259"
      x="0 3.1071327"
      y="0">04</tspan></text>
+
 
 
 </g><g
@@ -51141,6 +51144,7 @@
      id="tspan40269">R </tspan></text>
 
 
+
 <text
    style="line-height:0%"
    transform="translate(355.22,179.98)"
@@ -51148,6 +51152,7 @@
      y="0"
      x="0 3.1071327"
      id="tspan40273">12</tspan></text>
+
 
 
 </g></g><g
@@ -51164,6 +51169,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text40285"
    transform="translate(355.22,443.89)"
@@ -51171,6 +51177,7 @@
      id="tspan40287"
      x="0 3.1071327"
      y="0">03</tspan></text>
+
 
 
 </g><g
@@ -51187,6 +51194,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text40353"
    transform="translate(355.22,299.59)"
@@ -51194,6 +51202,7 @@
      id="tspan40355"
      x="0 3.1071327"
      y="0">08</tspan></text>
+
 
 
 </g><g
@@ -51210,6 +51219,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text40421"
    transform="translate(355.22,470.73)"
@@ -51217,6 +51227,7 @@
      id="tspan40423"
      x="0 3.1071327"
      y="0">02</tspan></text>
+
 
 
 </g><g
@@ -51232,6 +51243,7 @@
      y="0">Cage d</tspan></text>
 
 
+
 <text
    id="text41209"
    transform="translate(704.04,209.44)"
@@ -51241,6 +51253,7 @@
      y="0">'</tspan></text>
 
 
+
 <text
    id="text41213"
    transform="translate(705.04,209.44)"
@@ -51248,6 +51261,7 @@
      id="tspan41215"
      x="0 2.8752234 5.4601793 8.0451355 10.920359 12.064343 13.208327 16.083551 17.802887"
      y="0">escaliers</tspan></text>
+
 
 
 </g><g
@@ -51263,6 +51277,7 @@
      y="0">245 </tspan></text>
 
 
+
 <text
    id="text41227"
    style="line-height:0%;fill:#132613"
@@ -51272,6 +51287,7 @@
      y="0">m</tspan></text>
 
 
+
 <text
    id="text41231"
    style="line-height:0%;fill:#000000"
@@ -51279,6 +51295,7 @@
      id="tspan41233"
      x="0"
      y="0">²</tspan></text>
+
 
 
 </g><g
@@ -51295,6 +51312,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text41475"
    transform="translate(414.43,469.58)"
@@ -51304,6 +51322,7 @@
      y="0">02</tspan></text>
 
 
+
 <text
    id="text41479"
    transform="translate(420.65,469.58)"
@@ -51311,6 +51330,7 @@
      id="tspan41481"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51327,6 +51347,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text41493"
    transform="translate(355.22,337.6)"
@@ -51334,6 +51355,7 @@
      id="tspan41495"
      x="0 3.1071327"
      y="0">06</tspan></text>
+
 
 
 </g><g
@@ -51352,6 +51374,7 @@
      id="tspan41523">R </tspan></text>
 
 
+
 <text
    style="line-height:0%"
    transform="translate(412.72,187.33)"
@@ -51361,6 +51384,7 @@
      id="tspan41527">11</tspan></text>
 
 
+
 <text
    style="line-height:0%"
    transform="translate(418.63,187.33)"
@@ -51368,6 +51392,7 @@
      y="0"
      x="0"
      id="tspan41531">a</tspan></text>
+
 
 
 </g></g><g
@@ -51384,6 +51409,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text41579"
    transform="translate(414.43,278.6)"
@@ -51393,6 +51419,7 @@
      y="0">09</tspan></text>
 
 
+
 <text
    id="text41583"
    transform="translate(420.65,278.6)"
@@ -51400,6 +51427,7 @@
      id="tspan41585"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51416,6 +51444,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text41651"
    transform="translate(414.43,299.59)"
@@ -51425,6 +51454,7 @@
      y="0">07</tspan></text>
 
 
+
 <text
    id="text41655"
    transform="translate(420.65,299.59)"
@@ -51432,6 +51462,7 @@
      id="tspan41657"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51448,6 +51479,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text41687"
    transform="translate(414.43,357.76)"
@@ -51457,6 +51489,7 @@
      y="0">06</tspan></text>
 
 
+
 <text
    id="text41691"
    transform="translate(420.65,357.76)"
@@ -51464,6 +51497,7 @@
      id="tspan41693"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51480,6 +51514,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text42285"
    transform="translate(414.43,389.26)"
@@ -51489,6 +51524,7 @@
      y="0">05</tspan></text>
 
 
+
 <text
    id="text42289"
    transform="translate(420.65,389.26)"
@@ -51496,6 +51532,7 @@
      id="tspan42291"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51512,6 +51549,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text42331"
    transform="translate(414.43,413.73)"
@@ -51521,6 +51559,7 @@
      y="0">04</tspan></text>
 
 
+
 <text
    id="text42335"
    transform="translate(420.65,413.73)"
@@ -51528,6 +51567,7 @@
      id="tspan42337"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51544,6 +51584,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text42367"
    transform="translate(414.43,442.04)"
@@ -51553,6 +51594,7 @@
      y="0">03</tspan></text>
 
 
+
 <text
    id="text42371"
    transform="translate(420.65,442.04)"
@@ -51560,6 +51602,7 @@
      id="tspan42373"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51578,6 +51621,7 @@
      id="tspan42401">R </tspan></text>
 
 
+
 <text
    style="line-height:0%"
    transform="translate(412.72,160.09)"
@@ -51587,6 +51631,7 @@
      id="tspan42405">13</tspan></text>
 
 
+
 <text
    style="line-height:0%"
    transform="translate(418.93,160.09)"
@@ -51594,6 +51639,7 @@
      y="0"
      x="0"
      id="tspan42409">a</tspan></text>
+
 
 
 </g></g><g
@@ -51610,6 +51656,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text42421"
    transform="translate(355.22,215.15)"
@@ -51617,6 +51664,7 @@
      id="tspan42423"
      x="0 2.9573917"
      y="0">11</tspan></text>
+
 
 
 </g><g
@@ -51633,6 +51681,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text42481"
    transform="translate(355.22,389.26)"
@@ -51640,6 +51689,7 @@
      id="tspan42483"
      x="0 3.1071327"
      y="0">05</tspan></text>
+
 
 
 </g><g
@@ -51656,6 +51706,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42495"
    transform="translate(683.12,416.72)"
@@ -51663,6 +51714,7 @@
      id="tspan42497"
      x="0 3.1071327 6.2142653"
      y="0">102</tspan></text>
+
 
 
 </g><g
@@ -51679,6 +51731,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42509"
    transform="translate(683.12,390.32)"
@@ -51688,6 +51741,7 @@
      y="0">105</tspan></text>
 
 
+
 <text
    id="text42513"
    transform="translate(692.44,390.32)"
@@ -51695,6 +51749,7 @@
      id="tspan42515"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51711,6 +51766,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42527"
    transform="translate(683.12,360.26)"
@@ -51720,6 +51776,7 @@
      y="0">106</tspan></text>
 
 
+
 <text
    id="text42531"
    transform="translate(692.44,360.26)"
@@ -51727,6 +51784,7 @@
      id="tspan42533"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51743,6 +51801,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42545"
    transform="translate(683.12,331.48)"
@@ -51752,6 +51811,7 @@
      y="0">107</tspan></text>
 
 
+
 <text
    id="text42549"
    transform="translate(692.44,331.48)"
@@ -51759,6 +51819,7 @@
      id="tspan42551"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51775,6 +51836,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42563"
    transform="translate(758.21,298.18)"
@@ -51784,6 +51846,7 @@
      y="0">108</tspan></text>
 
 
+
 <text
    id="text42567"
    transform="translate(767.53,298.18)"
@@ -51791,6 +51854,7 @@
      id="tspan42569"
      x="0"
      y="0">a</tspan></text>
+
 
 
 </g><g
@@ -51807,6 +51871,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42581"
    transform="translate(758.21,323.98)"
@@ -51816,6 +51881,7 @@
      y="0">108</tspan></text>
 
 
+
 <text
    id="text42585"
    transform="translate(767.53,323.98)"
@@ -51823,6 +51889,7 @@
      id="tspan42587"
      x="0"
      y="0">b</tspan></text>
+
 
 
 </g><g
@@ -51839,6 +51906,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42599"
    transform="translate(758.21,354.88)"
@@ -51846,6 +51914,7 @@
      id="tspan42601"
      x="0 3.1071327 6.2142653"
      y="0">106</tspan></text>
+
 
 
 </g><g
@@ -51862,6 +51931,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42613"
    transform="translate(758.21,383.29)"
@@ -51869,6 +51939,7 @@
      id="tspan42615"
      x="0 3.1071327 6.2142653"
      y="0">105</tspan></text>
+
 
 
 </g><g
@@ -51885,6 +51956,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42645"
    transform="translate(758.21,412.01)"
@@ -51892,6 +51964,7 @@
      id="tspan42647"
      x="0 3.1071327 6.2142653"
      y="0">104</tspan></text>
+
 
 
 </g><g
@@ -51908,6 +51981,7 @@
      y="0">R</tspan></text>
 
 
+
 <text
    id="text42659"
    transform="translate(758.21,440.74)"
@@ -51915,6 +51989,7 @@
      id="tspan42661"
      x="0 3.1071327 6.2142653"
      y="0">103</tspan></text>
+
 
 
 </g><g
@@ -51931,6 +52006,7 @@
      y="0">R </tspan></text>
 
 
+
 <text
    id="text43041"
    transform="translate(355.22,252.67)"
@@ -51938,6 +52014,7 @@
      id="tspan43043"
      x="0 3.1071327"
      y="0">09</tspan></text>
+
 
 
 </g><g
@@ -51954,6 +52031,7 @@
      y="0">RS</tspan></text>
 
 
+
 <text
    id="text43055"
    transform="translate(388.58,420.19)"
@@ -51963,6 +52041,7 @@
      y="0">-</tspan></text>
 
 
+
 <text
    id="text43059"
    transform="translate(390.45,420.19)"
@@ -51970,6 +52049,7 @@
      id="tspan43061"
      x="0 3.1071327"
      y="0">02</tspan></text>
+
 
 
 </g><path
