@@ -16,7 +16,7 @@
    xml:space="preserve"
    id="svg34002"
    sodipodi:docname="floor-S.svg"
-   inkscape:version="0.91 r13725"><sodipodi:namedview
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1"
@@ -26,14 +26,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1030"
+     inkscape:window-height="986"
      id="namedview34004"
      showgrid="false"
-     inkscape:zoom="4"
-     inkscape:cx="726.02099"
-     inkscape:cy="257.6164"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="1079.6337"
+     inkscape:cy="291.39131"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg34002"
      inkscape:snap-global="false" /><metadata
@@ -3531,6 +3531,76 @@
          inkscape:collect="always"
          stdDeviation="0.3596622"
          id="feGaussianBlur16767" /></filter></defs><g
+     transform="matrix(1.6288378,0,0,0.86736323,-604.40148,246.94403)"
+     id="S141"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0-6-2-7-5"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.6726641,0,0,0.86736323,-753.85825,246.94403)"
+     id="S137"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0-6-2-7-4"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.0481388,0,0,0.86736323,-343.84933,247.44403)"
+     id="S135"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0-6-2-7"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.1029217,0,0,0.86736323,-463.6703,247.44403)"
+     id="S133"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0-6-2"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.3184012,0,0,0.86736323,-722.08656,246.85578)"
+     id="S131"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0-6"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.054987,0,0,0.86736323,-592.16224,247.04638)"
+     id="S129"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1-0"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.6777141,0,0,1.4490711,-951.56086,-282.4542)"
+     id="S02"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7-1"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(1.6777141,0,0,1.4115652,-951.79307,-450.52255)"
+     id="S07"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-7"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(0.9236265,0,0,0.4782968,-367.74033,-13.177673)"
+     id="S11"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0-3"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
+     transform="matrix(0.9236265,0,0,0.97555927,-368.23109,-362.2796)"
+     id="S12"
+     style="fill:#ffffff"><path
+       d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
+       id="path3001-6-0"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:0.74736837;fill-rule:evenodd;stroke-width:2.02473593" /></g><g
      transform="matrix(1.1095659,0,0,0.87402683,-89.170613,243.51976)"
      id="S143"
      style="fill:#ffffff"><path
@@ -3579,69 +3649,7 @@
        d="M 919.67736,791.01597 V 723.8263 h 114.71374 v 67.18967 H 919.67736"
        id="path3077-0"
        inkscape:connector-curvature="0"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.0684669" /></g><g
-     id="S12"><rect
-       transform="skewY(-0.01558592)"
-       x="348.31052"
-       y="175.33264"
-       width="62.263813"
-       height="73.384949"
-       id="rect33835"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:0.99804705" /></g><g
-     id="S07"><rect
-       x="348.48685"
-       y="328.32858"
-       width="64.007133"
-       height="88.91993"
-       id="rect33781"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:1.63905728" /><rect
-       x="348.1467"
-       y="418.34164"
-       width="40.15609"
-       height="16.81673"
-       id="rect33781-3"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:0.56458187" /></g><g
-     id="S137"><rect
-       x="542.01447"
-       y="725.21289"
-       width="113.95313"
-       height="65.737717"
-       id="rect33908"
-       style="fill:#ffffff;stroke:none;stroke-width:1.03337383" /></g><rect
-     style="fill:#00ff00;stroke:#00ff00;stroke-width:0.99248737"
-     id="rect33894"
-     height="65.296112"
-     width="71.794411"
-     y="725.14978"
-     x="468.28204" /><g
-     id="S133"><rect
-       x="391.77054"
-       y="725.65997"
-       width="73.879173"
-       height="64.779587"
-       id="rect33881"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:1.02281606" /></g><g
-     id="S131"><rect
-       x="300.01666"
-       y="725.72021"
-       width="89.169815"
-       height="64.700768"
-       id="rect33867"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:1.01822352" /></g><g
-     id="S129"><rect
-       x="225.66728"
-       y="724.87714"
-       width="72.492172"
-       height="67.220078"
-       id="rect33857"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:1.05363691" /></g><g
-     id="S02"><rect
-       x="348.68445"
-       y="475.3118"
-       width="45.958263"
-       height="149.94194"
-       id="rect1430"
-       style="fill:#00ff00;stroke:#00ff00;stroke-width:2.06317139" /></g><path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:2.0684669" /></g><path
      style="fill:none;stroke:#000000;stroke-width:0.680287;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
      inkscape:connector-curvature="0"
      id="path2721"
@@ -4332,11 +4340,6 @@
      inkscape:connector-curvature="0"
      id="path2995"
      d="m 161.58065,721.74008 h -16.58691 v -0.83902 h 16.58691 v 0.83902" /><g
-     id="S125a"><path
-       d="M 80.429972,673.43971 H 178.16832 V 720.8935 H 80.429972 v -47.45379"
-       id="path2997"
-       inkscape:connector-curvature="0"
-       style="fill:#00ff00;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:3.77937222" /></g><g
      id="S102a"
      style="fill:#ffffff"><path
        d="m 774.88961,551.21173 h 68.36507 v 75.41289 h -68.45199 l 0.0869,-75.41289"
@@ -4528,13 +4531,7 @@
      style="fill:#ffffff;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:3.77937222"
      inkscape:connector-curvature="0"
      id="path3081"
-     d="m 414.56427,435.56602 h 15.46141 V 325.96423 h 33.20556 v 300.67173 h -26.4556 V 614.87455 H 414.56427 V 435.56602" /><g
-     id="S12a"
-     style="fill:#ffffff"><path
-       d="m 463.20479,174.77044 v 18.47697 h 2.10133 v 74.32892 h -28.61741 v -31.5366 h -24.2938 v -61.2674 h 50.80988"
-       id="path3083"
-       inkscape:connector-curvature="0"
-       style="fill:#ffffff;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:3.77937222" /></g><path
+     d="m 414.56427,435.56602 h 15.46141 V 325.96423 h 33.20556 v 300.67173 h -26.4556 V 614.87455 H 414.56427 V 435.56602" /><path
      style="fill-rule:evenodd;stroke-width:3.77937222"
      inkscape:connector-curvature="0"
      id="path3113"
@@ -56700,26 +56697,29 @@
        font-weight="bold"
        id="g27649"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(98.46,544.8)"
-         id="text27639"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27637">42 </tspan></text>
+   transform="translate(98.46,544.8)"
+   id="text27639"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27637">42 </tspan></text>
+
 <text
-         transform="translate(104.45,544.8)"
-         id="text27643"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27641">m</tspan></text>
+   transform="translate(104.45,544.8)"
+   id="text27643"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27641">m</tspan></text>
+
 <text
-         transform="translate(108.28,544.8)"
-         id="text27647"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27645">²</tspan></text>
+   transform="translate(108.28,544.8)"
+   id="text27647"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27645">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g27849"><g
@@ -56727,26 +56727,29 @@
        font-weight="bold"
        id="g27847"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(777.9,535.42)"
-         id="text27837"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27835">16 </tspan></text>
+   transform="translate(777.9,535.42)"
+   id="text27837"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27835">16 </tspan></text>
+
 <text
-         transform="translate(783.89,535.42)"
-         id="text27841"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27839">m</tspan></text>
+   transform="translate(783.89,535.42)"
+   id="text27841"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27839">m</tspan></text>
+
 <text
-         transform="translate(787.72,535.42)"
-         id="text27845"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27843">²</tspan></text>
+   transform="translate(787.72,535.42)"
+   id="text27845"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27843">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g27903"><g
@@ -56754,26 +56757,29 @@
        font-weight="bold"
        id="g27901"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(679.44,408.41)"
-         id="text27891"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27889">73 </tspan></text>
+   transform="translate(679.44,408.41)"
+   id="text27891"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27889">73 </tspan></text>
+
 <text
-         transform="translate(685.43,408.41)"
-         id="text27895"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27893">m</tspan></text>
+   transform="translate(685.43,408.41)"
+   id="text27895"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27893">m</tspan></text>
+
 <text
-         transform="translate(689.26,408.41)"
-         id="text27899"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27897">²</tspan></text>
+   transform="translate(689.26,408.41)"
+   id="text27899"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27897">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g27921"><g
@@ -56781,23 +56787,29 @@
        font-weight="bold"
        id="g27919"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(433.85,530.15)"
-         id="text27909"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan27907">S </tspan></text>
+   transform="translate(433.85,530.15)"
+   id="text27909"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan27907">S </tspan></text>
+
 <text
-         transform="translate(439.17,530.15)"
-         id="text27913"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan27911">135</tspan></text>
+   transform="translate(439.17,530.15)"
+   id="text27913"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan27911">135</tspan></text>
+
 <text
-         transform="translate(448.49,530.15)"
-         id="text27917"><tspan
-           x="0"
-           y="0"
-           id="tspan27915">a</tspan></text>
+   transform="translate(448.49,530.15)"
+   id="text27917"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan27915">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-102.01514,-23.127701)"
      id="g27939"><g
@@ -56805,26 +56817,29 @@
        font-weight="bold"
        id="g27937"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(749.31,338.14)"
-         id="text27927"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024 7.1703033"
-           y="0"
-           id="tspan27925">108 </tspan></text>
+   transform="translate(749.31,338.14)"
+   id="text27927"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024 7.1703033"
+     y="0"
+     id="tspan27925">108 </tspan></text>
+
 <text
-         transform="translate(757.69,338.14)"
-         id="text27931"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27929">m</tspan></text>
+   transform="translate(757.69,338.14)"
+   id="text27931"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27929">m</tspan></text>
+
 <text
-         transform="translate(761.52,338.14)"
-         id="text27935"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27933">²</tspan></text>
+   transform="translate(761.52,338.14)"
+   id="text27935"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27933">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g27975"><g
@@ -56832,26 +56847,29 @@
        font-weight="bold"
        id="g27973"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(946.22,535.42)"
-         id="text27963"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27961">16 </tspan></text>
+   transform="translate(946.22,535.42)"
+   id="text27963"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27961">16 </tspan></text>
+
 <text
-         transform="translate(952.21,535.42)"
-         id="text27967"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27965">m</tspan></text>
+   transform="translate(952.21,535.42)"
+   id="text27967"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27965">m</tspan></text>
+
 <text
-         transform="translate(956.04,535.42)"
-         id="text27971"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27969">²</tspan></text>
+   transform="translate(956.04,535.42)"
+   id="text27971"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27969">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g27993"><g
@@ -56859,26 +56877,29 @@
        font-weight="bold"
        id="g27991"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(749.31,392.96)"
-         id="text27981"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27979">36 </tspan></text>
+   transform="translate(749.31,392.96)"
+   id="text27981"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27979">36 </tspan></text>
+
 <text
-         transform="translate(755.3,392.96)"
-         id="text27985"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan27983">m</tspan></text>
+   transform="translate(755.3,392.96)"
+   id="text27985"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan27983">m</tspan></text>
+
 <text
-         transform="translate(759.13,392.96)"
-         id="text27989"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan27987">²</tspan></text>
+   transform="translate(759.13,392.96)"
+   id="text27989"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan27987">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28011"><g
@@ -56886,26 +56907,29 @@
        font-weight="bold"
        id="g28009"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(749.31,418.84)"
-         id="text27999"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan27997">36 </tspan></text>
+   transform="translate(749.31,418.84)"
+   id="text27999"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan27997">36 </tspan></text>
+
 <text
-         transform="translate(755.3,418.84)"
-         id="text28003"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28001">m</tspan></text>
+   transform="translate(755.3,418.84)"
+   id="text28003"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28001">m</tspan></text>
+
 <text
-         transform="translate(759.13,418.84)"
-         id="text28007"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28005">²</tspan></text>
+   transform="translate(759.13,418.84)"
+   id="text28007"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28005">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28029"><g
@@ -56913,26 +56937,29 @@
        font-weight="bold"
        id="g28027"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(749.31,444.24)"
-         id="text28017"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28015">36 </tspan></text>
+   transform="translate(749.31,444.24)"
+   id="text28017"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28015">36 </tspan></text>
+
 <text
-         transform="translate(755.3,444.24)"
-         id="text28021"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28019">m</tspan></text>
+   transform="translate(755.3,444.24)"
+   id="text28021"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28019">m</tspan></text>
+
 <text
-         transform="translate(759.13,444.24)"
-         id="text28025"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28023">²</tspan></text>
+   transform="translate(759.13,444.24)"
+   id="text28025"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28023">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-104.01514,0.37229892)"
      id="g28047"><g
@@ -56940,26 +56967,29 @@
        font-weight="bold"
        id="g28045"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(679.44,443.83)"
-         id="text28035"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28033">72 </tspan></text>
+   transform="translate(679.44,443.83)"
+   id="text28035"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28033">72 </tspan></text>
+
 <text
-         transform="translate(685.43,443.83)"
-         id="text28039"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28037">m</tspan></text>
+   transform="translate(685.43,443.83)"
+   id="text28039"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28037">m</tspan></text>
+
 <text
-         transform="translate(689.26,443.83)"
-         id="text28043"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28041">²</tspan></text>
+   transform="translate(689.26,443.83)"
+   id="text28043"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28041">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28083"><g
@@ -56967,26 +56997,29 @@
        font-weight="bold"
        id="g28081"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(551.47,535.25)"
-         id="text28071"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28069">16 </tspan></text>
+   transform="translate(551.47,535.25)"
+   id="text28071"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28069">16 </tspan></text>
+
 <text
-         transform="translate(558.67,535.25)"
-         id="text28075"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28073">m</tspan></text>
+   transform="translate(558.67,535.25)"
+   id="text28075"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28073">m</tspan></text>
+
 <text
-         transform="translate(562.5,535.25)"
-         id="text28079"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28077">²</tspan></text>
+   transform="translate(562.5,535.25)"
+   id="text28079"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28077">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28123"><g
@@ -56994,26 +57027,29 @@
        font-weight="bold"
        id="g28121"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1003.2,535.42)"
-         id="text28111"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28109">16 </tspan></text>
+   transform="translate(1003.2,535.42)"
+   id="text28111"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28109">16 </tspan></text>
+
 <text
-         transform="translate(1009.2,535.42)"
-         id="text28115"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28113">m</tspan></text>
+   transform="translate(1009.2,535.42)"
+   id="text28115"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28113">m</tspan></text>
+
 <text
-         transform="translate(1013,535.42)"
-         id="text28119"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28117">²</tspan></text>
+   transform="translate(1013,535.42)"
+   id="text28119"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28117">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28141"><g
@@ -57021,26 +57057,29 @@
        font-weight="bold"
        id="g28139"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.4,548.33)"
-         id="text28129"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28127">31 </tspan></text>
+   transform="translate(1088.4,548.33)"
+   id="text28129"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28127">31 </tspan></text>
+
 <text
-         transform="translate(1094.4,548.33)"
-         id="text28133"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28131">m</tspan></text>
+   transform="translate(1094.4,548.33)"
+   id="text28133"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28131">m</tspan></text>
+
 <text
-         transform="translate(1098.2,548.33)"
-         id="text28137"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28135">²</tspan></text>
+   transform="translate(1098.2,548.33)"
+   id="text28137"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28135">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-107.51514,-22.377701)"
      id="g28177"><g
@@ -57048,26 +57087,29 @@
        font-weight="bold"
        id="g28175"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(679.44,338.14)"
-         id="text28165"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024 7.1703033"
-           y="0"
-           id="tspan28163">106 </tspan></text>
+   transform="translate(679.44,338.14)"
+   id="text28165"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024 7.1703033"
+     y="0"
+     id="tspan28163">106 </tspan></text>
+
 <text
-         transform="translate(687.82,338.14)"
-         id="text28169"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28167">m</tspan></text>
+   transform="translate(687.82,338.14)"
+   id="text28169"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28167">m</tspan></text>
+
 <text
-         transform="translate(691.65,338.14)"
-         id="text28173"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28171">²</tspan></text>
+   transform="translate(691.65,338.14)"
+   id="text28173"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28171">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28195"><g
@@ -57075,26 +57117,29 @@
        font-weight="bold"
        id="g28193"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(889.09,535.42)"
-         id="text28183"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28181">16 </tspan></text>
+   transform="translate(889.09,535.42)"
+   id="text28183"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28181">16 </tspan></text>
+
 <text
-         transform="translate(895.08,535.42)"
-         id="text28187"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28185">m</tspan></text>
+   transform="translate(895.08,535.42)"
+   id="text28187"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28185">m</tspan></text>
+
 <text
-         transform="translate(898.91,535.42)"
-         id="text28191"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28189">²</tspan></text>
+   transform="translate(898.91,535.42)"
+   id="text28191"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28189">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28213"><g
@@ -57102,26 +57147,29 @@
        font-weight="bold"
        id="g28211"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.4,578.39)"
-         id="text28201"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28199">24 </tspan></text>
+   transform="translate(1088.4,578.39)"
+   id="text28201"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28199">24 </tspan></text>
+
 <text
-         transform="translate(1094.4,578.39)"
-         id="text28205"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28203">m</tspan></text>
+   transform="translate(1094.4,578.39)"
+   id="text28205"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28203">m</tspan></text>
+
 <text
-         transform="translate(1098.2,578.39)"
-         id="text28209"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28207">²</tspan></text>
+   transform="translate(1098.2,578.39)"
+   id="text28209"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28207">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28231"><g
@@ -57129,26 +57177,29 @@
        font-weight="bold"
        id="g28229"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.4,603.95)"
-         id="text28219"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28217">24 </tspan></text>
+   transform="translate(1088.4,603.95)"
+   id="text28219"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28217">24 </tspan></text>
+
 <text
-         transform="translate(1094.4,603.95)"
-         id="text28223"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28221">m</tspan></text>
+   transform="translate(1094.4,603.95)"
+   id="text28223"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28221">m</tspan></text>
+
 <text
-         transform="translate(1098.2,603.95)"
-         id="text28227"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28225">²</tspan></text>
+   transform="translate(1098.2,603.95)"
+   id="text28227"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28225">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28249"><g
@@ -57156,26 +57207,29 @@
        font-weight="bold"
        id="g28247"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(977.27,535.42)"
-         id="text28237"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28235">16 </tspan></text>
+   transform="translate(977.27,535.42)"
+   id="text28237"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28235">16 </tspan></text>
+
 <text
-         transform="translate(983.26,535.42)"
-         id="text28241"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28239">m</tspan></text>
+   transform="translate(983.26,535.42)"
+   id="text28241"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28239">m</tspan></text>
+
 <text
-         transform="translate(987.09,535.42)"
-         id="text28245"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28243">²</tspan></text>
+   transform="translate(987.09,535.42)"
+   id="text28245"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28243">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28267"><g
@@ -57183,26 +57237,29 @@
        font-weight="bold"
        id="g28265"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(918.46,535.42)"
-         id="text28255"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28253">16 </tspan></text>
+   transform="translate(918.46,535.42)"
+   id="text28255"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28253">16 </tspan></text>
+
 <text
-         transform="translate(924.45,535.42)"
-         id="text28259"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28257">m</tspan></text>
+   transform="translate(924.45,535.42)"
+   id="text28259"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28257">m</tspan></text>
+
 <text
-         transform="translate(928.28,535.42)"
-         id="text28263"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28261">²</tspan></text>
+   transform="translate(928.28,535.42)"
+   id="text28263"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28261">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28285"><g
@@ -57210,26 +57267,29 @@
        font-weight="bold"
        id="g28283"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(861.92,535.42)"
-         id="text28273"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28271">16 </tspan></text>
+   transform="translate(861.92,535.42)"
+   id="text28273"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28271">16 </tspan></text>
+
 <text
-         transform="translate(867.91,535.42)"
-         id="text28277"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28275">m</tspan></text>
+   transform="translate(867.91,535.42)"
+   id="text28277"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28275">m</tspan></text>
+
 <text
-         transform="translate(871.74,535.42)"
-         id="text28281"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28279">²</tspan></text>
+   transform="translate(871.74,535.42)"
+   id="text28281"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28279">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28303"><g
@@ -57237,26 +57297,29 @@
        font-weight="bold"
        id="g28301"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(835.54,535.42)"
-         id="text28291"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28289">16 </tspan></text>
+   transform="translate(835.54,535.42)"
+   id="text28291"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28289">16 </tspan></text>
+
 <text
-         transform="translate(841.53,535.42)"
-         id="text28295"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28293">m</tspan></text>
+   transform="translate(841.53,535.42)"
+   id="text28295"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28293">m</tspan></text>
+
 <text
-         transform="translate(845.36,535.42)"
-         id="text28299"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28297">²</tspan></text>
+   transform="translate(845.36,535.42)"
+   id="text28299"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28297">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28321"><g
@@ -57264,26 +57327,29 @@
        font-weight="bold"
        id="g28319"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(807.19,535.42)"
-         id="text28309"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28307">16 </tspan></text>
+   transform="translate(807.19,535.42)"
+   id="text28309"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28307">16 </tspan></text>
+
 <text
-         transform="translate(813.18,535.42)"
-         id="text28313"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28311">m</tspan></text>
+   transform="translate(813.18,535.42)"
+   id="text28313"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28311">m</tspan></text>
+
 <text
-         transform="translate(817.01,535.42)"
-         id="text28317"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28315">²</tspan></text>
+   transform="translate(817.01,535.42)"
+   id="text28317"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28315">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28361"><g
@@ -57291,26 +57357,29 @@
        font-weight="bold"
        id="g28359"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(669.18,535.25)"
-         id="text28349"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28347">17 </tspan></text>
+   transform="translate(669.18,535.25)"
+   id="text28349"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28347">17 </tspan></text>
+
 <text
-         transform="translate(675.17,535.25)"
-         id="text28353"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28351">m</tspan></text>
+   transform="translate(675.17,535.25)"
+   id="text28353"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28351">m</tspan></text>
+
 <text
-         transform="translate(679,535.25)"
-         id="text28357"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28355">²</tspan></text>
+   transform="translate(679,535.25)"
+   id="text28357"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28355">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28397"><g
@@ -57318,26 +57387,29 @@
        font-weight="bold"
        id="g28395"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(637.11,535.25)"
-         id="text28385"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28383">21 </tspan></text>
+   transform="translate(637.11,535.25)"
+   id="text28385"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28383">21 </tspan></text>
+
 <text
-         transform="translate(643.1,535.25)"
-         id="text28389"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28387">m</tspan></text>
+   transform="translate(643.1,535.25)"
+   id="text28389"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28387">m</tspan></text>
+
 <text
-         transform="translate(646.93,535.25)"
-         id="text28393"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28391">²</tspan></text>
+   transform="translate(646.93,535.25)"
+   id="text28393"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28391">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28415"><g
@@ -57345,26 +57417,29 @@
        font-weight="bold"
        id="g28413"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(608.77,535.25)"
-         id="text28403"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28401">16 </tspan></text>
+   transform="translate(608.77,535.25)"
+   id="text28403"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28401">16 </tspan></text>
+
 <text
-         transform="translate(615.97,535.25)"
-         id="text28407"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28405">m</tspan></text>
+   transform="translate(615.97,535.25)"
+   id="text28407"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28405">m</tspan></text>
+
 <text
-         transform="translate(619.8,535.25)"
-         id="text28411"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28409">²</tspan></text>
+   transform="translate(619.8,535.25)"
+   id="text28411"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28409">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28451"><g
@@ -57372,26 +57447,29 @@
        font-weight="bold"
        id="g28449"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(579.82,535.25)"
-         id="text28439"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28437">16 </tspan></text>
+   transform="translate(579.82,535.25)"
+   id="text28439"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28437">16 </tspan></text>
+
 <text
-         transform="translate(587.02,535.25)"
-         id="text28443"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28441">m</tspan></text>
+   transform="translate(587.02,535.25)"
+   id="text28443"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28441">m</tspan></text>
+
 <text
-         transform="translate(590.85,535.25)"
-         id="text28447"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28445">²</tspan></text>
+   transform="translate(590.85,535.25)"
+   id="text28447"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28445">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28469"><g
@@ -57399,26 +57477,29 @@
        font-weight="bold"
        id="g28467"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(523.12,535.25)"
-         id="text28457"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28455">16 </tspan></text>
+   transform="translate(523.12,535.25)"
+   id="text28457"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28455">16 </tspan></text>
+
 <text
-         transform="translate(530.32,535.25)"
-         id="text28461"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28459">m</tspan></text>
+   transform="translate(530.32,535.25)"
+   id="text28461"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28459">m</tspan></text>
+
 <text
-         transform="translate(534.15,535.25)"
-         id="text28465"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28463">²</tspan></text>
+   transform="translate(534.15,535.25)"
+   id="text28465"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28463">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28487"><g
@@ -57426,26 +57507,29 @@
        font-weight="bold"
        id="g28485"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(494.78,535.25)"
-         id="text28475"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28473">16 </tspan></text>
+   transform="translate(494.78,535.25)"
+   id="text28475"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28473">16 </tspan></text>
+
 <text
-         transform="translate(501.98,535.25)"
-         id="text28479"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28477">m</tspan></text>
+   transform="translate(501.98,535.25)"
+   id="text28479"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28477">m</tspan></text>
+
 <text
-         transform="translate(505.81,535.25)"
-         id="text28483"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28481">²</tspan></text>
+   transform="translate(505.81,535.25)"
+   id="text28483"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28481">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28523"><g
@@ -57453,26 +57537,29 @@
        font-weight="bold"
        id="g28521"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(700.01,535.25)"
-         id="text28511"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28509">10 </tspan></text>
+   transform="translate(700.01,535.25)"
+   id="text28511"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28509">10 </tspan></text>
+
 <text
-         transform="translate(706,535.25)"
-         id="text28515"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28513">m</tspan></text>
+   transform="translate(706,535.25)"
+   id="text28515"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28513">m</tspan></text>
+
 <text
-         transform="translate(709.83,535.25)"
-         id="text28519"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28517">²</tspan></text>
+   transform="translate(709.83,535.25)"
+   id="text28519"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28517">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28559"><g
@@ -57480,26 +57567,29 @@
        font-weight="bold"
        id="g28557"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(219.86,535.25)"
-         id="text28547"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28545">34 </tspan></text>
+   transform="translate(219.86,535.25)"
+   id="text28547"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28545">34 </tspan></text>
+
 <text
-         transform="translate(225.85,535.25)"
-         id="text28551"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28549">m</tspan></text>
+   transform="translate(225.85,535.25)"
+   id="text28551"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28549">m</tspan></text>
+
 <text
-         transform="translate(229.68,535.25)"
-         id="text28555"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28553">²</tspan></text>
+   transform="translate(229.68,535.25)"
+   id="text28555"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28553">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28595"><g
@@ -57507,26 +57597,29 @@
        font-weight="bold"
        id="g28593"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(313.96,535.25)"
-         id="text28583"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28581">33 </tspan></text>
+   transform="translate(313.96,535.25)"
+   id="text28583"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28581">33 </tspan></text>
+
 <text
-         transform="translate(319.95,535.25)"
-         id="text28587"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28585">m</tspan></text>
+   transform="translate(319.95,535.25)"
+   id="text28587"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28585">m</tspan></text>
+
 <text
-         transform="translate(323.78,535.25)"
-         id="text28591"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28589">²</tspan></text>
+   transform="translate(323.78,535.25)"
+   id="text28591"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28589">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28631"><g
@@ -57534,26 +57627,29 @@
        font-weight="bold"
        id="g28629"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(433.85,535.25)"
-         id="text28619"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28617">33 </tspan></text>
+   transform="translate(433.85,535.25)"
+   id="text28619"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28617">33 </tspan></text>
+
 <text
-         transform="translate(441.05,535.25)"
-         id="text28623"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28621">m</tspan></text>
+   transform="translate(441.05,535.25)"
+   id="text28623"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28621">m</tspan></text>
+
 <text
-         transform="translate(444.88,535.25)"
-         id="text28627"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28625">²</tspan></text>
+   transform="translate(444.88,535.25)"
+   id="text28627"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28625">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28667"><g
@@ -57561,26 +57657,29 @@
        font-weight="bold"
        id="g28665"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(350.74,221.99)"
-         id="text28655"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28653">34 </tspan></text>
+   transform="translate(350.74,221.99)"
+   id="text28655"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28653">34 </tspan></text>
+
 <text
-         transform="translate(357.94,221.99)"
-         id="text28659"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28657">m</tspan></text>
+   transform="translate(357.94,221.99)"
+   id="text28659"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28657">m</tspan></text>
+
 <text
-         transform="translate(361.77,221.99)"
-         id="text28663"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28661">²</tspan></text>
+   transform="translate(361.77,221.99)"
+   id="text28663"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28661">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28703"><g
@@ -57588,26 +57687,29 @@
        font-weight="bold"
        id="g28701"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(350.74,250.61)"
-         id="text28691"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28689">34 </tspan></text>
+   transform="translate(350.74,250.61)"
+   id="text28691"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28689">34 </tspan></text>
+
 <text
-         transform="translate(357.94,250.61)"
-         id="text28695"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28693">m</tspan></text>
+   transform="translate(357.94,250.61)"
+   id="text28695"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28693">m</tspan></text>
+
 <text
-         transform="translate(361.77,250.61)"
-         id="text28699"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28697">²</tspan></text>
+   transform="translate(361.77,250.61)"
+   id="text28699"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28697">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28775"><g
@@ -57615,26 +57717,29 @@
        font-weight="bold"
        id="g28773"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(282.81,535.25)"
-         id="text28763"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan28761">15 </tspan></text>
+   transform="translate(282.81,535.25)"
+   id="text28763"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan28761">15 </tspan></text>
+
 <text
-         transform="translate(288.8,535.25)"
-         id="text28767"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan28765">m</tspan></text>
+   transform="translate(288.8,535.25)"
+   id="text28767"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan28765">m</tspan></text>
+
 <text
-         transform="translate(292.63,535.25)"
-         id="text28771"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan28769">²</tspan></text>
+   transform="translate(292.63,535.25)"
+   id="text28771"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan28769">²</tspan></text>
+
 </g></g><g
      transform="matrix(3.7076274,0,0,3.7076274,-943.19837,-395.32709)"
      id="g28807"><g
@@ -57642,17 +57747,21 @@
        font-weight="bold"
        id="g28805"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,165.49)"
-         id="text28799"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan28797">S </tspan></text>
+   transform="translate(350.74,165.49)"
+   id="text28799"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan28797">S </tspan></text>
+
 <text
-         transform="translate(356.06,165.49)"
-         id="text28803"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan28801">12</tspan></text>
+   transform="translate(356.06,165.49)"
+   id="text28803"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan28801">12</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28821"><g
@@ -57660,17 +57769,21 @@
        font-weight="bold"
        id="g28819"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,216.72)"
-         id="text28813"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan28811">S </tspan></text>
+   transform="translate(350.74,216.72)"
+   id="text28813"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan28811">S </tspan></text>
+
 <text
-         transform="translate(356.06,216.72)"
-         id="text28817"><tspan
-           x="0 2.9573917"
-           y="0"
-           id="tspan28815">11</tspan></text>
+   transform="translate(356.06,216.72)"
+   id="text28817"
+   style="line-height:0%"><tspan
+     x="0 2.9573917"
+     y="0"
+     id="tspan28815">11</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g28835"><g
@@ -57678,53 +57791,65 @@
        font-weight="bold"
        id="g28833"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,245.34)"
-         id="text28827"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan28825">S </tspan></text>
+   transform="translate(350.74,245.34)"
+   id="text28827"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan28825">S </tspan></text>
+
 <text
-         transform="translate(356.06,245.34)"
-         id="text28831"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan28829">10</tspan></text>
+   transform="translate(356.06,245.34)"
+   id="text28831"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan28829">10</tspan></text>
+
 </g></g><g
-     transform="matrix(2.9058139,0,0,2.9058139,-658.08946,-495.99461)"
+     transform="matrix(6.6332333,0,0,6.6332333,-1958.2008,-1604.3499)"
      id="g28849"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g28847"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,301.44)"
-         id="text28841"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan28839">S </tspan></text>
+   transform="translate(350.74,301.44)"
+   id="text28841"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan28839">S </tspan></text>
+
 <text
-         transform="translate(356.06,301.44)"
-         id="text28845"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan28843">07</tspan></text>
+   transform="translate(356.06,301.44)"
+   id="text28845"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan28843">07</tspan></text>
+
 </g></g><g
-     transform="matrix(3.7327016,0,0,3.7327016,-959.92408,-1107.163)"
+     transform="matrix(6.9280035,0,0,6.9280035,-2066.4433,-2506.5501)"
      id="g28863"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g28861"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,447.24)"
-         id="text28855"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan28853">S </tspan></text>
+   transform="translate(350.74,447.24)"
+   id="text28855"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan28853">S </tspan></text>
+
 <text
-         transform="translate(356.06,447.24)"
-         id="text28859"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan28857">02</tspan></text>
+   transform="translate(356.06,447.24)"
+   id="text28859"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan28857">02</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29473"><g
@@ -57732,26 +57857,29 @@
        font-weight="bold"
        id="g29471"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(226.43,588.82)"
-         id="text29461"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29459">28 </tspan></text>
+   transform="translate(226.43,588.82)"
+   id="text29461"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29459">28 </tspan></text>
+
 <text
-         transform="translate(232.42,588.82)"
-         id="text29465"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29463">m</tspan></text>
+   transform="translate(232.42,588.82)"
+   id="text29465"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29463">m</tspan></text>
+
 <text
-         transform="translate(236.25,588.82)"
-         id="text29469"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29467">²</tspan></text>
+   transform="translate(236.25,588.82)"
+   id="text29469"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29467">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29491"><g
@@ -57759,23 +57887,29 @@
        font-weight="bold"
        id="g29489"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(217.14,529.79)"
-         id="text29479"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29477">S </tspan></text>
+   transform="translate(217.14,529.79)"
+   id="text29479"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29477">S </tspan></text>
+
 <text
-         transform="translate(222.46,529.79)"
-         id="text29483"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29481">128</tspan></text>
+   transform="translate(222.46,529.79)"
+   id="text29483"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29481">128</tspan></text>
+
 <text
-         transform="translate(231.78,529.79)"
-         id="text29487"><tspan
-           x="0"
-           y="0"
-           id="tspan29485">a</tspan></text>
+   transform="translate(231.78,529.79)"
+   id="text29487"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29485">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29509"><g
@@ -57783,144 +57917,175 @@
        font-weight="bold"
        id="g29507"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(311.37,529.79)"
-         id="text29497"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29495">S </tspan></text>
+   transform="translate(311.37,529.79)"
+   id="text29497"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29495">S </tspan></text>
+
 <text
-         transform="translate(316.69,529.79)"
-         id="text29501"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29499">131</tspan></text>
+   transform="translate(316.69,529.79)"
+   id="text29501"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29499">131</tspan></text>
+
 <text
-         transform="translate(326.01,529.79)"
-         id="text29505"><tspan
-           x="0"
-           y="0"
-           id="tspan29503">a</tspan></text>
+   transform="translate(326.01,529.79)"
+   id="text29505"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29503">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29527"><g
        font-size="5.1834px"
        id="g29525"
        style="font-size:5.18340015px;font-family:Arial;fill:#132613"><text
-         transform="translate(687.38,209.44)"
-         id="text29515"><tspan
-           x="0 3.7292476 6.5980587 9.4668703 12.335682 13.7877"
-           y="0"
-           id="tspan29513">Cage d</tspan></text>
+   transform="translate(687.38,209.44)"
+   id="text29515"
+   style="line-height:0%"><tspan
+     x="0 3.7292476 6.5980587 9.4668703 12.335682 13.7877"
+     y="0"
+     id="tspan29513">Cage d</tspan></text>
+
 <text
-         transform="translate(704.04,209.44)"
-         id="text29519"><tspan
-           x="0"
-           y="0"
-           id="tspan29517">'</tspan></text>
+   transform="translate(704.04,209.44)"
+   id="text29519"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29517">'</tspan></text>
+
 <text
-         transform="translate(705.04,209.44)"
-         id="text29523"><tspan
-           x="0 2.8752234 5.4601793 8.0451355 10.920359 12.064343 13.208327 16.083551 17.802887"
-           y="0"
-           id="tspan29521">escaliers</tspan></text>
+   transform="translate(705.04,209.44)"
+   id="text29523"
+   style="line-height:0%"><tspan
+     x="0 2.8752234 5.4601793 8.0451355 10.920359 12.064343 13.208327 16.083551 17.802887"
+     y="0"
+     id="tspan29521">escaliers</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29545"><g
        font-size="4.3195px"
        id="g29543"
        style="font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(699.7,215.81)"
-         id="text29533"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024 7.1703033"
-           y="0"
-           id="tspan29531">245 </tspan></text>
+   transform="translate(699.7,215.81)"
+   id="text29533"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024 7.1703033"
+     y="0"
+     id="tspan29531">245 </tspan></text>
+
 <text
-         transform="translate(708.08,215.81)"
-         id="text29537"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29535">m</tspan></text>
+   transform="translate(708.08,215.81)"
+   id="text29537"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29535">m</tspan></text>
+
 <text
-         transform="translate(711.68,215.81)"
-         id="text29541"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29539">²</tspan></text>
+   transform="translate(711.68,215.81)"
+   id="text29541"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29539">²</tspan></text>
+
 </g></g><g
-     transform="matrix(3.5861308,0,0,3.5861308,-1076.2975,-1327.0368)"
+     transform="matrix(4.1811882,0,0,4.1811882,-1341.0839,-1671.594)"
      id="g29559"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g29557"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(433.85,583.12)"
-         id="text29551"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29549">S </tspan></text>
+   transform="translate(433.85,583.12)"
+   id="text29551"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29549">S </tspan></text>
+
 <text
-         transform="translate(439.17,583.12)"
-         id="text29555"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29553">135</tspan></text>
+   transform="translate(439.17,583.12)"
+   id="text29555"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29553">135</tspan></text>
+
 </g></g><g
-     transform="matrix(3.5929764,0,0,3.5929764,-954.11811,-1330.7273)"
+     transform="matrix(4.1738376,0,0,4.1738376,-1182.1502,-1667.0645)"
      id="g29573"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g29571"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(378.17,583.12)"
-         id="text29565"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29563">S </tspan></text>
+   transform="translate(378.17,583.12)"
+   id="text29565"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29563">S </tspan></text>
+
 <text
-         transform="translate(383.48,583.12)"
-         id="text29569"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29567">133</tspan></text>
+   transform="translate(383.48,583.12)"
+   id="text29569"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29567">133</tspan></text>
+
 </g></g><g
-     transform="matrix(3.6856657,0,0,3.6856657,-828.20261,-1384.2645)"
+     transform="matrix(4.4241474,0,0,4.4241474,-1068.2935,-1811.869)"
      id="g29587"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g29585"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(311.37,583.12)"
-         id="text29579"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29577">S </tspan></text>
+   transform="translate(311.37,583.12)"
+   id="text29579"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29577">S </tspan></text>
+
 <text
-         transform="translate(316.69,583.12)"
-         id="text29583"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29581">131</tspan></text>
+   transform="translate(316.69,583.12)"
+   id="text29583"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29581">131</tspan></text>
+
 </g></g><g
-     transform="matrix(3.5100575,0,0,3.5100575,-651.63061,-1281.6979)"
+     transform="matrix(4.2150844,0,0,4.2150844,-836.08906,-1689.931)"
      id="g29601"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g29599"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(252.92,583.12)"
-         id="text29593"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29591">S </tspan></text>
+   transform="translate(252.92,583.12)"
+   id="text29593"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29591">S </tspan></text>
+
 <text
-         transform="translate(258.23,583.12)"
-         id="text29597"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29595">129</tspan></text>
+   transform="translate(258.23,583.12)"
+   id="text29597"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29595">129</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29619"><g
@@ -57928,23 +58093,29 @@
        font-weight="bold"
        id="g29617"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(278.59,529.79)"
-         id="text29607"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29605">S </tspan></text>
+   transform="translate(278.59,529.79)"
+   id="text29607"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29605">S </tspan></text>
+
 <text
-         transform="translate(283.9,529.79)"
-         id="text29611"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29609">130</tspan></text>
+   transform="translate(283.9,529.79)"
+   id="text29611"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29609">130</tspan></text>
+
 <text
-         transform="translate(293.23,529.79)"
-         id="text29615"><tspan
-           x="0"
-           y="0"
-           id="tspan29613">a</tspan></text>
+   transform="translate(293.23,529.79)"
+   id="text29615"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29613">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29633"><g
@@ -57952,17 +58123,21 @@
        font-weight="bold"
        id="g29631"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(223.84,583.12)"
-         id="text29625"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29623">S </tspan></text>
+   transform="translate(223.84,583.12)"
+   id="text29625"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29623">S </tspan></text>
+
 <text
-         transform="translate(229.16,583.12)"
-         id="text29629"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29627">128</tspan></text>
+   transform="translate(229.16,583.12)"
+   id="text29629"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29627">128</tspan></text>
+
 </g></g><g
      transform="matrix(3.5126215,0,0,3.5126215,-469.09109,-1188.9923)"
      id="g29651"><g
@@ -57970,23 +58145,29 @@
        font-weight="bold"
        id="g29649"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(160.82,538.66)"
-         id="text29639"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29637">S </tspan></text>
+   transform="translate(160.82,538.66)"
+   id="text29639"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29637">S </tspan></text>
+
 <text
-         transform="translate(166.13,538.66)"
-         id="text29643"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29641">125</tspan></text>
+   transform="translate(166.13,538.66)"
+   id="text29643"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29641">125</tspan></text>
+
 <text
-         transform="translate(175.45,538.66)"
-         id="text29647"><tspan
-           x="0"
-           y="0"
-           id="tspan29645">a</tspan></text>
+   transform="translate(175.45,538.66)"
+   id="text29647"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29645">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29669"><g
@@ -57994,23 +58175,29 @@
        font-weight="bold"
        id="g29667"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(98.46,538.66)"
-         id="text29657"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29655">S </tspan></text>
+   transform="translate(98.46,538.66)"
+   id="text29657"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29655">S </tspan></text>
+
 <text
-         transform="translate(103.78,538.66)"
-         id="text29661"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan29659">123</tspan></text>
+   transform="translate(103.78,538.66)"
+   id="text29661"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan29659">123</tspan></text>
+
 <text
-         transform="translate(113.1,538.66)"
-         id="text29665"><tspan
-           x="0"
-           y="0"
-           id="tspan29663">a</tspan></text>
+   transform="translate(113.1,538.66)"
+   id="text29665"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29663">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29687"><g
@@ -58018,23 +58205,29 @@
        font-weight="bold"
        id="g29685"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(402.26,165.49)"
-         id="text29675"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29673">S </tspan></text>
+   transform="translate(402.26,165.49)"
+   id="text29675"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29673">S </tspan></text>
+
 <text
-         transform="translate(407.58,165.49)"
-         id="text29679"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan29677">12</tspan></text>
+   transform="translate(407.58,165.49)"
+   id="text29679"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan29677">12</tspan></text>
+
 <text
-         transform="translate(413.79,165.49)"
-         id="text29683"><tspan
-           x="0"
-           y="0"
-           id="tspan29681">a</tspan></text>
+   transform="translate(413.79,165.49)"
+   id="text29683"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29681">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29723"><g
@@ -58042,26 +58235,29 @@
        font-weight="bold"
        id="g29721"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(402.26,170.77)"
-         id="text29711"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29709">98 </tspan></text>
+   transform="translate(402.26,170.77)"
+   id="text29711"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29709">98 </tspan></text>
+
 <text
-         transform="translate(409.46,170.77)"
-         id="text29715"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29713">m</tspan></text>
+   transform="translate(409.46,170.77)"
+   id="text29715"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29713">m</tspan></text>
+
 <text
-         transform="translate(413.29,170.77)"
-         id="text29719"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29717">²</tspan></text>
+   transform="translate(413.29,170.77)"
+   id="text29719"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29717">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29741"><g
@@ -58069,23 +58265,29 @@
        font-weight="bold"
        id="g29739"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(398.26,356.16)"
-         id="text29729"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29727">S </tspan></text>
+   transform="translate(398.26,356.16)"
+   id="text29729"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29727">S </tspan></text>
+
 <text
-         transform="translate(403.57,356.16)"
-         id="text29733"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan29731">06</tspan></text>
+   transform="translate(403.57,356.16)"
+   id="text29733"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan29731">06</tspan></text>
+
 <text
-         transform="translate(409.79,356.16)"
-         id="text29737"><tspan
-           x="0"
-           y="0"
-           id="tspan29735">a</tspan></text>
+   transform="translate(409.79,356.16)"
+   id="text29737"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan29735">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29759"><g
@@ -58093,26 +58295,29 @@
        font-weight="bold"
        id="g29757"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(398.26,361.43)"
-         id="text29747"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29745">25 </tspan></text>
+   transform="translate(398.26,361.43)"
+   id="text29747"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29745">25 </tspan></text>
+
 <text
-         transform="translate(405.46,361.43)"
-         id="text29751"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29749">m</tspan></text>
+   transform="translate(405.46,361.43)"
+   id="text29751"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29749">m</tspan></text>
+
 <text
-         transform="translate(409.29,361.43)"
-         id="text29755"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29753">²</tspan></text>
+   transform="translate(409.29,361.43)"
+   id="text29755"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29753">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29777"><g
@@ -58120,26 +58325,29 @@
        font-weight="bold"
        id="g29775"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(350.74,361.43)"
-         id="text29765"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29763">27 </tspan></text>
+   transform="translate(350.74,361.43)"
+   id="text29765"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29763">27 </tspan></text>
+
 <text
-         transform="translate(357.94,361.43)"
-         id="text29769"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29767">m</tspan></text>
+   transform="translate(357.94,361.43)"
+   id="text29769"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29767">m</tspan></text>
+
 <text
-         transform="translate(361.77,361.43)"
-         id="text29773"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29771">²</tspan></text>
+   transform="translate(361.77,361.43)"
+   id="text29773"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29771">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29791"><g
@@ -58147,17 +58355,21 @@
        font-weight="bold"
        id="g29789"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(350.74,356.16)"
-         id="text29783"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29781">S </tspan></text>
+   transform="translate(350.74,356.16)"
+   id="text29783"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29781">S </tspan></text>
+
 <text
-         transform="translate(356.06,356.16)"
-         id="text29787"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan29785">06</tspan></text>
+   transform="translate(356.06,356.16)"
+   id="text29787"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan29785">06</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29827"><g
@@ -58165,26 +58377,29 @@
        font-weight="bold"
        id="g29825"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,308.49)"
-         id="text29815"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29813">25 </tspan></text>
+   transform="translate(1039.4,308.49)"
+   id="text29815"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29813">25 </tspan></text>
+
 <text
-         transform="translate(1045.4,308.49)"
-         id="text29819"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29817">m</tspan></text>
+   transform="translate(1045.4,308.49)"
+   id="text29819"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29817">m</tspan></text>
+
 <text
-         transform="translate(1049.2,308.49)"
-         id="text29823"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29821">²</tspan></text>
+   transform="translate(1049.2,308.49)"
+   id="text29823"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29821">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29845"><g
@@ -58192,26 +58407,29 @@
        font-weight="bold"
        id="g29843"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.9,308.49)"
-         id="text29833"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29831">25 </tspan></text>
+   transform="translate(1088.9,308.49)"
+   id="text29833"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29831">25 </tspan></text>
+
 <text
-         transform="translate(1094.9,308.49)"
-         id="text29837"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29835">m</tspan></text>
+   transform="translate(1094.9,308.49)"
+   id="text29837"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29835">m</tspan></text>
+
 <text
-         transform="translate(1098.8,308.49)"
-         id="text29841"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29839">²</tspan></text>
+   transform="translate(1098.8,308.49)"
+   id="text29841"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29839">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29863"><g
@@ -58219,26 +58437,29 @@
        font-weight="bold"
        id="g29861"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,335.64)"
-         id="text29851"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29849">25 </tspan></text>
+   transform="translate(1039.4,335.64)"
+   id="text29851"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29849">25 </tspan></text>
+
 <text
-         transform="translate(1045.4,335.64)"
-         id="text29855"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29853">m</tspan></text>
+   transform="translate(1045.4,335.64)"
+   id="text29855"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29853">m</tspan></text>
+
 <text
-         transform="translate(1049.2,335.64)"
-         id="text29859"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29857">²</tspan></text>
+   transform="translate(1049.2,335.64)"
+   id="text29859"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29857">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29881"><g
@@ -58246,26 +58467,29 @@
        font-weight="bold"
        id="g29879"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.9,335.64)"
-         id="text29869"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29867">51 </tspan></text>
+   transform="translate(1088.9,335.64)"
+   id="text29869"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29867">51 </tspan></text>
+
 <text
-         transform="translate(1094.9,335.64)"
-         id="text29873"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29871">m</tspan></text>
+   transform="translate(1094.9,335.64)"
+   id="text29873"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29871">m</tspan></text>
+
 <text
-         transform="translate(1098.8,335.64)"
-         id="text29877"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29875">²</tspan></text>
+   transform="translate(1098.8,335.64)"
+   id="text29877"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29875">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29899"><g
@@ -58273,26 +58497,29 @@
        font-weight="bold"
        id="g29897"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,363.99)"
-         id="text29887"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29885">25 </tspan></text>
+   transform="translate(1039.4,363.99)"
+   id="text29887"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29885">25 </tspan></text>
+
 <text
-         transform="translate(1045.4,363.99)"
-         id="text29891"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29889">m</tspan></text>
+   transform="translate(1045.4,363.99)"
+   id="text29891"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29889">m</tspan></text>
+
 <text
-         transform="translate(1049.2,363.99)"
-         id="text29895"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29893">²</tspan></text>
+   transform="translate(1049.2,363.99)"
+   id="text29895"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29893">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29917"><g
@@ -58300,26 +58527,29 @@
        font-weight="bold"
        id="g29915"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,392.33)"
-         id="text29905"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29903">25 </tspan></text>
+   transform="translate(1039.4,392.33)"
+   id="text29905"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29903">25 </tspan></text>
+
 <text
-         transform="translate(1045.4,392.33)"
-         id="text29909"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29907">m</tspan></text>
+   transform="translate(1045.4,392.33)"
+   id="text29909"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29907">m</tspan></text>
+
 <text
-         transform="translate(1049.2,392.33)"
-         id="text29913"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29911">²</tspan></text>
+   transform="translate(1049.2,392.33)"
+   id="text29913"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29911">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29935"><g
@@ -58327,26 +58557,29 @@
        font-weight="bold"
        id="g29933"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.9,392.33)"
-         id="text29923"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29921">25 </tspan></text>
+   transform="translate(1088.9,392.33)"
+   id="text29923"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29921">25 </tspan></text>
+
 <text
-         transform="translate(1094.9,392.33)"
-         id="text29927"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29925">m</tspan></text>
+   transform="translate(1094.9,392.33)"
+   id="text29927"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29925">m</tspan></text>
+
 <text
-         transform="translate(1098.8,392.33)"
-         id="text29931"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29929">²</tspan></text>
+   transform="translate(1098.8,392.33)"
+   id="text29931"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29929">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29953"><g
@@ -58354,26 +58587,29 @@
        font-weight="bold"
        id="g29951"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.9,421.62)"
-         id="text29941"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29939">25 </tspan></text>
+   transform="translate(1088.9,421.62)"
+   id="text29941"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29939">25 </tspan></text>
+
 <text
-         transform="translate(1094.9,421.62)"
-         id="text29945"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29943">m</tspan></text>
+   transform="translate(1094.9,421.62)"
+   id="text29945"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29943">m</tspan></text>
+
 <text
-         transform="translate(1098.8,421.62)"
-         id="text29949"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29947">²</tspan></text>
+   transform="translate(1098.8,421.62)"
+   id="text29949"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29947">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29971"><g
@@ -58381,26 +58617,29 @@
        font-weight="bold"
        id="g29969"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1088.9,451.2)"
-         id="text29959"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29957">48 </tspan></text>
+   transform="translate(1088.9,451.2)"
+   id="text29959"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29957">48 </tspan></text>
+
 <text
-         transform="translate(1094.9,451.2)"
-         id="text29963"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29961">m</tspan></text>
+   transform="translate(1094.9,451.2)"
+   id="text29963"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29961">m</tspan></text>
+
 <text
-         transform="translate(1098.8,451.2)"
-         id="text29967"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29965">²</tspan></text>
+   transform="translate(1098.8,451.2)"
+   id="text29967"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29965">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g29989"><g
@@ -58408,26 +58647,29 @@
        font-weight="bold"
        id="g29987"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,421.62)"
-         id="text29977"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan29975">81 </tspan></text>
+   transform="translate(1039.4,421.62)"
+   id="text29977"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan29975">81 </tspan></text>
+
 <text
-         transform="translate(1045.4,421.62)"
-         id="text29981"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan29979">m</tspan></text>
+   transform="translate(1045.4,421.62)"
+   id="text29981"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan29979">m</tspan></text>
+
 <text
-         transform="translate(1049.2,421.62)"
-         id="text29985"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan29983">²</tspan></text>
+   transform="translate(1049.2,421.62)"
+   id="text29985"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan29983">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30007"><g
@@ -58435,23 +58677,29 @@
        font-weight="bold"
        id="g30005"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(398.26,387.03)"
-         id="text29995"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan29993">S </tspan></text>
+   transform="translate(398.26,387.03)"
+   id="text29995"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan29993">S </tspan></text>
+
 <text
-         transform="translate(403.57,387.03)"
-         id="text29999"><tspan
-           x="0 3.1071327"
-           y="0"
-           id="tspan29997">05</tspan></text>
+   transform="translate(403.57,387.03)"
+   id="text29999"
+   style="line-height:0%"><tspan
+     x="0 3.1071327"
+     y="0"
+     id="tspan29997">05</tspan></text>
+
 <text
-         transform="translate(409.79,387.03)"
-         id="text30003"><tspan
-           x="0"
-           y="0"
-           id="tspan30001">a</tspan></text>
+   transform="translate(409.79,387.03)"
+   id="text30003"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30001">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30025"><g
@@ -58459,26 +58707,29 @@
        font-weight="bold"
        id="g30023"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(398.26,392.3)"
-         id="text30013"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan30011">28 </tspan></text>
+   transform="translate(398.26,392.3)"
+   id="text30013"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan30011">28 </tspan></text>
+
 <text
-         transform="translate(405.46,392.3)"
-         id="text30017"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan30015">m</tspan></text>
+   transform="translate(405.46,392.3)"
+   id="text30017"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan30015">m</tspan></text>
+
 <text
-         transform="translate(409.29,392.3)"
-         id="text30021"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan30019">²</tspan></text>
+   transform="translate(409.29,392.3)"
+   id="text30021"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan30019">²</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30043"><g
@@ -58486,170 +58737,205 @@
        font-weight="bold"
        id="g30041"
        style="font-weight:bold;font-size:4.31949997px;font-family:Arial"><text
-         transform="translate(1039.4,285.18)"
-         id="text30031"
-         style="fill:#132613"><tspan
-           x="0 2.3901012 4.7802024"
-           y="0"
-           id="tspan30029">25 </tspan></text>
+   transform="translate(1039.4,285.18)"
+   id="text30031"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0 2.3901012 4.7802024"
+     y="0"
+     id="tspan30029">25 </tspan></text>
+
 <text
-         transform="translate(1045.4,285.18)"
-         id="text30035"
-         style="fill:#132613"><tspan
-           x="0"
-           y="0"
-           id="tspan30033">m</tspan></text>
+   transform="translate(1045.4,285.18)"
+   id="text30035"
+   style="line-height:0%;fill:#132613"><tspan
+     x="0"
+     y="0"
+     id="tspan30033">m</tspan></text>
+
 <text
-         transform="translate(1049.2,285.18)"
-         id="text30039"
-         style="fill:#000000"><tspan
-           x="0"
-           y="0"
-           id="tspan30037">²</tspan></text>
+   transform="translate(1049.2,285.18)"
+   id="text30039"
+   style="line-height:0%;fill:#000000"><tspan
+     x="0"
+     y="0"
+     id="tspan30037">²</tspan></text>
+
 </g></g><g
-     transform="matrix(3.6242655,0,0,3.6242655,-1216.0545,-1348.8365)"
+     transform="matrix(5.1741263,0,0,5.1741263,-1996.2946,-2248.2554)"
      id="g30057"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30055"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(494.19,583.12)"
-         id="text30049"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30047">S </tspan></text>
+   transform="translate(494.19,583.12)"
+   id="text30049"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30047">S </tspan></text>
+
 <text
-         transform="translate(499.5,583.12)"
-         id="text30053"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30051">137</tspan></text>
+   transform="translate(499.5,583.12)"
+   id="text30053"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30051">137</tspan></text>
+
 </g></g><g
-     transform="matrix(3.7983293,0,0,3.7983293,-1621.3787,-1450.0821)"
+     transform="matrix(5.2937548,0,0,5.2937548,-2538.5078,-2317.9812)"
      id="g30071"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30069"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(607.57,583.12)"
-         id="text30063"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30061">S </tspan></text>
+   transform="translate(607.57,583.12)"
+   id="text30063"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30061">S </tspan></text>
+
 <text
-         transform="translate(612.89,583.12)"
-         id="text30067"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30065">141</tspan></text>
+   transform="translate(612.89,583.12)"
+   id="text30067"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30065">141</tspan></text>
+
 </g></g><g
-     transform="matrix(3.5736373,0,0,3.5736373,-1595.5338,-1320.862)"
+     transform="matrix(4.5404452,0,0,4.5404452,-2244.2729,-1878.6747)"
      id="g30085"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30083"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(664.88,583.12)"
-         id="text30077"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30075">S </tspan></text>
+   transform="translate(664.88,583.12)"
+   id="text30077"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30075">S </tspan></text>
+
 <text
-         transform="translate(670.19,583.12)"
-         id="text30081"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30079">143</tspan></text>
+   transform="translate(670.19,583.12)"
+   id="text30081"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30079">143</tspan></text>
+
 </g></g><g
-     transform="matrix(3.5766712,0,0,3.5766712,-1927.4183,-1321.1365)"
+     transform="matrix(5.4185069,0,0,5.4185069,-3424.7432,-2391.6181)"
      id="g30099"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30097"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(805.06,583.12)"
-         id="text30091"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30089">S </tspan></text>
+   transform="translate(805.06,583.12)"
+   id="text30091"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30089">S </tspan></text>
+
 <text
-         transform="translate(810.38,583.12)"
-         id="text30095"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30093">147</tspan></text>
+   transform="translate(810.38,583.12)"
+   id="text30095"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30093">147</tspan></text>
+
 </g></g><g
-     transform="matrix(3.514206,0,0,3.514206,-1985.9398,-1284.4495)"
+     transform="matrix(3.9845202,0,0,3.9845202,-2396.3556,-1558.7764)"
      id="g30113"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30111"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(863.16,583.12)"
-         id="text30105"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30103">S </tspan></text>
+   transform="translate(863.16,583.12)"
+   id="text30105"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30103">S </tspan></text>
+
 <text
-         transform="translate(868.47,583.12)"
-         id="text30109"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30107">151</tspan></text>
+   transform="translate(868.47,583.12)"
+   id="text30109"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30107">151</tspan></text>
+
 </g></g><g
-     transform="matrix(2.6210446,0,0,2.6210446,-1299.1205,-765.78049)"
+     transform="matrix(2.2404024,0,0,2.2404024,-945.41197,-543.79327)"
      id="g30127"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30125"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(918.53,583.12)"
-         id="text30119"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30117">S </tspan></text>
+   transform="translate(918.53,583.12)"
+   id="text30119"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30117">S </tspan></text>
+
 <text
-         transform="translate(923.85,583.12)"
-         id="text30123"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30121">152</tspan></text>
+   transform="translate(923.85,583.12)"
+   id="text30123"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30121">152</tspan></text>
+
 </g></g><g
-     transform="matrix(3.6445774,0,0,3.6445774,-2297.2139,-1361.6629)"
+     transform="matrix(4.0923322,0,0,4.0923322,-2728.5522,-1620.9272)"
      id="g30141"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30139"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(948.92,583.12)"
-         id="text30133"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30131">S </tspan></text>
+   transform="translate(948.92,583.12)"
+   id="text30133"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30131">S </tspan></text>
+
 <text
-         transform="translate(954.24,583.12)"
-         id="text30137"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30135">153</tspan></text>
+   transform="translate(954.24,583.12)"
+   id="text30137"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30135">153</tspan></text>
+
 </g></g><g
-     transform="matrix(3.892116,0,0,3.892116,-2678.6929,-1506.2294)"
+     transform="matrix(4.3134751,0,0,4.3134751,-3108.5075,-1750.2097)"
      id="g30155"><g
        font-size="5.6153px"
        font-weight="bold"
        id="g30153"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1005.6,583.12)"
-         id="text30147"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30145">S </tspan></text>
+   transform="translate(1005.6,583.12)"
+   id="text30147"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30145">S </tspan></text>
+
 <text
-         transform="translate(1010.9,583.12)"
-         id="text30151"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30149">155</tspan></text>
+   transform="translate(1010.9,583.12)"
+   id="text30151"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30149">155</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30173"><g
@@ -58657,23 +58943,29 @@
        font-weight="bold"
        id="g30171"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(494.78,530.15)"
-         id="text30161"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30159">S </tspan></text>
+   transform="translate(494.78,530.15)"
+   id="text30161"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30159">S </tspan></text>
+
 <text
-         transform="translate(500.09,530.15)"
-         id="text30165"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30163">137</tspan></text>
+   transform="translate(500.09,530.15)"
+   id="text30165"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30163">137</tspan></text>
+
 <text
-         transform="translate(509.42,530.15)"
-         id="text30169"><tspan
-           x="0"
-           y="0"
-           id="tspan30167">a</tspan></text>
+   transform="translate(509.42,530.15)"
+   id="text30169"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30167">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30191"><g
@@ -58681,23 +58973,29 @@
        font-weight="bold"
        id="g30189"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(523.12,530.15)"
-         id="text30179"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30177">S </tspan></text>
+   transform="translate(523.12,530.15)"
+   id="text30179"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30177">S </tspan></text>
+
 <text
-         transform="translate(528.44,530.15)"
-         id="text30183"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30181">138</tspan></text>
+   transform="translate(528.44,530.15)"
+   id="text30183"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30181">138</tspan></text>
+
 <text
-         transform="translate(537.76,530.15)"
-         id="text30187"><tspan
-           x="0"
-           y="0"
-           id="tspan30185">a</tspan></text>
+   transform="translate(537.76,530.15)"
+   id="text30187"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30185">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30209"><g
@@ -58705,23 +59003,29 @@
        font-weight="bold"
        id="g30207"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(551.47,530.15)"
-         id="text30197"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30195">S </tspan></text>
+   transform="translate(551.47,530.15)"
+   id="text30197"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30195">S </tspan></text>
+
 <text
-         transform="translate(556.79,530.15)"
-         id="text30201"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30199">139</tspan></text>
+   transform="translate(556.79,530.15)"
+   id="text30201"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30199">139</tspan></text>
+
 <text
-         transform="translate(566.11,530.15)"
-         id="text30205"><tspan
-           x="0"
-           y="0"
-           id="tspan30203">a</tspan></text>
+   transform="translate(566.11,530.15)"
+   id="text30205"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30203">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30227"><g
@@ -58729,23 +59033,29 @@
        font-weight="bold"
        id="g30225"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(579.82,530.15)"
-         id="text30215"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30213">S </tspan></text>
+   transform="translate(579.82,530.15)"
+   id="text30215"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30213">S </tspan></text>
+
 <text
-         transform="translate(585.13,530.15)"
-         id="text30219"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30217">140</tspan></text>
+   transform="translate(585.13,530.15)"
+   id="text30219"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30217">140</tspan></text>
+
 <text
-         transform="translate(594.45,530.15)"
-         id="text30223"><tspan
-           x="0"
-           y="0"
-           id="tspan30221">a</tspan></text>
+   transform="translate(594.45,530.15)"
+   id="text30223"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30221">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30245"><g
@@ -58753,23 +59063,29 @@
        font-weight="bold"
        id="g30243"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(608.77,530.15)"
-         id="text30233"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30231">S </tspan></text>
+   transform="translate(608.77,530.15)"
+   id="text30233"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30231">S </tspan></text>
+
 <text
-         transform="translate(614.08,530.15)"
-         id="text30237"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30235">141</tspan></text>
+   transform="translate(614.08,530.15)"
+   id="text30237"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30235">141</tspan></text>
+
 <text
-         transform="translate(623.4,530.15)"
-         id="text30241"><tspan
-           x="0"
-           y="0"
-           id="tspan30239">a</tspan></text>
+   transform="translate(623.4,530.15)"
+   id="text30241"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30239">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30263"><g
@@ -58777,23 +59093,29 @@
        font-weight="bold"
        id="g30261"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(637.11,530.15)"
-         id="text30251"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30249">S </tspan></text>
+   transform="translate(637.11,530.15)"
+   id="text30251"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30249">S </tspan></text>
+
 <text
-         transform="translate(642.43,530.15)"
-         id="text30255"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30253">142</tspan></text>
+   transform="translate(642.43,530.15)"
+   id="text30255"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30253">142</tspan></text>
+
 <text
-         transform="translate(651.75,530.15)"
-         id="text30259"><tspan
-           x="0"
-           y="0"
-           id="tspan30257">a</tspan></text>
+   transform="translate(651.75,530.15)"
+   id="text30259"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30257">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30281"><g
@@ -58801,23 +59123,29 @@
        font-weight="bold"
        id="g30279"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(669.18,530.15)"
-         id="text30269"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30267">S </tspan></text>
+   transform="translate(669.18,530.15)"
+   id="text30269"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30267">S </tspan></text>
+
 <text
-         transform="translate(674.5,530.15)"
-         id="text30273"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30271">143</tspan></text>
+   transform="translate(674.5,530.15)"
+   id="text30273"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30271">143</tspan></text>
+
 <text
-         transform="translate(683.82,530.15)"
-         id="text30277"><tspan
-           x="0"
-           y="0"
-           id="tspan30275">a</tspan></text>
+   transform="translate(683.82,530.15)"
+   id="text30277"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30275">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30299"><g
@@ -58825,23 +59153,29 @@
        font-weight="bold"
        id="g30297"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(696.62,530.15)"
-         id="text30287"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30285">S </tspan></text>
+   transform="translate(696.62,530.15)"
+   id="text30287"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30285">S </tspan></text>
+
 <text
-         transform="translate(701.93,530.15)"
-         id="text30291"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30289">144</tspan></text>
+   transform="translate(701.93,530.15)"
+   id="text30291"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30289">144</tspan></text>
+
 <text
-         transform="translate(711.25,530.15)"
-         id="text30295"><tspan
-           x="0"
-           y="0"
-           id="tspan30293">a</tspan></text>
+   transform="translate(711.25,530.15)"
+   id="text30295"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30293">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30317"><g
@@ -58849,23 +59183,29 @@
        font-weight="bold"
        id="g30315"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(777.9,530.15)"
-         id="text30305"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30303">S </tspan></text>
+   transform="translate(777.9,530.15)"
+   id="text30305"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30303">S </tspan></text>
+
 <text
-         transform="translate(783.22,530.15)"
-         id="text30309"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30307">147</tspan></text>
+   transform="translate(783.22,530.15)"
+   id="text30309"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30307">147</tspan></text>
+
 <text
-         transform="translate(792.54,530.15)"
-         id="text30313"><tspan
-           x="0"
-           y="0"
-           id="tspan30311">a</tspan></text>
+   transform="translate(792.54,530.15)"
+   id="text30313"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30311">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30335"><g
@@ -58873,23 +59213,29 @@
        font-weight="bold"
        id="g30333"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(807.19,530.15)"
-         id="text30323"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30321">S </tspan></text>
+   transform="translate(807.19,530.15)"
+   id="text30323"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30321">S </tspan></text>
+
 <text
-         transform="translate(812.51,530.15)"
-         id="text30327"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30325">148</tspan></text>
+   transform="translate(812.51,530.15)"
+   id="text30327"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30325">148</tspan></text>
+
 <text
-         transform="translate(821.83,530.15)"
-         id="text30331"><tspan
-           x="0"
-           y="0"
-           id="tspan30329">a</tspan></text>
+   transform="translate(821.83,530.15)"
+   id="text30331"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30329">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30353"><g
@@ -58897,23 +59243,29 @@
        font-weight="bold"
        id="g30351"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(835.54,530.15)"
-         id="text30341"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30339">S </tspan></text>
+   transform="translate(835.54,530.15)"
+   id="text30341"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30339">S </tspan></text>
+
 <text
-         transform="translate(840.86,530.15)"
-         id="text30345"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30343">149</tspan></text>
+   transform="translate(840.86,530.15)"
+   id="text30345"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30343">149</tspan></text>
+
 <text
-         transform="translate(850.18,530.15)"
-         id="text30349"><tspan
-           x="0"
-           y="0"
-           id="tspan30347">a</tspan></text>
+   transform="translate(850.18,530.15)"
+   id="text30349"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30347">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30371"><g
@@ -58921,23 +59273,29 @@
        font-weight="bold"
        id="g30369"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(861.92,530.15)"
-         id="text30359"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30357">S </tspan></text>
+   transform="translate(861.92,530.15)"
+   id="text30359"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30357">S </tspan></text>
+
 <text
-         transform="translate(867.24,530.15)"
-         id="text30363"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30361">150</tspan></text>
+   transform="translate(867.24,530.15)"
+   id="text30363"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30361">150</tspan></text>
+
 <text
-         transform="translate(876.56,530.15)"
-         id="text30367"><tspan
-           x="0"
-           y="0"
-           id="tspan30365">a</tspan></text>
+   transform="translate(876.56,530.15)"
+   id="text30367"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30365">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30389"><g
@@ -58945,23 +59303,29 @@
        font-weight="bold"
        id="g30387"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(889.09,530.15)"
-         id="text30377"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30375">S </tspan></text>
+   transform="translate(889.09,530.15)"
+   id="text30377"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30375">S </tspan></text>
+
 <text
-         transform="translate(894.4,530.15)"
-         id="text30381"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30379">151</tspan></text>
+   transform="translate(894.4,530.15)"
+   id="text30381"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30379">151</tspan></text>
+
 <text
-         transform="translate(903.73,530.15)"
-         id="text30385"><tspan
-           x="0"
-           y="0"
-           id="tspan30383">a</tspan></text>
+   transform="translate(903.73,530.15)"
+   id="text30385"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30383">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30407"><g
@@ -58969,23 +59333,29 @@
        font-weight="bold"
        id="g30405"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(918.46,530.15)"
-         id="text30395"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30393">S </tspan></text>
+   transform="translate(918.46,530.15)"
+   id="text30395"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30393">S </tspan></text>
+
 <text
-         transform="translate(923.78,530.15)"
-         id="text30399"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30397">152</tspan></text>
+   transform="translate(923.78,530.15)"
+   id="text30399"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30397">152</tspan></text>
+
 <text
-         transform="translate(933.1,530.15)"
-         id="text30403"><tspan
-           x="0"
-           y="0"
-           id="tspan30401">a</tspan></text>
+   transform="translate(933.1,530.15)"
+   id="text30403"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30401">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30425"><g
@@ -58993,23 +59363,29 @@
        font-weight="bold"
        id="g30423"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(946.22,530.15)"
-         id="text30413"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30411">S </tspan></text>
+   transform="translate(946.22,530.15)"
+   id="text30413"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30411">S </tspan></text>
+
 <text
-         transform="translate(951.54,530.15)"
-         id="text30417"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30415">153</tspan></text>
+   transform="translate(951.54,530.15)"
+   id="text30417"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30415">153</tspan></text>
+
 <text
-         transform="translate(960.86,530.15)"
-         id="text30421"><tspan
-           x="0"
-           y="0"
-           id="tspan30419">a</tspan></text>
+   transform="translate(960.86,530.15)"
+   id="text30421"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30419">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30443"><g
@@ -59017,23 +59393,29 @@
        font-weight="bold"
        id="g30441"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(977.27,530.15)"
-         id="text30431"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30429">S </tspan></text>
+   transform="translate(977.27,530.15)"
+   id="text30431"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30429">S </tspan></text>
+
 <text
-         transform="translate(982.59,530.15)"
-         id="text30435"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30433">154</tspan></text>
+   transform="translate(982.59,530.15)"
+   id="text30435"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30433">154</tspan></text>
+
 <text
-         transform="translate(991.91,530.15)"
-         id="text30439"><tspan
-           x="0"
-           y="0"
-           id="tspan30437">a</tspan></text>
+   transform="translate(991.91,530.15)"
+   id="text30439"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30437">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30461"><g
@@ -59041,23 +59423,29 @@
        font-weight="bold"
        id="g30459"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1003.2,530.15)"
-         id="text30449"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30447">S </tspan></text>
+   transform="translate(1003.2,530.15)"
+   id="text30449"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30447">S </tspan></text>
+
 <text
-         transform="translate(1008.5,530.15)"
-         id="text30453"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30451">155</tspan></text>
+   transform="translate(1008.5,530.15)"
+   id="text30453"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30451">155</tspan></text>
+
 <text
-         transform="translate(1017.8,530.15)"
-         id="text30457"><tspan
-           x="0"
-           y="0"
-           id="tspan30455">a</tspan></text>
+   transform="translate(1017.8,530.15)"
+   id="text30457"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30455">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-98.01514,-23.252701)"
      id="g30479"><g
@@ -59065,23 +59453,29 @@
        font-weight="bold"
        id="g30477"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="rotate(-90,785.07,-245.37)"
-         id="text30467"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30465">S </tspan></text>
+   transform="rotate(-90,785.07,-245.37)"
+   id="text30467"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30465">S </tspan></text>
+
 <text
-         transform="rotate(-90,782.41,-248.03)"
-         id="text30471"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30469">156</tspan></text>
+   transform="rotate(-90,782.41,-248.03)"
+   id="text30471"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30469">156</tspan></text>
+
 <text
-         transform="rotate(-90,777.75,-252.69)"
-         id="text30475"><tspan
-           x="0"
-           y="0"
-           id="tspan30473">a</tspan></text>
+   transform="rotate(-90,777.75,-252.69)"
+   id="text30475"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30473">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.765044,0,0,1.765044,-405.95578,-189.70971)"
      id="g30497"><g
@@ -59089,23 +59483,29 @@
        font-weight="bold"
        id="g30495"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(679.44,438.55)"
-         id="text30485"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30483">S </tspan></text>
+   transform="translate(679.44,438.55)"
+   id="text30485"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30483">S </tspan></text>
+
 <text
-         transform="translate(684.75,438.55)"
-         id="text30489"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30487">102</tspan></text>
+   transform="translate(684.75,438.55)"
+   id="text30489"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30487">102</tspan></text>
+
 <text
-         transform="translate(694.08,438.55)"
-         id="text30493"><tspan
-           x="0"
-           y="0"
-           id="tspan30491">a</tspan></text>
+   transform="translate(694.08,438.55)"
+   id="text30493"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30491">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.8290223,0,0,1.8290223,-451.43815,-223.8514)"
      id="g30515"><g
@@ -59113,23 +59513,29 @@
        font-weight="bold"
        id="g30513"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(679.44,403.14)"
-         id="text30503"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30501">S </tspan></text>
+   transform="translate(679.44,403.14)"
+   id="text30503"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30501">S </tspan></text>
+
 <text
-         transform="translate(684.75,403.14)"
-         id="text30507"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30505">102</tspan></text>
+   transform="translate(684.75,403.14)"
+   id="text30507"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30505">102</tspan></text>
+
 <text
-         transform="translate(694.08,403.14)"
-         id="text30511"><tspan
-           x="0"
-           y="0"
-           id="tspan30509">b</tspan></text>
+   transform="translate(694.08,403.14)"
+   id="text30511"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30509">b</tspan></text>
+
 </g></g><g
      transform="matrix(2.0002261,0,0,2.0002261,-566.54565,-245.42264)"
      id="g30529"><g
@@ -59137,17 +59543,21 @@
        font-weight="bold"
        id="g30527"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(679.44,332.86)"
-         id="text30521"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30519">S </tspan></text>
+   transform="translate(679.44,332.86)"
+   id="text30521"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30519">S </tspan></text>
+
 <text
-         transform="translate(684.75,332.86)"
-         id="text30525"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30523">106</tspan></text>
+   transform="translate(684.75,332.86)"
+   id="text30525"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30523">106</tspan></text>
+
 </g></g><g
      transform="matrix(1.9844742,0,0,1.9844742,-596.0884,-240.42832)"
      id="g30543"><g
@@ -59155,17 +59565,21 @@
        font-weight="bold"
        id="g30541"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(749.31,332.86)"
-         id="text30535"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30533">S </tspan></text>
+   transform="translate(749.31,332.86)"
+   id="text30535"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30533">S </tspan></text>
+
 <text
-         transform="translate(754.63,332.86)"
-         id="text30539"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30537">107</tspan></text>
+   transform="translate(754.63,332.86)"
+   id="text30539"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30537">107</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30557"><g
@@ -59173,17 +59587,21 @@
        font-weight="bold"
        id="g30555"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(749.31,387.68)"
-         id="text30549"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30547">S </tspan></text>
+   transform="translate(749.31,387.68)"
+   id="text30549"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30547">S </tspan></text>
+
 <text
-         transform="translate(754.63,387.68)"
-         id="text30553"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30551">105</tspan></text>
+   transform="translate(754.63,387.68)"
+   id="text30553"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30551">105</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30571"><g
@@ -59191,17 +59609,21 @@
        font-weight="bold"
        id="g30569"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(749.31,413.57)"
-         id="text30563"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30561">S </tspan></text>
+   transform="translate(749.31,413.57)"
+   id="text30563"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30561">S </tspan></text>
+
 <text
-         transform="translate(754.63,413.57)"
-         id="text30567"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30565">104</tspan></text>
+   transform="translate(754.63,413.57)"
+   id="text30567"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30565">104</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30585"><g
@@ -59209,17 +59631,21 @@
        font-weight="bold"
        id="g30583"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(749.31,438.96)"
-         id="text30577"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30575">S </tspan></text>
+   transform="translate(749.31,438.96)"
+   id="text30577"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30575">S </tspan></text>
+
 <text
-         transform="translate(754.63,438.96)"
-         id="text30581"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30579">103</tspan></text>
+   transform="translate(754.63,438.96)"
+   id="text30581"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30579">103</tspan></text>
+
 </g></g><g
      transform="matrix(3.3585761,0,0,3.3585761,-2264.5963,-1329.3892)"
      id="g30599"><g
@@ -59227,17 +59653,21 @@
        font-weight="bold"
        id="g30597"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1064.5,648.94)"
-         id="text30591"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30589">S </tspan></text>
+   transform="translate(1064.5,648.94)"
+   id="text30591"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30589">S </tspan></text>
+
 <text
-         transform="translate(1069.8,648.94)"
-         id="text30595"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30593">157</tspan></text>
+   transform="translate(1069.8,648.94)"
+   id="text30595"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30593">157</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30617"><g
@@ -59245,23 +59675,29 @@
        font-weight="bold"
        id="g30615"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.4,598.68)"
-         id="text30605"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30603">S </tspan></text>
+   transform="translate(1088.4,598.68)"
+   id="text30605"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30603">S </tspan></text>
+
 <text
-         transform="translate(1093.7,598.68)"
-         id="text30609"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30607">158</tspan></text>
+   transform="translate(1093.7,598.68)"
+   id="text30609"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30607">158</tspan></text>
+
 <text
-         transform="translate(1103,598.68)"
-         id="text30613"><tspan
-           x="0"
-           y="0"
-           id="tspan30611">a</tspan></text>
+   transform="translate(1103,598.68)"
+   id="text30613"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30611">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30635"><g
@@ -59269,23 +59705,29 @@
        font-weight="bold"
        id="g30633"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.4,573.12)"
-         id="text30623"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30621">S </tspan></text>
+   transform="translate(1088.4,573.12)"
+   id="text30623"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30621">S </tspan></text>
+
 <text
-         transform="translate(1093.7,573.12)"
-         id="text30627"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30625">158</tspan></text>
+   transform="translate(1093.7,573.12)"
+   id="text30627"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30625">158</tspan></text>
+
 <text
-         transform="translate(1103,573.12)"
-         id="text30631"><tspan
-           x="0"
-           y="0"
-           id="tspan30629">b</tspan></text>
+   transform="translate(1103,573.12)"
+   id="text30631"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30629">b</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30653"><g
@@ -59293,23 +59735,29 @@
        font-weight="bold"
        id="g30651"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.4,543.06)"
-         id="text30641"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30639">S </tspan></text>
+   transform="translate(1088.4,543.06)"
+   id="text30641"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30639">S </tspan></text>
+
 <text
-         transform="translate(1093.7,543.06)"
-         id="text30645"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30643">158</tspan></text>
+   transform="translate(1093.7,543.06)"
+   id="text30645"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30643">158</tspan></text>
+
 <text
-         transform="translate(1103,543.06)"
-         id="text30649"><tspan
-           x="0"
-           y="0"
-           id="tspan30647">c</tspan></text>
+   transform="translate(1103,543.06)"
+   id="text30649"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30647">c</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30667"><g
@@ -59317,17 +59765,21 @@
        font-weight="bold"
        id="g30665"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.9,445.93)"
-         id="text30659"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30657">S </tspan></text>
+   transform="translate(1088.9,445.93)"
+   id="text30659"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30657">S </tspan></text>
+
 <text
-         transform="translate(1094.2,445.93)"
-         id="text30663"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30661">202</tspan></text>
+   transform="translate(1094.2,445.93)"
+   id="text30663"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30661">202</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30685"><g
@@ -59335,23 +59787,29 @@
        font-weight="bold"
        id="g30683"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.9,416.35)"
-         id="text30673"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30671">S </tspan></text>
+   transform="translate(1088.9,416.35)"
+   id="text30673"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30671">S </tspan></text>
+
 <text
-         transform="translate(1094.2,416.35)"
-         id="text30677"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30675">204</tspan></text>
+   transform="translate(1094.2,416.35)"
+   id="text30677"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30675">204</tspan></text>
+
 <text
-         transform="translate(1103.6,416.35)"
-         id="text30681"><tspan
-           x="0"
-           y="0"
-           id="tspan30679">a</tspan></text>
+   transform="translate(1103.6,416.35)"
+   id="text30681"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30679">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30699"><g
@@ -59359,17 +59817,21 @@
        font-weight="bold"
        id="g30697"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.9,387.06)"
-         id="text30691"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30689">S </tspan></text>
+   transform="translate(1088.9,387.06)"
+   id="text30691"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30689">S </tspan></text>
+
 <text
-         transform="translate(1094.2,387.06)"
-         id="text30695"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30693">205</tspan></text>
+   transform="translate(1094.2,387.06)"
+   id="text30695"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30693">205</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30713"><g
@@ -59377,17 +59839,21 @@
        font-weight="bold"
        id="g30711"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.9,330.37)"
-         id="text30705"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30703">S </tspan></text>
+   transform="translate(1088.9,330.37)"
+   id="text30705"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30703">S </tspan></text>
+
 <text
-         transform="translate(1094.2,330.37)"
-         id="text30709"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30707">206</tspan></text>
+   transform="translate(1094.2,330.37)"
+   id="text30709"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30707">206</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30727"><g
@@ -59395,17 +59861,21 @@
        font-weight="bold"
        id="g30725"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1088.9,303.22)"
-         id="text30719"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30717">S </tspan></text>
+   transform="translate(1088.9,303.22)"
+   id="text30719"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30717">S </tspan></text>
+
 <text
-         transform="translate(1094.2,303.22)"
-         id="text30723"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30721">208</tspan></text>
+   transform="translate(1094.2,303.22)"
+   id="text30723"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30721">208</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30741"><g
@@ -59413,17 +59883,21 @@
        font-weight="bold"
        id="g30739"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,279.91)"
-         id="text30733"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30731">S </tspan></text>
+   transform="translate(1039.4,279.91)"
+   id="text30733"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30731">S </tspan></text>
+
 <text
-         transform="translate(1044.7,279.91)"
-         id="text30737"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30735">209</tspan></text>
+   transform="translate(1044.7,279.91)"
+   id="text30737"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30735">209</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30759"><g
@@ -59431,23 +59905,29 @@
        font-weight="bold"
        id="g30757"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,303.22)"
-         id="text30747"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30745">S </tspan></text>
+   transform="translate(1039.4,303.22)"
+   id="text30747"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30745">S </tspan></text>
+
 <text
-         transform="translate(1044.7,303.22)"
-         id="text30751"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30749">208</tspan></text>
+   transform="translate(1044.7,303.22)"
+   id="text30751"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30749">208</tspan></text>
+
 <text
-         transform="translate(1054,303.22)"
-         id="text30755"><tspan
-           x="0"
-           y="0"
-           id="tspan30753">a</tspan></text>
+   transform="translate(1054,303.22)"
+   id="text30755"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30753">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30773"><g
@@ -59455,17 +59935,21 @@
        font-weight="bold"
        id="g30771"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,330.37)"
-         id="text30765"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30763">S </tspan></text>
+   transform="translate(1039.4,330.37)"
+   id="text30765"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30763">S </tspan></text>
+
 <text
-         transform="translate(1044.7,330.37)"
-         id="text30769"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30767">207</tspan></text>
+   transform="translate(1044.7,330.37)"
+   id="text30769"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30767">207</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30791"><g
@@ -59473,23 +59957,29 @@
        font-weight="bold"
        id="g30789"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,358.71)"
-         id="text30779"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30777">S </tspan></text>
+   transform="translate(1039.4,358.71)"
+   id="text30779"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30777">S </tspan></text>
+
 <text
-         transform="translate(1044.7,358.71)"
-         id="text30783"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30781">206</tspan></text>
+   transform="translate(1044.7,358.71)"
+   id="text30783"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30781">206</tspan></text>
+
 <text
-         transform="translate(1054,358.71)"
-         id="text30787"><tspan
-           x="0"
-           y="0"
-           id="tspan30785">a</tspan></text>
+   transform="translate(1054,358.71)"
+   id="text30787"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30785">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30809"><g
@@ -59497,23 +59987,29 @@
        font-weight="bold"
        id="g30807"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,387.06)"
-         id="text30797"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30795">S </tspan></text>
+   transform="translate(1039.4,387.06)"
+   id="text30797"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30795">S </tspan></text>
+
 <text
-         transform="translate(1044.7,387.06)"
-         id="text30801"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30799">205</tspan></text>
+   transform="translate(1044.7,387.06)"
+   id="text30801"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30799">205</tspan></text>
+
 <text
-         transform="translate(1054,387.06)"
-         id="text30805"><tspan
-           x="0"
-           y="0"
-           id="tspan30803">a</tspan></text>
+   transform="translate(1054,387.06)"
+   id="text30805"
+   style="line-height:0%"><tspan
+     x="0"
+     y="0"
+     id="tspan30803">a</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g30823"><g
@@ -59521,28 +60017,33 @@
        font-weight="bold"
        id="g30821"
        style="font-weight:bold;font-size:5.61530018px;font-family:Arial;fill:#000000"><text
-         transform="translate(1039.4,416.35)"
-         id="text30815"><tspan
-           x="0 3.7435334"
-           y="0"
-           id="tspan30813">S </tspan></text>
+   transform="translate(1039.4,416.35)"
+   id="text30815"
+   style="line-height:0%"><tspan
+     x="0 3.7435334"
+     y="0"
+     id="tspan30813">S </tspan></text>
+
 <text
-         transform="translate(1044.7,416.35)"
-         id="text30819"><tspan
-           x="0 3.1071327 6.2142653"
-           y="0"
-           id="tspan30817">204</tspan></text>
+   transform="translate(1044.7,416.35)"
+   id="text30819"
+   style="line-height:0%"><tspan
+     x="0 3.1071327 6.2142653"
+     y="0"
+     id="tspan30817">204</tspan></text>
+
 </g></g><g
      transform="matrix(1.3332869,0,0,1.3332869,-105.51514,-23.627701)"
      id="g31287"><text
-       transform="translate(124.59,608.82)"
-       font-size="8.6389px"
-       font-weight="bold"
-       id="text31285"
-       style="font-weight:bold;font-size:8.6388998px;font-family:Arial;fill:#6d6d6d"><tspan
-         x="0"
-         y="0"
-         id="tspan31283">9</tspan></text>
+   transform="translate(124.59,608.82)"
+   font-size="8.6389px"
+   font-weight="bold"
+   id="text31285"
+   style="font-weight:bold;font-size:8.6388998px;line-height:0%;font-family:Arial;fill:#6d6d6d"><tspan
+     x="0"
+     y="0"
+     id="tspan31283">9</tspan></text>
+
 </g><path
      style="fill-rule:evenodd;stroke-width:3.77937222"
      inkscape:connector-curvature="0"
