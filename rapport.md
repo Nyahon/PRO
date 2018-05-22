@@ -261,7 +261,7 @@ Plan des bâtiments, Philippe Moser
 ### Initiale
 ### Finale
 ### Discussion planification initiale vs finale
-
+Notre planification initiale était très mauvaise, il a fallu que l'on prenne une semaine de plus au début du projet pour la revoir entièrement. Au final, le temps perdu en replanification a été gagné en clarté et le déroulement de nos tâches a pu être fait correctement.
 ## Journal de travail
 ### Dejvid Muaremi
 ### Aurélien Siu
