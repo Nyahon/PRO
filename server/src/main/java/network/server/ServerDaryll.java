@@ -1,9 +1,5 @@
 package network.server;
 
-
-
-
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -16,35 +12,34 @@ import java.util.logging.Logger;
 /**
  * This class implements the main logic of the Server. It starts a loop
  * to accept incoming connections on a TCP port. When a new connection request
- * is made by a serialisation.client, the serialisation.server spawns a new thread. It instantiates a serialisation.client
- * handler, to which it delegates the processing of the session (the serialisation.client
+ * is made by a serialisation.client, the serialisation.server spawns a new thread. It instantiates a client
+ * handler, to which it delegates the processing of the session (the client
  * handler executes on the thread).
-
  *
- * @author Olivier Liechti & Yohann Meyer
+ * @author Yohann Meyer
  */
 public class ServerDaryll {
 
     final static Logger LOG = Logger.getLogger(ServerDaryll.class.getName());
 
-    /*
+    /**
      * The TCP port where serialisation.client connection requests are accepted. -1 indicates that
      * we want to use an ephemeral port number, assigned by the OS
      */
     private int listenPort = -1;
 
-    /*
+    /**
      * The serialisation.server socket, used to accept serialisation.client connection requests
      */
     private ServerSocket serverSocket;
 
-    /*
+    /**
      * The serialisation.server maintains a list of serialisation.client workers, so that they can be notified
      * when the serialisation.server shuts down
      */
     List<ClientWorker> clientWorkers = new CopyOnWriteArrayList<>();
 
-    /*
+    /**
      * A flag that indicates whether the serialisation.server should continue to run (or whether
      * a shutdown is in progress)
      */

@@ -1,14 +1,4 @@
 package database;
-/*
- * Project DARYLL
- * File     : database.ToolBoxMySQL.java
- * Author   : Siu Aurélien
- * Created on : 27.03.2018
- * Edited by : Muaremi Dejvid, Romain Gallay
- * Last edit  : 12.04.2018
- * Description : Contains the basic tools to connect to the database and modify its content.
- *
- */
 
 import models.AdvancedRequest;
 import models.ClassRoom;
@@ -22,31 +12,51 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
 
+/**
+ * A class to connect and perform actions on a MySQL database
+ *
+ * @author Dejvid Muaremi
+ * @author Romain Gallay
+ */
 public class ToolBoxMySQL  {
 
-    // Logger to deliver information or report errors
+    /**
+     * Logger to deliver information or report errors
+     */
     private static final Logger LOG = Logger.getLogger(ToolBoxMySQL.class.getName());
 
-    // Login informations for the connection to the database
+    /**
+     * the database name
+     */
     private static final String database = "daryll";
-    private static final String account = "root";
-    private static final String password = "root";
-    private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
-
-    private Connection connection;
-    private String sql;
-
-    private static final String[][] periods = {{"08:25:00", "09:10:00"}, {"09:15:00", "10:00:00"},
-            {"10:25:00", "11:10:00"}, {"11:15:00", "12:00:00"}, {"12:00:00", "13:15:00"}, {"13:15:00","14:00:00"},
-            {"14:00:00", "14:45:00"}, {"14:55:00", "15:40:00"}, {"15:45:00", "16:30:00"}, {"16:35:00", "17:20:00"},
-            {"17:20:00", "18:05:00"}, {"18:30:00", "19:15:00"}, {"19:15:00", "20:00:00"}, {"20:05:00", "20:50:00"},
-            {"20:50:00", "21:35:00"}, {"21:35:00", "22:20:00"}};
-
-    public ToolBoxMySQL(){
-    }
 
     /**
-     * @brief This method initialize the connection to the database
+     * a MySQL account to access the database
+     */
+    private static final String account = "root";
+
+    /**
+     * the password of the MySQL account
+     */
+    private static final String password = "root";
+
+    /**
+     * the connexion to perform action on the MySQL database
+     */
+    private Connection connection;
+
+    /**
+     * a string containing a MySQL request
+     */
+    private String sql;
+
+    /**
+     * Default constructor
+     */
+    public ToolBoxMySQL(){}
+
+    /**
+     * A method initialize the connexion to the database
      */
     public void initConnection() {
         try {
@@ -59,7 +69,12 @@ public class ToolBoxMySQL  {
         }
     }
 
-    public void initDatabase(PrintWriter writer) {
+    /**
+     * A method to populate the database with basic information and the information of an ICS file
+     * @param writer    a PrintWriter to update the client on the progress of database populating
+     * @param fileNameICS   the name of the ICS file to parse
+     */
+    public void populateDatabase(PrintWriter writer, String fileNameICS) {
         initConnection();
         insertPeriods();
         // insert default classrooomequipment
@@ -70,7 +85,7 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method close the connection to the database
+     * This method close the connection to the database
      */
     public void closeConnection() {
         if (connection != null) {
@@ -82,9 +97,9 @@ public class ToolBoxMySQL  {
             }
         }
     }
-	
+
     /**
-     * @brief This method insert the periods list into the database
+     * This method inserts the periods list into the database
      */
     public void insertPeriods() {
         LOG.info("Insertion of the periods...");
@@ -117,8 +132,8 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method insert a new Classroom element into the database
-     * @param classroomName It defines the name of the new Classroom
+     * This method inserts a new Classroom element into the database
+     * @param classroomName defines the name of the new Classroom
      * @param isLocked defines if the room is locked or not
      * @param idClassroomEquipment defines the reference to an element of the ClassroomEquipment table
      *
@@ -159,7 +174,7 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method insert new Classroom elements according to the list
+     * This method inserts new Classroom elements according to the list
      * @param listClassrooms list of classrooms to add
      */
     public void insertClassrooms(String[] listClassrooms, int place) {
@@ -180,6 +195,10 @@ public class ToolBoxMySQL  {
         }
     }
 
+    /**
+     * This method inserts a classroom with its corresponding floor level
+     * @param classname the name of the classroom to add
+     */
     public void insertClassroomWithCheck(String classname){
         char levelChar = classname.charAt(0);
         int levelInt;
@@ -194,7 +213,7 @@ public class ToolBoxMySQL  {
 
     }
     /**
-     * @brief This method insert a new Classroom element into the database
+     * This method inserts a new Classroom element into the database
      * @param idClassroomEquipment id of the ClassroomEquipment
      * @param beamer provided?
      * @param electricalSocket provided?
@@ -236,10 +255,9 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method insert a new floor element into the database
+     * This method inserts a new floor element into the database
      * @param floorName name of the floor
      * @param place defines the place (number)
-     *
      */
     private void insertFloor(String floorName, int place) throws SQLException {
         LOG.info("insert new Floor...");
@@ -269,7 +287,7 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method insert a new floor equipment into the database
+     * This method inserts a new floor equipment into the database
      * @param toiletM define if men toilets are available on the floor
      * @param toiletF define if women toilets are available
      * @param coffeeMachine define if a selecta is available
@@ -279,7 +297,6 @@ public class ToolBoxMySQL  {
      */
     public void insertFloorEquipment(boolean toiletM, boolean toiletF, boolean coffeeMachine, boolean selecta, boolean wayOut) {
         LOG.info("insert new FloorEquipment...");
-        ResultSet result;
         PreparedStatement ps;
 
         try (Statement statement = connection.createStatement()) {
@@ -302,10 +319,10 @@ public class ToolBoxMySQL  {
     }
 
     /**
-     * @brief This method insert a new couple of Period and Classroom (TakePlace table) into the database
+     * This method inserts a new couple of Period and Classroom (TakePlace table) into the database
      * @param date name of the floor
      * @param idPeriod id of the linked element of the Period table
-     * @param classroomName
+     * @param classroomName the classroom name
      * */
     public void insertTakePlace(Date date, int idPeriod, String classroomName) {
         LOG.info("Insertion of a new TakePlace element...");
@@ -340,7 +357,7 @@ public class ToolBoxMySQL  {
         }
     }
 	/**
-     * @brief This method update the lock status of a classroom which already exist.
+     * This method updates the lock status of a classroom which already exist.
      * @param classroomName the name of the classroom to update. Must be in the database.
      * @param isLocked the new status of the classroom
      */
@@ -374,7 +391,7 @@ public class ToolBoxMySQL  {
         }
     }
     /**
-     * @brief update the classroom equipment for the specified classroom equipment.
+     * This method updates the classroom equipment for the specified classroom equipment.
      * You have to set all the models.
      * @param idClassroomEquipment must exist in the database, used to find the equipment to update.
      * @param beamer does the classroom has a beamer ?
@@ -416,7 +433,7 @@ public class ToolBoxMySQL  {
 	}
 
     /**
-     * @brief update the floor equipment for the specified floor equipment.
+     * This method updates the floor equipment for the specified floor equipment.
      * You have to set all the models.
      * @param idFloorEquipment must exist in the database, used to find the equipment to update.
      * @param toiletM does the floor has toilet for the male student ?
@@ -459,7 +476,6 @@ public class ToolBoxMySQL  {
         }
     }
     /**
-     * @brief clear the take place table.
      * This method is used to clear the table before we add the new course
      */
     void clearTakePlace(){
@@ -478,14 +494,14 @@ public class ToolBoxMySQL  {
             closeConnection();
         }
     }
-    
+
     /**
      * Receives a ClassRoom object, query the database to return the full schedule (aka multiple timetables) of a given room.
      * @param c the classroom to get it's time table
      * @return A full schedule of the given room, empty if it'a always free, an SQLException if something bad happens.
      */
     public ArrayList<TimeSlot> classRoomSchedule(ClassRoom c) {
-        ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
+        ArrayList<TimeSlot> timeTable = new ArrayList<>();
         LOG.info("Getting the timetable of a classroom");
 
         try {
@@ -497,15 +513,15 @@ public class ToolBoxMySQL  {
             ps = connection.prepareStatement(sql);
             ps.setString(1, c.getClassRoom());
             result = ps.executeQuery();
-    
+
             timeTable.addAll(receiveDataFromDB(result));
-            
+
         } catch (SQLException e){
             e.printStackTrace();
         }
         return timeTable;
     }
-    
+
     /**
      * Receives a TimeTable object containing the current room of a user with a requested schedule,
      * query the database to return all rooms that are occupied during this schedule.
@@ -530,9 +546,9 @@ public class ToolBoxMySQL  {
           ps.setInt(3, t.getIdPeriod());
 
           result = ps.executeQuery();
-          
+
           timeTable.addAll(receiveDataFromDB(result));
-          
+
       } catch (SQLException e){
           e.printStackTrace();
       }
@@ -549,26 +565,27 @@ public class ToolBoxMySQL  {
     public ArrayList<TimeSlot> classroomAdvancedSchedule(AdvancedRequest advancedRequest){
         ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
         LOG.info("Advanced request : classroom");
-    
+
         try {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call classroomAdvancedSchedule(?,?,?,?,?)";
+            sql = "call classroomAdvancedSchedule(?,?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
-        
+
             ps = connection.prepareStatement(sql);
-        
+
             ps.setInt(1, advancedRequest.getBuilding());
-            ps.setDate(2, advancedRequest.getDate());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
-            ps.setString(5, advancedRequest.getClassroom());
-        
+            ps.setDate(2, advancedRequest.getDateBegin());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
+            ps.setString(6, advancedRequest.getClassroom());
+
             result = ps.executeQuery();
-        
+
             timeTable.addAll(receiveDataFromDB(result));
-        
+
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -586,26 +603,27 @@ public class ToolBoxMySQL  {
     public ArrayList<TimeSlot> floorAdvancedSchedule(AdvancedRequest advancedRequest){
         ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
         LOG.info("Advanced request : classroom");
-    
+
         try {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call floorAdvancedSchedule(?,?,?,?,?)";
+            sql = "call floorAdvancedSchedule(?,?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
-        
+
             ps = connection.prepareStatement(sql);
-        
+
             ps.setInt(1, advancedRequest.getBuilding());
-            ps.setDate(2, advancedRequest.getDate());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
-            ps.setString(5, advancedRequest.getFloor());
-        
+            ps.setDate(2, advancedRequest.getDateBegin());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
+            ps.setString(6, advancedRequest.getFloor());
+
             result = ps.executeQuery();
-        
+
             timeTable.addAll(receiveDataFromDB(result));
-        
+
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -623,20 +641,21 @@ public class ToolBoxMySQL  {
     public ArrayList<TimeSlot> buildingAdvancedSchedule(AdvancedRequest advancedRequest){
         ArrayList<TimeSlot> timeTable = new ArrayList<TimeSlot>();
         LOG.info("Advanced request : classroom");
-    
+
         try {
             Statement statement = connection.createStatement();
             ResultSet result;
             PreparedStatement ps;
-            sql = "call buildingAdvancedSchedule(?,?,?,?)";
+            sql = "call buildingAdvancedSchedule(?,?,?,?,?)";
             //place, date, idPeriodBegin, idPeriodEnd, classroomName
-        
+
             ps = connection.prepareStatement(sql);
         
             ps.setInt(1, advancedRequest.getBuilding());
-            ps.setDate(2, advancedRequest.getDate());
-            ps.setInt(3, advancedRequest.getIdPeriodBegin());
-            ps.setInt(4, advancedRequest.getIdPeriodEnd());
+            ps.setDate(2, advancedRequest.getDateBegin());
+            ps.setDate(3, advancedRequest.getDateEnd());
+            ps.setInt(4, advancedRequest.getIdPeriodBegin());
+            ps.setInt(5, advancedRequest.getIdPeriodEnd());
         
             result = ps.executeQuery();
         

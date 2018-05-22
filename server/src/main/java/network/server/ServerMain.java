@@ -11,6 +11,7 @@ import java.util.logging.Logger;
  * instance of ServerDaryll and starts it (it will bind on the default port specified
  * in the serialisation.server.protocol).
  *
+ * @author Yohann Meyer
  */
 public class ServerMain {
 
@@ -19,7 +20,7 @@ public class ServerMain {
      * requests on the default port defined in the Protocol specification.
      *
      * @param args the command line arguments
-     * @throws java.io.IOException
+     * @throws java.io.IOException  if an I/O error occurs
      */
     public static void main(String[] args) throws IOException {
         System.setProperty("java.util.logging.SimpleFormatter.format", "%5$s %n");
