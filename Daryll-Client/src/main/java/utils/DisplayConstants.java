@@ -8,13 +8,13 @@ public class DisplayConstants {
 
     public enum COLORS_ROOMS {WHITE, LIGHT_GREEN, LIME_GREEN, DARK_GREEN, RED};
 
-    public static final String[] COLOR_VALUES = {"#ffffff", "#99ff99", "#00ff00", "#009900"};
+    public static final String[] COLOR_VALUES = {"#ffffff", "#99ff99", "#00ff00", "#009900", "#ff0000"};
 
     public static int getColorIdFromFreePeriods(int freePeriods){
-        if(freePeriods <= 3){
+        if(freePeriods <= COLORS_ROOMS.DARK_GREEN.ordinal()){
             return freePeriods;
         } else {
-            return 3;
+            return COLORS_ROOMS.DARK_GREEN.ordinal();
         }
     }
 }
