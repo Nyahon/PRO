@@ -95,9 +95,9 @@ DELIMITER //
 DELIMITER //
 CREATE PROCEDURE fullTimeTableFromRoom(IN classroomName varchar(10))
     BEGIN
-		SELECT date, idPeriod, classroomName
+		SELECT TakePlace.date, TakePlace.idPeriod, TakePlace.classroomName
         FROM TakePlace
-        WHERE classroomName = classroomName AND date = current_date();
+        WHERE TakePlace.classroomName = classroomName AND TakePlace.date = current_date();
 	END //
 
 # Querry the database to return all rooms that are occupied at a given schedule
