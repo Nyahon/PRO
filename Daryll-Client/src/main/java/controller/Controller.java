@@ -84,12 +84,11 @@ public class Controller {
     private static void createQuickClassroomFile(List<TimeSlot> timeSlotList, ClassRoom clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
         LocalDate date = LocalDate.now();
         DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         List<Integer> periods = new ArrayList<>();
 
         PrintWriter writer = new PrintWriter("DARYLL.txt", "UTF-8");
         writer.println("Salle: " + clientRequest.getClassRoom());
-        writer.flush();
         writer.println("-------------------------------------------------");
         writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
         writer.println("-------------------------------------------------");
