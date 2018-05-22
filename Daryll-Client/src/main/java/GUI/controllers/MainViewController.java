@@ -168,12 +168,14 @@ public class MainViewController implements Initializable {
         Button floorButton = (Button) event.getSource(); // get the button from the event
         String idButton = floorButton.getId(); // get the id of the button
 
-        ImageView imgView = null;
+        ImageView imgView = imageCheseaux;
         indexPlan = 0;
         currentFloorPaths = FLOORS.get(idButton);
 
+        String svgFloorPath = "";
+
         // Regex expression to know which building is the floor
-        if (idButton.matches("[A-K]")) {
+        if (idButton.matches("[A-D]") || idButton.matches("[G-K]") ) {
             imgView = imageCheseaux;
             previousCheseaux.setDisable(true);
             if(currentFloorPaths != null) {
@@ -199,73 +201,71 @@ public class MainViewController implements Initializable {
             }
         }
 
-        LocalDate localDate = dateField.getValue();
+        if(!idButton.matches("[E-F]")) {
+            LocalDate localDate = dateField.getValue();
 
-        LocalTime localTime = (LocalTime) hourSpinner.getValue();
-        System.out.println(localTime);
+            LocalTime localTime = (LocalTime) hourSpinner.getValue();
+            System.out.println(localTime);
 
-        // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
-        String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
+            // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
+            String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
 
-        int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
-        System.out.println(periodRequested);
-        TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
+            int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
+            System.out.println(periodRequested);
+            TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
-
-        //List<TimeSlot> classroomResponse = handleClientClassroomRequest(timeSlotToSend);
-
-        // Standard version
-        Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
-
-        /*AdvancedRequest advancedRequest = new AdvancedRequest(0, java.sql.Date.valueOf("2018-05-22"), 2, null, null);
-
-        List<AdvancedRequest> advancedRequests = new ArrayList<>(Arrays.asList(advancedRequest));
-        List<TimeSlot> timeSlotReceived = Controller.handleClientAdvancedRequest(advancedRequests);*/
-
-        String firstSvgFloorPath = "";
-        //String firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
-        for(HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()){
+            // Standard version
+            Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
 
 
-            for(int i = 0; i < currentFloorPaths.size(); ++i) {
-                firstSvgFloorPath = "/plans/" + currentFloorPaths.get(i);
-                String classroomName = classroom.getKey();
-                int freePeriods = classroom.getValue();
-                //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
-                switch (freePeriods) {
-                    case 0:
-                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#ffffff");
-                        break;
-                    case 1:
-                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#99ff99");
-                        break;
-                    case 2:
-                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#00ff00");
-                        break;
-                    case 3:
-                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
-                        break;
-                    default:
-                        svgToolBox.updateSVG(firstSvgFloorPath, classroomName, "#009900");
-                        break;
+            for (HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()) {
+
+
+                for (int i = 0; i < currentFloorPaths.size(); ++i) {
+                    svgFloorPath = "/plans/" + currentFloorPaths.get(i);
+                    String classroomName = classroom.getKey();
+                    int freePeriods = classroom.getValue();
+                    //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
+                    switch (freePeriods) {
+                        case 0:
+                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#ffffff");
+                            break;
+                        case 1:
+                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#99ff99");
+                            break;
+                        case 2:
+                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#00ff00");
+                            break;
+                        case 3:
+                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#009900");
+                            break;
+                        default:
+                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#009900");
+                            break;
+                    }
                 }
+
             }
+            svgFloorPath = "/plans/" + currentFloorPaths.get(0);
+            try {
+                //imgView.setImage(new Thread);
+                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight);
+                new Thread(planLoader).start();
+                System.gc();
+                //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
 
-        }
-        firstSvgFloorPath = "/plans/" + currentFloorPaths.get(0);
+            } catch (Exception e) {
 
-        try {
-            //imgView.setImage(new Thread);
-            planLoader = new PlanLoader(firstSvgFloorPath,imgView, planWidth, planHeight);
-            new Thread(planLoader).start();
-            System.gc();
-           //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
-
-        } catch (Exception e) {
-
+                Image exceptionImg = new Image("/plans/default-image.png");
+                imgView.setImage(exceptionImg);
+            }
+        } else{
             Image exceptionImg = new Image("/plans/default-image.png");
             imgView.setImage(exceptionImg);
         }
+
+
+
     }
 
 
