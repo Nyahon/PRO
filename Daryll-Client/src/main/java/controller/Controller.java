@@ -99,7 +99,7 @@ public class Controller {
             periods.add(j);
         }
         for (TimeSlot t : timeSlotList) {
-            periods.remove(t.getIdPeriod());
+            periods.remove(Integer.valueOf(t.getIdPeriod()));
         }
         for (int period : periods) {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
