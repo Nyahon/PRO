@@ -1,5 +1,6 @@
 package controller;
 
+
 import utils.ClassroomsByFloor;
 import utils.FloorFreePeriodMap;
 import models.AdvancedRequest;
@@ -11,7 +12,6 @@ import utils.PeriodManager;
 
 import java.awt.*;
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -157,7 +157,6 @@ public class Controller {
                 writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
                 writer.flush();
             }
-
             periods.clear();
         }
     }
@@ -180,55 +179,7 @@ public class Controller {
             writer.flush();
             // Recuperate classrooms in the requested floor and Loop on all classroom
             List<String> classrooms = ClassroomsByFloor.FloorsMap.get(clientRequest.getFloor());
-            for (String classroom : classrooms) {
-                writer.println("Salle : " + classroom);
-                writer.println("--------------");
-
-                // Fill the period tab with all existing periods
-                for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
-                    periods.add(j);
-                }
-
-                // Compare the current date of the inteval with the date of the first Timeslot in the list
-                if (timeSlotList.size() != 0 && date.equals(timeSlotList.get(0).getDate().toLocalDate())) {
-                    // Compare the current classroom of the floor with the classroom of the first Timeslot in the list
-                    if (classroom.equals(timeSlotList.get(0).getClassroom())) {
-                        tmp.add(timeSlotList.get(0));
-                        for (int i = 1; i < timeSlotList.size(); ++i) {
-                            if (!timeSlotList.get(i).getClassroom().equals(classroom)) {
-                                break;
-                            }
-                            tmp.add(timeSlotList.get(i));
-                        }
-
-                        // Remove all the occupied periods from the period list
-                        for (TimeSlot t : tmp) {
-                            periods.remove(Integer.valueOf(t.getIdPeriod()));
-                        }
-
-                        // Remove all the processed timeslots from the list
-                        timeSlotList.removeAll(tmp);
-                        tmp.clear();
-                    }
-                }
-
-                // Write all the remaining periods in the file
-                for (int period : periods) {
-                    writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
-                    writer.flush();
-                }
-
-                periods.clear();
-                if (classrooms.lastIndexOf(classroom) != classrooms.size() - 1) {
-                    writer.println("--------------");
-                    writer.flush();
-                }
-                else {
-                    writer.println();
-                    writer.println();
-                    writer.flush();
-                }
-            }
+            writeFreePeriodsForClassroom(writer, classrooms, date, timeSlotList, tmp, periods);
         }
     }
 
@@ -258,56 +209,68 @@ public class Controller {
 
                 // Recuperate classrooms in the current floor and Loop on all classroom
                 classrooms = ClassroomsByFloor.FloorsMap.get(floor);
-                for (String classroom : classrooms) {
-                    writer.println("Salle : " + classroom);
-                    writer.println("--------------");
-
-                    // Fill the period tab with all existing periods
-                    for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
-                        periods.add(j);
-                    }
-
-                    // Compare the current date of the interval with the date of the first Timeslot in the list
-                    if (timeSlotList.size() != 0 && date.equals(timeSlotList.get(0).getDate().toLocalDate())) {
-                        // Compare the current classroom of the floor with the classroom of the first Timeslot in the list
-                        if (classroom.equals(timeSlotList.get(0).getClassroom())) {
-                            tmp.add(timeSlotList.get(0));
-                            for (int i = 1; i < timeSlotList.size(); ++i) {
-                                if (!timeSlotList.get(i).getClassroom().equals(classroom)) {
-                                    break;
-                                }
-                                tmp.add(timeSlotList.get(i));
-                            }
-
-                            // Remove all the occupied periods from the period list
-                            for (TimeSlot t : tmp) {
-                                periods.remove(Integer.valueOf(t.getIdPeriod()));
-                            }
-
-                            // Remove all the processed timeslots from the list
-                            timeSlotList.removeAll(tmp);
-                            tmp.clear();
-                        }
-                    }
-
-                    // Write all the remaining periods in the file
-                    for (int period : periods) {
-                        writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
-                        writer.flush();
-                    }
-
-                    periods.clear();
-                    if (classrooms.lastIndexOf(classroom) != classrooms.size() - 1) {
-                        writer.println("--------------");
-                        writer.flush();
-                    }
-                    else {
-                        writer.println();
-                        writer.println();
-                        writer.flush();
-                    }
-                }
+                writeFreePeriodsForClassroom(writer, classrooms, date, timeSlotList, tmp, periods);
             }
         }
+    }
+
+    private static void writeFreePeriodsForClassroom(PrintWriter writer, List<String> classrooms, LocalDate date, List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods) {
+        for (String classroom : classrooms) {
+            writer.println("Salle : " + classroom);
+            writer.println("--------------");
+
+            // Fill the period tab with all existing periods
+            for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+                periods.add(j);
+            }
+
+            // Compare the current date of the interval with the date of the first Timeslot in the list
+            if (timeSlotList.size() != 0 && date.equals(timeSlotList.get(0).getDate().toLocalDate())) {
+                // Compare the current classroom of the floor with the classroom of the first Timeslot in the list
+                if (classroom.equals(timeSlotList.get(0).getClassroom())) {
+                    removeClassroomOccupiedPeriod(timeSlotList, tmp, periods, classroom);
+                }
+            }
+
+            // Write all the remaining periods in the file
+            for (int period : periods) {
+                writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
+                writer.flush();
+            }
+
+            periods.clear();
+            if (classrooms.lastIndexOf(classroom) != classrooms.size() - 1) {
+                writer.println("--------------");
+                writer.flush();
+            }
+            else {
+                writer.println();
+                writer.println();
+                writer.flush();
+            }
+        }
+
+    }
+
+    private static void removeClassroomOccupiedPeriod (List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods, String classroom) {
+        // Add the first TimeSlot of the TimeSlot list in the temp list
+        tmp.add(timeSlotList.get(0));
+        // Loop on all TimeSlot of the TimeSlot list until it reach a TimeSlot with a different classroom than the previous one.
+        for (int i = 1; i < timeSlotList.size(); ++i) {
+            if (!timeSlotList.get(i).getClassroom().equals(classroom)) {
+                break;
+            }
+            // Group all TimeSlot of the same classroom in the temp list
+            tmp.add(timeSlotList.get(i));
+        }
+
+        // Remove all the occupied periods from the period list
+        for (TimeSlot t : tmp) {
+            periods.remove(Integer.valueOf(t.getIdPeriod()));
+        }
+
+        // Remove all the processed TimeSlot from the list
+        timeSlotList.removeAll(tmp);
+        tmp.clear();
     }
 }
