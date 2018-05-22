@@ -91,7 +91,6 @@ public class ClientSocket {
 
         os.println(JsonObjectMapper.toJson(a));
         os.flush();
-
     }
 
     public List<TimeSlot> receiveTimeSlots() throws IOException {
