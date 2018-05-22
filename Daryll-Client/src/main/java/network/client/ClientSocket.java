@@ -35,7 +35,7 @@ public class ClientSocket {
         if( !is.readLine().equals(Protocol.RESPONSE_CONNECTED) )
             throw new IOException("error during connection");
 
-        LOG.info("Connected to DARRYL server " + server + " on port " + port + "." );
+        LOG.info("Connected to DARYLL server " + server + " on port " + port + "." );
     }
 
     public void disconnect() throws IOException {

@@ -12,9 +12,8 @@ import java.util.Properties;
 public class Protocol {
 
     static {
-        ConfigLoader config = new ConfigLoader();
-        DEFAULT_PORT = config.getServerPort();
-        SERVER_IP = config.getServerAddress();
+        DEFAULT_PORT = ConfigLoader.serverPort();
+        SERVER_IP = ConfigLoader.serverAddress();
     }
 
     /**
