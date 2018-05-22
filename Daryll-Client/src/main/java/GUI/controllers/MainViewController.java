@@ -57,7 +57,7 @@ public class MainViewController implements Initializable {
     private static final Logger LOG = Logger.getLogger(MainViewController.class.getName());
     private static PlanLoader planLoader = null;
     private static int indexPlan = 0;
-    private static final int planWidth = 2100;
+    private static final int planWidth = 1800;
     private static final int planHeight = 980;
     private static final SVGToolBox svgToolBox = new SVGToolBox();
 

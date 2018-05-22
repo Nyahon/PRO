@@ -60,13 +60,14 @@ public class SVGToolBox {
             // Get the list of all groups (g balise)
             NodeList groups = doc.getElementsByTagName("g");
 
-            // NodeList path = doc.getElementsByTagName("path");
+            NodeList path = doc.getElementsByTagName("path");
 
             getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
+            getClassroomFromSVGNodeList(path, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
             transformTheDom(doc, svgInputStream.getClass().getResource(svg).getPath());
 
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -84,20 +85,20 @@ public class SVGToolBox {
 
                 Element linkNode = (Element) nNode.getParentNode();
                 if (linkNode.getAttribute("id").equals(classroomName)) {
-                    //System.out.println(eElement.getAttribute("id"));
-                    //System.out.println(eElement.getAttribute("style"));
-                    eElement.setAttribute("style", "fill:#00ff00");
-                    linkNode.setAttribute("style", "fill:#00ff00");
-                    //System.out.println(eElement.getAttribute("style"));
-                    //System.out.println(linkNode.getAttribute("style"));
+                    System.out.println(eElement.getAttribute("id"));
+                    System.out.println(eElement.getAttribute("style"));
+                    eElement.setAttribute("style", colorValue);
+                    linkNode.setAttribute("style", colorValue);
+                    System.out.println(eElement.getAttribute("style"));
+                    System.out.println(linkNode.getAttribute("style"));
 
                     NodeList path = eElement.getElementsByTagName("path");
                     if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                         Element pathElem = (Element) path.item(0);
                         // #C5FFB8
-                        //System.out.println(pathElem.getAttribute("style"));
-                        pathElem.setAttribute("style", colorValue);
-                        //System.out.println(pathElem.getAttribute("style"));
+//                        System.out.println(pathElem.getAttribute("style"));
+                        //pathElem.setAttribute("style", colorValue);
+//                        System.out.println(pathElem.getAttribute("style"));
                     }
                 }
             }
