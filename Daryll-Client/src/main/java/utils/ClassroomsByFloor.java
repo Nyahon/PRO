@@ -14,11 +14,11 @@ public class ClassroomsByFloor {
     private static List<String> F_CLASSROOMS =
             Arrays.asList("F01");
     private static List<String> G_CLASSROOMS =
-            Arrays.asList("G01", "G02", "G03", "G04", "G05", "G06a", "G06b");
+            Arrays.asList("G01", "G02", "G03", "G04", "G05", "G06a", "G06b", "G07");
     private static List<String> H_CLASSROOMS =
-            Arrays.asList("H01", "H02", "H03", "H04", "H05", "H06c");
+            Arrays.asList("H01", "H02", "H03", "H04", "H05", "H06c", "H07");
     private static List<String> J_CLASSROOMS =
-            Arrays.asList("J01", "J02", "J03", "J04", "J05", "J06");
+            Arrays.asList("J01", "J02", "J03", "J04", "J05", "J06", "J07");
     private static List<String> K_CLASSROOMS =
             Arrays.asList("K01", "K02", "K03", "K04");
 

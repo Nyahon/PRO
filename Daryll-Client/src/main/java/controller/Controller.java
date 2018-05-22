@@ -13,10 +13,17 @@ import utils.PeriodManager;
 import java.awt.*;
 import java.io.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
 
+/**
+ * A controller class to handle and format requests between GUI and ClientSocket
+ *
+ * @author Loïc Frueh
+ * @author Romain Gallay
+ */
 
 public class Controller {
 
@@ -274,5 +281,79 @@ public class Controller {
         // Remove all the processed TimeSlot from the list
         timeSlotList.removeAll(tmp);
         tmp.clear();
+    }
+
+    /**Return the closest free room from the user position
+     *
+     * @param classRoom the current user classroom
+     * @return the closest free classroom
+     */
+    public static ClassRoom closestClassroom(ClassRoom classRoom) {
+
+        ClassRoom closestRoom = null;
+        String floor = classRoom.floor();
+        int currentPeriod = PeriodManager.currentOrNextPeriod(LocalTime.now());
+
+        // a timeslot representing the given classroom at the current date + period
+        TimeSlot ts = new TimeSlot(classRoom.getClassRoom(), System.currentTimeMillis(), currentPeriod);
+        Map<String, Integer> mapReceived = null;
+
+        try {
+            mapReceived = floorRequestWithFreeRoom(floor, false, ts);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        Map.Entry<String,Integer> firstEntry = mapReceived.entrySet().iterator().next();
+        String currentFloor = firstEntry.getKey().substring(0,1);
+        System.out.println("current floor = " +currentFloor);
+        double difference = Double.MAX_VALUE;
+
+        // iterate on the official classroom list in the current floor
+        List<String> roomList = ClassroomsByFloor.FloorsMap.get(currentFloor);
+
+        for(String room : roomList){
+            if(mapReceived.containsKey(room) && mapReceived.get(room) > 0){
+                double currentDifference = Math.abs(roomList.indexOf(room)-roomList.indexOf(classRoom.getClassRoom()));
+                System.out.println(room + " is free");
+                ClassRoom currentRoom = new ClassRoom(room);
+                if(currentDifference < difference){
+                    difference = currentDifference;
+                    closestRoom = currentRoom;
+                }
+            }
+        }
+        return closestRoom;
+    }
+
+    /**
+     * Find the closest floor from a given classroom, with at least one room free.
+     * @param floor : the floor to search
+     * @param floorAChecked : if we have checked floor A, we have to check upper floors
+     * @return a map containing a key classroom with a value representing the number of free periods
+     * @throws IOException if an I/O error occurs
+     */
+    private static Map<String, Integer> floorRequestWithFreeRoom(String floor, boolean floorAChecked,
+                                                                 TimeSlot ts) throws IOException {
+
+        Map<String, Integer> mapReceived = Controller.handleClientFloorRequest(ts);
+
+        if(mapReceived.isEmpty()){
+            int currentFloorIndex = ClassroomsByFloor.FloorsMap.get(floor).indexOf(floor);
+            if(floorAChecked && floor != "K"){
+                // do floor++
+                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex+1);
+            } else if (floor != "A") {
+                // do floor--
+                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex-1);
+            } else {
+                floorAChecked = true;
+                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex+1);
+            }
+            String roomFloorReference = ClassroomsByFloor.FloorsMap.get(floor).get(0);
+            ts.setClassroom(roomFloorReference);
+            mapReceived = floorRequestWithFreeRoom(floor, floorAChecked, ts);
+        }
+        return mapReceived;
     }
 }
