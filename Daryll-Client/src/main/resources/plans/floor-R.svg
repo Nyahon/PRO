@@ -23,8 +23,8 @@
    guidetolerance="10"
    id="namedview45131"
    inkscape:current-layer="svg2"
-   inkscape:cx="183.30321"
-   inkscape:cy="375.56295"
+   inkscape:cx="497.96773"
+   inkscape:cy="389.16034"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-height="986"
@@ -32,7 +32,7 @@
    inkscape:window-width="1920"
    inkscape:window-x="-11"
    inkscape:window-y="-11"
-   inkscape:zoom="2.3801426"
+   inkscape:zoom="0.84150748"
    objecttolerance="10"
    pagecolor="#ffffff"
    showgrid="false"
@@ -3726,21 +3726,187 @@
        d="m 2.3651,250.43 0,-178.36 104.37,0 0,-23.871 42.835,0 0,-43.919 256.98,0 0,261.66 -321.01,0 0,-15.507 -83.186,0"
        id="path2223"
        inkscape:connector-curvature="0"
-       style="clip-rule:evenodd" /></clipPath></defs><g
-   id="R06"
-   transform="matrix(0.90793338,0,0,0.65747683,-621.96428,-22.431954)"
-   style="fill:#ffffff"><path
-     style="fill:#ffffff;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:2.66304922"
+       style="clip-rule:evenodd" /></clipPath></defs><rect
+   height="38.997303"
+   id="R06a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.51525557"
+   width="30.469328"
+   x="263.00497"
+   y="367.75748" /><rect
+   height="32.169979"
+   id="R05a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.46798381"
+   width="30.469328"
+   x="263.32007"
+   y="408.61636" /><g
+   transform="matrix(1.0242286,0,0,2.6633931,-4.9784308,-408.68755)"
+   id="R07a"><path
+     style="fill:#ffffff;fill-rule:evenodd;stroke-width:3.77937222"
      inkscape:connector-curvature="0"
-     id="path4085-9-4"
-     d="m 880.40475,537.38896 h 68.37641 v 112.84827 h -68.45199 l 0.0756,-112.84827" /></g><g
+     id="path4155-8"
+     d="m 292.48004,290.98145 h -30.65449 v -27.50476 h 30.65449 v 27.50476" /></g><rect
+   height="33.430405"
+   id="R108a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.71196437"
+   width="67.862053"
+   x="699.11328"
+   y="294.91519" /><rect
+   height="36.896584"
+   id="R108b"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.74796373"
+   width="67.862053"
+   x="699.1524"
+   y="330.29269" /><rect
+   height="36.371407"
+   id="R103"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.74319595"
+   width="67.967087"
+   x="699.16583"
+   y="482.45648" /><rect
+   height="36.371407"
+   id="R104"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.74319595"
+   width="67.967087"
+   x="699.16583"
+   y="444.64362" /><rect
+   height="36.371407"
+   id="R105"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.74319595"
+   width="67.967087"
+   x="699.06079"
+   y="406.6207" /><rect
+   height="36.371407"
+   id="R105a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.73858756"
+   width="67.126801"
+   x="604.10852"
+   y="406.6207" /><rect
+   height="36.371407"
+   id="R106a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.73858756"
+   width="67.126801"
+   x="604.42365"
+   y="368.49274" /><rect
+   height="36.371407"
+   id="R107a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.73858756"
+   width="67.126801"
+   x="604.16101"
+   y="330.78488" /><rect
+   height="38.051979"
+   id="R02a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.64307505"
+   width="48.640507"
+   x="244.88631"
+   y="518.69379" /><rect
+   height="36.161335"
+   id="R02"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.58921218"
+   width="42.968578"
+   x="176.98071"
+   y="521.05713" /><rect
+   height="39.417442"
+   id="R03"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.60684091"
+   width="41.813187"
+   x="177.29582"
+   y="480.88095" /><rect
+   height="37.526798"
+   id="R03a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.50544769"
+   width="30.469328"
+   x="263.21506"
+   y="480.14572" /><rect
+   height="36.79155"
+   id="R04a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.50047165"
+   width="30.469328"
+   x="262.89993"
+   y="442.22781" /><rect
+   height="36.581478"
+   id="RS-02"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.57423151"
+   width="40.342686"
+   x="220.78061"
+   y="443.38321" /><rect
+   height="35.951263"
+   id="R04"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.57954574"
+   width="41.813187"
+   x="177.1908"
+   y="443.64578" /><rect
+   height="34.5858"
+   id="R05"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.70715052"
+   width="64.710976"
+   x="177.03323"
+   y="407.67105" /><rect
+   height="36.371407"
+   id="R08"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.71807814"
+   width="63.45055"
+   x="177.13826"
+   y="292.13174" /><rect
+   height="36.056301"
+   id="R11"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.71140134"
+   width="62.820335"
+   x="177.13826"
+   y="178.06296" /><rect
+   height="39.312408"
+   id="R11a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.57718134"
+   width="37.926868"
+   x="256.59781"
+   y="139.56737" /><rect
+   height="32.695156"
+   id="R13a"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:0.50932783"
+   width="35.511047"
+   x="256.59778"
+   y="105.37823" /><rect
+   height="70.613052"
+   id="R12"
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:1.10595703"
+   width="77.525337"
+   x="177.19078"
+   y="105.22069" /><rect
+   height="75.549728"
    id="R09"
-   transform="matrix(0.90793338,0,0,0.65747683,-621.75422,-137.87054)"
-   style="fill:#ffffff"><path
-     style="fill:#ffffff;fill-opacity:0.75293998;fill-rule:evenodd;stroke-width:2.66304922"
-     inkscape:connector-curvature="0"
-     id="path4085-9"
-     d="m 880.40475,537.38896 h 68.37641 v 112.84827 h -68.45199 l 0.0756,-112.84827" /></g><path
+   ry="0"
+   style="fill:#ffffff;stroke:none;stroke-width:1.03320849"
+   width="63.240482"
+   x="177.16272"
+   y="215.50291" /><rect
+   height="77.19593"
+   id="R06"
+   style="fill:#ffffff;stroke:none;stroke-width:1.02117825"
+   width="63.915874"
+   x="177.01547"
+   y="329.81549" /><path
    d="m 292.69011,105.35757 h -115.4825 v 1.67994 h -4.61839 v -3.35948 H 297.3085 v 3.35948 h -4.61839 v -1.67994"
    id="path2829"
    inkscape:connector-curvature="0"
@@ -6900,11 +7066,12 @@
    id="path4141"
    inkscape:connector-curvature="0"
    stroke-miterlimit="10"
-   style="fill:none;stroke:#000000;stroke-width:0.680287;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><path
-   d="m 292.48004,290.98145 -30.65449,0 0,-27.50476 30.65449,0 0,27.50476"
-   id="path4155"
-   inkscape:connector-curvature="0"
-   style="fill:#ffffff;fill-rule:evenodd;stroke-width:3.77937222" /><path
+   style="fill:none;stroke:#000000;stroke-width:0.680287;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" /><g
+   id="R09a"><path
+     style="fill:#ffffff;fill-rule:evenodd;stroke-width:3.77937222"
+     inkscape:connector-curvature="0"
+     id="path4155"
+     d="m 292.48004,290.98145 -30.65449,0 0,-27.50476 30.65449,0 0,27.50476" /></g><path
    d="m 750.35106,602.96862 1.9766,0"
    id="path4159"
    inkscape:connector-curvature="0"
@@ -51102,7 +51269,6 @@
      style="stroke-width:1.33328688">8</tspan></text>
 
 
-
 <g
    font-size="5.6153px"
    font-weight="bold"
@@ -51117,7 +51283,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text40257"
    transform="translate(355.22,413.73)"
@@ -51125,7 +51290,6 @@
      id="tspan40259"
      x="0 3.1071327"
      y="0">04</tspan></text>
-
 
 
 </g><g
@@ -51144,7 +51308,6 @@
      id="tspan40269">R </tspan></text>
 
 
-
 <text
    style="line-height:0%"
    transform="translate(355.22,179.98)"
@@ -51152,7 +51315,6 @@
      y="0"
      x="0 3.1071327"
      id="tspan40273">12</tspan></text>
-
 
 
 </g></g><g
@@ -51169,7 +51331,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text40285"
    transform="translate(355.22,443.89)"
@@ -51177,7 +51338,6 @@
      id="tspan40287"
      x="0 3.1071327"
      y="0">03</tspan></text>
-
 
 
 </g><g
@@ -51194,7 +51354,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text40353"
    transform="translate(355.22,299.59)"
@@ -51202,7 +51361,6 @@
      id="tspan40355"
      x="0 3.1071327"
      y="0">08</tspan></text>
-
 
 
 </g><g
@@ -51219,7 +51377,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text40421"
    transform="translate(355.22,470.73)"
@@ -51227,7 +51384,6 @@
      id="tspan40423"
      x="0 3.1071327"
      y="0">02</tspan></text>
-
 
 
 </g><g
@@ -51243,7 +51399,6 @@
      y="0">Cage d</tspan></text>
 
 
-
 <text
    id="text41209"
    transform="translate(704.04,209.44)"
@@ -51253,7 +51408,6 @@
      y="0">'</tspan></text>
 
 
-
 <text
    id="text41213"
    transform="translate(705.04,209.44)"
@@ -51261,7 +51415,6 @@
      id="tspan41215"
      x="0 2.8752234 5.4601793 8.0451355 10.920359 12.064343 13.208327 16.083551 17.802887"
      y="0">escaliers</tspan></text>
-
 
 
 </g><g
@@ -51277,7 +51430,6 @@
      y="0">245 </tspan></text>
 
 
-
 <text
    id="text41227"
    style="line-height:0%;fill:#132613"
@@ -51287,7 +51439,6 @@
      y="0">m</tspan></text>
 
 
-
 <text
    id="text41231"
    style="line-height:0%;fill:#000000"
@@ -51295,7 +51446,6 @@
      id="tspan41233"
      x="0"
      y="0">²</tspan></text>
-
 
 
 </g><g
@@ -51312,7 +51462,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text41475"
    transform="translate(414.43,469.58)"
@@ -51322,7 +51471,6 @@
      y="0">02</tspan></text>
 
 
-
 <text
    id="text41479"
    transform="translate(420.65,469.58)"
@@ -51330,7 +51478,6 @@
      id="tspan41481"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51347,7 +51494,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text41493"
    transform="translate(355.22,337.6)"
@@ -51355,7 +51501,6 @@
      id="tspan41495"
      x="0 3.1071327"
      y="0">06</tspan></text>
-
 
 
 </g><g
@@ -51374,7 +51519,6 @@
      id="tspan41523">R </tspan></text>
 
 
-
 <text
    style="line-height:0%"
    transform="translate(412.72,187.33)"
@@ -51384,7 +51528,6 @@
      id="tspan41527">11</tspan></text>
 
 
-
 <text
    style="line-height:0%"
    transform="translate(418.63,187.33)"
@@ -51392,7 +51535,6 @@
      y="0"
      x="0"
      id="tspan41531">a</tspan></text>
-
 
 
 </g></g><g
@@ -51409,7 +51551,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text41579"
    transform="translate(414.43,278.6)"
@@ -51419,7 +51560,6 @@
      y="0">09</tspan></text>
 
 
-
 <text
    id="text41583"
    transform="translate(420.65,278.6)"
@@ -51427,7 +51567,6 @@
      id="tspan41585"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51444,7 +51583,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text41651"
    transform="translate(414.43,299.59)"
@@ -51454,7 +51592,6 @@
      y="0">07</tspan></text>
 
 
-
 <text
    id="text41655"
    transform="translate(420.65,299.59)"
@@ -51462,7 +51599,6 @@
      id="tspan41657"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51479,7 +51615,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text41687"
    transform="translate(414.43,357.76)"
@@ -51489,7 +51624,6 @@
      y="0">06</tspan></text>
 
 
-
 <text
    id="text41691"
    transform="translate(420.65,357.76)"
@@ -51497,7 +51631,6 @@
      id="tspan41693"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51514,7 +51647,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text42285"
    transform="translate(414.43,389.26)"
@@ -51524,7 +51656,6 @@
      y="0">05</tspan></text>
 
 
-
 <text
    id="text42289"
    transform="translate(420.65,389.26)"
@@ -51532,7 +51663,6 @@
      id="tspan42291"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51549,7 +51679,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text42331"
    transform="translate(414.43,413.73)"
@@ -51559,7 +51688,6 @@
      y="0">04</tspan></text>
 
 
-
 <text
    id="text42335"
    transform="translate(420.65,413.73)"
@@ -51567,7 +51695,6 @@
      id="tspan42337"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51584,7 +51711,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text42367"
    transform="translate(414.43,442.04)"
@@ -51594,7 +51720,6 @@
      y="0">03</tspan></text>
 
 
-
 <text
    id="text42371"
    transform="translate(420.65,442.04)"
@@ -51602,7 +51727,6 @@
      id="tspan42373"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51621,7 +51745,6 @@
      id="tspan42401">R </tspan></text>
 
 
-
 <text
    style="line-height:0%"
    transform="translate(412.72,160.09)"
@@ -51631,7 +51754,6 @@
      id="tspan42405">13</tspan></text>
 
 
-
 <text
    style="line-height:0%"
    transform="translate(418.93,160.09)"
@@ -51639,7 +51761,6 @@
      y="0"
      x="0"
      id="tspan42409">a</tspan></text>
-
 
 
 </g></g><g
@@ -51656,7 +51777,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text42421"
    transform="translate(355.22,215.15)"
@@ -51664,7 +51784,6 @@
      id="tspan42423"
      x="0 2.9573917"
      y="0">11</tspan></text>
-
 
 
 </g><g
@@ -51681,7 +51800,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text42481"
    transform="translate(355.22,389.26)"
@@ -51689,7 +51807,6 @@
      id="tspan42483"
      x="0 3.1071327"
      y="0">05</tspan></text>
-
 
 
 </g><g
@@ -51706,7 +51823,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42495"
    transform="translate(683.12,416.72)"
@@ -51714,7 +51830,6 @@
      id="tspan42497"
      x="0 3.1071327 6.2142653"
      y="0">102</tspan></text>
-
 
 
 </g><g
@@ -51731,7 +51846,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42509"
    transform="translate(683.12,390.32)"
@@ -51741,7 +51855,6 @@
      y="0">105</tspan></text>
 
 
-
 <text
    id="text42513"
    transform="translate(692.44,390.32)"
@@ -51749,7 +51862,6 @@
      id="tspan42515"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51766,7 +51878,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42527"
    transform="translate(683.12,360.26)"
@@ -51776,7 +51887,6 @@
      y="0">106</tspan></text>
 
 
-
 <text
    id="text42531"
    transform="translate(692.44,360.26)"
@@ -51784,7 +51894,6 @@
      id="tspan42533"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51801,7 +51910,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42545"
    transform="translate(683.12,331.48)"
@@ -51811,7 +51919,6 @@
      y="0">107</tspan></text>
 
 
-
 <text
    id="text42549"
    transform="translate(692.44,331.48)"
@@ -51819,7 +51926,6 @@
      id="tspan42551"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51836,7 +51942,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42563"
    transform="translate(758.21,298.18)"
@@ -51846,7 +51951,6 @@
      y="0">108</tspan></text>
 
 
-
 <text
    id="text42567"
    transform="translate(767.53,298.18)"
@@ -51854,7 +51958,6 @@
      id="tspan42569"
      x="0"
      y="0">a</tspan></text>
-
 
 
 </g><g
@@ -51871,7 +51974,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42581"
    transform="translate(758.21,323.98)"
@@ -51881,7 +51983,6 @@
      y="0">108</tspan></text>
 
 
-
 <text
    id="text42585"
    transform="translate(767.53,323.98)"
@@ -51889,7 +51990,6 @@
      id="tspan42587"
      x="0"
      y="0">b</tspan></text>
-
 
 
 </g><g
@@ -51906,7 +52006,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42599"
    transform="translate(758.21,354.88)"
@@ -51914,7 +52013,6 @@
      id="tspan42601"
      x="0 3.1071327 6.2142653"
      y="0">106</tspan></text>
-
 
 
 </g><g
@@ -51931,7 +52029,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42613"
    transform="translate(758.21,383.29)"
@@ -51939,7 +52036,6 @@
      id="tspan42615"
      x="0 3.1071327 6.2142653"
      y="0">105</tspan></text>
-
 
 
 </g><g
@@ -51956,7 +52052,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42645"
    transform="translate(758.21,412.01)"
@@ -51964,7 +52059,6 @@
      id="tspan42647"
      x="0 3.1071327 6.2142653"
      y="0">104</tspan></text>
-
 
 
 </g><g
@@ -51981,7 +52075,6 @@
      y="0">R</tspan></text>
 
 
-
 <text
    id="text42659"
    transform="translate(758.21,440.74)"
@@ -51989,7 +52082,6 @@
      id="tspan42661"
      x="0 3.1071327 6.2142653"
      y="0">103</tspan></text>
-
 
 
 </g><g
@@ -52006,7 +52098,6 @@
      y="0">R </tspan></text>
 
 
-
 <text
    id="text43041"
    transform="translate(355.22,252.67)"
@@ -52014,7 +52105,6 @@
      id="tspan43043"
      x="0 3.1071327"
      y="0">09</tspan></text>
-
 
 
 </g><g
@@ -52031,7 +52121,6 @@
      y="0">RS</tspan></text>
 
 
-
 <text
    id="text43055"
    transform="translate(388.58,420.19)"
@@ -52041,7 +52130,6 @@
      y="0">-</tspan></text>
 
 
-
 <text
    id="text43059"
    transform="translate(390.45,420.19)"
@@ -52049,7 +52137,6 @@
      id="tspan43061"
      x="0 3.1071327"
      y="0">02</tspan></text>
-
 
 
 </g><path
