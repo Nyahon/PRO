@@ -43,7 +43,7 @@ public class ClientWorker implements Runnable {
         try {
             handler.handleClientConnection(is, os);
         } catch (IOException ex) {
-            LOG.log(Level.SEVERE, "Exception in serialisation.client handler: {0}", ex.getMessage());
+            LOG.log(Level.SEVERE, "Exception in client handler: {0}", ex.getMessage());
         } finally {
             done = true;
             server.notifyClientWorkerDone(this);
@@ -73,13 +73,13 @@ public class ClientWorker implements Runnable {
         try {
             is.close();
         } catch (IOException ex) {
-            LOG.log(Level.INFO, "Exception while closing input stream on the serialisation.server: {0}", ex.getMessage());
+            LOG.log(Level.INFO, "Exception while closing input stream on the server: {0}", ex.getMessage());
         }
 
         try {
             os.close();
         } catch (IOException ex) {
-            LOG.log(Level.INFO, "Exception while closing output stream on the serialisation.server: {0}", ex.getMessage());
+            LOG.log(Level.INFO, "Exception while closing output stream on the server: {0}", ex.getMessage());
         }
 
         try {
@@ -88,5 +88,4 @@ public class ClientWorker implements Runnable {
             LOG.log(Level.INFO, "Exception while closing socket on the serialisation.server: {0}", ex.getMessage());
         }
     }
-
 }
