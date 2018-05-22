@@ -84,6 +84,7 @@ public class SVGToolBox {
                 Element eElement = (Element) nNode;
 
                 Element linkNode = (Element) nNode.getParentNode();
+
                 if (linkNode.getAttribute("id").equals(classroomName)) {
                     //System.out.println(eElement.getAttribute("id"));
                     //System.out.println(eElement.getAttribute("style"));
@@ -93,15 +94,20 @@ public class SVGToolBox {
                     //System.out.println(linkNode.getAttribute("style"));
 
                     NodeList path = eElement.getElementsByTagName("path");
+                    //NodeList rectangles = eElement.getElementsByTagName("rect");
                     if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                         Element pathElem = (Element) path.item(0);
-                        // #C5FFB8
-//                        System.out.println(pathElem.getAttribute("style"));
+                        //Element rectElem = (Element) rectangles.item(0);
                         if(pathElem != null) {
+                            //System.out.print("path");
                             pathElem.setAttribute("style", colorValue);
-                        }
+                        } /*else if(rectElem != null){
+                            System.out.print("rect");
+                            rectElem.setAttribute("style", colorValue);
+                        }*/
                     }
                 }
+
             }
         }
     }

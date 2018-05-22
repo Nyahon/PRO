@@ -15,6 +15,8 @@ package GUI.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -25,8 +27,9 @@ import javafx.scene.control.TextField;
  * @author Labinot
  */
 public class ShortestRoomViewController implements Initializable {
-   
-   private String currentRoom;
+
+
+
    
    /**
     * Set the room given by the user.
@@ -35,7 +38,7 @@ public class ShortestRoomViewController implements Initializable {
    public void setCurrentRoom(TextField t) {
       Scene scene = t.getScene(); // get the scene
       TextField textField = (TextField) scene.lookup("#shortestRoomTextField"); // get the pane who hostes the image
-      currentRoom = textField.getText();
+
    }
    
    

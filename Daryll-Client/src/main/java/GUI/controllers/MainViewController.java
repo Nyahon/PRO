@@ -30,6 +30,8 @@ import GUI.svgTools.SVGToolBox;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
@@ -83,15 +85,13 @@ public class MainViewController implements Initializable {
     @FXML
     private HBox bottomUserInputHBox;
     @FXML
-    private Button enterPositionButton;
-    @FXML
     private Spinner hourSpinner;
     @FXML
     private Label guiConsole;
     @FXML
     Circle circleGuiLogger;
 
-    private GuiLogger guiLogger;
+    public GuiLogger guiLogger;
 
     /**
      * @brief This method is the first one to be called to fill the hash map with floors
@@ -291,13 +291,14 @@ public class MainViewController implements Initializable {
     }
 
 
-    public void updatePosition(){
+    public void updatePosition(KeyEvent keyEvent){
 
-        position =  currentRoomField.getText();
-        currentRoomField.clear();
-        enterPositionButton.setText("Modifier");
-        currentRoomLabel.setText(position);
-        guiLogger.printInfo(position);
+        if(keyEvent.getCode() == KeyCode.ENTER) {
+            position = currentRoomField.getText();
+            currentRoomField.clear();
+            currentRoomLabel.setText(position);
+            guiLogger.printInfo(position);
+        }
 
     }
 
@@ -395,7 +396,6 @@ public class MainViewController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("/ShortestRoomView.fxml"));
 
-        TimeslotViewController timeslotViewController = fxmlLoader.getController();
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
@@ -414,7 +414,15 @@ public class MainViewController implements Initializable {
      */
     public void timeslot() throws IOException {
         // Initializing the FXML
-        Parent root = FXMLLoader.load(getClass().getResource("/TimeslotView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root = fxmlLoader.load(getClass().getResource("/TimeslotView.fxml"));
+
+        TimeslotViewController timeslotViewController = fxmlLoader.getController();
+        if(timeslotViewController != null) {
+            timeslotViewController.setMainViewController(this);
+        }else{
+            System.out.println("lLALKKDOJ");
+        }
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
@@ -492,7 +500,7 @@ public class MainViewController implements Initializable {
         fillFloors();
         hourSpinner = new TimeSpinner();
         hourSpinner.setPrefWidth(90.0);
-        bottomUserInputHBox.getChildren().set(5, hourSpinner);
+        bottomUserInputHBox.getChildren().set(7, hourSpinner);
         guiLogger = new GuiLogger(guiConsole);
     }
 

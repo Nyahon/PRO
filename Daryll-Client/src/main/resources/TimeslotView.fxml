@@ -2,87 +2,58 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="381.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
+<BorderPane maxHeight="1.7976931348623157E308" prefHeight="214.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
   <bottom>
-    <Button fx:id="TimeslotButton" mnemonicParsing="false" onAction="#giveRoomSchedule" prefWidth="123.0" text="Chercher !" BorderPane.alignment="CENTER" />
+    <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="123.0" text="Recherche" BorderPane.alignment="CENTER" />
   </bottom>
   <center>
-    <GridPane>
-      <children>
-        <Label text="Lundi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <Label text="Mardi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <Label text="Mercredi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <Label text="Jeudi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <Label text="Vendredi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <Label text="Samedi" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-        <Label text="Dimanche" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-        <Label text="Dates" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-        <TextField fx:id="mondayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-          <GridPane.margin>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" fx:id="x1" />
-          </GridPane.margin>
-        </TextField>
-        <TextField fx:id="tuesdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <TextField fx:id="wednesdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <TextField fx:id="thursdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <TextField fx:id="fridayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <TextField fx:id="saturdayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-        <TextField fx:id="sundayBegin" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-        <TextField fx:id="mondayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <TextField fx:id="tuesdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-        <TextField fx:id="wednesdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-        <TextField fx:id="thursdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-        <TextField fx:id="fridayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-        <TextField fx:id="saturdayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-        <TextField fx:id="sundayEnd" alignment="CENTER" focusTraversable="false" prefWidth="200.0" promptText="hh:mm" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.margin="$x1" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <DatePicker fx:id="dateBegin" promptText="Début" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
-               <GridPane.margin>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </GridPane.margin>
-            </DatePicker>
-            <DatePicker fx:id="dateEnd" promptText="Fin" GridPane.columnIndex="2" GridPane.rowIndex="8">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <GridPane.margin>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </GridPane.margin>
-            </DatePicker>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Heure début" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Heure fin" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      </children>
-      <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="111.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="100.0" />
-      </columnConstraints>
-      <padding>
-        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
-      </padding>
-      <rowConstraints>
-            <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-            <RowConstraints />
-      </rowConstraints>
-    </GridPane>
+      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308">
+         <children>
+          <GridPane>
+            <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Date début" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Heure début" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Heure fin" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Batiment" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Étage" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Salle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Date fin" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            </children>
+            <columnConstraints>
+              <ColumnConstraints hgrow="SOMETIMES" prefWidth="155.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="155.0" />
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="130.0" />
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="150.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="80.0" />
+            </columnConstraints>
+            <padding>
+              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
+            </padding>
+            <rowConstraints>
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+            </rowConstraints>
+          </GridPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </VBox>
   </center>
   <top>
-    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="333.0" text="Entrez votre plage d'horaire" textAlignment="LEFT" BorderPane.alignment="CENTER">
+    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="333.0" text="Entrez vos plages horaires" textAlignment="LEFT" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>

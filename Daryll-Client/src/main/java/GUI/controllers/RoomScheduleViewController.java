@@ -18,11 +18,16 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.ClassRoom;
 import models.TimeSlot;
+import utils.ClassroomsByFloor;
 
 import static controller.Controller.handleClientClassroomRequest;
 
@@ -36,23 +41,42 @@ public class RoomScheduleViewController implements Initializable {
    @FXML
    private TextField scheduleRoomTextField;
 
-   String classroomRequested = "";
 
    /**
     * Handler that will give the schedule of the room
     */
-   public void giveRoomSchedule () {
+   public void giveRoomSchedule (Event event) {
 
 
-      ClassRoom classRoomRequested = new ClassRoom(scheduleRoomTextField.getText());
+      String classroomName = scheduleRoomTextField.getText().toUpperCase();
+      ClassRoom classroomRequested = new ClassRoom(classroomName);
 
-      try {
-         List<TimeSlot> listClass = handleClientClassroomRequest(classRoomRequested);
-      } catch (IOException e){
-         e.printStackTrace();
+      String floor = classroomRequested.getClassRoom().substring(0,1);
+
+      List<String> classroomFromFloor = ClassroomsByFloor.FloorsMap.get(floor);
+
+      if(classroomFromFloor != null) {
+         for (int i = 0; i < classroomFromFloor.size(); ++i){
+               if(classroomFromFloor.get(i).equals(classroomName)){
+                  try {
+                     System.out.println("coucou");
+                     handleClientClassroomRequest(classroomRequested);
+                  } catch (IOException e){
+                     e.printStackTrace();
+                  }
+
+
+                  Button button = (Button) event.getSource();
+                  Scene scene = button.getScene();
+                  ((Stage)scene.getWindow()).close();
+
+                  break;
+               }
+         }
+
       }
 
-      
+
    }
    
    /**
