@@ -29,8 +29,7 @@ Ce rapport, étant à rendre lors de la semaines treize, il ne contiendra pas le
 
 # Objectifs du projet
 L'objectif de notre projet et de proposer un programme, DARYLL, un utilitaire permettant l'obtention des disponiblités des salles de cours de la HEIG. À l'heure actuelle, aucun outil interne de l'HEIG-VD ne permet d'obtenir cette information de manière viable.
-Se basant principalement sur les données GAPS, DARYLL proposera une interface claire et rapide
-aux utilisateur à la recherche d'une salle libre pour un ou plusieurs horaire(s) donné(s) et l'inverse.
+Se basant principalement sur les données GAPS, DARYLL proposera une interface claire et rapide aux utilisateur à la recherche d'une salle libre pour un ou plusieurs horaire(s) donné(s) et l'inverse.
 Il permettra également d'imprimer un horaire selon les spécification de l'utilisateur.
 
 
@@ -222,7 +221,6 @@ Labinot Rashiti :
 
 
 # Bibliographie / Webographie
-
 ## Java
 Documentation officielle, https://docs.oracle.com/javase/8/docs/
 ## Maven
@@ -246,7 +244,6 @@ Oracle, 2014/01, "Designing GUI with the librarie panel (release 2)", https://do
 Labri.fr, 2014/08, "Introduction à JavaFX", http://www.labri.fr/perso/johnen/pdf/IUT-Bordeaux/UMLCours/IntroductionJavaFX-V1.pdf
 ## Communication client serveur
 Cours de RES de l'HEIG-VD par Olivier Liechti, https://github.com/wasadigi/Teaching-HEIGVD-RES
-
 # Sources externes
 Calendrier ICS, GAPS
 Plan des bâtiments, Philippe Moser
