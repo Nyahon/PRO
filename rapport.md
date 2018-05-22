@@ -109,10 +109,8 @@ L'équipement d'un étage est identifiée par un numéro unique, et se caractér
 Un équipement est relié à un et un seul étage.
 
 
-Schema et commentaire global
----
-Schema et commentaire sur l'interface graphique
----
+Schemas et commentaires
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 # Description technique de l'implémentation
@@ -210,6 +208,13 @@ Malheureusement, les dates SQL ne sont pas parfaitement supportées par Java, ce
 ## Niveau projet à proprement parler
 ## Niveau fonctionnement du groupe
 ## Avis personnel de chacun des membres du groupe
+Dejvid Muaremi :
+Ce projet fut très interessant à faire, j'ai pu découvrir de nouvelles technologies et mettre en pratique tout ce que j'ai appris jusqu'à maintenant. Parfois, j'ai pris du retard sur mes tâches mais j'ai pu le rattraper au final.
+Aurélien Siu :
+Romain Gallay :
+Yohann Meyer :
+Loïc Frueh :
+Labinot Rashiti :
 ## Améliorations possibles
 
 
