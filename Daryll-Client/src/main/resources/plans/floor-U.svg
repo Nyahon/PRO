@@ -5122,64 +5122,48 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="986"
      id="namedview817"
      showgrid="false"
-     inkscape:zoom="0.70340475"
-     inkscape:cx="860.28917"
-     inkscape:cy="213.85685"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="1.4068095"
+     inkscape:cx="497.99773"
+     inkscape:cy="290.38038"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="g823" /><g
      id="g823"
      inkscape:groupmode="layer"
      inkscape:label="Plans-St-Roch"
      transform="matrix(1.3333333,0,0,1.3333333,0,-284.72397)"><g
-   id="g13808"><rect
-     y="613.6618"
-     x="566.87622"
-     height="120.72331"
-     width="149.19693"
-     id="rect86093-2"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:1.89439583;stroke-opacity:1" /><rect
-     y="661.05585"
-     x="397.93872"
-     height="85.548187"
-     width="169.20596"
-     id="rect86095-3"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:2.04681659;stroke-opacity:1" /><rect
-     y="621.07471"
-     x="715.8913"
-     height="113.18384"
-     width="20.714712"
-     id="rect86093-2-4"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:0.68348163;stroke-opacity:1" /><rect
-     y="746.3913"
-     x="453.75336"
-     height="13.694368"
-     width="110.66605"
-     id="rect86095-3-7"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:0.66228342;stroke-opacity:1" /></g><g
+   id="U44"
+   style="fill:#ffffff"><path
+     d="M 563.5027,613.66181 H 734.55969 V 734.81802 H 563.5027 V 613.66181"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:45.27832794"
+     id="path38429-0"
+     inkscape:connector-curvature="0" /><path
+     d="m 711.19194,734.88846 h 24.56792 v 25.1972 h -24.56792 v -25.1972"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.82541704"
+     id="path38429-0-3"
+     inkscape:connector-curvature="0" /><path
+     d="m 396.86045,661.12236 h 167.14682 v 85.66879 H 396.86045 v -85.66879"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:37.63635254"
+     id="path38429-0-3-6"
+     inkscape:connector-curvature="0" /><path
+     d="m 453.55345,739.19728 h 110.86598 v 20.88838 H 453.55345 v -20.88838"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:15.1355648"
+     id="path38429-0-3-6-1"
+     inkscape:connector-curvature="0" /></g><g
    id="U32"
-   style="stroke:none;stroke-opacity:1"
-   transform="translate(-289.15601,45.138715)"><rect
-     y="615.89288"
-     x="373.7316"
-     height="98.568932"
-     width="140.06061"
-     id="rect86093"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:1.65852964;stroke-opacity:1" /><rect
-     y="650.53802"
-     x="344.42413"
-     height="64.40892"
-     width="30.174849"
-     id="rect86095"
-     style="fill:#00fe00;fill-opacity:1;stroke:none;stroke-width:0.75;stroke-opacity:1" /></g><path
-   inkscape:connector-curvature="0"
-   id="path4241"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 46.625261,619.61458 h 38.423685 v 39.99974 H 46.625261 v -39.99974" /><path
+   style="fill:#f9f9f9"><path
+     d="M 87.139337,758.82468 H 56.135516 v -63.14794 h 31.003821 v 59.29532 3.85262"
+     style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5.75911617"
+     id="path4369-4-8"
+     inkscape:connector-curvature="0" /><path
+     d="M 225.52286,758.82707 H 86.310366 V 660.24362 H 225.52286 v 92.56893 6.01452"
+     style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:15.24789047"
+     id="path4369-4"
+     inkscape:connector-curvature="0" /></g><path
    inkscape:connector-curvature="0"
    id="path4245"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
@@ -5197,14 +5181,6 @@
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 46.625261,619.61458 v 39.99974" /><path
    inkscape:connector-curvature="0"
-   id="path4281"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 459.53738,532.84311 h 23.62398 v 1.88787 h 24.18523 v 11.78081 h -0.56408 v 19.99846 h -22.6772 v -20.25074 h -11.21388 v 29.85736 h -13.35404 v -43.27376" /><path
-   inkscape:connector-curvature="0"
-   id="path4285"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 113.78946,659.61432 v -40.39659 h 26.69389 v 40.39659 h -26.69389" /><path
-   inkscape:connector-curvature="0"
    id="path4289"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 113.78946,619.21773 v 40.39659" /><path
@@ -5221,10 +5197,6 @@
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 113.78946,659.61432 h 26.69389" /><path
    inkscape:connector-curvature="0"
-   id="path4325"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="M 155.79046,312.68406 V 331.8976 H 138.278 v -19.21354 h 17.51246" /><path
-   inkscape:connector-curvature="0"
    id="path4329"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="M 155.79046,331.8976 V 312.68406" /><path
@@ -5240,18 +5212,6 @@
    id="path4341"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="M 155.79046,312.68406 H 138.278" /><path
-   inkscape:connector-curvature="0"
-   id="path4353"
-   style="fill:#ffff7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 85.048946,619.22623 h 28.740514 v 40.38809 H 85.048946 v -40.38809" /><path
-   inkscape:connector-curvature="0"
-   id="path4369"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="M 138.278,333.15619 H 115.28615 V 312.52674 H 138.278 v 19.37086 1.25859" /><path
-   inkscape:connector-curvature="0"
-   id="path4373"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 481.67884,567.17355 h 1.48252 v -0.6633 h 14.48789 v -5.32064 h 9.13325 v 5.98394 h 4.09323 v 38.58242 h -29.19689 v -38.58242" /><path
    inkscape:connector-curvature="0"
    id="path4377"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
@@ -22189,10 +22149,6 @@
    style="fill:none;stroke:#000000;stroke-width:0.1417325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 469.3963,286.19681 v 0" /><path
    inkscape:connector-curvature="0"
-   id="path38365"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 439.88477,604.59093 v -19.15089 h 18.39404 v -8.56631 h 14.61262 v 27.7172 h -33.00666" /><path
-   inkscape:connector-curvature="0"
    id="path38369"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 439.88477,585.44004 v 19.15089" /><path
@@ -22216,10 +22172,6 @@
    id="path38389"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 439.88477,604.59093 h 33.00665" /><path
-   inkscape:connector-curvature="0"
-   id="path38393"
-   style="fill:#ffff7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 716.86127,620.27505 v -7.40127 h 7.55999 v 7.40127 h -7.55999" /><path
    inkscape:connector-curvature="0"
    id="path38397"
    style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
@@ -22252,10 +22204,6 @@
    id="path38425"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 735.75986,670.32363 h 0.6293" /><path
-   inkscape:connector-curvature="0"
-   id="path38429"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 725.20926,613.66181 h 12.2826 v 6.61324 h -12.2826 v -6.61324" /><path
    inkscape:connector-curvature="0"
    id="path38433"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
@@ -22440,10 +22388,6 @@
    id="path38613"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
    d="m 472.89142,547.01636 h 10.26994" /><path
-   inkscape:connector-curvature="0"
-   id="path38617"
-   style="fill:#ffbf7f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83465004"
-   d="m 473.64828,547.01636 h 9.51309 v 6.23623 h -9.51309 v -6.23623" /><path
    inkscape:connector-curvature="0"
    id="path38621"
    style="fill:none;stroke:#000000;stroke-width:0.51023704;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
@@ -46182,6 +46126,7 @@
      id="tspan76943"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text76949"
@@ -46191,6 +46136,7 @@
      y="316.3093"
      id="tspan76947"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46202,6 +46148,7 @@
      sodipodi:role="line"
      id="tspan76951"
      style="stroke-width:1.00000215">01</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46246,6 +46193,7 @@
      id="tspan77007"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77013"
@@ -46255,6 +46203,7 @@
      y="527.52777"
      id="tspan77011"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46266,6 +46215,7 @@
      sodipodi:role="line"
      id="tspan77015"
      style="stroke-width:1.00000215">10</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46310,6 +46260,7 @@
      id="tspan77071"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77077"
@@ -46319,6 +46270,7 @@
      y="539.85278"
      id="tspan77075"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46330,6 +46282,7 @@
      sodipodi:role="line"
      id="tspan77079"
      style="stroke-width:1.00000215">11</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46374,6 +46327,7 @@
      id="tspan77135"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77141"
@@ -46383,6 +46337,7 @@
      y="560.33789"
      id="tspan77139"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46394,6 +46349,7 @@
      sodipodi:role="line"
      id="tspan77143"
      style="stroke-width:1.00000215">13</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46438,6 +46394,7 @@
      id="tspan77199"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77205"
@@ -46447,6 +46404,7 @@
      y="551.01984"
      id="tspan77203"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46458,6 +46416,7 @@
      sodipodi:role="line"
      id="tspan77207"
      style="stroke-width:1.00000215">12</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46502,6 +46461,7 @@
      id="tspan77263"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77269"
@@ -46511,6 +46471,7 @@
      y="617.56"
      id="tspan77267"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46522,6 +46483,7 @@
      sodipodi:role="line"
      id="tspan77271"
      style="stroke-width:1.00000215">18</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
@@ -46549,6 +46511,7 @@
      id="tspan77327"
      style="stroke-width:1.00000215">3</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77345"
@@ -46558,6 +46521,7 @@
      y="466.17862"
      id="tspan77343"
      style="stroke-width:1.00000215">4</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46569,6 +46533,7 @@
      id="tspan77359"
      style="stroke-width:1.00000215">5</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77377"
@@ -46578,6 +46543,7 @@
      y="409.4855"
      id="tspan77375"
      style="stroke-width:1.00000215">6</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46589,6 +46555,7 @@
      id="tspan77391"
      style="stroke-width:1.00000215">8</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77409"
@@ -46599,6 +46566,7 @@
      id="tspan77407"
      style="stroke-width:1.00000215">2</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:8.6389389px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#6d6d6d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77425"
@@ -46608,6 +46576,7 @@
      y="381.13843"
      id="tspan77423"
      style="stroke-width:1.00000215">7</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46620,6 +46589,7 @@
      id="tspan77439"
      style="stroke-width:1.00000215">26 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77445"
@@ -46630,6 +46600,7 @@
      id="tspan77443"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77449"
@@ -46639,6 +46610,7 @@
      y="519.99677"
      id="tspan77447"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46651,6 +46623,7 @@
      id="tspan77463"
      style="stroke-width:1.00000215">35 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77469"
@@ -46661,6 +46634,7 @@
      id="tspan77467"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77473"
@@ -46670,6 +46644,7 @@
      y="410.6785"
      id="tspan77471"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46682,6 +46657,7 @@
      id="tspan77487"
      style="stroke-width:1.00000215">35 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77493"
@@ -46692,6 +46668,7 @@
      id="tspan77491"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77497"
@@ -46701,6 +46678,7 @@
      y="440.73758"
      id="tspan77495"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46713,6 +46691,7 @@
      id="tspan77511"
      style="stroke-width:1.00000215">35 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77517"
@@ -46723,6 +46702,7 @@
      id="tspan77515"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77521"
@@ -46732,6 +46712,7 @@
      y="381.88943"
      id="tspan77519"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46744,6 +46725,7 @@
      id="tspan77535"
      style="stroke-width:1.00000215">108 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77541"
@@ -46754,6 +46736,7 @@
      id="tspan77539"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77545"
@@ -46763,6 +46746,7 @@
      y="467.13364"
      id="tspan77543"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46775,6 +46759,7 @@
      id="tspan77559"
      style="stroke-width:1.00000215">55 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77565"
@@ -46785,6 +46770,7 @@
      id="tspan77563"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77569"
@@ -46794,6 +46780,7 @@
      y="522.87476"
      id="tspan77567"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46806,6 +46793,7 @@
      id="tspan77583"
      style="stroke-width:1.00000215">34 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77589"
@@ -46815,6 +46803,7 @@
      y="348.59238"
      id="tspan77587"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46826,6 +46815,7 @@
      id="tspan77591"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77609"
@@ -46835,6 +46825,7 @@
      y="635.61102"
      id="tspan77607"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46847,6 +46838,7 @@
      id="tspan77611"
      style="stroke-width:1.00000215">34</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77629"
@@ -46858,6 +46850,7 @@
      id="tspan77627"
      style="stroke-width:1.00000215">36 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77633"
@@ -46868,6 +46861,7 @@
      id="tspan77631"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77637"
@@ -46877,6 +46871,7 @@
      y="374.39642"
      id="tspan77635"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46889,6 +46884,7 @@
      id="tspan77651"
      style="stroke-width:1.00000215">36 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77657"
@@ -46898,6 +46894,7 @@
      y="405.2915"
      id="tspan77655"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46909,6 +46906,7 @@
      id="tspan77659"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77677"
@@ -46918,6 +46916,7 @@
      y="713.70422"
      id="tspan77675"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46930,6 +46929,7 @@
      id="tspan77679"
      style="stroke-width:1.00000215">38</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77697"
@@ -46941,6 +46941,7 @@
      id="tspan77695"
      style="stroke-width:1.00000215">35 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77701"
@@ -46951,6 +46952,7 @@
      id="tspan77699"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77705"
@@ -46960,6 +46962,7 @@
      y="433.70654"
      id="tspan77703"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -46972,6 +46975,7 @@
      id="tspan77719"
      style="stroke-width:1.00000215">9 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77725"
@@ -46982,6 +46986,7 @@
      id="tspan77723"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77729"
@@ -46991,6 +46996,7 @@
      y="542.68878"
      id="tspan77727"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47003,6 +47009,7 @@
      id="tspan77743"
      style="stroke-width:1.00000215">35 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77749"
@@ -47013,6 +47020,7 @@
      id="tspan77747"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77753"
@@ -47022,6 +47030,7 @@
      y="491.14868"
      id="tspan77751"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47034,6 +47043,7 @@
      id="tspan77767"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77773"
@@ -47043,6 +47053,7 @@
      y="350.07437"
      id="tspan77771"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47055,6 +47066,7 @@
      id="tspan77775"
      style="stroke-width:1.00000215">08</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77793"
@@ -47066,6 +47078,7 @@
      id="tspan77791"
      style="stroke-width:1.00000215">114 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77797"
@@ -47076,6 +47089,7 @@
      id="tspan77795"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77801"
@@ -47085,6 +47099,7 @@
      y="355.34738"
      id="tspan77799"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47097,6 +47112,7 @@
      id="tspan77815"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77821"
@@ -47106,6 +47122,7 @@
      y="556.48083"
      id="tspan77819"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47118,26 +47135,31 @@
      id="tspan77823"
      style="stroke-width:1.00000215">14</tspan></text>
 
-<text
-   style="font-variant:normal;font-weight:bold;font-size:32.43428802px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.77605581"
-   id="text77841"
-   x="79.815079"
-   y="733.42096"><tspan
-     x="79.815079"
-     y="733.42096"
-     id="tspan77839"
-     style="stroke-width:5.77605581">U</tspan></text>
 
+
+
+<g
+   id="g13797"
+   transform="matrix(1.5775906,0,0,1.5775906,-21.945101,-429.84576)"><text
+     y="733.42096"
+     x="79.815079"
+     id="text77841"
+     style="font-variant:normal;font-weight:bold;font-size:32.43428802px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.77605581"><tspan
+       style="stroke-width:5.77605581"
+       id="tspan77839"
+       y="733.42096"
+       x="79.815079">U</tspan></text>
 <text
-   style="font-variant:normal;font-weight:bold;font-size:31.44992828px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.60075521"
-   id="text77845"
-   x="106.46392"
-   y="732.27289"><tspan
-     x="106.46392 123.86623"
      y="732.27289"
-     sodipodi:role="line"
-     id="tspan77843"
-     style="stroke-width:5.60075521">32</tspan></text>
+     x="106.46392"
+     id="text77845"
+     style="font-variant:normal;font-weight:bold;font-size:31.44992828px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.60075521"><tspan
+       style="stroke-width:5.60075521"
+       id="tspan77843"
+       sodipodi:role="line"
+       y="732.27289"
+       x="106.46392 123.86623">32</tspan></text>
+</g>
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47150,6 +47172,7 @@
      id="tspan77859"
      style="stroke-width:1.00000215">12 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77865"
@@ -47160,6 +47183,7 @@
      id="tspan77863"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77869"
@@ -47169,6 +47193,7 @@
      y="560.44086"
      id="tspan77867"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47181,6 +47206,7 @@
      id="tspan77883"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77889"
@@ -47190,6 +47216,7 @@
      y="297.81027"
      id="tspan77887"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47202,6 +47229,7 @@
      id="tspan77891"
      style="stroke-width:1.00000215">00</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77909"
@@ -47213,6 +47241,7 @@
      id="tspan77907"
      style="stroke-width:1.00000215">3 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77913"
@@ -47223,6 +47252,7 @@
      id="tspan77911"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77917"
@@ -47232,6 +47262,7 @@
      y="540.48883"
      id="tspan77915"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47244,6 +47275,7 @@
      id="tspan77931"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77937"
@@ -47254,6 +47286,7 @@
      sodipodi:role="line"
      id="tspan77935"
      style="stroke-width:1.00000215">04</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47266,6 +47299,7 @@
      id="tspan77971"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77977"
@@ -47276,6 +47310,7 @@
      sodipodi:role="line"
      id="tspan77975"
      style="stroke-width:1.00000215">03</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47288,6 +47323,7 @@
      id="tspan77991"
      style="stroke-width:1.00000215">25 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text77997"
@@ -47298,6 +47334,7 @@
      id="tspan77995"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78001"
@@ -47307,6 +47344,7 @@
      y="672.61108"
      id="tspan77999"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47319,6 +47357,7 @@
      id="tspan78015"
      style="stroke-width:1.00000215">24 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78021"
@@ -47329,6 +47368,7 @@
      id="tspan78019"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78025"
@@ -47338,6 +47378,7 @@
      y="495.22372"
      id="tspan78023"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47350,6 +47391,7 @@
      id="tspan78039"
      style="stroke-width:1.00000215">22 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78045"
@@ -47360,6 +47402,7 @@
      id="tspan78043"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78049"
@@ -47369,6 +47412,7 @@
      y="522.05975"
      id="tspan78047"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47381,6 +47425,7 @@
      id="tspan78063"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78069"
@@ -47391,6 +47436,7 @@
      sodipodi:role="line"
      id="tspan78067"
      style="stroke-width:1.00000215">08</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47403,6 +47449,7 @@
      id="tspan78083"
      style="stroke-width:1.00000215">68 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78089"
@@ -47412,6 +47459,7 @@
      y="388.00845"
      id="tspan78087"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47423,6 +47471,7 @@
      id="tspan78091"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78133"
@@ -47432,6 +47481,7 @@
      y="667.33807"
      id="tspan78131"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47444,6 +47494,7 @@
      id="tspan78135"
      style="stroke-width:1.00000215">32</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78141"
@@ -47453,6 +47504,7 @@
      y="667.33807"
      id="tspan78139"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47465,6 +47517,7 @@
      id="tspan78155"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78161"
@@ -47475,6 +47528,7 @@
      sodipodi:role="line"
      id="tspan78159"
      style="stroke-width:1.00000215">02</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47487,6 +47541,7 @@
      id="tspan78175"
      style="stroke-width:1.00000215">22 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78181"
@@ -47497,6 +47552,7 @@
      id="tspan78179"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78185"
@@ -47506,6 +47562,7 @@
      y="464.13962"
      id="tspan78183"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47518,6 +47575,7 @@
      id="tspan78199"
      style="stroke-width:1.00000215">33 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78205"
@@ -47528,6 +47586,7 @@
      id="tspan78203"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78209"
@@ -47537,6 +47596,7 @@
      y="350.00436"
      id="tspan78207"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47549,6 +47609,7 @@
      id="tspan78255"
      style="stroke-width:1.00000215">48 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78261"
@@ -47559,6 +47620,7 @@
      id="tspan78259"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78265"
@@ -47568,6 +47630,7 @@
      y="303.08328"
      id="tspan78263"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 
 
@@ -47583,6 +47646,7 @@
      id="tspan78303"
      style="stroke-width:1.00000215">426 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78309"
@@ -47593,6 +47657,7 @@
      id="tspan78307"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78313"
@@ -47602,6 +47667,7 @@
      y="719.72223"
      id="tspan78311"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47614,6 +47680,7 @@
      id="tspan78383"
      style="stroke-width:1.00000215">27 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78389"
@@ -47624,6 +47691,7 @@
      id="tspan78387"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78393"
@@ -47633,6 +47701,7 @@
      y="640.88507"
      id="tspan78391"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47645,6 +47714,7 @@
      id="tspan78407"
      style="stroke-width:1.00000215">28 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78413"
@@ -47655,6 +47725,7 @@
      id="tspan78411"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78417"
@@ -47664,6 +47735,7 @@
      y="640.88507"
      id="tspan78415"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47676,6 +47748,7 @@
      id="tspan78431"
      style="stroke-width:1.00000215">38 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text78437"
@@ -47685,6 +47758,7 @@
      y="640.88507"
      id="tspan78435"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47696,6 +47770,7 @@
      id="tspan78439"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text79893"
@@ -47705,6 +47780,7 @@
      y="635.61102"
      id="tspan79891"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47717,6 +47793,7 @@
      id="tspan79895"
      style="stroke-width:1.00000215">32</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text79901"
@@ -47726,6 +47803,7 @@
      y="635.61102"
      id="tspan79899"
      style="stroke-width:1.00000215">b</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47738,6 +47816,7 @@
      id="tspan79915"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text79921"
@@ -47749,6 +47828,7 @@
      id="tspan79919"
      style="stroke-width:1.00000215">02</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text79925"
@@ -47758,6 +47838,7 @@
      y="514.72375"
      id="tspan79923"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47770,6 +47851,7 @@
      id="tspan79939"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text79945"
@@ -47780,6 +47862,7 @@
      sodipodi:role="line"
      id="tspan79943"
      style="stroke-width:1.00000215">06</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47792,6 +47875,7 @@
      id="tspan80007"
      style="stroke-width:1.00000215">13 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80013"
@@ -47802,6 +47886,7 @@
      id="tspan80011"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80017"
@@ -47811,6 +47896,7 @@
      y="329.01233"
      id="tspan80015"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47823,6 +47909,7 @@
      id="tspan80055"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80061"
@@ -47834,6 +47921,7 @@
      id="tspan80059"
      style="stroke-width:1.00000215">09</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80065"
@@ -47843,6 +47931,7 @@
      y="323.73932"
      id="tspan80063"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47855,6 +47944,7 @@
      id="tspan80103"
      style="stroke-width:1.00000215">31 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80109"
@@ -47865,6 +47955,7 @@
      id="tspan80107"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80113"
@@ -47874,6 +47965,7 @@
      y="350.00436"
      id="tspan80111"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47886,6 +47978,7 @@
      id="tspan80151"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80157"
@@ -47897,6 +47990,7 @@
      id="tspan80155"
      style="stroke-width:1.00000215">07</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80161"
@@ -47906,6 +48000,7 @@
      y="344.73135"
      id="tspan80159"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47918,6 +48013,7 @@
      id="tspan80175"
      style="stroke-width:1.00000215">17 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80181"
@@ -47928,6 +48024,7 @@
      id="tspan80179"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80185"
@@ -47937,6 +48034,7 @@
      y="408.17349"
      id="tspan80183"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47949,6 +48047,7 @@
      id="tspan80199"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80205"
@@ -47960,6 +48059,7 @@
      id="tspan80203"
      style="stroke-width:1.00000215">06</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80209"
@@ -47970,6 +48070,7 @@
      id="tspan80207"
      style="stroke-width:1.00000215">a</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80225"
@@ -47979,6 +48080,7 @@
      y="594.15393"
      id="tspan80223"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -47991,6 +48093,7 @@
      id="tspan80227"
      style="stroke-width:1.00000215">46</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80245"
@@ -48002,6 +48105,7 @@
      id="tspan80243"
      style="stroke-width:1.00000215">19 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80249"
@@ -48011,6 +48115,7 @@
      y="598.03394"
      id="tspan80247"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48022,6 +48127,7 @@
      id="tspan80251"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80269"
@@ -48031,6 +48137,7 @@
      y="576.6059"
      id="tspan80267"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48043,6 +48150,7 @@
      id="tspan80271"
      style="stroke-width:1.00000215">47</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80289"
@@ -48054,6 +48162,7 @@
      id="tspan80287"
      style="stroke-width:1.00000215">29 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80293"
@@ -48063,6 +48172,7 @@
      y="581.38391"
      id="tspan80291"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48074,6 +48184,7 @@
      id="tspan80295"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80313"
@@ -48083,6 +48194,7 @@
      y="576.6059"
      id="tspan80311"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48095,6 +48207,7 @@
      id="tspan80315"
      style="stroke-width:1.00000215">48</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80333"
@@ -48106,6 +48219,7 @@
      id="tspan80331"
      style="stroke-width:1.00000215">24 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80337"
@@ -48115,6 +48229,7 @@
      y="581.38391"
      id="tspan80335"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48126,6 +48241,7 @@
      id="tspan80339"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80357"
@@ -48135,6 +48251,7 @@
      y="576.6059"
      id="tspan80355"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48147,6 +48264,7 @@
      id="tspan80359"
      style="stroke-width:1.00000215">49</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80377"
@@ -48158,6 +48276,7 @@
      id="tspan80375"
      style="stroke-width:1.00000215">26 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80381"
@@ -48167,6 +48286,7 @@
      y="581.38391"
      id="tspan80379"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48178,6 +48298,7 @@
      id="tspan80383"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80401"
@@ -48187,6 +48308,7 @@
      y="576.71393"
      id="tspan80399"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48199,6 +48321,7 @@
      id="tspan80403"
      style="stroke-width:1.00000215">50</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80421"
@@ -48210,6 +48333,7 @@
      id="tspan80419"
      style="stroke-width:1.00000215">26 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80425"
@@ -48219,6 +48343,7 @@
      y="581.38391"
      id="tspan80423"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48230,6 +48355,7 @@
      id="tspan80427"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80445"
@@ -48239,6 +48365,7 @@
      y="576.71393"
      id="tspan80443"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48251,6 +48378,7 @@
      id="tspan80447"
      style="stroke-width:1.00000215">51</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80465"
@@ -48262,6 +48390,7 @@
      id="tspan80463"
      style="stroke-width:1.00000215">68</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80469"
@@ -48271,6 +48400,7 @@
      y="581.38391"
      id="tspan80467"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48283,6 +48413,7 @@
      id="tspan80471"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80477"
@@ -48292,6 +48423,7 @@
      y="581.38391"
      id="tspan80475"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48303,6 +48435,7 @@
      id="tspan80479"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80497"
@@ -48312,6 +48445,7 @@
      y="576.71393"
      id="tspan80495"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48324,6 +48458,7 @@
      id="tspan80499"
      style="stroke-width:1.00000215">54</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80517"
@@ -48335,6 +48470,7 @@
      id="tspan80515"
      style="stroke-width:1.00000215">26 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80521"
@@ -48344,6 +48480,7 @@
      y="581.38391"
      id="tspan80519"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48355,6 +48492,7 @@
      id="tspan80523"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80541"
@@ -48364,6 +48502,7 @@
      y="576.71393"
      id="tspan80539"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48376,6 +48515,7 @@
      id="tspan80543"
      style="stroke-width:1.00000215">55</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80561"
@@ -48387,6 +48527,7 @@
      id="tspan80559"
      style="stroke-width:1.00000215">28 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80565"
@@ -48396,6 +48537,7 @@
      y="581.38391"
      id="tspan80563"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48407,6 +48549,7 @@
      id="tspan80567"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80585"
@@ -48416,6 +48559,7 @@
      y="628.87"
      id="tspan80583"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48428,6 +48572,7 @@
      id="tspan80587"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80593"
@@ -48437,6 +48582,7 @@
      y="628.87"
      id="tspan80591"
      style="stroke-width:1.00000215">b</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48449,6 +48595,7 @@
      id="tspan80607"
      style="stroke-width:1.00000215">32 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80613"
@@ -48458,6 +48605,7 @@
      y="633.64801"
      id="tspan80611"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48469,6 +48617,7 @@
      id="tspan80615"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80633"
@@ -48478,6 +48627,7 @@
      y="628.87"
      id="tspan80631"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48490,6 +48640,7 @@
      id="tspan80635"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80641"
@@ -48499,6 +48650,7 @@
      y="628.87"
      id="tspan80639"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48511,6 +48663,7 @@
      id="tspan80655"
      style="stroke-width:1.00000215">31 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80661"
@@ -48520,6 +48673,7 @@
      y="633.64801"
      id="tspan80659"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48531,6 +48685,7 @@
      id="tspan80663"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80681"
@@ -48540,6 +48695,7 @@
      y="628.87"
      id="tspan80679"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48552,6 +48708,7 @@
      id="tspan80683"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80689"
@@ -48561,6 +48718,7 @@
      y="628.87"
      id="tspan80687"
      style="stroke-width:1.00000215">c</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48573,6 +48731,7 @@
      id="tspan80703"
      style="stroke-width:1.00000215">32 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80709"
@@ -48582,6 +48741,7 @@
      y="633.64801"
      id="tspan80707"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48593,6 +48753,7 @@
      id="tspan80711"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80729"
@@ -48602,6 +48763,7 @@
      y="628.87"
      id="tspan80727"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48614,6 +48776,7 @@
      id="tspan80731"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80737"
@@ -48623,6 +48786,7 @@
      y="628.87"
      id="tspan80735"
      style="stroke-width:1.00000215">d</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48635,6 +48799,7 @@
      id="tspan80751"
      style="stroke-width:1.00000215">32 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80757"
@@ -48644,6 +48809,7 @@
      y="633.64801"
      id="tspan80755"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48655,6 +48821,7 @@
      id="tspan80759"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80777"
@@ -48664,6 +48831,7 @@
      y="628.87"
      id="tspan80775"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48676,6 +48844,7 @@
      id="tspan80779"
      style="stroke-width:1.00000215">45</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80797"
@@ -48687,6 +48856,7 @@
      id="tspan80795"
      style="stroke-width:1.00000215">127</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80801"
@@ -48696,6 +48866,7 @@
      y="633.64801"
      id="tspan80799"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48708,6 +48879,7 @@
      id="tspan80803"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80809"
@@ -48717,6 +48889,7 @@
      y="633.64801"
      id="tspan80807"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48728,26 +48901,31 @@
      id="tspan80811"
      style="stroke-width:1.00000215">²</tspan></text>
 
-<text
-   style="font-variant:normal;font-weight:bold;font-size:36.68340302px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.53275824"
-   id="text80829"
-   x="499.89142"
-   y="713.32495"><tspan
-     x="499.89142"
-     y="713.32495"
-     id="tspan80827"
-     style="stroke-width:6.53275824">U</tspan></text>
 
+
+
+<g
+   id="g13901"
+   transform="matrix(1.5550585,0,0,1.5550585,-259.73811,-388.72194)"><text
+     y="713.32495"
+     x="499.89142"
+     id="text80829"
+     style="font-variant:normal;font-weight:bold;font-size:36.68340302px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.53275824"><tspan
+       style="stroke-width:6.53275824"
+       id="tspan80827"
+       y="713.32495"
+       x="499.89142">U</tspan></text>
 <text
-   style="font-variant:normal;font-weight:bold;font-size:38.13338852px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.79097843"
-   id="text80833"
-   x="527.81836"
-   y="713.32727"><tspan
-     x="527.81836 548.91913"
      y="713.32727"
-     sodipodi:role="line"
-     id="tspan80831"
-     style="stroke-width:6.79097843">44</tspan></text>
+     x="527.81836"
+     id="text80833"
+     style="font-variant:normal;font-weight:bold;font-size:38.13338852px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.79097843"><tspan
+       style="stroke-width:6.79097843"
+       id="tspan80831"
+       sodipodi:role="line"
+       y="713.32727"
+       x="527.81836 548.91913">44</tspan></text>
+</g>
 
 
 
@@ -48762,6 +48940,7 @@
      id="tspan80871"
      style="stroke-width:1.00000215">U</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80877"
@@ -48773,6 +48952,7 @@
      id="tspan80875"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80881"
@@ -48782,6 +48962,7 @@
      y="748.05731"
      id="tspan80879"
      style="stroke-width:1.00000215">e</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48794,6 +48975,7 @@
      id="tspan80895"
      style="stroke-width:1.00000215">52 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80901"
@@ -48803,6 +48985,7 @@
      y="752.72729"
      id="tspan80899"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48814,6 +48997,7 @@
      id="tspan80903"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80921"
@@ -48823,6 +49007,7 @@
      y="748.05731"
      id="tspan80919"
      style="stroke-width:1.00000215">U</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48835,6 +49020,7 @@
      id="tspan80923"
      style="stroke-width:1.00000215">44</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.18336153px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80929"
@@ -48844,6 +49030,7 @@
      y="748.05731"
      id="tspan80927"
      style="stroke-width:1.00000215">f</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48856,6 +49043,7 @@
      id="tspan80943"
      style="stroke-width:1.00000215">19 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80949"
@@ -48866,6 +49054,7 @@
      id="tspan80947"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80953"
@@ -48875,6 +49064,7 @@
      y="752.72729"
      id="tspan80951"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48887,6 +49077,7 @@
      id="tspan80967"
      style="stroke-width:1.00000215">13</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80973"
@@ -48896,6 +49087,7 @@
      y="439.67557"
      id="tspan80971"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48908,6 +49100,7 @@
      id="tspan80975"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80981"
@@ -48918,6 +49111,7 @@
      id="tspan80979"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text80985"
@@ -48927,6 +49121,7 @@
      y="439.67557"
      id="tspan80983"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48939,6 +49134,7 @@
      id="tspan80999"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81005"
@@ -48950,6 +49146,7 @@
      id="tspan81003"
      style="stroke-width:1.00000215">05</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81009"
@@ -48959,6 +49156,7 @@
      y="434.40155"
      id="tspan81007"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48971,6 +49169,7 @@
      id="tspan81023"
      style="stroke-width:1.00000215">15</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81029"
@@ -48980,6 +49179,7 @@
      y="464.13962"
      id="tspan81027"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -48992,6 +49192,7 @@
      id="tspan81031"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81037"
@@ -49002,6 +49203,7 @@
      id="tspan81035"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81041"
@@ -49011,6 +49213,7 @@
      y="464.13962"
      id="tspan81039"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49023,6 +49226,7 @@
      id="tspan81055"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81061"
@@ -49034,6 +49238,7 @@
      id="tspan81059"
      style="stroke-width:1.00000215">04</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81065"
@@ -49043,6 +49248,7 @@
      y="458.8656"
      id="tspan81063"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49055,6 +49261,7 @@
      id="tspan81079"
      style="stroke-width:1.00000215">17 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81089"
@@ -49064,6 +49271,7 @@
      y="492.44769"
      id="tspan81087"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49076,6 +49284,7 @@
      id="tspan81103"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81109"
@@ -49087,6 +49296,7 @@
      id="tspan81107"
      style="stroke-width:1.00000215">03</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81113"
@@ -49096,6 +49306,7 @@
      y="487.17468"
      id="tspan81111"
      style="stroke-width:1.00000215">a</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49108,6 +49319,7 @@
      id="tspan81219"
      style="stroke-width:1.00000215">31</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81225"
@@ -49117,6 +49329,7 @@
      y="439.67557"
      id="tspan81223"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49129,6 +49342,7 @@
      id="tspan81227"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81233"
@@ -49139,6 +49353,7 @@
      id="tspan81231"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81237"
@@ -49148,6 +49363,7 @@
      y="439.67557"
      id="tspan81235"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49160,6 +49376,7 @@
      id="tspan81251"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81257"
@@ -49171,6 +49388,7 @@
      id="tspan81255"
      style="stroke-width:1.00000215">05</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81273"
@@ -49180,6 +49398,7 @@
      y="461.86063"
      id="tspan81271"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49192,6 +49411,7 @@
      id="tspan81275"
      style="stroke-width:1.00000215">102</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81293"
@@ -49201,6 +49421,7 @@
      y="435.46356"
      id="tspan81291"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49213,6 +49434,7 @@
      id="tspan81295"
      style="stroke-width:1.00000215">105</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81301"
@@ -49223,6 +49445,7 @@
      id="tspan81299"
      style="stroke-width:1.00000215">a</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81317"
@@ -49232,6 +49455,7 @@
      y="405.40448"
      id="tspan81315"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49244,6 +49468,7 @@
      id="tspan81319"
      style="stroke-width:1.00000215">106</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81325"
@@ -49254,6 +49479,7 @@
      id="tspan81323"
      style="stroke-width:1.00000215">a</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81341"
@@ -49263,6 +49489,7 @@
      y="376.61642"
      id="tspan81339"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49275,6 +49502,7 @@
      id="tspan81343"
      style="stroke-width:1.00000215">107</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81349"
@@ -49285,6 +49513,7 @@
      id="tspan81347"
      style="stroke-width:1.00000215">a</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81365"
@@ -49294,6 +49523,7 @@
      y="343.31937"
      id="tspan81363"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49306,6 +49536,7 @@
      id="tspan81367"
      style="stroke-width:1.00000215">108</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81373"
@@ -49316,6 +49547,7 @@
      id="tspan81371"
      style="stroke-width:1.00000215">a</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81389"
@@ -49325,6 +49557,7 @@
      y="369.12341"
      id="tspan81387"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49337,6 +49570,7 @@
      id="tspan81391"
      style="stroke-width:1.00000215">108</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81397"
@@ -49347,6 +49581,7 @@
      id="tspan81395"
      style="stroke-width:1.00000215">b</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81413"
@@ -49356,6 +49591,7 @@
      y="400.01749"
      id="tspan81411"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49368,6 +49604,7 @@
      id="tspan81415"
      style="stroke-width:1.00000215">106</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81433"
@@ -49377,6 +49614,7 @@
      y="428.43353"
      id="tspan81431"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49389,6 +49627,7 @@
      id="tspan81435"
      style="stroke-width:1.00000215">105</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81453"
@@ -49400,6 +49639,7 @@
      id="tspan81451"
      style="stroke-width:1.00000215">36 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81457"
@@ -49409,6 +49649,7 @@
      y="462.42163"
      id="tspan81455"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49420,6 +49661,7 @@
      id="tspan81459"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81477"
@@ -49429,6 +49671,7 @@
      y="457.14862"
      id="tspan81475"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49441,6 +49684,7 @@
      id="tspan81479"
      style="stroke-width:1.00000215">104</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81497"
@@ -49450,6 +49694,7 @@
      y="485.87567"
      id="tspan81495"
      style="stroke-width:1.00000215">R</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49462,6 +49707,7 @@
      id="tspan81499"
      style="stroke-width:1.00000215">103</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81629"
@@ -49473,6 +49719,7 @@
      id="tspan81627"
      style="stroke-width:1.00000215">32</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81633"
@@ -49482,6 +49729,7 @@
      y="609.89899"
      id="tspan81631"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49494,6 +49742,7 @@
      id="tspan81635"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81641"
@@ -49504,6 +49753,7 @@
      id="tspan81639"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81645"
@@ -49513,6 +49763,7 @@
      y="609.89899"
      id="tspan81643"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49525,6 +49776,7 @@
      id="tspan81659"
      style="stroke-width:1.00000215">15 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81665"
@@ -49535,6 +49787,7 @@
      id="tspan81663"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81669"
@@ -49544,6 +49797,7 @@
      y="609.89899"
      id="tspan81667"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49556,6 +49810,7 @@
      id="tspan81771"
      style="stroke-width:1.00000215">38</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81777"
@@ -49565,6 +49820,7 @@
      y="609.89899"
      id="tspan81775"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49577,6 +49833,7 @@
      id="tspan81779"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81785"
@@ -49586,6 +49843,7 @@
      y="609.89899"
      id="tspan81783"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49597,6 +49855,7 @@
      id="tspan81787"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81805"
@@ -49607,6 +49866,7 @@
      id="tspan81803"
      style="stroke-width:1.00000215">1</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81809"
@@ -49616,6 +49876,7 @@
      y="553.01782"
      id="tspan81807"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49628,6 +49889,7 @@
      id="tspan81811"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81817"
@@ -49638,6 +49900,7 @@
      id="tspan81815"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81821"
@@ -49647,6 +49910,7 @@
      y="553.01782"
      id="tspan81819"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49659,6 +49923,7 @@
      id="tspan81835"
      style="stroke-width:1.00000215">9 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81841"
@@ -49669,6 +49934,7 @@
      id="tspan81839"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81845"
@@ -49678,6 +49944,7 @@
      y="563.19287"
      id="tspan81843"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49690,6 +49957,7 @@
      id="tspan81859"
      style="stroke-width:1.00000215">2 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81865"
@@ -49700,6 +49968,7 @@
      id="tspan81863"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:3.45557761px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81869"
@@ -49709,6 +49978,7 @@
      y="619.41199"
      id="tspan81867"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49721,6 +49991,7 @@
      id="tspan81883"
      style="stroke-width:1.00000215">100 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81889"
@@ -49730,6 +50001,7 @@
      y="470.60364"
      id="tspan81887"
      style="stroke-width:1.00000215">m</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49741,6 +50013,7 @@
      id="tspan81891"
      style="stroke-width:1.00000215">²</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81909"
@@ -49751,6 +50024,7 @@
      id="tspan81907"
      style="stroke-width:1.00000215">6</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81913"
@@ -49760,6 +50034,7 @@
      y="319.69031"
      id="tspan81911"
      style="stroke-width:1.00000215">.</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49772,6 +50047,7 @@
      id="tspan81915"
      style="stroke-width:1.00000215">5 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81921"
@@ -49782,6 +50058,7 @@
      id="tspan81919"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81925"
@@ -49791,6 +50068,7 @@
      y="319.69031"
      id="tspan81923"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49803,6 +50081,7 @@
      id="tspan81939"
      style="stroke-width:1.00000215">68 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81945"
@@ -49813,6 +50092,7 @@
      id="tspan81943"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81949"
@@ -49822,6 +50102,7 @@
      y="303.08328"
      id="tspan81947"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49834,6 +50115,7 @@
      id="tspan81963"
      style="stroke-width:1.00000215">R </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81969"
@@ -49844,6 +50126,7 @@
      sodipodi:role="line"
      id="tspan81967"
      style="stroke-width:1.00000215">09</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49856,6 +50139,7 @@
      id="tspan81983"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text81989"
@@ -49865,6 +50149,7 @@
      y="465.33063"
      id="tspan81987"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49877,6 +50162,7 @@
      id="tspan81991"
      style="stroke-width:1.00000215">02</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82105"
@@ -49888,6 +50174,7 @@
      id="tspan82103"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82109"
@@ -49897,6 +50184,7 @@
      y="635.61102"
      id="tspan82107"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49909,6 +50197,7 @@
      id="tspan82111"
      style="stroke-width:1.00000215">07</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82129"
@@ -49920,6 +50209,7 @@
      id="tspan82127"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82133"
@@ -49929,6 +50219,7 @@
      y="517.60077"
      id="tspan82131"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49941,6 +50232,7 @@
      id="tspan82135"
      style="stroke-width:1.00000215">09</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82153"
@@ -49952,6 +50244,7 @@
      id="tspan82151"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82157"
@@ -49961,6 +50254,7 @@
      y="610.36096"
      id="tspan82155"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -49973,6 +50267,7 @@
      id="tspan82159"
      style="stroke-width:1.00000215">15</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82177"
@@ -49984,6 +50279,7 @@
      id="tspan82175"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82181"
@@ -49993,6 +50289,7 @@
      y="610.36096"
      id="tspan82179"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -50005,6 +50302,7 @@
      id="tspan82183"
      style="stroke-width:1.00000215">16</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82201"
@@ -50016,6 +50314,7 @@
      id="tspan82199"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82205"
@@ -50025,6 +50324,7 @@
      y="610.36096"
      id="tspan82203"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -50037,6 +50337,7 @@
      id="tspan82207"
      style="stroke-width:1.00000215">17</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82225"
@@ -50048,6 +50349,7 @@
      id="tspan82223"
      style="stroke-width:1.00000215">RS</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82229"
@@ -50057,6 +50359,7 @@
      y="756.16632"
      id="tspan82227"
      style="stroke-width:1.00000215">-</tspan></text>
+
 
 <text
    style="font-variant:normal;font-weight:bold;font-size:5.61531258px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
@@ -50069,6 +50372,7 @@
      id="tspan82231"
      style="stroke-width:1.00000215">19</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82249"
@@ -50080,6 +50384,7 @@
      id="tspan82247"
      style="stroke-width:1.00000215">17 </tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#132613;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82253"
@@ -50090,6 +50395,7 @@
      id="tspan82251"
      style="stroke-width:1.00000215">m</tspan></text>
 
+
 <text
    style="font-variant:normal;font-weight:bold;font-size:4.31946945px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00000215"
    id="text82257"
@@ -50099,6 +50405,7 @@
      y="756.05731"
      id="tspan82255"
      style="stroke-width:1.00000215">²</tspan></text>
+
 
 <path
    inkscape:connector-curvature="0"
