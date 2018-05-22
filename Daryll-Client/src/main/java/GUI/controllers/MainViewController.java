@@ -33,7 +33,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
-import org.apache.xpath.SourceTree;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -215,7 +214,7 @@ public class MainViewController implements Initializable {
             System.out.println(localTime);
 
             // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
-            String firstClassroom = ClassroomsByFloor.FloorsMap.get(idButton).get(0);
+            String firstClassroom = ClassroomsByFloor.FLOORS_MAP.get(idButton).get(0);
 
             int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
             System.out.println(periodRequested);

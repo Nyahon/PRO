@@ -189,7 +189,7 @@ public class Controller {
             writer.println("*************************************");
             writer.flush();
             // Recuperate classrooms in the requested floor and Loop on all classroom
-            List<String> classrooms = ClassroomsByFloor.FloorsMap.get(clientRequest.getFloor());
+            List<String> classrooms = ClassroomsByFloor.FLOORS_MAP.get(clientRequest.getFloor());
             writeFreePeriodsForFloor(writer, classrooms, date, timeSlotList, tmp, periods);
         }
     }
@@ -219,7 +219,7 @@ public class Controller {
                 writer.flush();
 
                 // Recuperate classrooms in the current floor and Loop on all classroom
-                classrooms = ClassroomsByFloor.FloorsMap.get(floor);
+                classrooms = ClassroomsByFloor.FLOORS_MAP.get(floor);
                 writeFreePeriodsForFloor(writer, classrooms, date, timeSlotList, tmp, periods);
             }
         }
@@ -310,7 +310,7 @@ public class Controller {
         double difference = Double.MAX_VALUE;
 
         // iterate on the official classroom list in the current floor
-        List<String> roomList = ClassroomsByFloor.FloorsMap.get(currentFloor);
+        List<String> roomList = ClassroomsByFloor.FLOORS_MAP.get(currentFloor);
 
         for(String room : roomList){
             if(mapReceived.containsKey(room) && mapReceived.get(room) > 0){
@@ -339,18 +339,18 @@ public class Controller {
         Map<String, Integer> mapReceived = Controller.handleClientFloorRequest(ts);
 
         if(mapReceived.isEmpty()){
-            int currentFloorIndex = ClassroomsByFloor.FloorsMap.get(floor).indexOf(floor);
+            int currentFloorIndex = ClassroomsByFloor.FLOORS_MAP.get(floor).indexOf(floor);
             if(floorAChecked && floor != "K"){
                 // do floor++
-                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex+1);
+                floor = ClassroomsByFloor.FLOORS_MAP.get(floor).get(currentFloorIndex+1);
             } else if (floor != "A") {
                 // do floor--
-                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex-1);
+                floor = ClassroomsByFloor.FLOORS_MAP.get(floor).get(currentFloorIndex-1);
             } else {
                 floorAChecked = true;
-                floor = ClassroomsByFloor.FloorsMap.get(floor).get(currentFloorIndex+1);
+                floor = ClassroomsByFloor.FLOORS_MAP.get(floor).get(currentFloorIndex+1);
             }
-            String roomFloorReference = ClassroomsByFloor.FloorsMap.get(floor).get(0);
+            String roomFloorReference = ClassroomsByFloor.FLOORS_MAP.get(floor).get(0);
             ts.setClassroom(roomFloorReference);
             mapReceived = floorRequestWithFreeRoom(floor, floorAChecked, ts);
         }

@@ -38,22 +38,29 @@ public class ClassroomsByFloor {
     public static final List<String> FLOORS_ST_ROCH =
             Arrays.asList("R", "S", "T", "U");
 
-    public static final Map< String, List<String> > FloorsMap;
+    public static final Map< String, List<String> > FLOORS_MAP;
+    public static final Map<Integer, List<String> > BUILDING_MAP;
     static {
-        Map<String, List<String> > map = new HashMap<>();
-        map.put("A", A_CLASSROOMS);
-        map.put("B", B_CLASSROOMS);
-        map.put("C", C_CLASSROOMS);
-        map.put("D", D_CLASSROOMS);
-        map.put("F", F_CLASSROOMS);
-        map.put("G", G_CLASSROOMS);
-        map.put("H", H_CLASSROOMS);
-        map.put("J", J_CLASSROOMS);
-        map.put("K", K_CLASSROOMS);
-        map.put("R", R_CLASSROOMS);
-        map.put("S", S_CLASSROOMS);
-        map.put("T", T_CLASSROOMS);
-        map.put("U", U_CLASSROOMS);
-        FloorsMap = Collections.unmodifiableMap(map);
+        Map<String, List<String> > floorMap = new HashMap<>();
+        floorMap.put("A", A_CLASSROOMS);
+        floorMap.put("B", B_CLASSROOMS);
+        floorMap.put("C", C_CLASSROOMS);
+        floorMap.put("D", D_CLASSROOMS);
+        floorMap.put("F", F_CLASSROOMS);
+        floorMap.put("G", G_CLASSROOMS);
+        floorMap.put("H", H_CLASSROOMS);
+        floorMap.put("J", J_CLASSROOMS);
+        floorMap.put("K", K_CLASSROOMS);
+        floorMap.put("R", R_CLASSROOMS);
+        floorMap.put("S", S_CLASSROOMS);
+        floorMap.put("T", T_CLASSROOMS);
+        floorMap.put("U", U_CLASSROOMS);
+        FLOORS_MAP = Collections.unmodifiableMap(floorMap);
+
+        Map<Integer, List<String> > buildingMap = new HashMap<>();
+        buildingMap.put(0, FLOORS_CHESEAUX);
+        buildingMap.put(1, FLOORS_ST_ROCH);
+        BUILDING_MAP = buildingMap;
     }
+
 }

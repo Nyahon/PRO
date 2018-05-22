@@ -8,7 +8,7 @@ public class FloorFreePeriodMap {
 private Map<String, Integer> freeMap = new HashMap<>();
 
 public FloorFreePeriodMap(String floor) {
-    for (String classroom : ClassroomsByFloor.FloorsMap.get(floor)) {
+    for (String classroom : ClassroomsByFloor.FLOORS_MAP.get(floor)) {
         freeMap.put(classroom, 3);
     }
 }

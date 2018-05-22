@@ -17,7 +17,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +25,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.ClassRoom;
-import models.TimeSlot;
 import utils.ClassroomsByFloor;
 
 import static controller.Controller.handleClientClassroomRequest;
@@ -53,7 +51,7 @@ public class RoomScheduleViewController implements Initializable {
 
       String floor = classroomRequested.getClassRoom().substring(0,1);
 
-      List<String> classroomFromFloor = ClassroomsByFloor.FloorsMap.get(floor);
+      List<String> classroomFromFloor = ClassroomsByFloor.FLOORS_MAP.get(floor);
 
       if(classroomFromFloor != null) {
          for (int i = 0; i < classroomFromFloor.size(); ++i){
