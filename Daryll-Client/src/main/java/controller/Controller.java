@@ -110,7 +110,8 @@ public class Controller {
 
     private static void writeToFileWithClassroomTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         writer.println("Salle: " + clientRequest.getClassroom());
         writer.flush();
@@ -120,7 +121,7 @@ public class Controller {
         // Loop on all dates in the interval wanted by the user
         for (LocalDate date = clientRequest.getDateBegin().toLocalDate(); date.isBefore(clientRequest.getDateEnd().toLocalDate().plusDays(1)); date = date.plusDays(1)) {
             writer.println("-------------------------------------------------");
-            writer.println("SHIT FORMAT" + " - " + date.toString());
+            writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
             writer.println("-------------------------------------------------");
             writer.flush();
 
@@ -163,7 +164,8 @@ public class Controller {
 
     private static void writeToFileWithFloorTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         writer.println("Etage: " + clientRequest.getFloor());
         writer.println("#############################################################################");
@@ -173,7 +175,7 @@ public class Controller {
         List<TimeSlot> tmp = new ArrayList<>();
         // Loop on all dates in the interval wanted by the user
         for (LocalDate date = clientRequest.getDateBegin().toLocalDate(); date.isBefore(clientRequest.getDateEnd().toLocalDate().plusDays(1)); date = date.plusDays(1)) {
-            writer.println("SHIT FORMAT" + " - " + date.toString());
+            writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
             writer.println("*************************************");
             writer.flush();
             // Recuperate classrooms in the requested floor and Loop on all classroom
@@ -233,7 +235,8 @@ public class Controller {
     private static void writeToFileWithAllTemplate(List<TimeSlot> timeSlotList, AdvancedRequest clientRequest, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         List<String> classrooms;
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         // Recuperate a list of the floors in fonction of the requested building
         List<String> floors = clientRequest.getBuilding() == 0 ? ClassroomsByFloor.FLOORS_CHESEAUX : ClassroomsByFloor.FLOORS_ST_ROCH;
@@ -241,7 +244,7 @@ public class Controller {
         List<TimeSlot> tmp = new ArrayList<>();
         // Loop on all dates in the interval wanted by the user
         for (LocalDate date = clientRequest.getDateBegin().toLocalDate(); date.isBefore(clientRequest.getDateEnd().toLocalDate().plusDays(1)); date = date.plusDays(1)) {
-            writer.println("SHIT FORMAT" + " - " + date.toString());
+            writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
             writer.println("#############################################################################");
             writer.println();
             writer.flush();

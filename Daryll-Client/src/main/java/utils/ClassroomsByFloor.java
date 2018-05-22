@@ -29,7 +29,7 @@ public class ClassroomsByFloor {
                     "S137", "S141", "S143", "S147", "S151", "S153", "S155", "S157");
     private static List<String> T_CLASSROOMS =
             Arrays.asList("T102", "T104", "T105", "T106", "T107", "T12", "T129", "T136a", "T139", "T141", "T143",
-                    "S147", "S151", "S153", "S155", "S157", "S158");
+                    "T147", "T151", "T153", "T155", "T157", "T158");
     private static List<String> U_CLASSROOMS =
             Arrays.asList("U32", "U44");
 
