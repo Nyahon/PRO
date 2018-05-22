@@ -45,7 +45,8 @@ public class Controller {
             Runtime.getRuntime().exec(cmd);
         }
         else {
-            Desktop.getDesktop().edit(file);
+            String cmd = "nano" + file.getCanonicalPath();
+            Runtime.getRuntime().exec(cmd);
         }
     }
 
