@@ -1,5 +1,6 @@
 package GUI.svgTools;
 
+import GUI.controllers.MainViewController;
 import GUI.svgTools.BufferedImageTranscoder;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
@@ -22,13 +23,15 @@ public class PlanLoader implements Runnable{
     private int height;
     private ImageView imgView;
     private Image img;
+    private MainViewController mainViewController;
 
 
-    public PlanLoader(String file, ImageView imgView, int width, int height){
+    public PlanLoader(String file, ImageView imgView, int width, int height, MainViewController mainViewController){
         this.file = file;
         this.width = width;
         this.height = height;
         this.imgView = imgView;
+        this.mainViewController = mainViewController;
     }
 
 
@@ -67,5 +70,8 @@ public class PlanLoader implements Runnable{
         img = getTranscodedImage(width, height);
 
         imgView.setImage(img);
+
+        mainViewController.guiLogger.printInfo("Chargement du plan effectué");
+        Thread.currentThread().interrupt();
     }
 }

@@ -33,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import org.apache.xpath.SourceTree;
 import utils.ClassroomsByFloor;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -50,7 +51,11 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
+import utils.DisplayConstants;
 import utils.PeriodManager;
+
+import static utils.DisplayConstants.COLOR_VALUES;
+import static utils.DisplayConstants.getColorIdFromFreePeriods;
 
 public class MainViewController implements Initializable {
 
@@ -89,7 +94,7 @@ public class MainViewController implements Initializable {
     @FXML
     private Label guiConsole;
     @FXML
-    Circle circleGuiLogger;
+    private Circle circleGuiLogger;
 
     public GuiLogger guiLogger;
 
@@ -168,6 +173,8 @@ public class MainViewController implements Initializable {
         Button floorButton = (Button) event.getSource(); // get the button from the event
         String idButton = floorButton.getId(); // get the id of the button
 
+        guiLogger.printInfo("Chargement du plan " + idButton + " en cours");
+
         ImageView imgView = imageCheseaux;
         indexPlan = 0;
         currentFloorPaths = FLOORS.get(idButton);
@@ -224,32 +231,18 @@ public class MainViewController implements Initializable {
                 for (int i = 0; i < currentFloorPaths.size(); ++i) {
                     svgFloorPath = "/plans/" + currentFloorPaths.get(i);
                     String classroomName = classroom.getKey();
-                    int freePeriods = classroom.getValue();
-                    //DisplayConstants.COLORS_ROOMS colors_rooms =  nextOccupiedPeriod - periodRequested;
-                    switch (freePeriods) {
-                        case 0:
-                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#ffffff");
-                            break;
-                        case 1:
-                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#99ff99");
-                            break;
-                        case 2:
-                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#00ff00");
-                            break;
-                        case 3:
-                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#009900");
-                            break;
-                        default:
-                            svgToolBox.updateSVG(svgFloorPath, classroomName, "#009900");
-                            break;
-                    }
+
+                    int colorId = getColorIdFromFreePeriods(classroom.getValue());
+                    DisplayConstants.COLORS_ROOMS colors_rooms = DisplayConstants.COLORS_ROOMS.values()[colorId];
+
+                    svgToolBox.updateSVG(svgFloorPath, classroomName, COLOR_VALUES[colors_rooms.ordinal()]);
                 }
 
             }
             svgFloorPath = "/plans/" + currentFloorPaths.get(0);
             try {
                 //imgView.setImage(new Thread);
-                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight);
+                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
                 System.gc();
                 //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
@@ -338,7 +331,7 @@ public class MainViewController implements Initializable {
             try {
                 //loadSvgImage( "/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
 
-                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight);
+                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
             } catch (Exception e) {
 

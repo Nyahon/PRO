@@ -93,13 +93,13 @@ public class TimeslotViewController implements Initializable {
                System.out.println("REQUETE");
                List<AdvancedRequest> requests = new ArrayList<>();
 
-
-
                for(AdvancedRequestForm arf : advancedRequestForms){
 
                   int beginPeriod = PeriodManager.currentOrNextPeriod(arf.getBeginTime());
                   int endPeriod = PeriodManager.currentOrNextPeriod(arf.getEndTime());
                   //AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()),beginPeriod,null,null);
+
+
 
                   System.out.println(beginPeriod);
                   AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()),beginPeriod,null,null);
