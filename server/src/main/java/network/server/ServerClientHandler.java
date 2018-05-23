@@ -37,7 +37,7 @@ public class ServerClientHandler implements IClientHandler {
     /**
      * the file name of the ICS to parse
      */
-    private static final String fileNameICS = "gaps_global_S2_2017_2018.ics";
+    private static final String fileNameICS = "./src/main/resources/gaps_global_S2_2017_2018.ics";
 
     /**
      * Default constructor
