@@ -95,7 +95,7 @@ public class Controller {
             clientRequest = data.get(i);
 
             writer.println("REQUETE no " + (i + 1));
-            writer.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            writer.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             writer.println();
             writer.flush();
 
@@ -230,7 +230,7 @@ public class Controller {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
         // Write the header
         writer.println(DisplayConstants.FILE_FLOOR_TITLE + ": " + clientRequest.getFloor());
-        writer.println("#############################################################################");
+        writer.println("##################################################");
         writer.println();
         writer.flush();
 
@@ -264,7 +264,7 @@ public class Controller {
         // Loop on all dates in the interval wanted by the user
         for (LocalDate date = clientRequest.getDateBegin().toLocalDate(); date.isBefore(clientRequest.getDateEnd().toLocalDate().plusDays(1)); date = date.plusDays(1)) {
             writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
-            writer.println("#############################################################################");
+            writer.println("########################################");
             writer.println();
             writer.flush();
 
