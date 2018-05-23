@@ -1,11 +1,9 @@
 /**
  * Module      : PRO
- * File        : ViewController.java
- * Date        : 31.03.2018
+ * File        : GuiLogger.java
+ * Date        : 19.05.2018
  * <p>
- * Goal : This class implements a simple GUI logger
- * between the GUI and the user work, each event for each object from the GUI
- * contains a method that will manage the action.
+ * Goal : This class implements a simple GUI logger to inform user.
  * <p>
  * <p>
  * Remarks :

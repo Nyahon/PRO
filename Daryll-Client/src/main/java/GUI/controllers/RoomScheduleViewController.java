@@ -28,6 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.ClassRoom;
 import utils.ClassroomsByFloor;
+import utils.ConfigLoader;
 
 import static controller.Controller.handleClientClassroomRequest;
 
@@ -51,12 +52,10 @@ public class RoomScheduleViewController implements Initializable {
      */
     public void giveRoomSchedule(Event event) {
 
-
         String classroomName = scheduleRoomTextField.getText().toUpperCase();
 
-        mainViewController.guiLogger.printInfo("Bonjour");
-
         if (classroomName.isEmpty()) {
+            mainViewController.guiLogger.printError("Veuillez entrez une salle valide");
             return;
         }
         ClassRoom classroomRequested = new ClassRoom(classroomName);
@@ -78,11 +77,10 @@ public class RoomScheduleViewController implements Initializable {
                     Button button = (Button) event.getSource();
                     Scene scene = button.getScene();
                     ((Stage) scene.getWindow()).close();
-
                     break;
                 }
             }
-
+            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.outputFilename() + " a été généré");
         }
     }
 

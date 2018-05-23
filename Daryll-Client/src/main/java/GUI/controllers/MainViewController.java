@@ -23,6 +23,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.List;
 import java.util.logging.Logger;
 
 import GUI.model.TimeSpinner;
@@ -34,8 +35,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
-import utils.ClassroomsByFloor;
-import javafx.application.Platform;
+import models.ClassRoom;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -45,8 +45,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.TimeSlot;
@@ -54,6 +52,8 @@ import controller.Controller;
 import utils.DisplayConstants;
 import utils.PeriodManager;
 
+import static controller.Controller.closestClassroom;
+import static utils.ClassroomsByFloor.FLOORS_MAP;
 import static utils.DisplayConstants.COLOR_VALUES;
 import static utils.DisplayConstants.getColorIdFromFreePeriods;
 
@@ -67,8 +67,10 @@ public class MainViewController implements Initializable {
     private static final int planWidth = 1800;
     private static final int planHeight = 980;
     private static final SVGToolBox svgToolBox = new SVGToolBox();
-
     private static String position = "";
+
+    private static String currentFloor = "G";
+
     @FXML
     private ImageView imageCheseaux;
     @FXML
@@ -90,7 +92,9 @@ public class MainViewController implements Initializable {
     @FXML
     private HBox bottomUserInputHBox;
     @FXML
-    private Spinner hourSpinner;
+    private Spinner timeSpinner;
+    @FXML
+    private Button mainSearch;
     @FXML
     private Label guiConsole;
     @FXML
@@ -111,7 +115,7 @@ public class MainViewController implements Initializable {
         floorFileName.clear();
 
         floorFileName.add("floor-B1.svg");
-        floorFileName.add("floor-B2.svg");
+        //floorFileName.add("floor-B2.svg");
         floorFileName.add("floor-B3.svg");
         FLOORS.put("B", new ArrayList<>(floorFileName));
         floorFileName.clear();
@@ -135,7 +139,7 @@ public class MainViewController implements Initializable {
         FLOORS.put("H", new ArrayList<>(floorFileName));
         floorFileName.clear();
 
-        floorFileName.add("floor-J.svg"); //Needs to be added in resources
+        floorFileName.add("floor-J.svg");
 
         FLOORS.put("J", new ArrayList<>(floorFileName));
         floorFileName.clear();
@@ -165,24 +169,37 @@ public class MainViewController implements Initializable {
     /**
      * @param event It corresponds to a mouse click for this case.
      *              //@see idButton The buttons need to have an ID.
-     * @brief This method is a handler that manage the click in a floor button. It
+     * This method is a handler that manage the click in a floor button. It
      * will show the free room from the stage.
      */
-    public void showFloor(Event event) throws IOException{
+    public void newFloorEvent(Event event) throws IOException{
 
         Button floorButton = (Button) event.getSource(); // get the button from the event
         String idButton = floorButton.getId(); // get the id of the button
 
-        guiLogger.printInfo("Chargement du plan " + idButton + " en cours");
+        currentFloor = idButton;
+        showFloor(idButton);
+    }
+
+
+    /**
+     * @param floor the floor
+     * This method is a handler to
+     */
+    public void showFloor(String floor) throws IOException{
+
+        timeSpinner.setFocusTraversable(true);
+        System.out.println();
+        guiLogger.printInfo("Chargement du plan " + floor + " en cours");
 
         ImageView imgView = imageCheseaux;
         indexPlan = 0;
-        currentFloorPaths = FLOORS.get(idButton);
+        currentFloorPaths = FLOORS.get(floor);
 
         String svgFloorPath = "";
 
         // Regex expression to know which building is the floor
-        if (idButton.matches("[A-D]") || idButton.matches("[G-K]") ) {
+        if (floor.matches("[A-D]") || floor.matches("[G-K]") ) {
             imgView = imageCheseaux;
             previousCheseaux.setDisable(true);
             if(currentFloorPaths != null) {
@@ -194,7 +211,7 @@ public class MainViewController implements Initializable {
             } else {
                 nextCheseaux.setDisable(true);
             }
-        } else if (idButton.matches("[R-U]")) {
+        } else if (floor.matches("[R-U]")) {
             imgView = imageStRoch;
             previousStRoch.setDisable(true);
             if(currentFloorPaths != null) {
@@ -208,22 +225,19 @@ public class MainViewController implements Initializable {
             }
         }
 
-        if(!idButton.matches("[E-F]")) {
+        if(!floor.matches("[E-F]")) {
             LocalDate localDate = dateField.getValue();
-
-            LocalTime localTime = (LocalTime) hourSpinner.getValue();
+            LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());;
             System.out.println(localTime);
 
-            // Get first classroom from idButton representing a floor (we do not care here about specific classroom)
-            String firstClassroom = ClassroomsByFloor.FLOORS_MAP.get(idButton).get(0);
+            // Get first classroom from idButton representing a floor
+            String firstClassroom = FLOORS_MAP.get(floor).get(0);
 
             int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
             System.out.println(periodRequested);
             TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
-            // Standard version
             Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
-
 
             for (HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()) {
 
@@ -254,8 +268,31 @@ public class MainViewController implements Initializable {
             Image exceptionImg = new Image("/plans/default-image.png");
             imgView.setImage(exceptionImg);
         }
+    }
 
+    public void searchButtonHandle(){
 
+        String currentRoom = currentRoomLabel.getText();
+        ClassRoom classRoom = new ClassRoom(currentRoom);
+
+        if(currentRoom != null && !currentRoom.isEmpty()){
+
+            ClassRoom closestClassroom = closestClassroom(classRoom);
+            try {
+                showFloor(closestClassroom.getClassRoom().substring(0, 1));
+                guiLogger.printInfo("Votre salle la plus proche : " + closestClassroom.getClassRoom());
+            } catch (IOException e){
+                e.printStackTrace();
+                guiLogger.printError("Erreur pour charger le plan demandé");
+            }
+        } else {
+            try {
+                showFloor(currentFloor);
+            } catch (Exception e){
+                e.printStackTrace();
+                guiLogger.printError("Erreur pour charger le plan demandé");
+            }
+        }
 
     }
 
@@ -271,11 +308,24 @@ public class MainViewController implements Initializable {
         // update position if key ENTER is pressed
         if(keyEvent.getCode() == KeyCode.ENTER) {
             position = currentRoomField.getText();
-            currentRoomField.clear();
-            currentRoomLabel.setText(position);
-            //guiLogger.printInfo(position);
-        }
+            if(!position.equals("")){
 
+                String floor = position.substring(0,1).toUpperCase();
+                position = position.replaceFirst(position.substring(0,1), floor.toUpperCase());
+                System.out.println(position);
+                List<String> classrooms = FLOORS_MAP.get(floor);
+                if(classrooms != null) {
+                    for(int i = 0; i < classrooms.size(); ++i) {
+                        if(classrooms.get(i).equals(position)) {
+                            currentRoomField.clear();
+                            currentRoomLabel.setText(position);
+                            return;
+                        }
+                    }
+                }
+            }
+            guiLogger.printError("Saisie incorrecte ou salle inconnue");
+        }
     }
 
     /**
@@ -290,9 +340,8 @@ public class MainViewController implements Initializable {
 
         String idButton = b.getId(); // get the id of the button
 
-
         /*
-        * Method to check when
+        * Method to check button in Cheseaux ImageView
          */
         if (idButton.equals("nextCheseaux") || idButton.equals("previousCheseaux")){
             if (idButton.equals("nextCheseaux")) {
@@ -313,7 +362,6 @@ public class MainViewController implements Initializable {
                 previousCheseaux.setDisable(false);
             }
 
-
             try {
                 planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
@@ -326,19 +374,6 @@ public class MainViewController implements Initializable {
         }
 
     }
-
-    /**
-     * @brief This method cleans the pane, it means that the image will not appear
-     * because the CSS code is deleted.
-     * @param b The necessary button floor to get the scene.
-     *
-    public void clean(Button b) {
-    Scene scene = b.getScene(); // get the scene
-    ImageView imgView = (ImageView) scene.lookup("#imageCheseaux"); // get the pane who hostes the image
-    imgView.setVisible(false);
-    //imgView.setDisable(true); // delete image
-    }*/
-
 
     /**
      * @throws Exception
@@ -377,12 +412,6 @@ public class MainViewController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("/TimeslotView.fxml"));
 
-        TimeslotViewController timeslotViewController = fxmlLoader.getController();
-        if(timeslotViewController != null) {
-            timeslotViewController.setMainViewController(this);
-        }else{
-            System.out.println("lLALKKDOJ");
-        }
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
@@ -411,16 +440,6 @@ public class MainViewController implements Initializable {
         stage.show();
     }
 
-    /**
-     * @brief This method is a handler for the guide option in the menu. It will
-     * redirect to a web page of your project in Github
-     */
-    public void howToUse() throws Exception {
-        String url = "https://github.com/Nyahon/PRO";
-        URI uri = new URI(url);
-        Desktop.getDesktop().browse(uri);
-    }
-
 
     /**
      * @param url link text
@@ -431,9 +450,9 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         fillFloors();
-        hourSpinner = new TimeSpinner();
-        hourSpinner.setPrefWidth(90.0);
-        bottomUserInputHBox.getChildren().set(7, hourSpinner);
+        timeSpinner = new TimeSpinner();
+        timeSpinner.setPrefWidth(90.0);
+        bottomUserInputHBox.getChildren().set(7, timeSpinner);
         guiLogger = new GuiLogger(guiConsole, circleGuiLogger);
     }
 

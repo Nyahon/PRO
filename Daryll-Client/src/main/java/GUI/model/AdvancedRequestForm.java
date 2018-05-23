@@ -196,7 +196,6 @@ public class AdvancedRequestForm {
     }
 
     public LocalTime getEndTime(){
-
         System.out.println(endTime.getValue());
         return endTime.getValue();
     }

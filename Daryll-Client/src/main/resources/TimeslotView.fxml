@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" prefHeight="340.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
+<BorderPane maxHeight="400.0" maxWidth="813.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
   <bottom>
     <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="123.0" text="Recherche" BorderPane.alignment="CENTER" />
   </bottom>
   <center>
-      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308" prefHeight="280.0" prefWidth="803.0">
+      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="803.0">
          <children>
           <GridPane>
             <children>

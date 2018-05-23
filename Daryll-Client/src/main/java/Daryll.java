@@ -74,7 +74,7 @@ public class Daryll extends Application {
       imgView1.fitWidthProperty().bind(pane1.widthProperty().subtract(60));
 
       imgView2.setPreserveRatio(true);
-      imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(100));
+      imgView2.fitWidthProperty().bind(pane2.widthProperty().subtract(150));
 
       LocalDateTime currentDateTime = LocalDateTime.now();
       DatePicker datePicker = (DatePicker) scene.lookup("#dateField");

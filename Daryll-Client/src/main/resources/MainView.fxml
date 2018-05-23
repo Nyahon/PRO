@@ -21,14 +21,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.MainViewController">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.MainViewController">
   <bottom>
       <VBox BorderPane.alignment="TOP_LEFT">
          <children>
             <ToolBar blendMode="SRC_ATOP" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" VBox.vgrow="SOMETIMES">
               <items>
-                  <Circle fx:id="circleGuiLogger" fill="#1fff2e" radius="13.0" stroke="#15402091" strokeType="INSIDE" />
-                  <Label fx:id="guiConsole" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="387.0" text="GUI console" textFill="#09ff09">
+                  <Circle fx:id="circleGuiLogger" fill="LIMEGREEN" radius="13.0" stroke="#15402091" strokeType="INSIDE" />
+                  <Label fx:id="guiConsole" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="387.0" text="GUI console" textFill="LIMEGREEN">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -83,8 +83,8 @@
                         <Insets right="5.0" />
                      </HBox.margin></DatePicker>
                   <Label text="Heure" />
-                  <Spinner fx:id="hourSpinner" editable="true" prefWidth="100.0" />
-                  <Button fx:id="mainSearch" mnemonicParsing="false" text="Recherche" textAlignment="CENTER">
+                  <Spinner fx:id="timeSpinner" editable="true" prefWidth="100.0" />
+                  <Button fx:id="mainSearch" mnemonicParsing="false" onAction="#searchButtonHandle" text="Recherche" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="40.0" />
                      </HBox.margin>
@@ -123,16 +123,16 @@
               <left>
                 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" prefHeight="400.0" prefWidth="108.0">
                   <children>
-                    <Button fx:id="K" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage K" />
-                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage J" />
-                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage H" />
-                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage G" />
-                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage F" />
-                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage E" />
-                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage D" />
-                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage C" />
-                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage B" />
-                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="95.0" prefWidth="146.0" text="Étage A" />
+                    <Button fx:id="K" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage K" />
+                    <Button fx:id="J" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage J" />
+                    <Button fx:id="H" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage H" />
+                    <Button fx:id="G" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage G" />
+                    <Button fx:id="F" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage F" />
+                    <Button fx:id="E" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage E" />
+                    <Button fx:id="D" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage D" />
+                    <Button fx:id="C" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage C" />
+                    <Button fx:id="B" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage B" />
+                    <Button fx:id="A" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="95.0" prefWidth="146.0" text="Étage A" />
                   </children>
                 </VBox>
               </left>
@@ -143,7 +143,7 @@
           <content>
             <BorderPane disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" visible="true">
                 <center>
-                        <BorderPane fx:id="planStRoch">
+                        <BorderPane fx:id="planStRoch" minHeight="-Infinity" minWidth="-Infinity">
                            <center>
                             <ImageView fx:id="imageStRoch" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                            </center>
@@ -158,10 +158,10 @@
               <left>
                 <VBox prefHeight="456.0" prefWidth="108.0">
                   <children>
-                    <Button fx:id="U" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage U" />
-                    <Button fx:id="T" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage T" />
-                    <Button fx:id="S" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage S" />
-                    <Button fx:id="R" mnemonicParsing="false" onMouseClicked="#showFloor" prefHeight="105.0" prefWidth="146.0" text="Étage R" />
+                    <Button fx:id="U" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="105.0" prefWidth="146.0" text="Étage U" />
+                    <Button fx:id="T" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="105.0" prefWidth="146.0" text="Étage T" />
+                    <Button fx:id="S" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="105.0" prefWidth="146.0" text="Étage S" />
+                    <Button fx:id="R" mnemonicParsing="false" onMouseClicked="#newFloorEvent" prefHeight="105.0" prefWidth="146.0" text="Étage R" />
                   </children>
                 </VBox>
               </left>
@@ -182,7 +182,6 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Aide">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#howToUse" text="Mode d'emploi" />
             <MenuItem mnemonicParsing="false" onAction="#about" text="À propos" />
           </items>
         </Menu>

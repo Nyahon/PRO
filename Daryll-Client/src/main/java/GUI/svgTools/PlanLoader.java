@@ -26,6 +26,13 @@ public class PlanLoader implements Runnable{
     private MainViewController mainViewController;
 
 
+    /**
+     *
+     * @param imgView
+     * @param width the width of the image in output
+     * @param height the height of the image in output
+     *
+     */
     public PlanLoader(String file, ImageView imgView, int width, int height, MainViewController mainViewController){
         this.file = file;
         this.width = width;
@@ -71,7 +78,6 @@ public class PlanLoader implements Runnable{
 
         imgView.setImage(img);
 
-        mainViewController.guiLogger.printInfo("Chargement du plan effectué");
         Thread.currentThread().interrupt();
     }
 }
