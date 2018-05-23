@@ -42,7 +42,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00ff00" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#A0FF00" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
                   <Label fx:id="secondPeriod" minWidth="120.0" text="2 périodes">
                      <padding>
                         <Insets left="5.0" />

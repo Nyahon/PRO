@@ -12,7 +12,7 @@ public class DisplayConstants {
 
     public enum COLORS_ROOMS {WHITE, LIGHT_GREEN, LIME_GREEN, DARK_GREEN, RED};
 
-    public static final String[] COLOR_VALUES = {"#ffffff", "#99ff99", "#00ff00", "#009900", "#ff0000"};
+    public static final String[] COLOR_VALUES = {"#ffffff", "#99ff99", "#A0FF00", "#009900", "#ff0000"};
 
     /**
      * The title that will be write in the request file in front of all classrooms labels (ex. title: A02)
