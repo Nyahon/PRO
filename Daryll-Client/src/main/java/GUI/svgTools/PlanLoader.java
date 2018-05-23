@@ -24,6 +24,7 @@ public class PlanLoader implements Runnable{
     private ImageView imgView;
     private Image img;
     private MainViewController mainViewController;
+    private boolean closestRoom;
 
 
     /**
@@ -33,12 +34,13 @@ public class PlanLoader implements Runnable{
      * @param height the height of the image in output
      *
      */
-    public PlanLoader(String file, ImageView imgView, int width, int height, MainViewController mainViewController){
+    public PlanLoader(String file, ImageView imgView, int width, int height, MainViewController mainViewController, boolean closestRoom){
         this.file = file;
         this.width = width;
         this.height = height;
         this.imgView = imgView;
         this.mainViewController = mainViewController;
+        this.closestRoom = closestRoom;
     }
 
 
@@ -77,6 +79,10 @@ public class PlanLoader implements Runnable{
         img = getTranscodedImage(width, height);
 
         imgView.setImage(img);
+
+        if(!closestRoom){
+            mainViewController.guiLogger.printInfo("Chargement du plan terminé");
+        }
 
         Thread.currentThread().interrupt();
     }

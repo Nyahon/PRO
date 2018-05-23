@@ -50,12 +50,14 @@ import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
 import utils.DisplayConstants;
-import utils.PeriodManager;
 
 import static controller.Controller.closestClassroom;
 import static utils.ClassroomsByFloor.FLOORS_MAP;
 import static utils.DisplayConstants.COLOR_VALUES;
 import static utils.DisplayConstants.getColorIdFromFreePeriods;
+import static utils.PeriodManager.PERIODS_END;
+import static utils.PeriodManager.PERIODS_START;
+import static utils.PeriodManager.currentOrNextPeriod;
 
 public class MainViewController implements Initializable {
 
@@ -101,6 +103,14 @@ public class MainViewController implements Initializable {
     private Circle circleGuiLogger;
 
     public static GuiLogger guiLogger;
+
+    @FXML
+    private Label firstPeriod;
+    @FXML
+    private Label secondPeriod;
+    @FXML
+    private Label thirdPeriod;
+
 
     /**
      * @brief This method is the first one to be called to fill the hash map with floors
@@ -178,7 +188,7 @@ public class MainViewController implements Initializable {
         String idButton = floorButton.getId(); // get the id of the button
 
         currentFloor = idButton;
-        showFloor(idButton);
+        showFloor(idButton, false);
     }
 
 
@@ -186,10 +196,8 @@ public class MainViewController implements Initializable {
      * @param floor the floor
      * This method is a handler to
      */
-    public void showFloor(String floor) throws IOException{
+    public void showFloor(String floor, boolean currentClassroom) throws IOException{
 
-        timeSpinner.setFocusTraversable(true);
-        System.out.println();
         guiLogger.printInfo("Chargement du plan " + floor + " en cours");
 
         ImageView imgView = imageCheseaux;
@@ -230,10 +238,21 @@ public class MainViewController implements Initializable {
             LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
             System.out.println(localTime);
 
+
+            int beginPeriod = currentOrNextPeriod(localTime);
+            int endPeriod = beginPeriod;
+
+            LocalTime beginTime = PERIODS_START.get(beginPeriod);
+            firstPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod));
+            ++endPeriod;
+            secondPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod));
+            ++endPeriod;
+            thirdPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod) + "+");
+
             // Get first classroom from idButton representing a floor
             String firstClassroom = FLOORS_MAP.get(floor).get(0);
 
-            int periodRequested = PeriodManager.currentOrNextPeriod(localTime);
+            int periodRequested = currentOrNextPeriod(localTime);
             System.out.println(periodRequested);
             TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
@@ -255,7 +274,7 @@ public class MainViewController implements Initializable {
             }
             svgFloorPath = "/plans/" + currentFloorPaths.get(0);
             try {
-                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight, this);
+                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight, this, currentClassroom);
                 new Thread(planLoader).start();
                 System.gc();
 
@@ -268,6 +287,7 @@ public class MainViewController implements Initializable {
             Image exceptionImg = new Image("/plans/default-image.png");
             imgView.setImage(exceptionImg);
         }
+
     }
 
     public void searchButtonHandle(){
@@ -277,12 +297,11 @@ public class MainViewController implements Initializable {
 
         if(currentRoom != null && !currentRoom.isEmpty() && !currentRoom.contains("non définie")){
 
-            System.out.println("fjdijfidjf" + classRoom.getClassRoom());
             LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
             LocalDate localDate = dateField.getValue();
             ClassRoom closestClassroom = closestClassroom(classRoom, localTime, localDate);
             try {
-                showFloor(closestClassroom.getClassRoom().substring(0, 1));
+                showFloor(closestClassroom.getClassRoom().substring(0, 1), true);
                 guiLogger.printInfo("Votre salle la plus proche : " + closestClassroom.getClassRoom());
             } catch (IOException e){
                 e.printStackTrace();
@@ -290,15 +309,13 @@ public class MainViewController implements Initializable {
             }
         } else {
             try {
-                showFloor(currentFloor);
+                showFloor(currentFloor, false);
             } catch (Exception e){
                 e.printStackTrace();
                 guiLogger.printError("Erreur pour charger le plan demandé");
             }
         }
-
     }
-
 
     /**
      * @brief This method is a update your current position.
@@ -366,7 +383,7 @@ public class MainViewController implements Initializable {
             }
 
             try {
-                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this);
+                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this, false);
                 new Thread(planLoader).start();
             } catch (Exception e) {
 
@@ -396,7 +413,7 @@ public class MainViewController implements Initializable {
 
         // Creating and launching the stage
         Stage stage = new Stage();
-        stage.setTitle("Horaire de la salle");
+        stage.setTitle("Horaire d'une salle");
         stage.setWidth(270);
         stage.setHeight(170);
         stage.setResizable(false);

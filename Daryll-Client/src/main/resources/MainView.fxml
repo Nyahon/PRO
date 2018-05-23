@@ -28,7 +28,7 @@
             <ToolBar blendMode="SRC_ATOP" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" VBox.vgrow="SOMETIMES">
               <items>
                   <Circle fx:id="circleGuiLogger" fill="LIMEGREEN" radius="13.0" stroke="#15402091" strokeType="INSIDE" />
-                  <Label fx:id="guiConsole" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="387.0" text="GUI console" textFill="LIMEGREEN">
+                  <Label fx:id="guiConsole" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="346.0" prefHeight="40.0" text="GUI console" textFill="LIMEGREEN">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -37,19 +37,22 @@
                      </font>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99ff99" height="28.0" layoutX="100.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label alignment="CENTER_RIGHT" text="1 période" textAlignment="RIGHT">
+                  <Label fx:id="firstPeriod" contentDisplay="RIGHT" minWidth="120.0" prefWidth="0.0" text="1 période">
                      <padding>
-                        <Insets right="40.0" />
+                        <Insets left="5.0" />
                      </padding>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00ff00" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label text="2 périodes">
+                  <Label fx:id="secondPeriod" minWidth="120.0" text="2 périodes">
                      <padding>
-                        <Insets right="40.0" />
+                        <Insets left="5.0" />
                      </padding>
                   </Label>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#009900" height="28.0" stroke="BLACK" strokeType="OUTSIDE" width="28.0" x="100.0" />
-                  <Label alignment="BASELINE_RIGHT" contentDisplay="RIGHT" text="3 périodes" />
+                  <Label fx:id="thirdPeriod" contentDisplay="RIGHT" minWidth="120.0" text="3 périodes">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding></Label>
               </items>
                <VBox.margin>
                   <Insets />

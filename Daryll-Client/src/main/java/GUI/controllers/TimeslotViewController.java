@@ -34,6 +34,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import models.AdvancedRequest;
+import utils.ConfigLoader;
 import utils.PeriodManager;
 
 /**
@@ -130,9 +131,6 @@ public class TimeslotViewController implements Initializable {
                     classroomName = tmpClassroom;
                 }
 
-                System.out.println();
-                System.out.println("Building: " + arf.getBuilding() + " datebegin: " + Date.valueOf(arf.getBeginDate())
-                        + "dateEnd: " + Date.valueOf(arf.getEndDate()) + " periodBegin : " + beginPeriod + " floor: " + floorName + " classroom : " + classroomName);
                 AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()), beginPeriod, endPeriod, floorName, classroomName);
                 requests.add(advancedRequest);
             }
@@ -143,9 +141,7 @@ public class TimeslotViewController implements Initializable {
                 mainViewController.guiLogger.printInfo("Erreur lors de la récupération des données");
             }
 
-
-            mainViewController.guiLogger.printInfo("Fichier généré contenant vos requêtes avancées");
-
+            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.outputFilename() + " a été généré");
         }
     };
 
