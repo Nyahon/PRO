@@ -38,37 +38,74 @@ public class ConfigLoader {
         loadConfig();
     }
 
+    /**
+     * Private default constructor
+     */
     private ConfigLoader(){}
 
+    /**
+     * Loads the properties defined in the configuration file.
+     */
     private static void loadConfig(){
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(CONFIG_FILENAME), "UTF-8"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(CONFIG_FILENAME),
+                    "UTF-8"));
             properties.load(reader);
         } catch (IOException e){
             LOG.log(Level.WARNING, "File " + CONFIG_FILENAME + " not found, loading default configuration.");
         }
     }
 
+    /**
+     * Retrieve the server address
+     * @return the server address from the properties file, or the default server address if there is an issue
+     * with the properties
+     */
     public static String serverAddress() {
         return properties.getProperty(SERVER_ADDRESS_ID, DEFAULT_SERVER_ADDRESS);
     }
 
+    /**
+     * Retrieve the server port
+     * @return the server port from the properties file, or the default server port if there is an issue
+     * with the properties
+     */
     public static int serverPort() {
         return Integer.valueOf(properties.getProperty(SERVER_PORT_ID, DEFAULT_SERVER_PORT));
     }
 
+    /**
+     * Retrieve the output filename to generate a file after an advanced research
+     * @return the output filename from the properties file, or the default output filename if there is an issue
+     * with the properties
+     */
     public static String outputFilename() {
         return properties.getProperty(OUTPUT_FILENAME_ID, DEFAULT_OUTPUT_FILENAME);
     }
 
+    /**
+     * Retrieve the formatter to represent the days of week in the file generated after an advanced research
+     * @return the formatter to represent the days of week from the properties file,
+     * or the default formatter if there is an issue with the properties
+     */
     public static String daysOfWeekFormatter() {
         return properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DEFAULT_DAYS_OF_WEEK_FORMATTER);
     }
 
+    /**
+     * Retrieve the formatter to represent the date in the file generated after an advanced research
+     * @return the formatter to represent the date from the properties file,
+     * or the default formatter if there is an issue with the properties
+     */
     public static String dateFormatter() {
         return properties.getProperty(DATE_FORMATTER_ID, DEFAULT_DATE_FORMATTER);
     }
 
+    /**
+     * Retrieve the encoder used to generated a file after an advanced research
+     * @return the encoder used to generated a file after an advanced research,
+     * or the default encoder if there is an issue with the properties
+     */
     public static String encodageFile() {
         return properties.getProperty(ENCODE_FILE_ID, DEFAULT_ENCODAGE_FILE);
     }
