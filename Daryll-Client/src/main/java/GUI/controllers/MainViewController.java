@@ -227,7 +227,7 @@ public class MainViewController implements Initializable {
 
         if(!floor.matches("[E-F]")) {
             LocalDate localDate = dateField.getValue();
-            LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());;
+            LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
             System.out.println(localTime);
 
             // Get first classroom from idButton representing a floor
@@ -278,7 +278,9 @@ public class MainViewController implements Initializable {
         if(currentRoom != null && !currentRoom.isEmpty() && !currentRoom.contains("non définie")){
 
             System.out.println("fjdijfidjf" + classRoom.getClassRoom());
-            ClassRoom closestClassroom = closestClassroom(classRoom);
+            LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
+            LocalDate localDate = dateField.getValue();
+            ClassRoom closestClassroom = closestClassroom(classRoom, localTime, localDate);
             try {
                 showFloor(closestClassroom.getClassRoom().substring(0, 1));
                 guiLogger.printInfo("Votre salle la plus proche : " + closestClassroom.getClassRoom());
