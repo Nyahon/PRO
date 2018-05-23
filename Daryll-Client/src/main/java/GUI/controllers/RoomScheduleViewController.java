@@ -80,7 +80,7 @@ public class RoomScheduleViewController implements Initializable {
                     break;
                 }
             }
-            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.outputFilename() + " a été généré");
+            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.getOutputFilename() + " a été généré");
         }
     }
 

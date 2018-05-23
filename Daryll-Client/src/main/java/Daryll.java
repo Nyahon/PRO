@@ -1,19 +1,3 @@
-/**
- * Module      : PRO
- * File        : Daryll.java
- * Date of Creation        : 31.03.2018
- *
- * Goal : This file contains the base of the application Daryll, this is where the
- *        application begin and launch his GUI.
- *
- * 
- * Remarks : -
- *
- * @author Rashiti Labinot
- * @version 1.0
- *
- */
-
 import GUI.controllers.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +6,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
+import utils.ConfigLoader;
+
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.logging.Logger;
 
 /**
  * This file contains the base of the application Daryll, this is where the
@@ -31,6 +18,7 @@ import java.time.LocalDateTime;
  */
 public class Daryll extends Application {
 
+   private static final Logger LOG = Logger.getLogger(ConfigLoader.class.getName());
    /**
     * Method that loads all the JavaFX ressources to run the programm.
     * @param stage the javafx stage
@@ -88,6 +76,14 @@ public class Daryll extends Application {
     * @param args the command line arguments
     */
    public static void main(String[] args) {
+
+      if(args.length == 1){
+         if(args[0].equals("--localhost") || args[0].equals("-l")){
+            ConfigLoader.setServerAddress("localhost");
+         } else if(args[0].equals("--help") || args[0].equals("-h")){
+            // TODO smthing
+         }
+      }
       launch(args);
    }
 }

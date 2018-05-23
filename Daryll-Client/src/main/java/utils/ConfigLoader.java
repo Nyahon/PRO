@@ -29,6 +29,13 @@ public class ConfigLoader {
     private static final String DATE_FORMATTER_ID = "dateFormatter";
     private static final String FILE_ENCODING_ID = "encodageFile";
 
+    private static String serverAddress;
+    private static int serverPort;
+    private static String outputFilename;
+    private static String daysOfWeekFormatter;
+    private static String dateFormatter;
+    private static String fileEncoding;
+
     private static Properties properties;
 
     static {
@@ -79,6 +86,12 @@ public class ConfigLoader {
         } catch (IOException e){
             LOG.log(Level.SEVERE, "An I/O error occurred during configuration file creation.");
         }
+        serverAddress = properties.getProperty(SERVER_ADDRESS_ID, SERVER_ADDRESS_DEFAULT);
+        serverPort = Integer.valueOf(properties.getProperty(SERVER_PORT_ID, SERVER_PORT_DEFAULT));
+        outputFilename = properties.getProperty(OUTPUT_FILENAME_ID, OUTPUT_FILENAME_DEFAULT);
+        daysOfWeekFormatter = properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DAYS_OF_WEEK_FORMATTER_DEFAULT);
+        dateFormatter = properties.getProperty(DATE_FORMATTER_ID, DATE_FORMATTER_DEFAULT);
+        fileEncoding = properties.getProperty(FILE_ENCODING_ID, FILE_ENCODING_DEFAULT);
     }
 
     /**
@@ -86,8 +99,13 @@ public class ConfigLoader {
      * @return the server address from the properties file, or the default server address if there is an issue
      * with the properties
      */
-    public static String serverAddress() {
-        return properties.getProperty(SERVER_ADDRESS_ID, SERVER_ADDRESS_DEFAULT);
+    public static String getServerAddress() {
+        return serverAddress;
+    }
+
+
+    public static void setServerAddress(String serverAddress) {
+        ConfigLoader.serverAddress = serverAddress;
     }
 
     /**
@@ -95,8 +113,12 @@ public class ConfigLoader {
      * @return the server port from the properties file, or the default server port if there is an issue
      * with the properties
      */
-    public static int serverPort() {
-        return Integer.valueOf(properties.getProperty(SERVER_PORT_ID, SERVER_PORT_DEFAULT));
+    public static int getServerPort() {
+        return serverPort;
+    }
+
+    public static void setServerPort(int serverPort) {
+        ConfigLoader.serverPort = serverPort;
     }
 
     /**
@@ -104,8 +126,12 @@ public class ConfigLoader {
      * @return the output filename from the properties file, or the default output filename if there is an issue
      * with the properties
      */
-    public static String outputFilename() {
-        return properties.getProperty(OUTPUT_FILENAME_ID, OUTPUT_FILENAME_DEFAULT);
+    public static String getOutputFilename() {
+        return outputFilename;
+    }
+
+    public static void setOutputFilename(String outputFilename) {
+        ConfigLoader.outputFilename = outputFilename;
     }
 
     /**
@@ -113,8 +139,12 @@ public class ConfigLoader {
      * @return the formatter to represent the days of week from the properties file,
      * or the default formatter if there is an issue with the properties
      */
-    public static String daysOfWeekFormatter() {
-        return properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DAYS_OF_WEEK_FORMATTER_DEFAULT);
+    public static String getDaysOfWeekFormatter() {
+        return daysOfWeekFormatter;
+    }
+
+    public static void setDaysOfWeekFormatter(String daysOfWeekFormatter) {
+        ConfigLoader.daysOfWeekFormatter = daysOfWeekFormatter;
     }
 
     /**
@@ -122,8 +152,12 @@ public class ConfigLoader {
      * @return the formatter to represent the date from the properties file,
      * or the default formatter if there is an issue with the properties
      */
-    public static String dateFormatter() {
-        return properties.getProperty(DATE_FORMATTER_ID, DATE_FORMATTER_DEFAULT);
+    public static String getDateFormatter() {
+        return dateFormatter;
+    }
+
+    public static void setDateFormatter(String dateFormatter) {
+        ConfigLoader.dateFormatter = dateFormatter;
     }
 
     /**
@@ -131,7 +165,11 @@ public class ConfigLoader {
      * @return the encoder used to generated a file after an advanced research,
      * or the default encoder if there is an issue with the properties
      */
-    public static String encodageFile() {
-        return properties.getProperty(FILE_ENCODING_ID, FILE_ENCODING_DEFAULT);
+    public static String getFileEncoding() {
+        return fileEncoding;
+    }
+
+    public static void setFileEncoding(String fileEncoding) {
+        ConfigLoader.fileEncoding = fileEncoding;
     }
 }

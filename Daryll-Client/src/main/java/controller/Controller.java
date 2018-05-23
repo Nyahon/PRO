@@ -74,7 +74,7 @@ public class Controller {
         client.disconnect();
         // Create and open a file with the result of the client request (if the file already exist, it will overwrite it)
         createQuickClassroomFile(result, data);
-        File file = new File(ConfigLoader.outputFilename());
+        File file = new File(ConfigLoader.getOutputFilename());
         openFileInTextEditor(file);
     }
 
@@ -85,7 +85,7 @@ public class Controller {
      */
     public static void handleClientAdvancedRequest(List<AdvancedRequest> data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
-        PrintWriter writer = new PrintWriter(ConfigLoader.outputFilename(), ConfigLoader.encodageFile());
+        PrintWriter writer = new PrintWriter(ConfigLoader.getOutputFilename(), ConfigLoader.getFileEncoding());
         // Send the client advanced requests and processed them one by one
         for (int i = 0; i < data.size(); ++i) {
             // Send request to the server
@@ -119,7 +119,7 @@ public class Controller {
         writer.close();
         client.disconnect();
 
-        File file = new File(ConfigLoader.outputFilename());
+        File file = new File(ConfigLoader.getOutputFilename());
         openFileInTextEditor(file);
     }
 
@@ -130,11 +130,11 @@ public class Controller {
      */
     private static void createQuickClassroomFile(List<TimeSlot> timeSlotList, ClassRoom clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
         LocalDate date = LocalDate.now();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDaysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDateFormatter());
         List<Integer> periods = new ArrayList<>();
 
-        PrintWriter writer = new PrintWriter(ConfigLoader.outputFilename(), ConfigLoader.encodageFile());
+        PrintWriter writer = new PrintWriter(ConfigLoader.getOutputFilename(), ConfigLoader.getFileEncoding());
         // Write the header in the file
         writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + clientRequest.getClassRoom());
         writer.println("-------------------------------------------------");
@@ -169,8 +169,8 @@ public class Controller {
      */
     private static void writeToFileWithClassroomTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDaysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDateFormatter());
 
         // Write the header in the file
         writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + clientRequest.getClassroom());
@@ -234,8 +234,8 @@ public class Controller {
      */
     private static void writeToFileWithFloorTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDaysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDateFormatter());
         // Write the header
         writer.println(DisplayConstants.FILE_FLOOR_TITLE + ": " + clientRequest.getFloor());
         writer.println("##################################################");
@@ -262,8 +262,8 @@ public class Controller {
     private static void writeToFileWithDefaultTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         List<String> classrooms;
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDaysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDateFormatter());
 
         // Recuperate a list of the floors in function of the requested building
         List<String> floors = clientRequest.getBuilding() == 0 ? ClassroomsByFloor.FLOORS_CHESEAUX : ClassroomsByFloor.FLOORS_ST_ROCH;
