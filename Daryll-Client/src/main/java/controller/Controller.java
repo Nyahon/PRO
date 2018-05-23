@@ -396,7 +396,7 @@ public class Controller {
         int currentPeriod = PeriodManager.currentOrNextPeriod(time);
 
         // a timeslot representing the given classroom at the current date + period
-        TimeSlot ts = new TimeSlot(classRoom.getClassRoom(), date.toEpochDay()*86400, currentPeriod);
+        TimeSlot ts = new TimeSlot(classRoom.getClassRoom(), java.sql.Date.valueOf(date).getTime(), currentPeriod);
         Map<String, Integer> mapReceived = null;
 
         try {
@@ -414,6 +414,7 @@ public class Controller {
         List<String> roomList = ClassroomsByFloor.FLOORS_MAP.get(currentFloor);
 
         for(String room : roomList){
+            System.out.println("pouet " + room + " -> " + mapReceived.get(room));
             if(mapReceived.containsKey(room) && mapReceived.get(room) > 0){
                 double currentDifference = Math.abs(roomList.indexOf(room)-roomList.indexOf(classRoom.getClassRoom()));
                 ClassRoom currentRoom = new ClassRoom(room);

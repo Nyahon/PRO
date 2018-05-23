@@ -299,6 +299,8 @@ public class MainViewController implements Initializable {
 
             LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
             LocalDate localDate = dateField.getValue();
+            System.out.println("time = " + timeSpinner.getEditor().getText());
+            System.out.println("date = " + dateField.getValue());
             ClassRoom closestClassroom = closestClassroom(classRoom, localTime, localDate);
             try {
                 showFloor(closestClassroom.getClassRoom().substring(0, 1), true);
