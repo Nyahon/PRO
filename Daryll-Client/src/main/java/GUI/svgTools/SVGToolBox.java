@@ -1,14 +1,14 @@
 /**
- * Module      : PRO
- * File        : .java
- * Date of Creation        : 31.03.2018
+ * Module               : PRO
+ * File                 : SVGToolBox.java
+ * Date of Creation     : 31.03.2018
  * <p>
  * Description : This file contains the tools to parse, use and transcode
  * svg files in the application Daryll. *
  * <p>
  * Remarks : -
  *
- * @author Früeh Loïc, Gallay Romain, Meyer Yohannn, Muaremi Dejvid, Siu Aurélien, Rashiti Labinot
+ * @author Aurélien Siu
  * @version 1.0
  */
 
@@ -40,14 +40,12 @@ public class SVGToolBox {
     private Document svgDocument;
 
     /**
-     * parse the given file to update color of classrooms
+     * parse the given file to update color of classrooms (groups of path elements)
      * @param svg the svg file that needs to be parsed
      */
     public void updateSVG(String svg, String classroomName, String colorValue) {
 
         InputStream svgInputStream = getClass().getResourceAsStream(svg);
-
-        //System.out.println(svgInputStream.toString());
 
         List<String> classrooms = new ArrayList<String>();
         try {
@@ -99,12 +97,8 @@ public class SVGToolBox {
                         Element pathElem = (Element) path.item(0);
                         //Element rectElem = (Element) rectangles.item(0);
                         if(pathElem != null) {
-                            //System.out.print("path");
                             pathElem.setAttribute("style", colorValue);
-                        } /*else if(rectElem != null){
-                            System.out.print("rect");
-                            rectElem.setAttribute("style", colorValue);
-                        }*/
+                        }
                     }
                 }
 

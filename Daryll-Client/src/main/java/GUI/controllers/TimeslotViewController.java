@@ -92,7 +92,6 @@ public class TimeslotViewController implements Initializable {
             int lastIndex = advancedRequestForms.size();
             int lastIndexGraphic = requestsFormsBox.getChildren().size() - 1;
 
-            System.out.println("last list : " + lastIndex + "last graphic: " + lastIndexGraphic);
             AdvancedRequestForm formToRemove = advancedRequestForms.get(lastIndex - 1);
             requestsFormsBox.getChildren().remove(lastIndex);
             advancedRequestForms.remove(lastIndex - 1);
@@ -141,7 +140,7 @@ public class TimeslotViewController implements Initializable {
                 mainViewController.guiLogger.printInfo("Erreur lors de la récupération des données");
             }
 
-            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.outputFilename() + " a été généré");
+            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.getOutputFilename() + " a été généré");
         }
     };
 
@@ -163,6 +162,7 @@ public class TimeslotViewController implements Initializable {
 
         searchButton.setOnMouseClicked(searchButtonClicked);
     }
+
 
     public void setMainViewController(MainViewController mainViewController) {
         this.mainViewController = mainViewController;
