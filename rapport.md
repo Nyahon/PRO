@@ -169,6 +169,20 @@ Après multiples recherches, nous avons eu l'idée de contourner le problème. E
 
 Le format SVG nous permet de définir des zones sur un plan. Chaque zone définissant un étage contiendra un ID permettant de l'identifier dans le programme. Les plans nous ont été fournis en PDF, mais grâce à l'outil Inkscape (éditeur d'images open source), il est possible de créer des fichiers SVG à partir de ces PDF. Il faudra donc, pour chaque étage de chaque établissement, définir les zones de chaque salle... Énorme tâche, mais pour un rendu final convainquant !
 
+####  #### Coloration du SVG
+
+Pour effectuer une coloration des salles des étages de l'HEIG, il faut avoir des fichiers SVGs qui contiennent une zone par salle et que chaque zone soit identifiée via le nom de la salle.
+
+Au début du projet, les plans des étages ont été donnés via un PDF. Ce PDF contenait donc tous les étages de Cheseaux et de Saint-Roch.
+
+Il a fallu donc transformer ces fichiers PDF en fichier SVG, c'est pourquoi nous avons utilisé l'outil Inkscape. Le problème est que la transformation de PDF en SVG crée énormément de fragments de zones SVG. De ce fait, aucune salle n'est définie par une zone uniquement, mais pas plusieurs petites zones.
+
+Il a fallu donc regrouper chaque fragment de zones SVG pour en faire qu'une et que celle-ci puisse définir la salle via un identifiant. Nous avons donc dû eu la lourde tâche, et pas des moindres, de regrouper chaque fragment de zones SVG pour chaque étage de chaque bâtiment (ceux fournis par GAPS). 
+
+De cette façon, nous avons des fichiers SVGs compatibles avec l'utilisation de la classe SVGToolBox. Un fichier SVG est un fichier contenant des milliers de balises. Lorsque nous avons regroupé es fragments de zones nous avons en réalité ajouté une balise de type "groupe" et un identifiant. 
+
+La classe SVGToolBox va donc colorer les plans de manière automatique en parcourant tous les groupes définis du fichier SVG puis indiquer la couleur dans son attribut "style". Cette opération est très couteuse et prend du temps pour charger l'image dans l'interface graphique. Nous avons donc implémenté l'utilisation de threads dans la coloration afin de le rendre plus rapide.
+
 ### Transformation ICS
 À partir du calendrier ICS de GAPS, nous avons dû implémenter un parseur afin de pouvoir parcourir ce fichier et récupérer la liste des salles occupées. Cette liste a été ensuite ajoutée à la base de données afin que l'on puisse y effectuer des requêtes dessus.
 
