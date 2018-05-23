@@ -10,12 +10,12 @@ Cependant, il est possible d'utiliser le client et le serveur en local.
 Pour se faire, il faut suivre le manuel d'installation afin d'installer le serveur DARYLL en local puis lancer le client de la manière suivante, depuis un terminal, se situer dans le répértoire de DARYLL et lancer la commande suivante : java -jar DARYLL -l
 # Interface
 ## Menu principal
-**Photo de l’Interface principale numérotée.**
+**main_view_with_number**
 - 1) Plan du bâtiment (si une recherche a été faite au préalable)
 - 2) Permet de voir la partie gauche du plan (si disponible)
 - 3) Permet de voir la partie droite du plan (si disponible)
 - 4) Choix du bâtiment
-- 5) Affiche, sur le plan (1), l’horaire d’un étage selon la date et l’heure (8) sélectionnées.
+- 5) Choix de l'étage, affiche, sur le plan (1), l’horaire d’un étage selon la date et l’heure (8) sélectionnées.
 - 6) Console d’information et légende
 - 7) Définition de la position courante
 - 8) Définition de la date et de l’heure pour la prochaine recherche
@@ -24,7 +24,8 @@ Pour se faire, il faut suivre le manuel d'installation afin d'installer le serve
 - b) Si la position courante (7) est définie, affichera toujours l’étage et la salle libre la plus proche.
 - 10) Affiche le menu pour les modes de recherche avancée
 - 11) Affiche le menu d’aide
-## Menu mode de recherche ### Photo du menu Mode ### Mode horaire d’une salle
+## Menu mode de recherche
+### Mode horaire d’une salle
 Pour avoir accès à l’horaire d’une salle en particulier pour la journée courante, il faut ouvrir le menu déroulant « Mode » (10) et sélectionner « Horaire d’une salle ».
 **Photo de l’interface horaire de la salle**
 - 12) Choix du numéro de la salle selon le format de l’HEIG-VD, par exemple H01.
@@ -41,7 +42,8 @@ Pour avoir accès à la recherche avancée, il faut ouvrir le menu déroulant «
 - 20) Choix de la salle
 - 21) Ajout et suppression de formulaire, permettant d’effectuer une recherche multiple.
 - 22) Ouvre un fichier texte temporaire qui contient les disponibilités des salles qui correspondent aux critères de recherche avancée. Attention : Certains fichiers générés ne sont pas forcément adapté à l'impression.
-## Menu d’aide ### Photo du menu Aide **À propos de DARYLL**
+## Menu d’aide
+### À propos de DARYLL
 Pour afficher des informations relatives à DARYLL, il faut ouvrir le menu déroulant « Aide » (11) et sélectionner « À propos ».
 # Table des figures
 # Glossaire
