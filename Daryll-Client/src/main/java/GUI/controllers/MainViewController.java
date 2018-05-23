@@ -275,8 +275,9 @@ public class MainViewController implements Initializable {
         String currentRoom = currentRoomLabel.getText();
         ClassRoom classRoom = new ClassRoom(currentRoom);
 
-        if(currentRoom != null && !currentRoom.isEmpty()){
+        if(currentRoom != null && !currentRoom.isEmpty() && !currentRoom.contains("non définie")){
 
+            System.out.println("fjdijfidjf" + classRoom.getClassRoom());
             ClassRoom closestClassroom = closestClassroom(classRoom);
             try {
                 showFloor(closestClassroom.getClassRoom().substring(0, 1));
