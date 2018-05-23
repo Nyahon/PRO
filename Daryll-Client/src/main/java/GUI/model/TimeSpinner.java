@@ -1,6 +1,4 @@
-/*
-source : https://stackoverflow.com/questions/32613619/how-to-make-a-timespinner-in-javafx
-*/
+
 package GUI.model;
 
 
@@ -17,6 +15,10 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.input.InputEvent;
 import javafx.util.StringConverter;
 
+/**
+ * @link https://stackoverflow.com/questions/32613619/how-to-make-a-timespinner-in-javafx
+ *  modified by : Aurélien Siu
+ */
 public class TimeSpinner extends Spinner<LocalTime> {
 
     // Mode represents the unit that is currently being edited.
@@ -82,10 +84,13 @@ public class TimeSpinner extends Spinner<LocalTime> {
     }
 
 
+    /**
+     * Constructor with specified LocalTime
+     * @param time
+     */
     public TimeSpinner(LocalTime time) {
+
         setEditable(true);
-
-
 
         // Create a StringConverter for converting between the text in the
         // editor and the actual value:
@@ -169,11 +174,10 @@ public class TimeSpinner extends Spinner<LocalTime> {
             //int minIndex = this.getEditor().getText().indexOf(':', hrIndex + 1);
             if (caretPos <= hrIndex) {
                 mode.set( Mode.HOURS );
-            } else /*if (caretPos <= minIndex) {
-                mode.set( Mode.MINUTES );
-            } else */{
-                mode.set( Mode.MINUTES );
+            } else {
+                mode.set(Mode.MINUTES);
             }
+
         });
 
         // When the mode changes, select the new portion:
@@ -181,6 +185,9 @@ public class TimeSpinner extends Spinner<LocalTime> {
 
     }
 
+    /**
+     * Default constructor with current LocalTime
+     */
     public TimeSpinner() {
         this(LocalTime.now());
     }

@@ -244,9 +244,9 @@ public class MainViewController implements Initializable {
 
             LocalTime beginTime = PERIODS_START.get(beginPeriod);
             firstPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod));
-            ++endPeriod;
+            endPeriod = ++endPeriod % PERIODS_END.size();
             secondPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod));
-            ++endPeriod;
+            endPeriod = ++endPeriod % PERIODS_END.size();
             thirdPeriod.setText(beginTime.toString() + " - " + PERIODS_END.get(endPeriod) + "+");
 
             // Get first classroom from idButton representing a floor

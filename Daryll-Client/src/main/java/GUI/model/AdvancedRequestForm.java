@@ -1,3 +1,16 @@
+/**
+ * File                 : AdvancedRequestForm.java
+ * Date of Creation     : 08.05.2018
+ * <p>
+ * Description : This file contains the tools to parse, use and transcode
+ * svg files in the application Daryll. *
+ * <p>
+ * Remarks : -
+ *
+ * @author Aurélien Siu
+ * @version 1.0
+ */
+
 package GUI.model;
 
 import javafx.beans.value.ChangeListener;
@@ -96,18 +109,13 @@ public class AdvancedRequestForm {
             }
         });
 
-
-
-
-
         id = counter++;
 
+        // Getting currentDateTime
         LocalDateTime currentDateTime = LocalDateTime.now();
 
         beginDate.valueProperty().setValue(currentDateTime.toLocalDate());
         endDate.valueProperty().setValue(currentDateTime.toLocalDate());
-
-
 
 
         beginDate.setPrefWidth(120.0);
@@ -120,6 +128,7 @@ public class AdvancedRequestForm {
         add.setPrefWidth(75.0);
         remove.setPrefWidth(65.0);
 
+        // Adding all these elements to the gridPane
         gridPane.add(beginDate, 0, 0);
         gridPane.add(endDate, 1, 0);
         gridPane.add(beginTime, 2, 0);
@@ -130,6 +139,7 @@ public class AdvancedRequestForm {
         gridPane.add(add, 7, 0);
         gridPane.add(remove, 8, 0);
 
+        // Creating Column Constraints
         ColumnConstraints datePickerConstraints = new ColumnConstraints();
         datePickerConstraints.setPrefWidth(130.0);
         datePickerConstraints.setHalignment(HPos.CENTER);
@@ -154,7 +164,7 @@ public class AdvancedRequestForm {
         buttonConstraints.setPrefWidth(80.0);
         buttonConstraints.setHalignment(HPos.CENTER);
 
-
+        // Applying Column Constraints
         gridPane.getColumnConstraints().add(0, datePickerConstraints);
         gridPane.getColumnConstraints().add(1, datePickerConstraints);
         gridPane.getColumnConstraints().add(2, hourConstraints);

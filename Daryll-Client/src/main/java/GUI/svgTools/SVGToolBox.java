@@ -1,7 +1,6 @@
 /**
- * Module               : PRO
  * File                 : SVGToolBox.java
- * Date of Creation     : 31.03.2018
+ * Date of Creation     : 16.04.2018
  * <p>
  * Description : This file contains the tools to parse, use and transcode
  * svg files in the application Daryll. *
@@ -31,7 +30,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class SVGToolBox {
@@ -71,7 +69,7 @@ public class SVGToolBox {
 
     /**
      *
-     * @param nodeList : list of nodes where to search the classroomName
+     * @param nodeList list of nodes where to search the classroomName
      * @param classroomName classroom name to apply color
      * @param colorValue  color to apply on the classroom
      */
