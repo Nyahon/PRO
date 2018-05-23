@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" prefHeight="0.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
+<BorderPane maxHeight="1.7976931348623157E308" prefHeight="340.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
   <bottom>
     <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="123.0" text="Recherche" BorderPane.alignment="CENTER" />
   </bottom>
   <center>
-      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308" prefHeight="19.0" prefWidth="803.0">
+      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308" prefHeight="280.0" prefWidth="803.0">
          <children>
           <GridPane>
             <children>
@@ -53,7 +53,7 @@
       </VBox>
   </center>
   <top>
-    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="333.0" text="Entrez vos plages horaires" textAlignment="LEFT" BorderPane.alignment="CENTER">
+    <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" prefHeight="47.0" prefWidth="333.0" text="Entrez vos plages horaires" textAlignment="LEFT" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>

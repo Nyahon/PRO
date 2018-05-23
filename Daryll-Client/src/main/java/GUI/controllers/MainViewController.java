@@ -261,34 +261,19 @@ public class MainViewController implements Initializable {
 
 
     /**
-     * @brief This method is a handler to load an SVG file image into an ImageView
+     * @brief This method is a update your current position.
      *
-     * @param path
-     * @param imgView The transcoded image will be put inside the image
-     * @param width
-     * @param height
+     * @param keyEvent
      *
      */
-    public void loadSvgImage(String path, ImageView imgView, int width, int height){
-
-        planLoader.openSVGFile(path);
-
-        // Select the Pane where the image will be displayed
-        Image img = planLoader.getTranscodedImage(width, height);
-
-        // Put the image inside an ImageView object
-        imgView.setImage(img);
-        System.gc();
-    }
-
-
     public void updatePosition(KeyEvent keyEvent){
 
+        // update position if key ENTER is pressed
         if(keyEvent.getCode() == KeyCode.ENTER) {
             position = currentRoomField.getText();
             currentRoomField.clear();
             currentRoomLabel.setText(position);
-            guiLogger.printInfo(position);
+            //guiLogger.printInfo(position);
         }
 
     }
@@ -305,9 +290,10 @@ public class MainViewController implements Initializable {
 
         String idButton = b.getId(); // get the id of the button
 
-        // Test affichage console
-        System.out.println(idButton);
 
+        /*
+        * Method to check when
+         */
         if (idButton.equals("nextCheseaux") || idButton.equals("previousCheseaux")){
             if (idButton.equals("nextCheseaux")) {
                 ++indexPlan;
@@ -326,6 +312,8 @@ public class MainViewController implements Initializable {
             } else{
                 previousCheseaux.setDisable(false);
             }
+
+
             try {
                 planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
@@ -361,7 +349,10 @@ public class MainViewController implements Initializable {
         FXMLLoader fxLoader = new FXMLLoader();
         Parent root = fxLoader.load(getClass().getResource("/RoomScheduleView.fxml"));
 
-        fxLoader.setController(new RoomScheduleViewController());
+        //System.out.println(fxLoader.getController().toString());
+        RoomScheduleViewController roomScheduleViewController = new RoomScheduleViewController();
+        roomScheduleViewController.setMainViewController(this);
+        fxLoader.setController(roomScheduleViewController);
 
         Scene scene = new Scene(root);
 

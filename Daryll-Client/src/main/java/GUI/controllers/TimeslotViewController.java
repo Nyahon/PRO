@@ -2,13 +2,14 @@
  * Module      : PRO
  * File        : TimeslotViewController.java
  * Date        : 12.04.2018
- *
+ * <p>
  * Goal : Controller managing the timeslot view.
- *
- * 
+ * <p>
+ * <p>
  * Remarks : -
  *
- * @author Rashiti Labinot
+ * @author Labinot Rashiti
+ * @author Aurélien Siu
  * @version 1.0
  */
 package GUI.controllers;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.net.ConnectException;
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -42,134 +44,132 @@ import utils.PeriodManager;
  */
 public class TimeslotViewController implements Initializable {
 
-   private static final int MAX_ADVANCED_REQUESTED_FORMS = 7;
-   @FXML
-   private VBox requestsFormsBox;
+    private static final int MAX_ADVANCED_REQUESTED_FORMS = 7;
+    private static List<AdvancedRequestForm> advancedRequestForms = new ArrayList<>();
+    @FXML
+    private VBox requestsFormsBox;
+    @FXML
+    private Button searchButton;
 
-   @FXML
-   private Button searchButton;
+    private MainViewController mainViewController;
 
-   private MainViewController mainViewController;
+    /**
+     * EventHandler for the add button
+     */
+    private EventHandler addButtonClicked = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            int lastIndex = advancedRequestForms.size() - 1;
+            if (lastIndex < MAX_ADVANCED_REQUESTED_FORMS) {
+                AdvancedRequestForm lastForm = advancedRequestForms.get(lastIndex);
+                System.out.println(lastForm.getAddButton().getText());
+                lastForm.getAddButton().setDisable(true);
+                lastForm.getRemoveButton().setDisable(true);
 
-   private static List<AdvancedRequestForm> advancedRequestForms = new ArrayList<>();
+                AdvancedRequestForm newForm = new AdvancedRequestForm();
+                newForm.getAddButton().setOnMouseClicked(addButtonClicked);
+                newForm.getRemoveButton().setOnMouseClicked(removeButtonClicked);
+                newForm.setEndHourSpinner(LocalTime.of(23,59));
+                advancedRequestForms.add(newForm);
+                requestsFormsBox.getChildren().add(newForm.getGridPane());
+            }
+        }
+    };
 
+    /**
+     * EventHandler for the remove button
+     */
+    private EventHandler removeButtonClicked = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
 
-   private EventHandler addButtonClicked = new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent event) {
-         int lastIndex = advancedRequestForms.size() - 1;
-         if(lastIndex < MAX_ADVANCED_REQUESTED_FORMS) {
-            AdvancedRequestForm lastForm = advancedRequestForms.get(lastIndex);
-            System.out.println(lastForm.getAddButton().getText());
-            lastForm.getAddButton().setDisable(true);
-            lastForm.getRemoveButton().setDisable(true);
+            int beforelastIndex = advancedRequestForms.size() - 2;
+            AdvancedRequestForm lastForm = advancedRequestForms.get(beforelastIndex);
+            lastForm.getAddButton().setDisable(false);
+            lastForm.getRemoveButton().setDisable(false);
 
-            AdvancedRequestForm newForm = new AdvancedRequestForm();
-            newForm.getAddButton().setOnMouseClicked(addButtonClicked);
-            newForm.getRemoveButton().setOnMouseClicked(removeButtonClicked);
-            advancedRequestForms.add(newForm);
-            requestsFormsBox.getChildren().add(newForm.getGridPane());
-         }
-      }
-   };
+            int lastIndex = advancedRequestForms.size();
+            int lastIndexGraphic = requestsFormsBox.getChildren().size() - 1;
 
-   private EventHandler removeButtonClicked = new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent event) {
+            System.out.println("last list : " + lastIndex + "last graphic: " + lastIndexGraphic);
+            AdvancedRequestForm formToRemove = advancedRequestForms.get(lastIndex - 1);
+            requestsFormsBox.getChildren().remove(lastIndex);
+            advancedRequestForms.remove(lastIndex - 1);
+        }
+    };
 
-         int beforelastIndex = advancedRequestForms.size() - 2;
-         AdvancedRequestForm lastForm = advancedRequestForms.get(beforelastIndex);
-         lastForm.getAddButton().setDisable(false);
-         lastForm.getRemoveButton().setDisable(false);
-
-         int lastIndex = advancedRequestForms.size();
-         int lastIndexGraphic = requestsFormsBox.getChildren().size() - 1;
-
-         System.out.println("last list : " + lastIndex + "last graphic: " + lastIndexGraphic);
-         AdvancedRequestForm formToRemove = advancedRequestForms.get(lastIndex - 1);
-         requestsFormsBox.getChildren().remove(lastIndex);
-         advancedRequestForms.remove(lastIndex - 1);
-      }
-   };
-
-   private EventHandler searchButtonClicked = new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent event) {
+    /**
+     * EventHandler for the search button
+     */
+    private EventHandler searchButtonClicked = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
 
          /*Thread t = new Thread(new Runnable() {
             @Override
             public void run() {*/
-               System.out.println("REQUETE");
-               List<AdvancedRequest> requests = new ArrayList<>();
+            mainViewController.guiLogger.printInfo("Récupération des données en cours");
+            List<AdvancedRequest> requests = new ArrayList<>();
 
-               for(AdvancedRequestForm arf : advancedRequestForms) {
+            for (AdvancedRequestForm arf : advancedRequestForms) {
 
-                  int beginPeriod = PeriodManager.currentOrNextPeriod(arf.getBeginTime());
-                  int endPeriod = PeriodManager.currentOrNextPeriod(arf.getEndTime());
-                  //AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()),beginPeriod,null,null);
+                int beginPeriod = PeriodManager.currentOrNextPeriod(arf.getBeginTime());
+                int endPeriod = PeriodManager.currentOrNextPeriod(arf.getEndTime());
 
-                  String tmpFloor = arf.getFloorName();
-                  String floorName = null;
+                String tmpFloor = arf.getFloorName();
+                String floorName = null;
 
-                  if (!tmpFloor.equals("Tous")) {
-                     floorName = tmpFloor;
-                  }
+                if (!tmpFloor.equals("Tous")) {
+                    floorName = tmpFloor;
+                }
 
-                  String tmpClassroom = arf.getClassroomName();
-                  String classroomName = null;
+                String tmpClassroom = arf.getClassroomName();
+                String classroomName = null;
 
-                  if (!tmpClassroom.equals("Tous")) {
-                     classroomName = tmpClassroom;
-                  }
+                if (!tmpClassroom.equals("Tous")) {
+                    classroomName = tmpClassroom;
+                }
 
-                  System.out.println();
-                  System.out.println("Building: " + arf.getBuilding() + " datebegin: " + Date.valueOf(arf.getBeginDate())
-                          + "dateEnd: " + Date.valueOf(arf.getEndDate()) + " periodBegin : " + beginPeriod + " floor: " + floorName + " classroom : " + classroomName);
-                  AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()), beginPeriod, endPeriod, floorName, classroomName);
-                  requests.add(advancedRequest);
-               }
-                  try {
-                     Controller.handleClientAdvancedRequest(requests);
-                  } catch (IOException e){
-                     e.printStackTrace();
-                  }
-
-
-               //mainViewController.guiLogger.printInfo("Advance request Done");
-
-         //   }
-         //});
+                System.out.println();
+                System.out.println("Building: " + arf.getBuilding() + " datebegin: " + Date.valueOf(arf.getBeginDate())
+                        + "dateEnd: " + Date.valueOf(arf.getEndDate()) + " periodBegin : " + beginPeriod + " floor: " + floorName + " classroom : " + classroomName);
+                AdvancedRequest advancedRequest = new AdvancedRequest(arf.getBuilding(), Date.valueOf(arf.getBeginDate()), Date.valueOf(arf.getEndDate()), beginPeriod, endPeriod, floorName, classroomName);
+                requests.add(advancedRequest);
+            }
+            try {
+                Controller.handleClientAdvancedRequest(requests);
+            } catch (IOException e) {
+                e.printStackTrace();
+                mainViewController.guiLogger.printInfo("Erreur lors de la récupération des données");
+            }
 
 
-      }
-   };
+            mainViewController.guiLogger.printInfo("Fichier généré contenant vos requêtes avancées");
 
-   /**
-    * Give a schedule for each day with the free rooms.
-    */
-   public void giveRoomSchedule() {
-      
-   }
-   
-   /**
-    * Initializes the controller class
-    */
-   @Override
-   public void initialize(URL url, ResourceBundle rb) {
+        }
+    };
 
-      AdvancedRequestForm advancedRequestForm = new AdvancedRequestForm();
-      advancedRequestForm.getRemoveButton().setVisible(false);
-      advancedRequestForm.getAddButton().setOnMouseClicked(addButtonClicked);
 
-      advancedRequestForms.add(advancedRequestForm);
+    /**
+     * Initializes the controller class
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
 
-      requestsFormsBox.getChildren().add(advancedRequestForm.getGridPane());
+        AdvancedRequestForm advancedRequestForm = new AdvancedRequestForm();
+        advancedRequestForm.getRemoveButton().setVisible(false);
+        advancedRequestForm.getAddButton().setOnMouseClicked(addButtonClicked);
 
-      searchButton.setOnMouseClicked(searchButtonClicked);
-   }
+        advancedRequestForm.setEndHourSpinner(LocalTime.of(23,59));
+        advancedRequestForms.add(advancedRequestForm);
 
-   public void setMainViewController(MainViewController mainViewController){
-      this.mainViewController = mainViewController;
-   }
-   
+        requestsFormsBox.getChildren().add(advancedRequestForm.getGridPane());
+
+        searchButton.setOnMouseClicked(searchButtonClicked);
+    }
+
+    public void setMainViewController(MainViewController mainViewController) {
+        this.mainViewController = mainViewController;
+    }
+
 }

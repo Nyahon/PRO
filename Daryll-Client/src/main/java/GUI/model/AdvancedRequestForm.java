@@ -28,7 +28,7 @@ public class AdvancedRequestForm {
     private DatePicker beginDate = new DatePicker();
     private DatePicker endDate = new DatePicker();
     private TimeSpinner beginTime = new TimeSpinner();
-    private TimeSpinner endTime = new TimeSpinner(LocalTime.of(23,59));
+    private TimeSpinner endTime = new TimeSpinner();
 
     private ChoiceBox building = new ChoiceBox();
 
@@ -107,16 +107,8 @@ public class AdvancedRequestForm {
         beginDate.valueProperty().setValue(currentDateTime.toLocalDate());
         endDate.valueProperty().setValue(currentDateTime.toLocalDate());
 
-        endTime.getValueFactory().setValue(LocalTime.of(23,59));
-        /*
-        endDate.setMinWidth(130.0);
-        beginTime.setMinWidth(85.0);
-        endTime.setMinWidth(85.0);
-        building.setMinWidth(110.0);
-        floor.setMinWidth(60.0);
-        classroom.setMinWidth(60.0);
-        add.setMinWidth(60);
-        remove.setMinWidth(60);*/
+
+
 
         beginDate.setPrefWidth(120.0);
         endDate.setPrefWidth(120.0);
@@ -172,7 +164,6 @@ public class AdvancedRequestForm {
         gridPane.getColumnConstraints().add(6, ChoiceBoxConstraints);
         gridPane.getColumnConstraints().add(7, buttonConstraints);
         gridPane.getColumnConstraints().add(8, buttonConstraints);
-
     }
 
     /**
@@ -200,10 +191,13 @@ public class AdvancedRequestForm {
     }
 
     public LocalTime getBeginTime(){
+        //System.out.println(beginTime.getValue());
         return beginTime.getValue();
     }
 
     public LocalTime getEndTime(){
+
+        System.out.println(endTime.getValue());
         return endTime.getValue();
     }
 
@@ -217,6 +211,10 @@ public class AdvancedRequestForm {
 
     public String getClassroomName(){
         return classroom.getSelectionModel().getSelectedItem().toString();
+    }
+
+    public void setEndHourSpinner(LocalTime localTime){
+        endTime.getValueFactory().setValue(localTime);
     }
 
 }

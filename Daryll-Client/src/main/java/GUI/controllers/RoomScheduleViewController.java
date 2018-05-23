@@ -54,7 +54,7 @@ public class RoomScheduleViewController implements Initializable {
 
         String classroomName = scheduleRoomTextField.getText().toUpperCase();
 
-        //mainViewController.guiLogger.printInfo("Bonjour");
+        mainViewController.guiLogger.printInfo("Bonjour");
 
         if (classroomName.isEmpty()) {
             return;
