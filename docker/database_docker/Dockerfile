@@ -31,7 +31,7 @@ ENV MYSQL_USER_DATABASE "daryll"
 ADD my.cnf /etc/my.cnf 
 COPY config/daryll-schema.sql /etc/daryll-schema.sql
 COPY config/daryll-requests.sql /etc/daryll-requests.sql
-ADD boot.sh /usr/local/bin/boot.sh
+ADD config/boot.sh /usr/local/bin/boot.sh
 RUN chmod +x /usr/local/bin/boot.sh
 
 CMD ["/usr/local/bin/boot.sh", "-D", "FOREGROUND"]
