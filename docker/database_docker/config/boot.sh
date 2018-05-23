@@ -29,8 +29,8 @@ if [ ! -d "/var/lib/mysql/mysql" ] ; then
     mysql -e "GRANT ALL PRIVILEGES ON ${MYSQL_USER_DATABASE}.* TO '${MYSQL_USER}'@'%';" -p${MYSQL_ROOT_PASSWORD}
 
     echo "starting database initialisation..."
-    mysql -udev -h localhost -p$MYSQL_USER_PASSWORD < /etc/daryll-schema.sql
-    mysql -udev -h localhost -p$MYSQL_USER_PASSWORD < /etc/daryll-requests.sql
+    mysql -uroot -h localhost -p$MYSQL_ROOT_PASSWORD < /etc/daryll-schema.sql
+    mysql -uroot -h localhost -p$MYSQL_ROOT_PASSWORD < /etc/daryll-requests.sql
     echo "end database initialisation."
 
     killall mysqld
