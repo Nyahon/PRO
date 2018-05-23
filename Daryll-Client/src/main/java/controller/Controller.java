@@ -402,7 +402,6 @@ public class Controller {
         for(String room : roomList){
             if(mapReceived.containsKey(room) && mapReceived.get(room) > 0){
                 double currentDifference = Math.abs(roomList.indexOf(room)-roomList.indexOf(classRoom.getClassRoom()));
-                System.out.println(room + " is free");
                 ClassRoom currentRoom = new ClassRoom(room);
                 if(currentDifference < difference){
                     difference = currentDifference;
