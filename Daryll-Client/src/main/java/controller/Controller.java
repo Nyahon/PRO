@@ -87,12 +87,17 @@ public class Controller {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
         PrintWriter writer = new PrintWriter(ConfigLoader.outputFilename(), ConfigLoader.encodageFile());
         // Send the client advanced requests and processed them one by one
-        for (AdvancedRequest request : data) {
+        for (int i = 0; i < data.size(); ++i) {
             // Send request to the server
-            client.askForAdvancedRequest(request);
+            client.askForAdvancedRequest(data.get(i));
             // Wait for the response
             List<TimeSlot> result = client.receiveTimeSlots();
-            clientRequest = request;
+            clientRequest = data.get(i);
+
+            writer.println("REQUETE no " + (i + 1));
+            writer.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            writer.println();
+            writer.flush();
 
             // Check the type of client request, write the result with the correct template in a file and open it
             if (clientRequest.getClassroom() != null) {
@@ -103,6 +108,12 @@ public class Controller {
             }
             else {
                 writeToFileWithDefaultTemplate(result, writer);
+            }
+
+            if (i != data.size() - 1) {
+                writer.println();
+                writer.println();
+                writer.flush();
             }
         }
         writer.close();
