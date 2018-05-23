@@ -3,7 +3,7 @@
  * Date of Creation     : 16.04.2018
  * <p>
  * Description : This file contains the tools to parse, use and transcode
- * svg files in the application Daryll. *
+ * svg files in the application Daryll.
  * <p>
  * Remarks : -
  *

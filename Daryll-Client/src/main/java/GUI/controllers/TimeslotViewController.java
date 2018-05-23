@@ -40,8 +40,8 @@ import utils.PeriodManager;
 /**
  * FXML Controller class
  *
- * @author Labinot
- * @author Aurélien
+ * @author Labinot Rashiti
+ * @author Aurélien Siu
  */
 public class TimeslotViewController implements Initializable {
 
@@ -79,8 +79,6 @@ public class TimeslotViewController implements Initializable {
 
             advancedRequestForms.add(newForm);
             requestsFormsBox.getChildren().add(newForm.getGridPane());
-
-
         }
     };
 
@@ -169,7 +167,6 @@ public class TimeslotViewController implements Initializable {
 
         searchButton.setOnMouseClicked(searchButtonClicked);
     }
-
 
     public void setMainViewController(MainViewController mainViewController) {
         this.mainViewController = mainViewController;

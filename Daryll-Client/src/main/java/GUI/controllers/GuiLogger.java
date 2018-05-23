@@ -1,6 +1,12 @@
+package GUI.controllers;
+
+import javafx.application.Platform;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
+
 /**
- * Module      : PRO
- * File        : GuiLogger.java
  * Date        : 19.05.2018
  * <p>
  * Goal : This class implements a simple GUI logger to inform user.
@@ -11,16 +17,6 @@
  * @author Siu Aurélien
  * @version 1.0
  */
-
-
-package GUI.controllers;
-
-import javafx.application.Platform;
-import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
-
 public class GuiLogger {
     private Label console;
     private Circle circle;
