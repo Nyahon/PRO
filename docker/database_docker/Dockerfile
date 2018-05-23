@@ -19,8 +19,8 @@ RUN yum -y update \
 	; rm -rf /var/cache/yum/* \
 	; yum clean all
 
-ENV MYSQL_MAJOR 5.6
-ENV MYSQL_VERSION 5.6.30
+ENV MYSQL_MAJOR 5.7
+ENV MYSQL_VERSION 5.7.21
 
 ENV MYSQL_ROOT_PASSWORD "root"
 ENV MYSQL_USER "dev"
