@@ -386,16 +386,17 @@ public class Controller {
     /**Return the closest free room from the user position
      *
      * @param classRoom the current user classroom
+     * @param
      * @return the closest free classroom
      */
-    public static ClassRoom closestClassroom(ClassRoom classRoom) {
+    public static ClassRoom closestClassroom(ClassRoom classRoom, LocalTime time, LocalDate date) {
 
         ClassRoom closestRoom = null;
         String floor = classRoom.floor();
-        int currentPeriod = PeriodManager.currentOrNextPeriod(LocalTime.now());
+        int currentPeriod = PeriodManager.currentOrNextPeriod(time);
 
         // a timeslot representing the given classroom at the current date + period
-        TimeSlot ts = new TimeSlot(classRoom.getClassRoom(), System.currentTimeMillis(), currentPeriod);
+        TimeSlot ts = new TimeSlot(classRoom.getClassRoom(), date.toEpochDay()*86400, currentPeriod);
         Map<String, Integer> mapReceived = null;
 
         try {
