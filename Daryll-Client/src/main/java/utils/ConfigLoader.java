@@ -1,9 +1,6 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,25 +13,27 @@ public class ConfigLoader {
 
     private static final String CONFIG_FILENAME = "daryll.properties";
     private static final Logger LOG = Logger.getLogger(ConfigLoader.class.getName());
+    private static final String EQ = "=";
 
-    private static final String DEFAULT_SERVER_ADDRESS = "localhost"; //"daryll.lan.iict.ch";
-    private static final String DEFAULT_SERVER_PORT = "2613";
-    private static final String DEFAULT_OUTPUT_FILENAME = "DARYLL.txt";
-    private static final String DEFAULT_DAYS_OF_WEEK_FORMATTER = "EEEE";
-    private static final String DEFAULT_DATE_FORMATTER = "dd.MM.yyyy";
-    private static final String DEFAULT_ENCODAGE_FILE = "UTF-8";
+    private static final String SERVER_ADDRESS_DEFAULT = "daryll.lan.iict.ch";
+    private static final String SERVER_PORT_DEFAULT = "2613";
+    private static final String OUTPUT_FILENAME_DEFAULT = "DARYLL.txt";
+    private static final String DAYS_OF_WEEK_FORMATTER_DEFAULT = "EEEE";
+    private static final String DATE_FORMATTER_DEFAULT = "dd.MM.yyyy";
+    private static final String FILE_ENCODING_DEFAULT = "UTF-8";
 
     private static final String SERVER_ADDRESS_ID = "serverAddress";
     private static final String SERVER_PORT_ID = "serverPort";
     private static final String OUTPUT_FILENAME_ID = "outputFilename";
     private static final String DAYS_OF_WEEK_FORMATTER_ID = "daysOfWeekFormatter";
     private static final String DATE_FORMATTER_ID = "dateFormatter";
-    private static final String ENCODE_FILE_ID = "encodageFile";
+    private static final String FILE_ENCODING_ID = "encodageFile";
 
     private static Properties properties;
 
     static {
         properties = new Properties();
+        createFileIfNotExists();
         loadConfig();
     }
 
@@ -57,12 +56,38 @@ public class ConfigLoader {
     }
 
     /**
+     * Creates a new configuration file if it does not exist yet
+     */
+    private static void createFileIfNotExists(){
+        File configFile = new File(CONFIG_FILENAME);
+
+        try {
+            if(configFile.createNewFile()){
+
+                try(PrintWriter writer = new PrintWriter(CONFIG_FILENAME, "UTF-8")){
+
+                    writer.println(SERVER_ADDRESS_ID + EQ + SERVER_ADDRESS_DEFAULT);
+                    writer.println(SERVER_PORT_ID + EQ + SERVER_PORT_DEFAULT);
+                    writer.println(OUTPUT_FILENAME_ID + EQ + OUTPUT_FILENAME_DEFAULT);
+                    writer.println(DAYS_OF_WEEK_FORMATTER_ID + EQ + DAYS_OF_WEEK_FORMATTER_DEFAULT);
+                    writer.println(DATE_FORMATTER_ID + EQ + DATE_FORMATTER_DEFAULT);
+                    writer.println(FILE_ENCODING_ID + EQ + FILE_ENCODING_DEFAULT);
+                } catch (IOException e){
+                    LOG.log(Level.SEVERE, "An I/O error occurred during config file filling.");
+                }
+            }
+        } catch (IOException e){
+            LOG.log(Level.SEVERE, "An I/O error occurred during configuration file creation.");
+        }
+    }
+
+    /**
      * Retrieve the server address
      * @return the server address from the properties file, or the default server address if there is an issue
      * with the properties
      */
     public static String serverAddress() {
-        return properties.getProperty(SERVER_ADDRESS_ID, DEFAULT_SERVER_ADDRESS);
+        return properties.getProperty(SERVER_ADDRESS_ID, SERVER_ADDRESS_DEFAULT);
     }
 
     /**
@@ -71,7 +96,7 @@ public class ConfigLoader {
      * with the properties
      */
     public static int serverPort() {
-        return Integer.valueOf(properties.getProperty(SERVER_PORT_ID, DEFAULT_SERVER_PORT));
+        return Integer.valueOf(properties.getProperty(SERVER_PORT_ID, SERVER_PORT_DEFAULT));
     }
 
     /**
@@ -80,7 +105,7 @@ public class ConfigLoader {
      * with the properties
      */
     public static String outputFilename() {
-        return properties.getProperty(OUTPUT_FILENAME_ID, DEFAULT_OUTPUT_FILENAME);
+        return properties.getProperty(OUTPUT_FILENAME_ID, OUTPUT_FILENAME_DEFAULT);
     }
 
     /**
@@ -89,7 +114,7 @@ public class ConfigLoader {
      * or the default formatter if there is an issue with the properties
      */
     public static String daysOfWeekFormatter() {
-        return properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DEFAULT_DAYS_OF_WEEK_FORMATTER);
+        return properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DAYS_OF_WEEK_FORMATTER_DEFAULT);
     }
 
     /**
@@ -98,7 +123,7 @@ public class ConfigLoader {
      * or the default formatter if there is an issue with the properties
      */
     public static String dateFormatter() {
-        return properties.getProperty(DATE_FORMATTER_ID, DEFAULT_DATE_FORMATTER);
+        return properties.getProperty(DATE_FORMATTER_ID, DATE_FORMATTER_DEFAULT);
     }
 
     /**
@@ -107,6 +132,6 @@ public class ConfigLoader {
      * or the default encoder if there is an issue with the properties
      */
     public static String encodageFile() {
-        return properties.getProperty(ENCODE_FILE_ID, DEFAULT_ENCODAGE_FILE);
+        return properties.getProperty(FILE_ENCODING_ID, FILE_ENCODING_DEFAULT);
     }
 }
