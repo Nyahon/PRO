@@ -210,8 +210,16 @@ Ce projet fut très intéressant à faire, j'ai pu découvrir de nouvelles techn
 Aurélien Siu :
 Romain Gallay :
 Yohann Meyer :
-Loïc Frueh :
 Labinot Rashiti :
+
+Je pense qu'on peut retenir une bonne expérience de ce projet. Le groupe s'entendait bien et les différentes réunions de groupe chaque semaine nous ont permis de diriger un cap, d'attribuer des tâches pour chacun et enfin avancer dans le projet.
+
+Il est vrai que le début était un peu poussif, car nous n'avons pas eu les informations nécessaires concernant les plans des bâtiments ou les horaires GAPS. Heureusement, nous avons été intelligents dans la manière de gérer ces retards et nous nous retrouvons donc avec un projet terminé. 
+
+Pour ma part, j'ai pu travailler dès le début sur l'interface graphique vu que je n'étais pas atteint par ces retards et j'ai continué sur ce thème jusqu'à la fin du projet. Par la suite, Aurélien m'a rejoint pour l'interface graphique et notamment pour le redimensionnement des fenêtres. Je tiens à le féliciter pour son idée sur l'utilisation des SVGs pour les plans qui était une très bonne idée ainsi que son implication durant tout le projet.
+
+Loïc Frueh :
+
 ## Améliorations possibles
 
 
