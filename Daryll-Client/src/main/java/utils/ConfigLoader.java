@@ -1,9 +1,8 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import org.python.antlr.ast.Print;
+
+import java.io.*;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,8 +15,9 @@ public class ConfigLoader {
 
     private static final String CONFIG_FILENAME = "daryll.properties";
     private static final Logger LOG = Logger.getLogger(ConfigLoader.class.getName());
+    private static final String EQ = "=";
 
-    private static final String DEFAULT_SERVER_ADDRESS = "localhost"; //"daryll.lan.iict.ch";
+    private static final String DEFAULT_SERVER_ADDRESS = "localhost"; //"daryll.lan.iict.ch";//"172.18.0.41";//"daryll.lan.iict.ch";//"localhost"; //
     private static final String DEFAULT_SERVER_PORT = "2613";
     private static final String DEFAULT_OUTPUT_FILENAME = "DARYLL.txt";
     private static final String DEFAULT_DAYS_OF_WEEK_FORMATTER = "EEEE";
@@ -35,6 +35,7 @@ public class ConfigLoader {
 
     static {
         properties = new Properties();
+        createFileIfNotExists();
         loadConfig();
     }
 
@@ -53,6 +54,32 @@ public class ConfigLoader {
             properties.load(reader);
         } catch (IOException e){
             LOG.log(Level.WARNING, "File " + CONFIG_FILENAME + " not found, loading default configuration.");
+        }
+    }
+
+    /**
+     * Creates a new configuration file if it does not exist yet
+     */
+    private static void createFileIfNotExists(){
+        File configFile = new File(CONFIG_FILENAME);
+
+        try {
+            if(configFile.createNewFile()){
+
+                try(PrintWriter writer = new PrintWriter(CONFIG_FILENAME, "UTF-8")){
+
+                    writer.println(SERVER_ADDRESS_ID + EQ + DEFAULT_SERVER_ADDRESS);
+                    writer.println(SERVER_PORT_ID + EQ + DEFAULT_SERVER_PORT);
+                    writer.println(OUTPUT_FILENAME_ID + EQ + DEFAULT_OUTPUT_FILENAME);
+                    writer.println(DAYS_OF_WEEK_FORMATTER_ID + EQ + DEFAULT_DAYS_OF_WEEK_FORMATTER);
+                    writer.println(DATE_FORMATTER_ID + EQ + DEFAULT_DATE_FORMATTER);
+                    writer.println(ENCODE_FILE_ID + EQ + DEFAULT_ENCODAGE_FILE);
+                } catch (IOException e){
+                    LOG.log(Level.SEVERE, "An I/O error occurred during config file filling.");
+                }
+            }
+        } catch (IOException e){
+            LOG.log(Level.SEVERE, "An I/O error occurred during configuration file creation.");
         }
     }
 
