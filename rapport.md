@@ -70,7 +70,7 @@ MySQL, le système de gestion de bases de données relationnelles (SGDBR), faisa
 Nous avons choisi de l'utiliser, car c'est le modèle que nous maitrisions le mieux et que Java possède de nombreuses méthodes afin de nous permettre d'interagir avec nos données.
 
 ### Inkscape
-Inkscape, le logiciel libre de dessin vectoriel sous licence GNU GPL. Il nous a permis d'ouvrir les PFD des plans du bâtiment afin de les modifier comme s'il s'agissait d'un SVG puis nous pouvons les exporter au format qui nous arrange le plus (SVG).
+Inkscape, le logiciel libre de dessin vectoriel sous licence GNU GPL. Il nous a permis d'ouvrir les PDFs des plans du bâtiment afin de les modifier comme s'il s'agissait d'un SVG puis nous pouvons les exporter au format qui nous arrange le plus (SVG simple).
 
 ### Docker
 Docker, le logiciel libre qui automatise le déploiement d'application dans des conteneurs logiciels. Ces conteneurs sont isolés et peuvent être exécutés sur n'importe quel système qui prend en charges Docker.
