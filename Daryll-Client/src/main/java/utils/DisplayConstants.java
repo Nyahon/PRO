@@ -23,6 +23,8 @@ public class DisplayConstants {
      */
     public static final String FILE_FLOOR_TITLE = "Etage";
 
+    public static final String FILE_ALL_OCCUPIED_MESSAGE = "Cette salle est occupée pour toutes les tranches horaires demandées";
+
     public static int getColorIdFromFreePeriods(int freePeriods){
         if(freePeriods <= COLORS_ROOMS.DARK_GREEN.ordinal()){
             return freePeriods;
