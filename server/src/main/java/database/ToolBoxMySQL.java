@@ -50,7 +50,7 @@ public class ToolBoxMySQL  {
      */
     public void initConnection() {
         try {
-            String url = "jdbc:mysql://localhost:3306/" + database + "?user=" + account + "&password=" + password;
+            String url = "jdbc:mysql://172.18.0.42:3306/" + database + "?user=" + account + "&password=" + password;
             connection = DriverManager.getConnection(url);
         } catch(SQLException e){
             LOG.log(Level.SEVERE, e.getMessage());
