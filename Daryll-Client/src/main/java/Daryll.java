@@ -19,25 +19,26 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
-
-import java.time.LocalDate;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
+/**
+ * This file contains the base of the application Daryll, this is where the
+ *        application begin and launch his GUI.
+ */
 public class Daryll extends Application {
 
    /**
-    * @brief Method that loads all the JavaFX ressources to run the programm.
-    * @param stage
-    * @throws Exception 
+    * Method that loads all the JavaFX ressources to run the programm.
+    * @param stage the javafx stage
+    * @throws IOException If an I/O error occurred
     */
 
    @Override
-   public void start(Stage stage) throws Exception {
+   public void start(Stage stage) throws IOException {
 
       FXMLLoader fxmlLoader = new FXMLLoader();
       BorderPane root = fxmlLoader.load(getClass().getResource("MainView.fxml"));
@@ -64,7 +65,6 @@ public class Daryll extends Application {
 
       pane1.maxHeightProperty().bind(scene.heightProperty());
 
-
       // Fix default size
       ImageView imgView1 = (ImageView) scene.lookup("#imageCheseaux");
       ImageView imgView2 = (ImageView) scene.lookup("#imageStRoch");
@@ -81,17 +81,13 @@ public class Daryll extends Application {
       datePicker.valueProperty().setValue(currentDateTime.toLocalDate());
 
       stage.show();
-
    }
 
-
    /**
-    * @brief The programm begins here.
+    * The programm begins here.
     * @param args the command line arguments
     */
    public static void main(String[] args) {
       launch(args);
-
-   }   
-   
+   }
 }
