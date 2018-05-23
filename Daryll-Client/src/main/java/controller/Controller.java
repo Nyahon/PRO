@@ -155,6 +155,10 @@ public class Controller {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
             writer.flush();
         }
+        if (periods.isEmpty()) {
+            writer.println(DisplayConstants.FILE_ALL_OCCUPIED_MESSAGE);
+            writer.flush();
+        }
         writer.close();
     }
 
@@ -213,6 +217,10 @@ public class Controller {
             // Write all the remaining periods in the file
             for (int period : periods) {
                 writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
+                writer.flush();
+            }
+            if (periods.isEmpty()) {
+                writer.println(DisplayConstants.FILE_ALL_OCCUPIED_MESSAGE);
                 writer.flush();
             }
             periods.clear();
@@ -313,6 +321,11 @@ public class Controller {
             // Write all the remaining periods in the file
             for (int period : periods) {
                 writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
+                writer.flush();
+            }
+
+            if (periods.isEmpty()) {
+                writer.println(DisplayConstants.FILE_ALL_OCCUPIED_MESSAGE);
                 writer.flush();
             }
 
