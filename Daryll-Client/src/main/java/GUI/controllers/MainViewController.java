@@ -11,6 +11,7 @@
  * Remarks :
  *
  * @author Rashiti Labinot
+ * @author Siu Aurélien
  * @version 1.0
  */
 package GUI.controllers;
@@ -95,7 +96,7 @@ public class MainViewController implements Initializable {
     @FXML
     private Circle circleGuiLogger;
 
-    public GuiLogger guiLogger;
+    public static GuiLogger guiLogger;
 
     /**
      * @brief This method is the first one to be called to fill the hash map with floors
@@ -240,11 +241,9 @@ public class MainViewController implements Initializable {
             }
             svgFloorPath = "/plans/" + currentFloorPaths.get(0);
             try {
-                //imgView.setImage(new Thread);
                 planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
                 System.gc();
-                //loadSvgImage( "/plans/" + currentFloorPaths.get(0), imgView, planWidth, planHeight);
 
             } catch (Exception e) {
 
@@ -328,8 +327,6 @@ public class MainViewController implements Initializable {
                 previousCheseaux.setDisable(false);
             }
             try {
-                //loadSvgImage( "/plans/" + currentFloorPaths.get(indexPlan), imgView, planWidth, planHeight);
-
                 planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this);
                 new Thread(planLoader).start();
             } catch (Exception e) {
@@ -364,6 +361,8 @@ public class MainViewController implements Initializable {
         FXMLLoader fxLoader = new FXMLLoader();
         Parent root = fxLoader.load(getClass().getResource("/RoomScheduleView.fxml"));
 
+        fxLoader.setController(new RoomScheduleViewController());
+
         Scene scene = new Scene(root);
 
         // Creating and launching the stage
@@ -371,28 +370,6 @@ public class MainViewController implements Initializable {
         stage.setTitle("Horaire de la salle");
         stage.setWidth(270);
         stage.setHeight(170);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    /**
-     * @throws java.lang.Exception
-     * @brief This method is a handler that manage the click of the shortest room menu
-     * button option. It will popup a little windows to enter the position and then it
-     * will give the shortest free room from a given place.
-     */
-    public void shortestFreeRoom() throws Exception {
-        // Initializing the FXML
-
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(getClass().getResource("/ShortestRoomView.fxml"));
-
-        Scene scene = new Scene(root);
-
-        // Creating and launching the stage
-        Stage stage = new Stage();
-        stage.setTitle("Salle la plus proche");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -419,7 +396,7 @@ public class MainViewController implements Initializable {
 
         // Creating and launching the stage
         Stage stage = new Stage();
-        stage.setTitle("Crénaux horaires");
+        stage.setTitle("Recherche avancée");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -453,33 +430,6 @@ public class MainViewController implements Initializable {
         Desktop.getDesktop().browse(uri);
     }
 
-    public class GuiLogger {
-        private Label console;
-
-        private final Paint colorInfo = Color.LIMEGREEN;
-        private final Paint colorError = Color.RED;
-
-        public GuiLogger(Label console) {
-            this.console = console;
-        }
-
-        public void printInfo(String valueOf) {
-            Platform.runLater(() -> {
-                circleGuiLogger.setFill(colorInfo);
-                console.setTextFill(colorInfo);
-                console.setText(valueOf);
-            });
-        }
-
-        public void printError(String valueOf) {
-            Platform.runLater(() -> {
-                circleGuiLogger.setFill(colorError);
-                console.setTextFill(colorError);
-                console.setText(valueOf);
-            });
-        }
-
-    }
 
     /**
      * @param url link text
@@ -493,7 +443,7 @@ public class MainViewController implements Initializable {
         hourSpinner = new TimeSpinner();
         hourSpinner.setPrefWidth(90.0);
         bottomUserInputHBox.getChildren().set(7, hourSpinner);
-        guiLogger = new GuiLogger(guiConsole);
+        guiLogger = new GuiLogger(guiConsole, circleGuiLogger);
     }
 
 }

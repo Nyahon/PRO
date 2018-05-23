@@ -177,7 +177,7 @@
         <Menu mnemonicParsing="false" text="Mode">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#scheduleRoom" text="Horaire d'une salle" />
-            <MenuItem mnemonicParsing="false" onAction="#timeslot" text="Crénaux horaires" />
+            <MenuItem mnemonicParsing="false" onAction="#timeslot" text="Recherche avancée" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Aide">

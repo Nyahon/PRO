@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" prefHeight="214.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
+<BorderPane maxHeight="1.7976931348623157E308" prefHeight="0.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controllers.TimeslotViewController">
   <bottom>
     <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="123.0" text="Recherche" BorderPane.alignment="CENTER" />
   </bottom>
   <center>
-      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308">
+      <VBox fx:id="requestsFormsBox" maxHeight="1.7976931348623157E308" prefHeight="19.0" prefWidth="803.0">
          <children>
           <GridPane>
             <children>
@@ -28,13 +28,13 @@
                   <Label text="Date fin" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             </children>
             <columnConstraints>
-              <ColumnConstraints hgrow="SOMETIMES" prefWidth="155.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="155.0" />
-              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="130.0" />
-              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="130.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="100.0" />
+              <ColumnConstraints hgrow="SOMETIMES" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="120.0" />
+              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="105.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="90.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="80.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" prefWidth="80.0" />
             </columnConstraints>
