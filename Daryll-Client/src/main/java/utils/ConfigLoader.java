@@ -21,7 +21,7 @@ public class ConfigLoader {
     private static final String DEFAULT_SERVER_PORT = "2613";
     private static final String DEFAULT_OUTPUT_FILENAME = "DARYLL.txt";
     private static final String DEFAULT_DAYS_OF_WEEK_FORMATTER = "EEEE";
-    private static final String DEFAULT_DATE_FORMATTER = "DD.MM.YYYY";
+    private static final String DEFAULT_DATE_FORMATTER = "dd.MM.yyyy";
     private static final String DEFAULT_ENCODAGE_FILE = "UTF-8";
 
     private static final String SERVER_ADDRESS_ID = "serverAddress";
