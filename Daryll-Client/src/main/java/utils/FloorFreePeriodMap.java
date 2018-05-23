@@ -9,7 +9,7 @@ private Map<String, Integer> freeMap = new HashMap<>();
 
 public FloorFreePeriodMap(String floor) {
     for (String classroom : ClassroomsByFloor.FLOORS_MAP.get(floor)) {
-        freeMap.put(classroom, 3);
+        freeMap.put(classroom, DisplayConstants.COLORS_ROOMS.DARK_GREEN.ordinal());
     }
 }
 

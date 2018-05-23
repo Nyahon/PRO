@@ -10,6 +10,9 @@ public class DisplayConstants {
 
     public static final String[] COLOR_VALUES = {"#ffffff", "#99ff99", "#00ff00", "#009900", "#ff0000"};
 
+    public static final String FILE_CLASSROOM_TITLE = "Salle";
+    public static final String FILE_FLOOR_TITLE = "Etage";
+
     public static int getColorIdFromFreePeriods(int freePeriods){
         if(freePeriods <= COLORS_ROOMS.DARK_GREEN.ordinal()){
             return freePeriods;

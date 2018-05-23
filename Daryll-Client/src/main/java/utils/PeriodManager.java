@@ -40,6 +40,11 @@ public class PeriodManager {
      */
     public static final List<LocalTime> PERIODS_END;
 
+    public static final int FIRST_PERIOD_ID = 0;
+    public static final int FIRST_WORK_PERIOD_ID = 3;
+    public static final int LAST_PERIOD_ID = PERIODS_START.size() - 1;
+
+
     /**
      * Default constructor, private because there is no need to instantiate the class
      */

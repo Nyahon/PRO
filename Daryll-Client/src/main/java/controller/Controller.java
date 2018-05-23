@@ -1,16 +1,13 @@
 package controller;
 
 
-import utils.ClassroomsByFloor;
-import utils.FloorFreePeriodMap;
+import utils.*;
 import models.AdvancedRequest;
 import models.ClassRoom;
 import models.TimeSlot;
 import network.client.ClientSocket;
 import network.protocol.Protocol;
-import utils.PeriodManager;
 
-import java.awt.*;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -27,14 +24,35 @@ import java.util.List;
 
 public class Controller {
 
+    /**
+     * The client socket that is used to send data to the server
+     */
     private static final ClientSocket client = new ClientSocket();
+
+    /**
+     * An advanced done by the user in the GUI
+     */
     private static AdvancedRequest clientRequest;
 
+
+    /**
+     * Processes user quick request for a floor and transmit the necessary information to the GUI
+     * in order to display it on the plans.
+     * @param data  the data send by the GUI that contains the floor, the date, and the start time of the free rooms
+     *              request
+     * @return A Map that show the number of free periods remaining, since the requested start time, per classroom.
+     *         Classroom -> number of period remaining for this classroom.
+     *         This information is used by the GUI to display rightful colors in the plan.
+     */
     public static Map<String, Integer> handleClientFloorRequest(TimeSlot data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
+        // Send request to the server
         client.askForFloor(data);
-        FloorFreePeriodMap freePeriodMap = new FloorFreePeriodMap(data.floor());
+        // Wait for the response
         List<TimeSlot> result = client.receiveTimeSlots();
+        client.disconnect();
+        // Create a Map that will store the classroom with their remaining number of free periods since the client requested period
+        FloorFreePeriodMap freePeriodMap = new FloorFreePeriodMap(data.floor());
         for (TimeSlot t : result) {
             int numberOfFreePeriod = t.getIdPeriod() - data.getIdPeriod();
             freePeriodMap.insert(t.getClassroom(), numberOfFreePeriod);
@@ -42,30 +60,41 @@ public class Controller {
         return freePeriodMap.getFreeMap();
     }
 
+    /**
+     * Processes user quick request for a classroom free period schedule. Create and open a file that store the result.
+     * If the file already exist, overwrite it.
+     * @param data  the data send by the GUI. It is the user requested classroom
+     */
     public static void handleClientClassroomRequest(ClassRoom data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
+        // Send request to the server
         client.askForClassroom(data);
+        // Wait for the response
         List<TimeSlot> result = client.receiveTimeSlots();
+        client.disconnect();
+        // Create and open a file with the result of the client request (if the file already exist, it will overwrite it)
         createQuickClassroomFile(result, data);
-        File file = new File("DARYLL.txt");
-        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-            String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
-            Runtime.getRuntime().exec(cmd);
-        }
-        else {
-            String cmd = "nano " + file.getCanonicalPath();
-            Runtime.getRuntime().exec(cmd);
-        }
+        File file = new File(ConfigLoader.outputFilename());
+        openFileInTextEditor(file);
     }
 
+    /**
+     * Processes user advanced requests from the GUI advanced request menu. Create and open a file that store the result
+     * of all the requests. If the file already exist, overwrite it.
+     * @param data  a list of all advanced requests done by the user
+     */
     public static void handleClientAdvancedRequest(List<AdvancedRequest> data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
-        PrintWriter writer = new PrintWriter("DARYLL.txt", "UTF-8");
+        PrintWriter writer = new PrintWriter(ConfigLoader.outputFilename(), ConfigLoader.encodageFile());
+        // Send the client advanced requests and processed them one by one
         for (AdvancedRequest request : data) {
+            // Send request to the server
             client.askForAdvancedRequest(request);
+            // Wait for the response
             List<TimeSlot> result = client.receiveTimeSlots();
             clientRequest = request;
 
+            // Check the type of client request, write the result with the correct template in a file and open it
             if (clientRequest.getClassroom() != null) {
                 writeToFileWithClassroomTemplate(result, writer);
             }
@@ -73,57 +102,63 @@ public class Controller {
                 writeToFileWithFloorTemplate(result, writer);
             }
             else {
-                writeToFileWithAllTemplate(result, writer);
+                writeToFileWithDefaultTemplate(result, writer);
             }
         }
         writer.close();
+        client.disconnect();
 
-
-        File file = new File("DARYLL.txt");
-        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-            String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
-            Runtime.getRuntime().exec(cmd);
-        }
-        else {
-            Desktop.getDesktop().edit(file);
-        }
-
-
+        File file = new File(ConfigLoader.outputFilename());
+        openFileInTextEditor(file);
     }
 
+    /**
+     * Create a file with the result of the user classroom free schedule request.
+     * @param timeSlotList  a list of all occupied periods of the classroom for today
+     * @param clientRequest  the client asked classroom
+     */
     private static void createQuickClassroomFile(List<TimeSlot> timeSlotList, ClassRoom clientRequest) throws FileNotFoundException, UnsupportedEncodingException {
         LocalDate date = LocalDate.now();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
         List<Integer> periods = new ArrayList<>();
 
-        PrintWriter writer = new PrintWriter("DARYLL.txt", "UTF-8");
-        writer.println("Salle: " + clientRequest.getClassRoom());
+        PrintWriter writer = new PrintWriter(ConfigLoader.outputFilename(), ConfigLoader.encodageFile());
+        // Write the header in the file
+        writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + clientRequest.getClassRoom());
         writer.println("-------------------------------------------------");
         writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
         writer.println("-------------------------------------------------");
         writer.flush();
 
-        for (int j = 3; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+        // Fill the period tab with all existing periods
+        for (int j = PeriodManager.FIRST_WORK_PERIOD_ID; j < PeriodManager.LAST_PERIOD_ID; ++j) {
             periods.add(j);
         }
+        // Remove all the occupied periods from the period list
         for (TimeSlot t : timeSlotList) {
             periods.remove(Integer.valueOf(t.getIdPeriod()));
         }
+        // Write all the remaining periods in the file
         for (int period : periods) {
             writer.println(PeriodManager.PERIODS_START.get(period).toString() + " - " + PeriodManager.PERIODS_END.get(period).toString());
             writer.flush();
         }
-
         writer.close();
     }
 
+    /**
+     * Write in a file with the classroom template style (free schedule for a particular classroom)
+     * @param timeSlotList  a list of all occupied periods of the classroom for the requested interval of dates
+     * @param writer the writer that is used to write the information in the file
+     */
     private static void writeToFileWithClassroomTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
 
-        writer.println("Salle: " + clientRequest.getClassroom());
+        // Write the header in the file
+        writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + clientRequest.getClassroom());
         writer.flush();
 
         List<TimeSlot> tmp = new ArrayList<>();
@@ -135,21 +170,22 @@ public class Controller {
             writer.println("-------------------------------------------------");
             writer.flush();
 
-            int firstPeriod = clientRequest.getIdPeriodBegin() < 3 ? 3 : clientRequest.getIdPeriodBegin();
+            int firstPeriod = clientRequest.getIdPeriodBegin() < PeriodManager.FIRST_WORK_PERIOD_ID ? PeriodManager.FIRST_WORK_PERIOD_ID : clientRequest.getIdPeriodBegin();
             // Fill the period tab with all existing periods
-            for (int j = firstPeriod; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+            for (int j = firstPeriod; j < clientRequest.getIdPeriodEnd(); ++j) {
                 periods.add(j);
             }
 
             // Compare the current date of the inteval with the date of the first Timeslot in the list
             if (timeSlotList.size() != 0 && date.equals(timeSlotList.get(0).getDate().toLocalDate())) {
-                // Loop on all timeslots of the list until the date of one of them is no longer equals to the previous one.
+                // Loop on all TimeSlots of the list until the date of one of them is no longer equals to the previous one.
                 for (int i = 0; i < timeSlotList.size(); ++i) {
                     timeSlotDate = timeSlotList.get(i).getDate().toLocalDate();
+                    // Compare the date of the current TimeSlot with the previous one
                     if (i != 0 && !timeSlotDate.equals(timeSlotList.get(i - 1).getDate().toLocalDate())) {
                         break;
                     }
-                    // Group all timeslots with the same date in a list
+                    // Group all TimeSlots with the same date in a temp list
                     tmp.add(timeSlotList.get(i));
                 }
 
@@ -158,7 +194,7 @@ public class Controller {
                     periods.remove(Integer.valueOf(t.getIdPeriod()));
                 }
 
-                // Remove all the processed timeslots from the list
+                // Remove all the processed TimeSlots from the list
                 timeSlotList.removeAll(tmp);
                 tmp.clear();
             }
@@ -172,12 +208,17 @@ public class Controller {
         }
     }
 
+    /**
+     * Write in a file with the floor template style (free schedule for a particular floor)
+     * @param timeSlotList  a list of all occupied periods of each classroom of the floor for the requested interval of dates
+     * @param writer the writer that is used to write the information in the file
+     */
     private static void writeToFileWithFloorTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-
-        writer.println("Etage: " + clientRequest.getFloor());
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
+        // Write the header
+        writer.println(DisplayConstants.FILE_FLOOR_TITLE + ": " + clientRequest.getFloor());
         writer.println("#############################################################################");
         writer.println();
         writer.flush();
@@ -188,19 +229,24 @@ public class Controller {
             writer.println(date.format(daysOfTheWeekFormatter) + " - " + date.format(dateFormatter));
             writer.println("*************************************");
             writer.flush();
-            // Recuperate classrooms in the requested floor and Loop on all classroom
+            // Recuperate classrooms in the requested floor and write the free period of all these classrooms in a file
             List<String> classrooms = ClassroomsByFloor.FLOORS_MAP.get(clientRequest.getFloor());
             writeFreePeriodsForFloor(writer, classrooms, date, timeSlotList, tmp, periods);
         }
     }
 
-    private static void writeToFileWithAllTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
+    /**
+     * Write in a file with the default template style (free schedule for all classroom of all floor)
+     * @param timeSlotList  a list of all occupied periods of all classroom in all floor for the requested interval of dates
+     * @param writer the writer that is used to write the information in the file
+     */
+    private static void writeToFileWithDefaultTemplate(List<TimeSlot> timeSlotList, PrintWriter writer) {
         List<Integer> periods = new ArrayList<>();
         List<String> classrooms;
-        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        DateTimeFormatter daysOfTheWeekFormatter = DateTimeFormatter.ofPattern(ConfigLoader.daysOfWeekFormatter());
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.dateFormatter());
 
-        // Recuperate a list of the floors in fonction of the requested building
+        // Recuperate a list of the floors in function of the requested building
         List<String> floors = clientRequest.getBuilding() == 0 ? ClassroomsByFloor.FLOORS_CHESEAUX : ClassroomsByFloor.FLOORS_ST_ROCH;
 
         List<TimeSlot> tmp = new ArrayList<>();
@@ -213,7 +259,7 @@ public class Controller {
 
             // Loop on all floors of the building
             for (String floor : floors) {
-                writer.println("Etage: " + floor);
+                writer.println(DisplayConstants.FILE_FLOOR_TITLE + ": " + floor);
                 writer.println("*************************");
                 writer.println();
                 writer.flush();
@@ -225,14 +271,23 @@ public class Controller {
         }
     }
 
+    /**
+     * Write in a file the free periods of all classroom of a floor (write period in a schedule style like 08h30 - 09h15)
+     * @param writer the writer that is used to write the information in the file
+     * @param classrooms  a list of all classrooms of the floor
+     * @param date the date that is used to show if there is free periods for the classrooms
+     * @param timeSlotList  a list of all occupied periods of the classrooms requested by the user
+     * @param tmp  an empty temporary list that will be used to store all occupied periods that are linked to the same classroom
+     * @param periods  an empty list that will store all useful and interesting periods ids according to the user request
+     */
     private static void writeFreePeriodsForFloor(PrintWriter writer, List<String> classrooms, LocalDate date, List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods) {
         for (String classroom : classrooms) {
-            writer.println("Salle : " + classroom);
+            writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + classroom);
             writer.println("--------------");
 
-            int beginPeriod = clientRequest.getIdPeriodBegin() < 3 ? 3 : clientRequest.getIdPeriodBegin();
+            int beginPeriod = clientRequest.getIdPeriodBegin() < PeriodManager.FIRST_WORK_PERIOD_ID ? PeriodManager.FIRST_WORK_PERIOD_ID : clientRequest.getIdPeriodBegin();
             // Fill the period tab with all existing periods
-            for (int j = beginPeriod; j < PeriodManager.PERIODS_START.size() - 1; ++j) {
+            for (int j = beginPeriod; j < clientRequest.getIdPeriodEnd(); ++j) {
                 periods.add(j);
             }
 
@@ -263,6 +318,12 @@ public class Controller {
         }
     }
 
+    /**
+     * Remove from the periods list all the occupied periods of the classroom that are store in the temporary list
+     * @param timeSlotList  a list of all occupied periods of the classrooms requested by the user
+     * @param tmp  an empty temporary list that will be used to store all occupied periods that are linked to the same classroom
+     * @param periods a list that store all useful and interesting periods ids according to the user request
+     */
     private static void removeClassroomOccupiedPeriod (List<TimeSlot> timeSlotList, List<TimeSlot> tmp, List<Integer> periods, String classroom) {
         // Add the first TimeSlot of the TimeSlot list in the temp list
         tmp.add(timeSlotList.get(0));
@@ -281,6 +342,21 @@ public class Controller {
         // Remove all the processed TimeSlot from the list
         timeSlotList.removeAll(tmp);
         tmp.clear();
+    }
+
+    /**
+     * Remove from the periods list all the occupied periods of the classroom that are store in the temporary list
+     * @param file  a list of all occupied periods of the classrooms requested by the user
+     */
+    private static void openFileInTextEditor(File file) throws IOException {
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
+            Runtime.getRuntime().exec(cmd);
+        }
+        else {
+            String cmd = "nano " + file.getCanonicalPath();
+            Runtime.getRuntime().exec(cmd);
+        }
     }
 
     /**Return the closest free room from the user position
