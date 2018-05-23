@@ -45,7 +45,7 @@ import utils.PeriodManager;
  */
 public class TimeslotViewController implements Initializable {
 
-    private static final int MAX_ADVANCED_REQUESTED_FORMS = 7;
+    private static final int MAX_ADVANCED_REQUESTED_FORMS = 5;
     private static List<AdvancedRequestForm> advancedRequestForms = new ArrayList<>();
     @FXML
     private VBox requestsFormsBox;
@@ -60,20 +60,27 @@ public class TimeslotViewController implements Initializable {
     private EventHandler addButtonClicked = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent event) {
-            int lastIndex = advancedRequestForms.size() - 1;
-            if (lastIndex < MAX_ADVANCED_REQUESTED_FORMS) {
-                AdvancedRequestForm lastForm = advancedRequestForms.get(lastIndex);
-                System.out.println(lastForm.getAddButton().getText());
-                lastForm.getAddButton().setDisable(true);
-                lastForm.getRemoveButton().setDisable(true);
 
-                AdvancedRequestForm newForm = new AdvancedRequestForm();
-                newForm.getAddButton().setOnMouseClicked(addButtonClicked);
-                newForm.getRemoveButton().setOnMouseClicked(removeButtonClicked);
-                newForm.setEndHourSpinner(LocalTime.of(23,59));
-                advancedRequestForms.add(newForm);
-                requestsFormsBox.getChildren().add(newForm.getGridPane());
+            // Set properties of the second to last element
+            int lastIndex = advancedRequestForms.size() - 1;
+            AdvancedRequestForm lastForm = advancedRequestForms.get(lastIndex);
+            lastForm.getAddButton().setDisable(true);
+            lastForm.getRemoveButton().setDisable(true);
+
+            // Creating new AdvancedRequestForm
+            AdvancedRequestForm newForm = new AdvancedRequestForm();
+            newForm.getAddButton().setOnMouseClicked(addButtonClicked);
+            newForm.getRemoveButton().setOnMouseClicked(removeButtonClicked);
+            newForm.setEndHourSpinner(LocalTime.of(23,59));
+
+            if (lastIndex == MAX_ADVANCED_REQUESTED_FORMS) {
+                newForm.getAddButton().setDisable(true);
             }
+
+            advancedRequestForms.add(newForm);
+            requestsFormsBox.getChildren().add(newForm.getGridPane());
+
+
         }
     };
 
