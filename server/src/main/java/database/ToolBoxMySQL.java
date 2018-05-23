@@ -5,12 +5,15 @@ import models.ClassRoom;
 import models.TimeSlot;
 import utils.PeriodManager;
 import utils.ReaderICS;
+import static utils.config.*;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
+
+
 
 /**
  * A class to connect and perform actions on a MySQL database
@@ -60,7 +63,9 @@ public class ToolBoxMySQL  {
      */
     public void initConnection() {
         try {
-            String url = "jdbc:mysql://localhost:3306/" + database + "?user=" + account + "&password=" + password;
+            String server = isInPRODUCTION ? prodIP : devIP;
+
+            String url = "jdbc:mysql://"+server+":3306/" + database + "?user=" + account + "&password=" + password;
             connection = DriverManager.getConnection(url);
         } catch(SQLException e){
             LOG.log(Level.SEVERE, e.getMessage());
