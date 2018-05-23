@@ -1,6 +1,5 @@
 package network.client;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import models.AdvancedRequest;
 import network.protocol.Protocol;
 import models.ClassRoom;
@@ -30,8 +29,6 @@ public class ClientSocket {
         socket = new Socket(server, port);
         is = new BufferedReader( new InputStreamReader( socket.getInputStream() ) );
         os = new PrintWriter( socket.getOutputStream() );
-        //   String resp = is.readLine();
-        //   System.out.println( resp );
         if( !is.readLine().equals(Protocol.RESPONSE_CONNECTED) )
             throw new IOException("error during connection");
 
@@ -56,7 +53,7 @@ public class ClientSocket {
 
     }
 
-    public void askForClassroom(ClassRoom c) throws JsonProcessingException, ConnectException, IOException{
+    public void askForClassroom(ClassRoom c) throws IOException{
         os.println(Protocol.CMD_CLASSROOM);
         os.flush();
         String rsp;
