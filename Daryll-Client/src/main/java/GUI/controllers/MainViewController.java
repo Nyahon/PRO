@@ -96,7 +96,12 @@ public class MainViewController implements Initializable {
     @FXML
     private Spinner timeSpinner;
     @FXML
-    private Button mainSearch;
+    private Label firstPeriod;
+    @FXML
+    private Label secondPeriod;
+    @FXML
+    private Label thirdPeriod;
+
     @FXML
     private Label guiConsole;
     @FXML
@@ -104,16 +109,9 @@ public class MainViewController implements Initializable {
 
     public static GuiLogger guiLogger;
 
-    @FXML
-    private Label firstPeriod;
-    @FXML
-    private Label secondPeriod;
-    @FXML
-    private Label thirdPeriod;
-
 
     /**
-     * @brief This method is the first one to be called to fill the hash map with floors
+     * This method fill the hash map with floors (first one to be called in initialize method)
      */
     private void fillFloors() {
         ArrayList<String> floorFileName = new ArrayList<>();
@@ -194,7 +192,7 @@ public class MainViewController implements Initializable {
 
     /**
      * @param floor the floor
-     * This method is a handler to
+     * This method is a handler to show the floor on the GUI
      */
     public void showFloor(String floor, boolean currentClassroom) throws IOException{
 
@@ -258,6 +256,7 @@ public class MainViewController implements Initializable {
 
             Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
 
+            // Apply color to every classroom in SVG
             for (HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()) {
 
 
@@ -290,6 +289,9 @@ public class MainViewController implements Initializable {
 
     }
 
+    /**
+     * Handle search button request
+     */
     public void searchButtonHandle(){
 
         String currentRoom = currentRoomLabel.getText();
@@ -334,7 +336,6 @@ public class MainViewController implements Initializable {
 
                 String floor = position.substring(0,1).toUpperCase();
                 position = position.replaceFirst(position.substring(0,1), floor.toUpperCase());
-                System.out.println(position);
                 List<String> classrooms = FLOORS_MAP.get(floor);
                 if(classrooms != null) {
                     for(int i = 0; i < classrooms.size(); ++i) {

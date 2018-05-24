@@ -109,10 +109,6 @@ public class TimeslotViewController implements Initializable {
     private EventHandler searchButtonClicked = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent event) {
-
-         /*Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {*/
             mainViewController.guiLogger.printInfo("Récupération des données en cours");
             List<AdvancedRequest> requests = new ArrayList<>();
 

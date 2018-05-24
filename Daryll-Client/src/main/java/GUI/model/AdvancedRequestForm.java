@@ -1,15 +1,3 @@
-/**
- * File                 : AdvancedRequestForm.java
- * Date of Creation     : 08.05.2018
- * <p>
- * Description : This file contains the tools to parse, use and transcode
- * svg files in the application Daryll. *
- * <p>
- * Remarks : -
- *
- * @author Aurélien Siu
- * @version 1.0
- */
 
 package GUI.model;
 
@@ -31,12 +19,16 @@ import java.util.List;
 import static utils.ClassroomsByFloor.BUILDING_MAP;
 import static utils.ClassroomsByFloor.FLOORS_MAP;
 
+/**
+ * This class defines all the graphics components to display for an advance request
+ *
+ * @author Aurélien Siu
+ */
 public class AdvancedRequestForm {
 
     private static int counter = 0;
     private int id;
     public static final List<String> BUILDING_NAMES = new ArrayList<String>(Arrays.asList("Cheseaux", "St-Roch"));
-
 
     private DatePicker beginDate = new DatePicker();
     private DatePicker endDate = new DatePicker();
@@ -44,7 +36,6 @@ public class AdvancedRequestForm {
     private TimeSpinner endTime = new TimeSpinner();
 
     private ChoiceBox building = new ChoiceBox();
-
     private ChoiceBox floor = new ChoiceBox();
     private ChoiceBox classroom = new ChoiceBox();
 
@@ -201,12 +192,10 @@ public class AdvancedRequestForm {
     }
 
     public LocalTime getBeginTime(){
-        //System.out.println(beginTime.getValue());
-        return beginTime.getValue();
+        return LocalTime.parse(beginTime.getEditor().getText());
     }
 
     public LocalTime getEndTime(){
-        System.out.println(endTime.getValue());
         return endTime.getValue();
     }
 
