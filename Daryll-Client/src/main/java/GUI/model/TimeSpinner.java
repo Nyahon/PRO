@@ -16,6 +16,8 @@ import javafx.scene.input.InputEvent;
 import javafx.util.StringConverter;
 
 /**
+ *
+ * TimeSpinner with LocalTime
  * @link https://stackoverflow.com/questions/32613619/how-to-make-a-timespinner-in-javafx
  *  modified by : Aurélien Siu
  */

@@ -13,6 +13,7 @@
 
 package GUI.svgTools;
 
+import org.apache.commons.io.input.ClassLoaderObjectInputStream;
 import utils.DisplayConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -60,7 +61,7 @@ public class SVGToolBox {
 
             getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
             getClassroomFromSVGNodeList(path, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
-            transformTheDom(doc, svgInputStream.getClass().getResource(svg).getPath());
+            transformTheDom(doc, svgInputStream.getClass().getCanonicalName());
 
         } catch (Exception e) {
             e.printStackTrace();
