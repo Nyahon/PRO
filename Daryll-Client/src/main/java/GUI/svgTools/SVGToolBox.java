@@ -27,34 +27,31 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+import static utils.DisplayConstants.COLOR_VALUES;
+import static utils.DisplayConstants.getColorIdFromFreePeriods;
 
 
 public class SVGToolBox {
-    private static final String PATH_ELEMENT_NAME = "path";
-
-    private Document svgDocument;
 
     /**
      * parse the given file to update color of classrooms (groups of path elements)
-     * @param svg the svg file that needs to be parsed
-     * @param classroomName name of the classroom
-     * @param colorValue color in web hexa value (example #ffffff)
+     * @param svgPath the svg file that needs to be parsed
+     * @param classroomsToupdate contains the names of the classroom to update with
+     * //@param colorValue color in web hexa value (example #ffffff)
      */
-    public void updateSVG(String svg, String classroomName, String colorValue) {
+    public void updateSVG(String svgPath, Map<String, Integer> classroomsToupdate) {
 
-        System.out.println(svg);
         FileInputStream svgInputFile = null;
         try {
-            svgInputFile = new FileInputStream(svg);
+            svgInputFile = new FileInputStream(svgPath);
         } catch (Exception e){
             e.printStackTrace();
         }
 
-        //InputStream svgFileInputStream = getClass().getResourceAsStream(svg);
 
-        List<String> classrooms = new ArrayList<String>();
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -62,14 +59,22 @@ public class SVGToolBox {
             Document doc = dBuilder.parse(svgInputFile);
             doc.getDocumentElement().normalize();
 
-            // Get the list of all groups (g balise)
-            NodeList groups = doc.getElementsByTagName("g");
+            for (HashMap.Entry<String, Integer> classroom : classroomsToupdate.entrySet()) {
 
-            NodeList path = doc.getElementsByTagName("path");
+                String classroomName = classroom.getKey();
+                int colorId = getColorIdFromFreePeriods(classroom.getValue());
+                DisplayConstants.COLORS_ROOMS colors_rooms = DisplayConstants.COLORS_ROOMS.values()[colorId];
 
-            getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
-            getClassroomFromSVGNodeList(path, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
-            transformTheDom(doc, svg);//getClass().getResource(svg).getPath().replaceFirst("file:", "") );
+                // Get the list of all groups (g balise)
+                NodeList groups = doc.getElementsByTagName("g");
+
+                NodeList path = doc.getElementsByTagName("path");
+
+                getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + COLOR_VALUES[colors_rooms.ordinal()]);
+                getClassroomFromSVGNodeList(path, classroomName, DisplayConstants.COLOR_BEACON + COLOR_VALUES[colors_rooms.ordinal()]);
+            }
+
+            transformTheDom(doc, svgPath);
 
             svgInputFile.close();
 
@@ -93,18 +98,12 @@ public class SVGToolBox {
                 Element linkNode = (Element) nNode.getParentNode();
 
                 if (linkNode.getAttribute("id").equals(classroomName)) {
-                    //System.out.println(eElement.getAttribute("id"));
-                    //System.out.println(eElement.getAttribute("style"));
                     eElement.setAttribute("style", colorValue);
                     linkNode.setAttribute("style", colorValue);
-                    //System.out.println(eElement.getAttribute("style"));
-                    //System.out.println(linkNode.getAttribute("style"));
 
                     NodeList path = eElement.getElementsByTagName("path");
-                    //NodeList rectangles = eElement.getElementsByTagName("rect");
                     if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                         Element pathElem = (Element) path.item(0);
-                        //Element rectElem = (Element) rectangles.item(0);
                         if(pathElem != null) {
                             pathElem.setAttribute("style", colorValue);
                         }
@@ -147,7 +146,7 @@ public class SVGToolBox {
             // screen. Then transform the DOM sending XML to
             // the screen.
             StreamResult scrResult =
-                    new StreamResult(new FileOutputStream("plans/tmpPlan1.svg"));
+                    new StreamResult(new FileOutputStream(file));
             transformer.transform(source, scrResult);
         }//end try block
 

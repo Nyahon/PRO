@@ -11,7 +11,10 @@ import java.util.logging.Logger;
  */
 public class ConfigLoader {
 
-    private static final String CONFIG_FILENAME = "daryll.properties";
+    public static final String MAIN_FOLDER = "DARYLL";
+    public static final String PLAN_PATH = MAIN_FOLDER + "/plans";
+    private static final String CONFIG_FILENAME = MAIN_FOLDER + "/daryll.properties";
+
     private static final Logger LOG = Logger.getLogger(ConfigLoader.class.getName());
     private static final String EQ = "=";
 
@@ -38,6 +41,7 @@ public class ConfigLoader {
 
     private static Properties properties;
 
+
     static {
         properties = new Properties();
         createFileIfNotExists();
@@ -60,6 +64,12 @@ public class ConfigLoader {
         } catch (IOException e){
             LOG.log(Level.WARNING, "File " + CONFIG_FILENAME + " not found, loading default configuration.");
         }
+        serverAddress = properties.getProperty(SERVER_ADDRESS_ID, SERVER_ADDRESS_DEFAULT);
+        serverPort = Integer.valueOf(properties.getProperty(SERVER_PORT_ID, SERVER_PORT_DEFAULT));
+        outputFilename = properties.getProperty(OUTPUT_FILENAME_ID, OUTPUT_FILENAME_DEFAULT);
+        daysOfWeekFormatter = properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DAYS_OF_WEEK_FORMATTER_DEFAULT);
+        dateFormatter = properties.getProperty(DATE_FORMATTER_ID, DATE_FORMATTER_DEFAULT);
+        fileEncoding = properties.getProperty(FILE_ENCODING_ID, FILE_ENCODING_DEFAULT);
     }
 
     /**
@@ -86,12 +96,6 @@ public class ConfigLoader {
         } catch (IOException e){
             LOG.log(Level.SEVERE, "An I/O error occurred during configuration file creation.");
         }
-        serverAddress = properties.getProperty(SERVER_ADDRESS_ID, SERVER_ADDRESS_DEFAULT);
-        serverPort = Integer.valueOf(properties.getProperty(SERVER_PORT_ID, SERVER_PORT_DEFAULT));
-        outputFilename = properties.getProperty(OUTPUT_FILENAME_ID, OUTPUT_FILENAME_DEFAULT);
-        daysOfWeekFormatter = properties.getProperty(DAYS_OF_WEEK_FORMATTER_ID, DAYS_OF_WEEK_FORMATTER_DEFAULT);
-        dateFormatter = properties.getProperty(DATE_FORMATTER_ID, DATE_FORMATTER_DEFAULT);
-        fileEncoding = properties.getProperty(FILE_ENCODING_ID, FILE_ENCODING_DEFAULT);
     }
 
     /**

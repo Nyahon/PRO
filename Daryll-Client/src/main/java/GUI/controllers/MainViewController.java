@@ -16,9 +16,7 @@
  */
 package GUI.controllers;
 
-import java.awt.*;
 import java.io.*;
-import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -55,6 +53,7 @@ import utils.DisplayConstants;
 
 import static controller.Controller.closestClassroom;
 import static utils.ClassroomsByFloor.FLOORS_MAP;
+import static utils.ConfigLoader.PLAN_PATH;
 import static utils.DisplayConstants.COLOR_VALUES;
 import static utils.DisplayConstants.getColorIdFromFreePeriods;
 import static utils.PeriodManager.PERIODS_END;
@@ -204,9 +203,7 @@ public class MainViewController implements Initializable {
         indexPlan = 0;
         currentFloorPaths = FLOORS.get(floor);
 
-        String svgInternFloorPath = "";
         String svgExternFloorPath = "";
-        URL svgInternFloorUrl;
 
         // Regex expression to know which building is the floor
         if (floor.matches("[A-D]") || floor.matches("[G-K]") ) {
@@ -238,8 +235,6 @@ public class MainViewController implements Initializable {
         if(!floor.matches("[E-F]")) {
             LocalDate localDate = dateField.getValue();
             LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
-            System.out.println(localTime);
-
 
             int beginPeriod = currentOrNextPeriod(localTime);
             int endPeriod = beginPeriod;
@@ -255,7 +250,7 @@ public class MainViewController implements Initializable {
             String firstClassroom = FLOORS_MAP.get(floor).get(0);
 
             int periodRequested = currentOrNextPeriod(localTime);
-            System.out.println(periodRequested);
+
             TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
             Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
@@ -264,26 +259,21 @@ public class MainViewController implements Initializable {
             // Getting the required files to modify from inside resource to extern.
             for (int i = 0; i < currentFloorPaths.size(); ++i) {
                 inputStreamSvg = getClass().getResourceAsStream("/plans/" + currentFloorPaths.get(i));
-                newTempSVGFile(inputStreamSvg, "plans/tmpPlan" + (i + 1) + ".svg");
+                newTempSVGFile(inputStreamSvg, PLAN_PATH + "/tmpPlan" + (i + 1) + ".svg");
                 inputStreamSvg.close();
             }
             // Apply color to every classroom in SVG
-            for (HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()) {
 
+            //List<String> currentExternSvgPaths = new ArrayList<>();
+            for (int i = 0; i < currentFloorPaths.size(); ++i) {
 
-                for (int i = 0; i < currentFloorPaths.size(); ++i) {
-                    svgExternFloorPath = "plans/tmpPlan" + (0 + 1) + ".svg";//"plans/" + currentFloorPaths.get(i);
-                    String classroomName = classroom.getKey();
+                svgExternFloorPath = PLAN_PATH + "/tmpPlan" + (i + 1) + ".svg";
 
-
-                    int colorId = getColorIdFromFreePeriods(classroom.getValue());
-                    DisplayConstants.COLORS_ROOMS colors_rooms = DisplayConstants.COLORS_ROOMS.values()[colorId];
-
-                    svgToolBox.updateSVG(svgExternFloorPath, classroomName, COLOR_VALUES[colors_rooms.ordinal()]);
-                }
+                svgToolBox.updateSVG(svgExternFloorPath, timeSlotReceived);
 
             }
-            svgExternFloorPath = "plans/tmpPlan" + 1 + ".svg";//"/plans/" + currentFloorPaths.get(0);
+
+            svgExternFloorPath = PLAN_PATH + "/tmpPlan" + 1 + ".svg";
             try {
                 planLoader = new PlanLoader(svgExternFloorPath,imgView, planWidth, planHeight, this, currentClassroom);
                 new Thread(planLoader).start();
@@ -309,11 +299,8 @@ public class MainViewController implements Initializable {
      */
     public void newTempSVGFile(InputStream svgInternStream, String svgExternPath){
         try{
-            //File svgSrcFile = new File(svgInternStream.getClass().ge);
-            //BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(svgExternPath), "UTF-8"));
             FileOutputStream svgDestFile = new FileOutputStream(new File(svgExternPath));
 
-            //out.write();
             IOUtils.copy(svgInternStream, svgDestFile);
         } catch (IOException e){
             e.printStackTrace();
@@ -333,8 +320,6 @@ public class MainViewController implements Initializable {
 
             LocalTime localTime = LocalTime.parse(timeSpinner.getEditor().getText());
             LocalDate localDate = dateField.getValue();
-            System.out.println("time = " + timeSpinner.getEditor().getText());
-            System.out.println("date = " + dateField.getValue());
             ClassRoom closestClassroom = closestClassroom(classRoom, localTime, localDate);
             try {
                 showFloor(closestClassroom.getClassRoom().substring(0, 1), true);
@@ -418,11 +403,11 @@ public class MainViewController implements Initializable {
             }
 
             try {
-                planLoader = new PlanLoader("plans/tmpPlan" + (indexPlan + 1) + ".svg", imgView, planWidth, planHeight, this, false); // "/plans/" + currentFloorPaths.get(indexPlan)
+                planLoader = new PlanLoader(PLAN_PATH + "/tmpPlan" + (indexPlan + 1) + ".svg", imgView, planWidth, planHeight, this, false); // "/plans/" + currentFloorPaths.get(indexPlan)
                 new Thread(planLoader).start();
             } catch (Exception e) {
 
-                Image exceptionImg = new Image("/plans/default-image.png");
+                Image exceptionImg = new Image(PLAN_PATH + "/default-image.png");
                 imgView.setImage(exceptionImg);
             }
 
@@ -439,7 +424,6 @@ public class MainViewController implements Initializable {
         FXMLLoader fxLoader = new FXMLLoader();
         Parent root = fxLoader.load(getClass().getResource("/RoomScheduleView.fxml"));
 
-        //System.out.println(fxLoader.getController().toString());
         RoomScheduleViewController roomScheduleViewController = new RoomScheduleViewController();
         roomScheduleViewController.setMainViewController(this);
         fxLoader.setController(roomScheduleViewController);

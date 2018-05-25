@@ -51,8 +51,7 @@ public class PlanLoader implements Runnable{
 
         InputStream svgInputStream = null;
         try {
-            svgInputStream = new FileInputStream(file); // getClass().getResourceAsStream(file)
-            System.out.println(svgInputStream.getClass().getCanonicalName());
+            svgInputStream = new FileInputStream(file);
             transcoderInput = new TranscoderInput(svgInputStream);
         } catch (IOException e){
             e.printStackTrace();

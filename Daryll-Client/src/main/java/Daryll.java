@@ -8,9 +8,13 @@ import javafx.scene.image.*;
 import javafx.stage.Stage;
 import utils.ConfigLoader;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
+
+import static utils.ConfigLoader.MAIN_FOLDER;
+import static utils.ConfigLoader.PLAN_PATH;
 
 /**
  * This file contains the base of the application Daryll, this is where the
@@ -77,6 +81,9 @@ public class Daryll extends Application {
     */
    public static void main(String[] args) {
 
+      // Creation of the plan folder
+      File mainFolder = new File(PLAN_PATH);
+      mainFolder.mkdirs();
       if(args.length == 1){
          if(args[0].equals("--localhost") || args[0].equals("-l")){
             ConfigLoader.setServerAddress("localhost");

@@ -78,10 +78,7 @@ public class AdvancedRequestForm {
         floor.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                System.out.println(number2);
 
-
-                System.out.println(classroom.getItems().get(0));
                 if( number2.intValue() > 0) {
 
                     List<String> classrooms = new ArrayList<>(FLOORS_MAP.get(floor.getItems().get((Integer) number2)));
