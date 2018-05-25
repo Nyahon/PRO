@@ -30,6 +30,11 @@ public class Controller {
     private static final ClientSocket client = new ClientSocket();
 
     /**
+     *
+     */
+    private static final String FILE_PATH = ConfigLoader.MAIN_FOLDER + "/" + ConfigLoader.getOutputFilename();
+
+    /**
      * An advanced done by the user in the GUI
      */
     private static AdvancedRequest clientRequest;
@@ -74,7 +79,7 @@ public class Controller {
         client.disconnect();
         // Create and open a file with the result of the client request (if the file already exist, it will overwrite it)
         createQuickClassroomFile(result, data);
-        File file = new File(ConfigLoader.getOutputFilename());
+        File file = new File(FILE_PATH);
         openFileInTextEditor(file);
     }
 
@@ -85,7 +90,7 @@ public class Controller {
      */
     public static void handleClientAdvancedRequest(List<AdvancedRequest> data) throws IOException {
         client.connect(Protocol.SERVER_IP, Protocol.DEFAULT_PORT);
-        PrintWriter writer = new PrintWriter(ConfigLoader.getOutputFilename(), ConfigLoader.getFileEncoding());
+        PrintWriter writer = new PrintWriter(FILE_PATH, ConfigLoader.getFileEncoding());
         // Send the client advanced requests and processed them one by one
         for (int i = 0; i < data.size(); ++i) {
             // Send request to the server
@@ -119,7 +124,7 @@ public class Controller {
         writer.close();
         client.disconnect();
 
-        File file = new File(ConfigLoader.getOutputFilename());
+        File file = new File(FILE_PATH);
         openFileInTextEditor(file);
     }
 
@@ -134,7 +139,7 @@ public class Controller {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(ConfigLoader.getDateFormatter());
         List<Integer> periods = new ArrayList<>();
 
-        PrintWriter writer = new PrintWriter(ConfigLoader.getOutputFilename(), ConfigLoader.getFileEncoding());
+        PrintWriter writer = new PrintWriter(FILE_PATH, ConfigLoader.getFileEncoding());
         // Write the header in the file
         writer.println(DisplayConstants.FILE_CLASSROOM_TITLE + ": " + clientRequest.getClassRoom());
         writer.println("-------------------------------------------------");
@@ -407,14 +412,12 @@ public class Controller {
 
         Map.Entry<String,Integer> firstEntry = mapReceived.entrySet().iterator().next();
         String currentFloor = firstEntry.getKey().substring(0,1);
-        System.out.println("current floor = " +currentFloor);
         double difference = Double.MAX_VALUE;
 
         // iterate on the official classroom list in the current floor
         List<String> roomList = ClassroomsByFloor.FLOORS_MAP.get(currentFloor);
 
         for(String room : roomList){
-            System.out.println("pouet " + room + " -> " + mapReceived.get(room));
             if(mapReceived.containsKey(room) && mapReceived.get(room) > 0){
                 double currentDifference = Math.abs(roomList.indexOf(room)-roomList.indexOf(classRoom.getClassRoom()));
                 ClassRoom currentRoom = new ClassRoom(room);

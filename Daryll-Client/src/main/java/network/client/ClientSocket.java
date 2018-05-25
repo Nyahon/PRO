@@ -136,7 +136,6 @@ public class ClientSocket {
         List<TimeSlot> response = new ArrayList<>();
         String rsp;
         while (!(rsp = is.readLine()).equals(Protocol.RESPONSE_OK)) {
-            System.out.println("response = " +rsp);
             response.add(JsonObjectMapper.parseJson(rsp, TimeSlot.class));
         }
         return response;
