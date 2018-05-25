@@ -13,7 +13,6 @@
 
 package GUI.svgTools;
 
-import org.apache.commons.io.input.ClassLoaderObjectInputStream;
 import utils.DisplayConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -27,8 +26,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,17 +39,27 @@ public class SVGToolBox {
     /**
      * parse the given file to update color of classrooms (groups of path elements)
      * @param svg the svg file that needs to be parsed
+     * @param classroomName name of the classroom
+     * @param colorValue color in web hexa value (example #ffffff)
      */
     public void updateSVG(String svg, String classroomName, String colorValue) {
 
-        InputStream svgInputStream = getClass().getResourceAsStream(svg);
+        System.out.println(svg);
+        FileInputStream svgInputFile = null;
+        try {
+            svgInputFile = new FileInputStream(svg);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //InputStream svgFileInputStream = getClass().getResourceAsStream(svg);
 
         List<String> classrooms = new ArrayList<String>();
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
-            Document doc = dBuilder.parse(svgInputStream);
+            Document doc = dBuilder.parse(svgInputFile);
             doc.getDocumentElement().normalize();
 
             // Get the list of all groups (g balise)
@@ -61,7 +69,9 @@ public class SVGToolBox {
 
             getClassroomFromSVGNodeList(groups, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
             getClassroomFromSVGNodeList(path, classroomName, DisplayConstants.COLOR_BEACON + colorValue);
-            transformTheDom(doc, svgInputStream.getClass().getCanonicalName());
+            transformTheDom(doc, svg);//getClass().getResource(svg).getPath().replaceFirst("file:", "") );
+
+            svgInputFile.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,10 +121,10 @@ public class SVGToolBox {
      * being produced.  This method transforms the DOM into
      * raw XML code and writes that code into the output.
      * @param document
-     * @param filename
+     * @param file
      */
     static void transformTheDom(Document document,
-                                String filename) {
+                                String file) {
         try {
             //Get a TransformerFactory object.
             TransformerFactory xformFactory =
@@ -137,7 +147,7 @@ public class SVGToolBox {
             // screen. Then transform the DOM sending XML to
             // the screen.
             StreamResult scrResult =
-                    new StreamResult(new FileOutputStream(filename));
+                    new StreamResult(new FileOutputStream("plans/tmpPlan1.svg"));
             transformer.transform(source, scrResult);
         }//end try block
 

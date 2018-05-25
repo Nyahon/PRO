@@ -14,6 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
 	</properties>
 
+
+
+
     <build>
         <plugins>
             <plugin>
@@ -23,7 +26,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.mycompany.app.App</mainClass>
+                            <mainClass>Daryll</mainClass>
                             <classpathPrefix>dependency/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -37,30 +40,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!-- Plugin utilisé afin d'obtenir un jar executable -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <!-- nom ajouté à la fin du nom du jar originel (par defaut "shade") -->
-                            <shadedClassifierName>launcher</shadedClassifierName>
-                            <transformers>
-                                <transformer implementation=
-                                                     "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <!-- nom de la classe ou se situe le main (ATTENTION nom complet avec les packages) -->
-                                    <mainClass>Daryll</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 

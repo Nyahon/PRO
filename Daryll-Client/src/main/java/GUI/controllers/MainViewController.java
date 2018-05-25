@@ -17,7 +17,7 @@
 package GUI.controllers;
 
 import java.awt.*;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
@@ -49,6 +49,8 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import utils.DisplayConstants;
 
 import static controller.Controller.closestClassroom;
@@ -202,7 +204,9 @@ public class MainViewController implements Initializable {
         indexPlan = 0;
         currentFloorPaths = FLOORS.get(floor);
 
-        String svgFloorPath = "";
+        String svgInternFloorPath = "";
+        String svgExternFloorPath = "";
+        URL svgInternFloorUrl;
 
         // Regex expression to know which building is the floor
         if (floor.matches("[A-D]") || floor.matches("[G-K]") ) {
@@ -256,24 +260,32 @@ public class MainViewController implements Initializable {
 
             Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
 
+            InputStream inputStreamSvg;
+            // Getting the required files to modify from inside resource to extern.
+            for (int i = 0; i < currentFloorPaths.size(); ++i) {
+                inputStreamSvg = getClass().getResourceAsStream("/plans/" + currentFloorPaths.get(i));
+                newTempSVGFile(inputStreamSvg, "plans/tmpPlan" + (i + 1) + ".svg");
+                inputStreamSvg.close();
+            }
             // Apply color to every classroom in SVG
             for (HashMap.Entry<String, Integer> classroom : timeSlotReceived.entrySet()) {
 
 
                 for (int i = 0; i < currentFloorPaths.size(); ++i) {
-                    svgFloorPath = "/plans/" + currentFloorPaths.get(i);
+                    svgExternFloorPath = "plans/tmpPlan" + (0 + 1) + ".svg";//"plans/" + currentFloorPaths.get(i);
                     String classroomName = classroom.getKey();
+
 
                     int colorId = getColorIdFromFreePeriods(classroom.getValue());
                     DisplayConstants.COLORS_ROOMS colors_rooms = DisplayConstants.COLORS_ROOMS.values()[colorId];
 
-                    svgToolBox.updateSVG(svgFloorPath, classroomName, COLOR_VALUES[colors_rooms.ordinal()]);
+                    svgToolBox.updateSVG(svgExternFloorPath, classroomName, COLOR_VALUES[colors_rooms.ordinal()]);
                 }
 
             }
-            svgFloorPath = "/plans/" + currentFloorPaths.get(0);
+            svgExternFloorPath = "plans/tmpPlan" + 1 + ".svg";//"/plans/" + currentFloorPaths.get(0);
             try {
-                planLoader = new PlanLoader(svgFloorPath,imgView, planWidth, planHeight, this, currentClassroom);
+                planLoader = new PlanLoader(svgExternFloorPath,imgView, planWidth, planHeight, this, currentClassroom);
                 new Thread(planLoader).start();
                 System.gc();
 
@@ -285,6 +297,26 @@ public class MainViewController implements Initializable {
         } else{
             Image exceptionImg = new Image("/plans/default-image.png");
             imgView.setImage(exceptionImg);
+        }
+
+    }
+
+    /**
+     * Method to get current SVG at extern of the jar
+     *
+     * @param svgInternStream
+     * @param svgExternPath
+     */
+    public void newTempSVGFile(InputStream svgInternStream, String svgExternPath){
+        try{
+            //File svgSrcFile = new File(svgInternStream.getClass().ge);
+            //BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(svgExternPath), "UTF-8"));
+            FileOutputStream svgDestFile = new FileOutputStream(new File(svgExternPath));
+
+            //out.write();
+            IOUtils.copy(svgInternStream, svgDestFile);
+        } catch (IOException e){
+            e.printStackTrace();
         }
 
     }
@@ -386,7 +418,7 @@ public class MainViewController implements Initializable {
             }
 
             try {
-                planLoader = new PlanLoader("/plans/" + currentFloorPaths.get(indexPlan),imgView, planWidth, planHeight, this, false);
+                planLoader = new PlanLoader("plans/tmpPlan" + (indexPlan + 1) + ".svg", imgView, planWidth, planHeight, this, false); // "/plans/" + currentFloorPaths.get(indexPlan)
                 new Thread(planLoader).start();
             } catch (Exception e) {
 

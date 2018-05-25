@@ -9,6 +9,8 @@ import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,8 +48,16 @@ public class PlanLoader implements Runnable{
 
     public void openSVGFile(String file){
         // Get InputStream from an SVG file
-        InputStream svgInputStream = getClass().getResourceAsStream(file);
-        transcoderInput = new TranscoderInput(svgInputStream);
+
+        InputStream svgInputStream = null;
+        try {
+            svgInputStream = new FileInputStream(file); // getClass().getResourceAsStream(file)
+            System.out.println(svgInputStream.getClass().getCanonicalName());
+            transcoderInput = new TranscoderInput(svgInputStream);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     /**
