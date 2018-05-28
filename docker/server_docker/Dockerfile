@@ -1,6 +1,6 @@
 FROM java:8
 MAINTAINER Daryll  
 ADD ["https://github.com/Nyahon/PRO/tree/prod_server/server/blob/server_jar?raw=true", "/opt/"]
-ADD ["/gaps_global_S2_2017_2018.ics" "/opt/server/"]
+ADD ["/home/dev/gaps_global_S2_2017_2018.ics" "/opt/server/"]
 EXPOSE 2613
 ENTRYPOINT ["java","-jar", "/opt/server.jar"]
