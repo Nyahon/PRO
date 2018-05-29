@@ -1,0 +1,7 @@
+Réalisé dans le cadre PRO -> inutile
+Technologie -> add Docker ?
+Organisation groupe -> git
+Difficulté -> virer telegram, ajouter date sql
+Ajout slide pour problème jar
+Ajout slide démo (à la fin) + questions
+Add schéma du projet (pour détailler implémentation par oral)
