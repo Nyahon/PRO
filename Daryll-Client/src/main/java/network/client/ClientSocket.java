@@ -79,8 +79,6 @@ public class ClientSocket {
     public boolean isConnected() {
 
         return socket != null;
-
-
     }
 
     /**

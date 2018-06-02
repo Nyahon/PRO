@@ -9,12 +9,16 @@ import javafx.stage.Stage;
 import utils.ConfigLoader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
-import static utils.ConfigLoader.MAIN_FOLDER;
+import static utils.ConfigLoader.GUI_RESOURCES_PATH;
 import static utils.ConfigLoader.PLAN_PATH;
+import static utils.DisplayConstants.MAIN_VIEW_FXML;
+import static utils.ExtractFromJar.createExternalFile;
 
 /**
  * This file contains the base of the application Daryll, this is where the
@@ -33,9 +37,14 @@ public class Daryll extends Application {
    public void start(Stage stage) throws IOException {
 
       FXMLLoader fxmlLoader = new FXMLLoader();
-      BorderPane root = fxmlLoader.load(getClass().getResource("MainView.fxml"));
 
-      MainViewController mainViewController = fxmlLoader.getController();
+      InputStream inputStreamMainView = getClass().getResourceAsStream(MAIN_VIEW_FXML);
+      createExternalFile(inputStreamMainView, GUI_RESOURCES_PATH + "/" + MAIN_VIEW_FXML);
+      inputStreamMainView.close();
+
+      BorderPane root = fxmlLoader.load(new FileInputStream(GUI_RESOURCES_PATH + "/" + MAIN_VIEW_FXML));
+
+      //MainViewController mainViewController = fxmlLoader.getController();
       Scene scene = new Scene(root);
  
       stage.setTitle("Daryll");
@@ -84,6 +93,9 @@ public class Daryll extends Application {
       // Creation of the plan folder
       File mainFolder = new File(PLAN_PATH);
       mainFolder.mkdirs();
+      File guiResourcesFolder = new File(GUI_RESOURCES_PATH);
+      guiResourcesFolder.mkdir();
+
       if(args.length == 1){
          if(args[0].equals("--localhost") || args[0].equals("-l")){
             ConfigLoader.setServerAddress("localhost");

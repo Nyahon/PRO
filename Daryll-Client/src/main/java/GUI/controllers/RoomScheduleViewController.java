@@ -12,25 +12,28 @@
  */
 package GUI.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.ClassRoom;
 import utils.ClassroomsByFloor;
-import utils.ConfigLoader;
 
 import static controller.Controller.handleClientClassroomRequest;
+import static utils.ClassroomsByFloor.isClassroomValid;
+import static utils.DisplayConstants.LOG_SCHEDULE_FILE_CREATED;
+import static utils.DisplayConstants.LOG_SERVER_ERROR;
+import static utils.DisplayConstants.LOG_WRONG_CLASSROOM;
 
 /**
  * FXML Controller class
@@ -47,41 +50,56 @@ public class RoomScheduleViewController implements Initializable {
 
     private MainViewController mainViewController;
 
+    public void handleKeyInput(KeyEvent keyEvent){
+        if(((KeyEvent)keyEvent).getCode() == KeyCode.ENTER) {
+            giveRoomSchedule(keyEvent);
+        }
+    }
+
+    /**
+     * Method to catch the search button event
+     * @param event
+     */
+    public void handleSearchButton(Event event){
+        giveRoomSchedule(event);
+    }
+
     /**
      * Handler that will give the schedule of the room
+     * @param event
      */
     public void giveRoomSchedule(Event event) {
 
-        String classroomName = scheduleRoomTextField.getText().toUpperCase();
+        String classroomName = scheduleRoomTextField.getText();
 
-        if (classroomName.isEmpty()) {
-            mainViewController.guiLogger.printError("Veuillez entrez une salle valide");
-            return;
-        }
-        ClassRoom classroomRequested = new ClassRoom(classroomName);
+        String floor = classroomName.substring(0, 1).toUpperCase();
+        classroomName = classroomName.replaceFirst(classroomName.substring(0, 1), floor);
+        if (isClassroomValid(classroomName)) {
 
-        String floor = classroomRequested.getClassRoom().substring(0, 1);
+            ClassRoom classroomRequested = new ClassRoom(classroomName);
 
-        List<String> classroomFromFloor = ClassroomsByFloor.FLOORS_MAP.get(floor);
+            List<String> classroomFromFloor = ClassroomsByFloor.FLOORS_MAP.get(floor);
 
-        if (classroomFromFloor != null) {
-            for (int i = 0; i < classroomFromFloor.size(); ++i) {
-                if (classroomFromFloor.get(i).equals(classroomName)) {
-                    try {
-                        handleClientClassroomRequest(classroomRequested);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            if (classroomFromFloor != null) {
+                for (int i = 0; i < classroomFromFloor.size(); ++i) {
+                    if (classroomFromFloor.get(i).equals(classroomName)) {
+                        try {
+                            handleClientClassroomRequest(classroomRequested);
+                        } catch (Exception e) {
+                            MainViewController.guiLogger.printError(LOG_SERVER_ERROR);
+                            return;
+                        }
+                        Control control =  (Control)event.getSource();
+                        Scene scene = control.getScene();
+                        ((Stage) scene.getWindow()).close();
+                        mainViewController.guiLogger.printInfo(LOG_SCHEDULE_FILE_CREATED);
+                        return;
                     }
-
-
-                    Button button = (Button) event.getSource();
-                    Scene scene = button.getScene();
-                    ((Stage) scene.getWindow()).close();
-                    break;
                 }
+
             }
-            mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.getOutputFilename() + " a été généré");
         }
+        mainViewController.guiLogger.printError(LOG_WRONG_CLASSROOM);
     }
 
     public void setMainViewController(MainViewController mainViewController){

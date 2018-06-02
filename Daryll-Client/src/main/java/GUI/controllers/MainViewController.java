@@ -21,7 +21,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
-import java.util.List;
 import java.util.logging.Logger;
 
 import GUI.model.TimeSpinner;
@@ -32,7 +31,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Window;
 import models.ClassRoom;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,15 +48,15 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.TimeSlot;
 import controller.Controller;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import utils.DisplayConstants;
 
 import static controller.Controller.closestClassroom;
 import static utils.ClassroomsByFloor.FLOORS_MAP;
+import static utils.ClassroomsByFloor.isClassroomValid;
+import static utils.ConfigLoader.GUI_RESOURCES_PATH;
 import static utils.ConfigLoader.PLAN_PATH;
-import static utils.DisplayConstants.COLOR_VALUES;
-import static utils.DisplayConstants.getColorIdFromFreePeriods;
+import static utils.DisplayConstants.*;
+import static utils.ExtractFromJar.createExternalFile;
 import static utils.PeriodManager.PERIODS_END;
 import static utils.PeriodManager.PERIODS_START;
 import static utils.PeriodManager.currentOrNextPeriod;
@@ -74,6 +75,8 @@ public class MainViewController implements Initializable {
 
     private static String currentFloor = "G";
 
+    @FXML
+    private BorderPane mainPane;
     @FXML
     private ImageView imageCheseaux;
     @FXML
@@ -195,7 +198,7 @@ public class MainViewController implements Initializable {
      * @param floor the floor
      * This method is a handler to show the floor on the GUI
      */
-    public void showFloor(String floor, boolean currentClassroom) throws IOException{
+    public void showFloor(String floor, boolean currentClassroom) {
 
         guiLogger.printInfo("Chargement du plan " + floor + " en cours");
 
@@ -253,24 +256,32 @@ public class MainViewController implements Initializable {
 
             TimeSlot timeSlotToSend = new TimeSlot(firstClassroom, java.sql.Date.valueOf(localDate).getTime(), periodRequested);
 
-            Map<String, Integer> timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
+            Map<String, Integer> timeSlotReceived = null;
+            try {
+                timeSlotReceived = Controller.handleClientFloorRequest(timeSlotToSend);
+            } catch (IOException e){
+                guiLogger.printInfo(LOG_SERVER_ERROR);
+                return;
+            }
 
             InputStream inputStreamSvg;
             // Getting the required files to modify from inside resource to extern.
             for (int i = 0; i < currentFloorPaths.size(); ++i) {
                 inputStreamSvg = getClass().getResourceAsStream("/plans/" + currentFloorPaths.get(i));
-                newTempSVGFile(inputStreamSvg, PLAN_PATH + "/tmpPlan" + (i + 1) + ".svg");
-                inputStreamSvg.close();
+                createExternalFile(inputStreamSvg, PLAN_PATH + "/tmpPlan" + (i + 1) + ".svg");
+                try {
+                    inputStreamSvg.close();
+                } catch (IOException e){
+                    guiLogger.printError("Erreur de modification des plans");
+                    return;
+                }
             }
-            // Apply color to every classroom in SVG
 
-            //List<String> currentExternSvgPaths = new ArrayList<>();
+            // Apply color to every classroom in SVG files
             for (int i = 0; i < currentFloorPaths.size(); ++i) {
 
                 svgExternFloorPath = PLAN_PATH + "/tmpPlan" + (i + 1) + ".svg";
-
                 svgToolBox.updateSVG(svgExternFloorPath, timeSlotReceived);
-
             }
 
             svgExternFloorPath = PLAN_PATH + "/tmpPlan" + 1 + ".svg";
@@ -280,7 +291,6 @@ public class MainViewController implements Initializable {
                 System.gc();
 
             } catch (Exception e) {
-
                 Image exceptionImg = new Image("/plans/default-image.png");
                 imgView.setImage(exceptionImg);
             }
@@ -291,22 +301,6 @@ public class MainViewController implements Initializable {
 
     }
 
-    /**
-     * Method to get current SVG at extern of the jar
-     *
-     * @param svgInternStream
-     * @param svgExternPath
-     */
-    public void newTempSVGFile(InputStream svgInternStream, String svgExternPath){
-        try{
-            FileOutputStream svgDestFile = new FileOutputStream(new File(svgExternPath));
-
-            IOUtils.copy(svgInternStream, svgDestFile);
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-
-    }
 
     /**
      * Handle search button request
@@ -324,7 +318,7 @@ public class MainViewController implements Initializable {
             try {
                 showFloor(closestClassroom.getClassRoom().substring(0, 1), true);
                 guiLogger.printInfo("Votre salle la plus proche : " + closestClassroom.getClassRoom());
-            } catch (IOException e){
+            } catch (Exception e){
                 e.printStackTrace();
                 guiLogger.printError("Erreur pour charger le plan demandé");
             }
@@ -348,23 +342,17 @@ public class MainViewController implements Initializable {
 
         // update position if key ENTER is pressed
         if(keyEvent.getCode() == KeyCode.ENTER) {
-            position = currentRoomField.getText();
-            if(!position.equals("")){
 
-                String floor = position.substring(0,1).toUpperCase();
-                position = position.replaceFirst(position.substring(0,1), floor.toUpperCase());
-                List<String> classrooms = FLOORS_MAP.get(floor);
-                if(classrooms != null) {
-                    for(int i = 0; i < classrooms.size(); ++i) {
-                        if(classrooms.get(i).equals(position)) {
-                            currentRoomField.clear();
-                            currentRoomLabel.setText(position);
-                            return;
-                        }
-                    }
-                }
+            position = currentRoomField.getText();
+            String floor = position.substring(0,1).toUpperCase();
+            position = position.replaceFirst(position.substring(0,1), floor);
+            if(isClassroomValid(position)){
+                currentRoomField.clear();
+                currentRoomLabel.setText(position);
+                guiLogger.printInfo("Position valide");
+            } else {
+                guiLogger.printError("Saisie incorrecte ou salle inconnue");
             }
-            guiLogger.printError("Saisie incorrecte ou salle inconnue");
         }
     }
 
@@ -377,7 +365,6 @@ public class MainViewController implements Initializable {
     public void nextPlan(Event event) {
 
         Button b = (Button) event.getSource(); // get the button from the event
-
         String idButton = b.getId(); // get the id of the button
 
         /*
@@ -422,21 +409,27 @@ public class MainViewController implements Initializable {
     public void scheduleRoom() throws Exception {
         // Initializing the FXML
         FXMLLoader fxLoader = new FXMLLoader();
-        Parent root = fxLoader.load(getClass().getResource("/RoomScheduleView.fxml"));
+        Parent root = fxLoader.load(getClass().getResourceAsStream("/" + ROOM_SCHEDULE_FXML));
 
         RoomScheduleViewController roomScheduleViewController = new RoomScheduleViewController();
         roomScheduleViewController.setMainViewController(this);
         fxLoader.setController(roomScheduleViewController);
 
-        Scene scene = new Scene(root);
+        Window mainWindow = mainPane.getScene().getWindow();
 
+        final double WIDTH = 290.0;
+        final double HEIGHT = 180.0;
+        Scene scene = new Scene(root);
         // Creating and launching the stage
         Stage stage = new Stage();
         stage.setTitle("Horaire d'une salle");
-        stage.setWidth(270);
-        stage.setHeight(170);
+        stage.setWidth(WIDTH);
+        stage.setHeight(HEIGHT);
         stage.setResizable(false);
         stage.setScene(scene);
+        stage.setX(mainWindow.getX() + mainWindow.getWidth() / 2 - WIDTH / 2);
+        stage.setY(mainWindow.getY() + mainWindow.getHeight() / 2 - HEIGHT / 2);
+        stage.setAlwaysOnTop(true);
         stage.show();
     }
 
@@ -447,18 +440,19 @@ public class MainViewController implements Initializable {
      * little planning of free rooms from timestamp.
      */
     public void timeslot() throws IOException {
+
         // Initializing the FXML
         FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = fxmlLoader.load(getClass().getResource("/TimeslotView.fxml"));
+        Parent root = fxmlLoader.load(new FileInputStream(GUI_RESOURCES_PATH + "/" + TIMESLOT_FXML));
 
         Scene scene = new Scene(root);
-
         // Creating and launching the stage
         Stage stage = new Stage();
         stage.setTitle("Recherche avancée");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
+
     }
 
     /**
@@ -467,7 +461,8 @@ public class MainViewController implements Initializable {
      */
     public void about() throws IOException {
         // Creating the stage
-        Parent root = FXMLLoader.load(getClass().getResource("/AboutView.fxml"));
+        FXMLLoader fxLoader = new FXMLLoader();
+        Parent root = fxLoader.load( getClass().getResourceAsStream("/" + ABOUT_FXML));
         Scene scene = new Scene(root);
 
         // Launching the stage
@@ -476,6 +471,7 @@ public class MainViewController implements Initializable {
         stage.setResizable(false);
         stage.setFullScreen(false);
         stage.setScene(scene);
+        stage.setAlwaysOnTop(true);
         stage.show();
     }
 
@@ -491,8 +487,17 @@ public class MainViewController implements Initializable {
         fillFloors();
         timeSpinner = new TimeSpinner();
         timeSpinner.setPrefWidth(90.0);
-        bottomUserInputHBox.getChildren().set(7, timeSpinner);
+        bottomUserInputHBox.getChildren().set(8, timeSpinner);
         guiLogger = new GuiLogger(guiConsole, circleGuiLogger);
+
+        try {
+            InputStream inputStreamTimeslot = getClass().getResourceAsStream("/" + TIMESLOT_FXML);
+            createExternalFile(inputStreamTimeslot, GUI_RESOURCES_PATH + "/" + TIMESLOT_FXML);
+            inputStreamTimeslot.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 }

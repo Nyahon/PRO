@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="530.0" maxWidth="640.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="640.0" snapToPixel="false" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" >
+<BorderPane maxHeight="530.0" maxWidth="640.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="640.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
   <center>
-    <TextArea disable="false" editable="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="290.0" style="-fx-text-alignment: justify;" text="DARYLL est un logiciel créé dans le cadre du cours PRO et de la HEIG-VD.&#10;&#10;Le but de ce projet est de fournir à l'utilisateur un outil permettant d'indiquer les salles libres de la HEIG-VD (Cheseaux et Saint-Roch) à l'utilisateur. &#10;&#10;L'utilisateur pourra donc chercher des salles libres facilement avec ses critères et avec les différents modes disponibles.&#10;&#10;Le programme a été réalisé par les étudiants suivants : &#10;- Dejvid Muaremmi&#10;- Aurélien Siu&#10;- Romain Gallay&#10;- Yohann Meyer&#10;- Labinot Rashiti&#10;- Loïc Frueh&#10;&#10;Le nom DARYLL étant l'accronyme des prénoms des contributeurs" wrapText="true" BorderPane.alignment="CENTER">
+    <TextArea disable="false" editable="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="290.0" style="-fx-text-alignment: justify;" text="DARYLL est un logiciel créé dans le cadre du cours PRO et de la HEIG-VD.&#10;&#10;Le but de ce projet est de fournir à l'utilisateur un outil permettant d'indiquer les salles libres de la HEIG-VD (Cheseaux et Saint-Roch) à l'utilisateur. &#10;&#10;L'utilisateur pourra donc chercher des salles libres facilement avec ses critères et avec les différents modes disponibles.&#10;&#10;Le programme a été réalisé par les étudiants suivants : &#10;- Dejvid Muaremi&#10;- Aurélien Siu&#10;- Romain Gallay&#10;- Yohann Meyer&#10;- Labinot Rashiti&#10;- Loïc Frueh&#10;&#10;Le nom DARYLL étant l'accronyme des prénoms des contributeurs&#10;&#10;&#10;https://github.com/nyahon/PRO&#10;" wrapText="true" BorderPane.alignment="CENTER">
       <BorderPane.margin>
         <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
       </BorderPane.margin>

@@ -383,7 +383,7 @@ public class Controller {
             Runtime.getRuntime().exec(cmd);
         }
         else {
-            String cmd = "nano " + file.getCanonicalPath();
+            String cmd = "xdg-open " + file.getCanonicalPath();
             Runtime.getRuntime().exec(cmd);
         }
     }

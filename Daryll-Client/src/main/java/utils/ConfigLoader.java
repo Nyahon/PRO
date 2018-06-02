@@ -13,6 +13,7 @@ public class ConfigLoader {
 
     public static final String MAIN_FOLDER = "DARYLL";
     public static final String PLAN_PATH = MAIN_FOLDER + "/plans";
+    public static final String GUI_RESOURCES_PATH = MAIN_FOLDER + "/guiResources";
     private static final String CONFIG_FILENAME = MAIN_FOLDER + "/daryll.properties";
 
     private static final Logger LOG = Logger.getLogger(ConfigLoader.class.getName());

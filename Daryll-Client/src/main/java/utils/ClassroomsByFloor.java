@@ -119,4 +119,25 @@ public class ClassroomsByFloor {
         BUILDING_MAP = buildingMap;
     }
 
+    /**
+     * This method check if a given classroomName exists
+     * @param classroomName
+     * @return classroom validity (boolean)
+     */
+    public static boolean isClassroomValid(String classroomName){
+        if(!classroomName.equals("")){
+
+            String floor = classroomName.substring(0,1).toUpperCase();
+            List<String> classrooms = FLOORS_MAP.get(floor);
+            if(classrooms != null) {
+                for(int i = 0; i < classrooms.size(); ++i) {
+                    if(classrooms.get(i).equals(classroomName)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 }

@@ -37,6 +37,8 @@ import models.AdvancedRequest;
 import utils.ConfigLoader;
 import utils.PeriodManager;
 
+import static utils.DisplayConstants.LOG_SERVER_ERROR;
+
 /**
  * FXML Controller class
  *
@@ -95,9 +97,7 @@ public class TimeslotViewController implements Initializable {
             lastForm.getRemoveButton().setDisable(false);
 
             int lastIndex = advancedRequestForms.size();
-            int lastIndexGraphic = requestsFormsBox.getChildren().size() - 1;
 
-            AdvancedRequestForm formToRemove = advancedRequestForms.get(lastIndex - 1);
             requestsFormsBox.getChildren().remove(lastIndex);
             advancedRequestForms.remove(lastIndex - 1);
         }
@@ -137,8 +137,8 @@ public class TimeslotViewController implements Initializable {
             try {
                 Controller.handleClientAdvancedRequest(requests);
             } catch (IOException e) {
-                e.printStackTrace();
-                mainViewController.guiLogger.printInfo("Erreur lors de la récupération des données");
+                mainViewController.guiLogger.printError(LOG_SERVER_ERROR);
+                return;
             }
 
             mainViewController.guiLogger.printInfo("Le fichier " + ConfigLoader.getOutputFilename() + " a été généré");
